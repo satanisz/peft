@@ -30,6 +30,9 @@ train = [
 peft-workshop = "peft_workshop.cli:main"
 peft-baseline = "peft_workshop.baseline:main"
 peft-preflight = "peft_workshop.preflight:main"
+peft-generate-dataset = "peft_workshop.dataset_v1:main"
+peft-audit-dataset = "peft_workshop.data_audit:main"
+peft-token-stats = "peft_workshop.token_stats:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

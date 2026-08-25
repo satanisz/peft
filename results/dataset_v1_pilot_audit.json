@@ -1,0 +1,103 @@
+{
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "Split train zawiera mniej niż docelowe 400 przypadków"
+  ],
+  "summary": {
+    "count": 120,
+    "split_counts": {
+      "development": 10,
+      "test": 20,
+      "train": 80,
+      "validation": 10
+    },
+    "control_type_counts": {
+      "ARITHMETIC": 12,
+      "CROSS_SECTION": 12,
+      "CURRENCY": 12,
+      "DIRECTION": 12,
+      "DISCLOSURE": 12,
+      "EVIDENCE": 12,
+      "INSUFFICIENT_DATA": 12,
+      "PERIOD": 12,
+      "UNIT": 12,
+      "VARIANCE": 12
+    },
+    "status_counts": {
+      "FAIL": 37,
+      "INSUFFICIENT_DATA": 24,
+      "NOT_APPLICABLE": 2,
+      "PASS": 43,
+      "WARN": 14
+    },
+    "difficulty_counts": {
+      "easy": 30,
+      "hard": 40,
+      "medium": 50
+    },
+    "family_count": 120,
+    "mutation_count": 50,
+    "mutation_counts": {
+      "ambiguous_stability": 2,
+      "below_threshold": 3,
+      "checklist_missing": 2,
+      "comparable_periods": 3,
+      "comparative_missing": 2,
+      "complete_disclosure": 3,
+      "conflicting_sources": 2,
+      "consistent_sections": 3,
+      "consistent_sum": 3,
+      "consistent_unit": 3,
+      "correct_fx_conversion": 2,
+      "cross_section_mismatch": 3,
+      "data_complete": 3,
+      "direction_correct": 3,
+      "direction_reversed": 3,
+      "evidence_omitted": 2,
+      "evidence_source_missing": 2,
+      "explained_variance": 3,
+      "fabricated_evidence_id": 3,
+      "fx_rate_missing": 3,
+      "incorrect_fx_conversion": 2,
+      "incorrect_total": 3,
+      "irrelevant_evidence": 2,
+      "mislabelled_period": 2,
+      "missing_component": 2,
+      "missing_table_date": 2,
+      "missing_unit": 2,
+      "negative_value_direction": 2,
+      "partial_disclosure": 2,
+      "percentage_ambiguity": 2,
+      "percentage_points_correct": 2,
+      "prior_missing": 3,
+      "prior_value_as_current": 2,
+      "quarter_on_quarter": 2,
+      "quarter_vs_year": 3,
+      "required_element_missing": 3,
+      "required_unit_missing": 2,
+      "rounding": 2,
+      "same_currency": 3,
+      "scope_not_applicable": 2,
+      "sign_error": 2,
+      "stale_fx_rate": 2,
+      "thousand_vs_million": 3,
+      "threshold_missing": 2,
+      "unit_missing": 2,
+      "unsupported_pass_conclusion": 2,
+      "valid_evidence_id": 3,
+      "variance_explanation_contradiction": 2,
+      "variance_without_cause": 2,
+      "within_tolerance": 2
+    },
+    "source_word_length": {
+      "min": 8,
+      "mean": 16.26,
+      "median": 16.0,
+      "max": 33
+    },
+    "exact_duplicate_count": 0,
+    "leaking_family_count": 0,
+    "file_sha256": "cab57746177befb7f3a2afabd8512e74ad9d2a7f06de00743eb5fb9fb20117c3"
+  }
+}

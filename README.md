@@ -23,6 +23,8 @@ zbudowanego wokół zastosowań bankowych.
 - [Pierwsze wyniki baseline](docs/05_baseline_results.md)
 - [Executive plan i sprinty](docs/06_executive_plan.md)
 - [Zasady współpracy w Git](CONTRIBUTING.md)
+- [Karta dataset-v1](data/DATASET_CARD.md)
+- [Raport Sprintu 1](docs/07_sprint_1_report.md)
 
 ## Planowane artefakty
 
