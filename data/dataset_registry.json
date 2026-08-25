@@ -1,0 +1,34 @@
+{
+  "datasets": [
+    {
+      "name": "financial-control-copilot-dataset-v1",
+      "version": "1.0.0",
+      "status": "frozen",
+      "frozen_at": "2026-08-26",
+      "language": "pl",
+      "synthetic": true,
+      "seed": 20260826,
+      "generator": "src/peft_workshop/dataset_v1.py",
+      "output": "data/generated/dataset_v1.jsonl",
+      "sha256": "ffa0da9497872513506655df64d200289b33d608ac6b37c6bc89d906bb843d7c",
+      "counts": {
+        "all": 620,
+        "train": 400,
+        "development": 50,
+        "validation": 50,
+        "test": 100,
+        "challenge": 20
+      },
+      "train_tokens_per_epoch": 384800,
+      "generation_command": "uv run peft-generate-dataset --mode full --seed 20260826",
+      "audit_command": "uv run peft-audit-dataset --data data/generated/dataset_v1.jsonl",
+      "card": "data/DATASET_CARD.md",
+      "audit_report": "results/dataset_v1_audit.md",
+      "limitations": [
+        "Syntetyczny test jest przeznaczony do regresji, a nie jako jedyny benchmark generalizacji.",
+        "Dane są krótsze i bardziej regularne niż rzeczywiste sprawozdania bankowe.",
+        "Końcowa ocena wymaga oddzielnego ręcznie przygotowanego zbioru diagnostycznego."
+      ]
+    }
+  ]
+}

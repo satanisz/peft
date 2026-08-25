@@ -14,7 +14,7 @@
     "expected_output"
   ],
   "properties": {
-    "case_id": {"type": "string", "pattern": "^FC-[0-9]{3}$"},
+    "case_id": {"type": "string", "pattern": "^(FC-[0-9]{3}|TR-[0-9]{4}|CH-[0-9]{3})$"},
     "group_id": {"type": "string", "minLength": 1},
     "split": {"enum": ["train", "development", "validation", "test", "challenge"]},
     "difficulty": {"enum": ["easy", "medium", "hard"]},
@@ -50,6 +50,36 @@
         "deterministic_check": {"type": ["object", "null"]}
       }
     },
-    "expected_output": {"$ref": "financial_control_output.schema.json"}
+    "expected_output": {"$ref": "financial_control_output.schema.json"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dataset_version",
+        "family_id",
+        "variant_id",
+        "generation_method",
+        "synthetic",
+        "language",
+        "seed",
+        "mutation_type",
+        "provenance"
+      ],
+      "properties": {
+        "dataset_version": {"type": "string"},
+        "family_id": {"type": "string"},
+        "variant_id": {"type": "integer", "minimum": 0},
+        "generation_method": {"enum": ["template", "adversarial_template", "manual"]},
+        "synthetic": {"const": true},
+        "language": {"enum": ["pl"]},
+        "seed": {"type": "integer"},
+        "mutation_type": {"type": "string"},
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        }
+      }
+    }
   }
 }

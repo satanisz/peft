@@ -74,6 +74,23 @@ Profil `smoke` służy do testu przepływu, nie do wyznaczania docelowej jakośc
 Formalny benchmark na splicie `test` wykonamy dopiero dla przypiętego modelu 4B,
 po zamrożeniu promptu i konfiguracji.
 
+## Dataset-v1
+
+```powershell
+uv run peft-generate-dataset --mode pilot
+uv run peft-audit-dataset `
+  --data data/pilot/dataset_v1_pilot.jsonl `
+  --json-output results/dataset_v1_pilot_audit.json `
+  --markdown-output results/dataset_v1_pilot_audit.md
+
+uv run peft-generate-dataset --mode full
+uv run peft-audit-dataset --data data/generated/dataset_v1.jsonl
+uv run peft-token-stats --data data/generated/dataset_v1.jsonl
+```
+
+Pełny generator zapisuje plik zbiorczy oraz oddzielne pliki dla każdego splitu.
+Karta danych znajduje się w `data/DATASET_CARD.md`.
+
 ## Warstwa treningowa — późniejszy etap
 
 ```powershell
@@ -82,4 +99,3 @@ uv sync --extra llm --extra train
 
 Instaluje PEFT, TRL, datasets i bitsandbytes. Przed treningiem powstaną osobne
 skrypty preflight dla kwantyzacji NF4 i pomiaru pamięci GPU.
-

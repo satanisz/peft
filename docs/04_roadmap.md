@@ -28,7 +28,7 @@ Rezultat: mierzalny baseline i materiał otwierający wykład.
 
 ## Etap 3 — dane warsztatowe
 
-Status: następny
+Status: ukończony — `dataset-v1.0.0`, M1 Data freeze
 
 - generator wariantów liczbowych i tekstowych,
 - generator kontrolowanych niezgodności,
@@ -40,6 +40,8 @@ Status: następny
 Rezultat: zestaw nadający się do uczciwego treningu i ewaluacji.
 
 ## Etap 4 — pipeline LoRA/QLoRA
+
+Status: po wykonaniu docelowego baseline 4B
 
 - wybór i przypięcie modelu,
 - konfiguracja LoRA BF16,
@@ -85,7 +87,5 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Zbudować etap 3: generator większego zbioru treningowego, warianty językowe i
-liczbowe, kontrolę duplikatów oraz grupowy podział danych. Obecne 40 przypadków
-pozostaje małym zbiorem diagnostycznym i nie powinno zostać mechanicznie
-powielone do treningu.
+Uruchomić Sprint 2: docelowy baseline Qwen3-4B dla B0/B1/B2, zamrozić prompt i
+zebrać rzeczywiste pomiary pamięci, latencji oraz jakości przed treningiem.

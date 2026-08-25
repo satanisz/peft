@@ -27,9 +27,9 @@ Na dzień 26 sierpnia 2026 gotowe są:
 - działające środowisko z RTX 5070 Ti 12 GB i CUDA 12.8,
 - testy automatyczne oraz instrukcja uruchomienia.
 
-Stan realizacji całego programu szacujemy na około 25%. Największa część
-pozostałej pracy dotyczy danych treningowych, QLoRA, pełnego benchmarku i
-materiałów dydaktycznych.
+Po ukończeniu Sprintu 1 stan realizacji całego programu szacujemy na około 40%.
+Dataset `v1.0.0` jest zamrożony; największa część pozostałej pracy dotyczy
+baseline 4B, QLoRA, pełnego benchmarku i materiałów dydaktycznych.
 
 ## 3. Oczekiwane rezultaty biznesowe
 
@@ -57,6 +57,8 @@ podstawie spadającego lossu — wymagane są określone artefakty i pomiary.
 
 **Czas:** 3–4 dni  
 **Cel:** stworzyć wiarygodny i kontrolowany zbiór do SFT.
+
+**Status:** ukończony 26 sierpnia 2026 — `dataset-v1.0.0`, M1 Data freeze.
 
 ### Zakres
 
@@ -366,4 +368,3 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 Rozpoczynamy Sprint 1. Pierwszy przegląd następuje po wygenerowaniu próbnych
 100–150 rekordów, zanim rozszerzymy zbiór do pełnej wielkości. Pozwala to
 skorygować jakość szablonów bez kosztownego przebudowywania całego datasetu.
-
