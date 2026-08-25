@@ -1,0 +1,40 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Sekrety i lokalna konfiguracja
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Modele, adaptery i ciężkie artefakty treningowe
+checkpoints/
+artifacts/
+outputs/
+wandb/
+mlruns/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+
+# Pliki tymczasowe i logi
+*.log
+*.tmp
+tmp/
+results/*.tmp
+
+# Edytory i system operacyjny
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

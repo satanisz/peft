@@ -1,0 +1,56 @@
+{
+  "report_id": "VBANK-Q1-2026",
+  "entity": "Vistula Bank S.A. (podmiot fikcyjny)",
+  "period": {
+    "current": "2026-Q1",
+    "comparative": "2025-Q1",
+    "balance_sheet_date": "2026-03-31"
+  },
+  "reporting_unit": "mln PLN",
+  "tables": {
+    "income_statement": [
+      {"source_id": "is.net_interest_income.current", "label": "Wynik z tytułu odsetek", "current": 1284, "comparative": 1132},
+      {"source_id": "is.net_fee_income.current", "label": "Wynik z tytułu opłat i prowizji", "current": 318, "comparative": 304},
+      {"source_id": "is.operating_income.current", "label": "Dochody operacyjne razem", "current": 1602, "comparative": 1436},
+      {"source_id": "is.admin_expenses.current", "label": "Koszty administracyjne", "current": -612, "comparative": -570},
+      {"source_id": "is.impairment.current", "label": "Odpisy z tytułu utraty wartości", "current": -228, "comparative": -180},
+      {"source_id": "is.profit_before_tax.current", "label": "Zysk brutto", "current": 762, "comparative": 686}
+    ],
+    "asset_quality": [
+      {"source_id": "aq.gross_loans.current", "label": "Kredyty brutto", "current": 48200, "comparative": 45100},
+      {"source_id": "aq.loss_allowance.current", "label": "Odpis aktualizujący", "current": 1860, "comparative": 1714},
+      {"source_id": "aq.net_loans.current", "label": "Kredyty netto", "current": 46340, "comparative": 43386},
+      {"source_id": "aq.npl.current", "label": "Ekspozycje nieobsługiwane", "current": 2602, "comparative": 2526}
+    ],
+    "capital_liquidity": [
+      {"source_id": "cap.cet1.current", "label": "Kapitał CET1", "current": 6800, "comparative": 6410},
+      {"source_id": "cap.rwa.current", "label": "Aktywa ważone ryzykiem", "current": 40500, "comparative": 39700},
+      {"source_id": "liq.lcr.current", "label": "LCR", "current": 168, "comparative": 154, "unit": "%"},
+      {"source_id": "liq.nsfr.current", "label": "NSFR", "current": 142, "comparative": 139, "unit": "%"}
+    ]
+  },
+  "commentary": [
+    {
+      "source_id": "commentary.interest.p12",
+      "text": "Wynik z tytułu odsetek wyniósł 1 284 mln PLN i wzrósł dzięki wyższej marży oraz wzrostowi wolumenu kredytów."
+    },
+    {
+      "source_id": "commentary.cost_risk.p14",
+      "text": "Odpisy z tytułu utraty wartości wyniosły 228 mln PLN wobec 180 mln PLN rok wcześniej, głównie z powodu aktualizacji parametrów ryzyka w portfelu detalicznym."
+    },
+    {
+      "source_id": "commentary.npl.p18",
+      "text": "Udział ekspozycji nieobsługiwanych wyniósł 5,4% portfela kredytowego brutto."
+    },
+    {
+      "source_id": "commentary.capital.p22",
+      "text": "Współczynnik CET1 wyniósł 16,8%, a pozycja kapitałowa banku pozostawała stabilna."
+    }
+  ],
+  "disclosures": [
+    {"source_id": "note.credit_risk.7", "title": "Nota 7 — Ryzyko kredytowe", "elements": ["ekspozycje brutto", "odpisy", "NPL", "segmenty"]},
+    {"source_id": "note.liquidity.11", "title": "Nota 11 — Ryzyko płynności", "elements": ["LCR", "NSFR", "bufor płynności"]}
+  ],
+  "disclaimer": "Wszystkie nazwy, liczby i zdarzenia są syntetyczne i służą wyłącznie celom edukacyjnym."
+}
+

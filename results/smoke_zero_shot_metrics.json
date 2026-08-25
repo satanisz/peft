@@ -1,0 +1,47 @@
+{
+  "aggregate": {
+    "count": 2,
+    "json_valid_rate": 0.0,
+    "schema_valid_rate": 0.0,
+    "sources_valid_rate": 0.0,
+    "status_correct_rate": 0.0,
+    "control_type_correct_rate": 0.0,
+    "severity_correct_rate": 0.0,
+    "human_review_correct_rate": 0.0,
+    "mean_evidence_precision": 0.0,
+    "mean_evidence_recall": 0.0,
+    "status_confusion": {}
+  },
+  "cases": [
+    {
+      "case_id": "FC-004",
+      "json_valid": false,
+      "schema_valid": false,
+      "sources_valid": false,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "Nie znaleziono poprawnego obiektu JSON w odpowiedzi modelu"
+      ]
+    },
+    {
+      "case_id": "FC-008",
+      "json_valid": false,
+      "schema_valid": false,
+      "sources_valid": false,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "Nie znaleziono poprawnego obiektu JSON w odpowiedzi modelu"
+      ]
+    }
+  ]
+}

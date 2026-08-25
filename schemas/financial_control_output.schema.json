@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/financial_control_output.schema.json",
+  "title": "Financial Control Copilot output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "control_id",
+    "control_type",
+    "status",
+    "severity",
+    "finding",
+    "evidence",
+    "recommended_action",
+    "requires_human_review",
+    "confidence"
+  ],
+  "properties": {
+    "control_id": {"type": "string", "minLength": 1},
+    "control_type": {
+      "enum": [
+        "ARITHMETIC",
+        "CROSS_SECTION",
+        "PERIOD",
+        "UNIT",
+        "CURRENCY",
+        "DIRECTION",
+        "VARIANCE",
+        "DISCLOSURE",
+        "EVIDENCE",
+        "INSUFFICIENT_DATA"
+      ]
+    },
+    "status": {"enum": ["PASS", "WARN", "FAIL", "INSUFFICIENT_DATA", "NOT_APPLICABLE"]},
+    "severity": {"enum": ["NONE", "LOW", "MEDIUM", "HIGH"]},
+    "finding": {"type": "string", "minLength": 1},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "value"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "value": {"type": "string"}
+        }
+      }
+    },
+    "calculation": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["performed_by", "expression", "result", "unit"],
+      "properties": {
+        "performed_by": {"enum": ["deterministic_control", "not_performed"]},
+        "expression": {"type": "string"},
+        "result": {"type": ["number", "null"]},
+        "unit": {"type": "string"}
+      }
+    },
+    "recommended_action": {"type": "string", "minLength": 1},
+    "requires_human_review": {"type": "boolean"},
+    "confidence": {"enum": ["LOW", "MEDIUM", "HIGH"]}
+  }
+}
+

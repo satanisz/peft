@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/control_case.schema.json",
+  "title": "Financial control benchmark case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "group_id",
+    "split",
+    "difficulty",
+    "control",
+    "input",
+    "expected_output"
+  ],
+  "properties": {
+    "case_id": {"type": "string", "pattern": "^FC-[0-9]{3}$"},
+    "group_id": {"type": "string", "minLength": 1},
+    "split": {"enum": ["train", "development", "validation", "test", "challenge"]},
+    "difficulty": {"enum": ["easy", "medium", "hard"]},
+    "control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "procedure"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"type": "string"},
+        "procedure": {"type": "string"}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["task", "sources", "deterministic_check"],
+      "properties": {
+        "task": {"type": "string"},
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["source_id", "content"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "content": {"type": "string"}
+            }
+          }
+        },
+        "deterministic_check": {"type": ["object", "null"]}
+      }
+    },
+    "expected_output": {"$ref": "financial_control_output.schema.json"}
+  }
+}

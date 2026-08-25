@@ -1,0 +1,57 @@
+{
+  "catalog_version": "1.0.0",
+  "reporting_unit": "mln PLN",
+  "controls": [
+    {
+      "id": "CTRL-ARITHMETIC",
+      "type": "ARITHMETIC",
+      "procedure": "Sprawdź, czy suma wskazanych składników jest równa wartości Razem z tolerancją 0,5 mln PLN. Obliczenie wykonuje kontrola deterministyczna."
+    },
+    {
+      "id": "CTRL-CROSS-SECTION",
+      "type": "CROSS_SECTION",
+      "procedure": "Porównaj wartości tej samej miary w tabeli i komentarzu. Różnica przekraczająca tolerancję zaokrąglenia 0,5 mln PLN jest niezgodnością."
+    },
+    {
+      "id": "CTRL-PERIOD",
+      "type": "PERIOD",
+      "procedure": "Potwierdź, że porównywane wartości dotyczą tych samych lub jawnie porównywalnych okresów sprawozdawczych."
+    },
+    {
+      "id": "CTRL-UNIT",
+      "type": "UNIT",
+      "procedure": "Potwierdź spójność jednostek. Nie przeliczaj wartości, jeżeli współczynnik konwersji nie został podany."
+    },
+    {
+      "id": "CTRL-CURRENCY",
+      "type": "CURRENCY",
+      "procedure": "Potwierdź spójność walut. Dopuszczaj przeliczenie tylko przy podanym kursie i dacie kursu."
+    },
+    {
+      "id": "CTRL-DIRECTION",
+      "type": "DIRECTION",
+      "procedure": "Porównaj kierunek zmiany wynikający z liczb z kierunkiem opisanym w komentarzu."
+    },
+    {
+      "id": "CTRL-VARIANCE",
+      "type": "VARIANCE",
+      "procedure": "Zmiana bezwzględna przekraczająca 10% wymaga konkretnego wyjaśnienia przyczyny. Samo powtórzenie wielkości zmiany nie jest wyjaśnieniem."
+    },
+    {
+      "id": "CTRL-DISCLOSURE",
+      "type": "DISCLOSURE",
+      "procedure": "Sprawdź obecność wskazanej noty i wymaganych elementów ujawnienia zgodnie z dostarczoną checklistą."
+    },
+    {
+      "id": "CTRL-EVIDENCE",
+      "type": "EVIDENCE",
+      "procedure": "Każde ustalenie musi wskazywać istniejący identyfikator źródła. Nie twórz identyfikatorów, których nie ma w wejściu."
+    },
+    {
+      "id": "CTRL-INSUFFICIENT-DATA",
+      "type": "INSUFFICIENT_DATA",
+      "procedure": "Jeżeli brakuje wartości, jednostki, okresu lub źródła koniecznego do oceny, zwróć INSUFFICIENT_DATA zamiast zgadywać."
+    }
+  ]
+}
+

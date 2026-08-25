@@ -1,0 +1,219 @@
+{
+  "aggregate": {
+    "count": 10,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 0.0,
+    "sources_valid_rate": 1.0,
+    "status_correct_rate": 0.3,
+    "control_type_correct_rate": 0.1,
+    "severity_correct_rate": 0.3,
+    "human_review_correct_rate": 0.0,
+    "mean_evidence_precision": 1.0,
+    "mean_evidence_recall": 0.7333333333333333,
+    "status_confusion": {
+      "INSUFFICIENT_DATA->PASS": 4,
+      "PASS->PASS": 3,
+      "WARN->PASS": 2,
+      "FAIL->PASS": 1
+    }
+  },
+  "cases": [
+    {
+      "case_id": "FC-003",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "calculation.result: '762 mln PLN' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "FC-007",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": true,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: '0,01 mln PLN' is not of type 'number', 'null'",
+        "requires_human_review: 'false' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "FC-011",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.5,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: 'null' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "FC-015",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.5,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "FC-019",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": true,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: '10200' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "FC-023",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: 'stabilne' is not of type 'number', 'null'",
+        "requires_human_review: 'false' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "WARN"
+    },
+    {
+      "case_id": "FC-027",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": true,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.5,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: '14 mln PLN' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS"
+    },
+    {
+      "case_id": "FC-031",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.5,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: '5,4%' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "WARN"
+    },
+    {
+      "case_id": "FC-035",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: 'null' is not of type 'number', 'null'",
+        "requires_human_review: 'true' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "FAIL"
+    },
+    {
+      "case_id": "FC-039",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "calculation.result: 'null' is not of type 'number', 'null'",
+        "requires_human_review: 'false' is not of type 'boolean'"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "INSUFFICIENT_DATA"
+    }
+  ]
+}
