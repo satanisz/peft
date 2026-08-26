@@ -8,9 +8,9 @@ from pathlib import Path
 from typing import Any
 
 from .cases import DEFAULT_OUTPUT, load_cases, write_cases
-from .metrics import aggregate_scores, score_prediction
-from .paths import resolve_project_path
-from .prompts import build_messages, select_demonstrations
+from .metrics import aggregate_boundary_scores, aggregate_scores, score_prediction
+from .paths import CONFIG_DIR, resolve_project_path
+from .prompts import build_messages, select_demonstrations, select_status_demonstrations
 from .validation import validate_case
 
 
@@ -50,8 +50,15 @@ def command_show_prompt(args: argparse.Namespace) -> int:
     case = next((item for item in cases if item["case_id"] == args.case_id), None)
     if case is None:
         raise SystemExit(f"Nie znaleziono przypadku {args.case_id}")
-    demonstrations = select_demonstrations(case, cases) if args.variant == "B2" else []
-    print(json.dumps(build_messages(case, demonstrations, prompt_style="naive" if args.variant == "B0" else "full"), ensure_ascii=False, indent=2))
+    demonstrations = (
+        select_demonstrations(case, cases)
+        if args.variant == "B2"
+        else select_status_demonstrations(case, cases)
+        if args.variant == "B3"
+        else []
+    )
+    style = "naive" if args.variant == "B0" else "status_aware" if args.variant == "B3" else "full"
+    print(json.dumps(build_messages(case, demonstrations, prompt_style=style), ensure_ascii=False, indent=2))
     return 0
 
 
@@ -98,6 +105,8 @@ def command_evaluate(args: argparse.Namespace) -> int:
         score = score_prediction(cases[case_id], prediction["response"])
         score["control_type"] = cases[case_id]["control"]["type"]
         score["expected_status"] = cases[case_id]["expected_output"]["status"]
+        score["group_id"] = cases[case_id]["group_id"]
+        score["boundary_type"] = cases[case_id].get("metadata", {}).get("boundary_type")
         scores.append(score)
     by_control_type = {
         control_type: aggregate_scores([score for score in scores if score["control_type"] == control_type])
@@ -131,6 +140,12 @@ def command_evaluate(args: argparse.Namespace) -> int:
         "by_expected_status": by_expected_status,
         "cases": scores,
     }
+    boundary_scores = [score for score in scores if score.get("boundary_type")]
+    if boundary_scores:
+        policy = json.loads((CONFIG_DIR / "status_policy_v1.json").read_text(encoding="utf-8"))
+        report["boundary"] = aggregate_boundary_scores(
+            boundary_scores, policy["business_cost_matrix"]
+        )
     output = resolve_project_path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -153,7 +168,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     prompt = subparsers.add_parser("show-prompt", help="Pokaż wiadomości dla wybranego przypadku")
     prompt.add_argument("case_id")
-    prompt.add_argument("--variant", choices=["B0", "B1", "B2"], default="B1")
+    prompt.add_argument("--variant", choices=["B0", "B1", "B2", "B3"], default="B1")
     prompt.add_argument("--data", default=str(DEFAULT_OUTPUT))
     prompt.set_defaults(func=command_show_prompt)
 

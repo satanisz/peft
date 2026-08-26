@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "profile": "workshop",
+    "split": "development",
+    "baseline_variant": "B3",
+    "prompt_style": "status_aware",
+    "prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "enable_thinking": false,
+    "parameter_dtype": "torch.bfloat16"
+  },
+  "aggregate": {
+    "count": 1,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 1.0,
+    "sources_valid_rate": 1.0,
+    "status_correct_rate": 1.0,
+    "control_type_correct_rate": 1.0,
+    "severity_correct_rate": 1.0,
+    "human_review_correct_rate": 1.0,
+    "mean_evidence_precision": 0.6666666666666666,
+    "mean_evidence_recall": 1.0,
+    "status_confusion": {
+      "PASS->PASS": 1
+    },
+    "per_status": {
+      "PASS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "WARN": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "FAIL": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "INSUFFICIENT_DATA": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "NOT_APPLICABLE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "macro_f1": 1.0,
+    "fail_false_positive_rate": 0.0,
+    "fail_false_negative_rate": 0.0
+  },
+  "runtime": {
+    "latency_s": {
+      "mean": 17.6222,
+      "median": 17.6222,
+      "p95": 17.6222,
+      "max": 17.6222
+    },
+    "input_tokens": {
+      "mean": 2894.0,
+      "median": 2894.0,
+      "p95": 2894.0,
+      "max": 2894.0
+    },
+    "output_tokens": {
+      "mean": 271.0,
+      "median": 271.0,
+      "p95": 271.0,
+      "max": 271.0
+    },
+    "tokens_per_second": {
+      "mean": 15.38,
+      "median": 15.38,
+      "p95": 15.38,
+      "max": 15.38
+    },
+    "peak_gpu_allocated_gib": {
+      "mean": 10.446,
+      "median": 10.446,
+      "p95": 10.446,
+      "max": 10.446
+    },
+    "peak_gpu_reserved_gib": {
+      "mean": 10.641,
+      "median": 10.641,
+      "p95": 10.641,
+      "max": 10.641
+    },
+    "truncated_rate": 0.0
+  },
+  "by_control_type": {
+    "UNIT": {
+      "count": 1,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.6666666666666666,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "by_expected_status": {
+    "PASS": {
+      "count": 1,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.6666666666666666,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "BD-0241",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 0.6666666666666666,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "UNIT",
+      "group_id": "boundary-pass_warn-f120",
+      "boundary_type": "PASS_WARN"
+    }
+  ],
+  "boundary": {
+    "count": 1,
+    "pair_count": 0,
+    "pair_accuracy": 0.0,
+    "flip_consistency": 0.0,
+    "unsafe_pass_rate": 0.0,
+    "unnecessary_escalation_rate": 0.0,
+    "mean_business_cost": 0.0,
+    "total_business_cost": 0,
+    "applicability_missing_confusion": {
+      "NOT_APPLICABLE->INSUFFICIENT_DATA": 0,
+      "INSUFFICIENT_DATA->NOT_APPLICABLE": 0
+    }
+  }
+}

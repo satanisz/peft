@@ -14,7 +14,7 @@
     "expected_output"
   ],
   "properties": {
-    "case_id": {"type": "string", "pattern": "^(FC-[0-9]{3}|TR-[0-9]{4}|CH-[0-9]{3})$"},
+    "case_id": {"type": "string", "pattern": "^(FC-[0-9]{3}|TR-[0-9]{4}|CH-[0-9]{3}|BD-[0-9]{4})$"},
     "group_id": {"type": "string", "minLength": 1},
     "split": {"enum": ["train", "development", "validation", "test", "challenge"]},
     "difficulty": {"enum": ["easy", "medium", "hard"]},
@@ -74,6 +74,9 @@
         "language": {"enum": ["pl"]},
         "seed": {"type": "integer"},
         "mutation_type": {"type": "string"},
+        "boundary_type": {"enum": ["PASS_WARN", "WARN_FAIL", "NOT_APPLICABLE_INSUFFICIENT_DATA"]},
+        "reason_code": {"type": "string"},
+        "paired_status": {"enum": ["PASS", "WARN", "FAIL", "INSUFFICIENT_DATA", "NOT_APPLICABLE"]},
         "provenance": {
           "type": "array",
           "minItems": 1,

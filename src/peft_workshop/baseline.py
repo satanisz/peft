@@ -9,7 +9,14 @@ from typing import Any
 
 from .cases import DEFAULT_OUTPUT, load_cases
 from .paths import CONFIG_DIR, RESULTS_DIR, resolve_project_path
-from .prompts import NAIVE_SYSTEM_PROMPT, SYSTEM_PROMPT, build_messages, select_demonstrations
+from .prompts import (
+    NAIVE_SYSTEM_PROMPT,
+    STATUS_AWARE_SYSTEM_PROMPT,
+    SYSTEM_PROMPT,
+    build_messages,
+    select_demonstrations,
+    select_status_demonstrations,
+)
 
 
 def _load_model_config(profile: str) -> dict[str, Any]:
@@ -32,8 +39,14 @@ def run_baseline(args: argparse.Namespace) -> Path:
         variant = "B2" if args.mode == "few-shot" else "B1"
     model_id = args.model or config["model_id"]
     max_new_tokens = args.max_new_tokens or config["max_new_tokens"]
-    prompt_style = "naive" if variant == "B0" else "full"
-    system_prompt = NAIVE_SYSTEM_PROMPT if variant == "B0" else SYSTEM_PROMPT
+    prompt_style = "naive" if variant == "B0" else "status_aware" if variant == "B3" else "full"
+    system_prompt = (
+        NAIVE_SYSTEM_PROMPT
+        if variant == "B0"
+        else STATUS_AWARE_SYSTEM_PROMPT
+        if variant == "B3"
+        else SYSTEM_PROMPT
+    )
     prompt_sha256 = hashlib.sha256(system_prompt.encode("utf-8")).hexdigest()
     tokenizer = AutoTokenizer.from_pretrained(model_id, revision=config["revision"])
     model = AutoModelForCausalLM.from_pretrained(
@@ -46,6 +59,11 @@ def run_baseline(args: argparse.Namespace) -> Path:
     is_cuda = torch.cuda.is_available() and str(model.device).startswith("cuda")
 
     all_cases = load_cases(resolve_project_path(args.data))
+    demonstration_cases = (
+        load_cases(resolve_project_path(args.demonstration_data))
+        if args.demonstration_data
+        else all_cases
+    )
     selected = [case for case in all_cases if args.split == "all" or case["split"] == args.split]
     if args.limit:
         selected = selected[: args.limit]
@@ -54,7 +72,13 @@ def run_baseline(args: argparse.Namespace) -> Path:
 
     if selected and not args.no_warmup:
         warmup_case = selected[0]
-        warmup_demos = select_demonstrations(warmup_case, all_cases) if variant == "B2" else []
+        warmup_demos = (
+            select_demonstrations(warmup_case, all_cases)
+            if variant == "B2"
+            else select_status_demonstrations(warmup_case, demonstration_cases)
+            if variant == "B3"
+            else []
+        )
         warmup_messages = build_messages(
             warmup_case,
             warmup_demos,
@@ -82,7 +106,13 @@ def run_baseline(args: argparse.Namespace) -> Path:
 
     with output.open("w", encoding="utf-8", newline="\n") as handle:
         for index, case in enumerate(selected, start=1):
-            demos = select_demonstrations(case, all_cases) if variant == "B2" else []
+            demos = (
+                select_demonstrations(case, all_cases)
+                if variant == "B2"
+                else select_status_demonstrations(case, demonstration_cases)
+                if variant == "B3"
+                else []
+            )
             messages = build_messages(
                 case,
                 demos,
@@ -150,13 +180,17 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Uruchom baseline zero-shot lub few-shot")
     parser.add_argument("--profile", choices=["smoke", "workshop"], default="smoke")
     parser.add_argument("--model", help="Opcjonalne nadpisanie model_id")
-    parser.add_argument("--variant", choices=["B0", "B1", "B2"], default="B0")
+    parser.add_argument("--variant", choices=["B0", "B1", "B2", "B3"], default="B0")
     parser.add_argument("--mode", choices=["zero-shot", "few-shot"], help="Przestarzały alias: zero-shot=B1, few-shot=B2")
     parser.add_argument("--split", choices=["train", "development", "validation", "test", "challenge", "all"], default="test")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--max-new-tokens", type=int)
     parser.add_argument("--no-warmup", action="store_true")
     parser.add_argument("--data", default=str(DEFAULT_OUTPUT))
+    parser.add_argument(
+        "--demonstration-data",
+        help="Dataset train z zamrożonymi demonstracjami B3; domyślnie --data",
+    )
     parser.add_argument("--output", default=str(RESULTS_DIR / "baseline.jsonl"))
     return parser
 

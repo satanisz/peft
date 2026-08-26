@@ -1,0 +1,62 @@
+{
+  "boundary_pack_version": "1.0.0",
+  "split": "validation",
+  "comparison": {
+    "B1": {
+      "count": 120,
+      "schema_valid_rate": 0.975,
+      "status_accuracy": 0.48333333333333334,
+      "macro_f1": 0.4789316856843889,
+      "warn_recall": 0.4666666666666667,
+      "not_applicable_recall": 0.5333333333333333,
+      "insufficient_data_recall": 0.1,
+      "fail_false_positive_rate": 0.3238095238095238,
+      "pair_accuracy": 0.23333333333333334,
+      "unsafe_pass_rate": 0.14666666666666667,
+      "unnecessary_escalation_rate": 0.37777777777777777,
+      "mean_business_cost": 2.2416666666666667,
+      "mean_input_tokens": 1056.9167,
+      "p95_latency_s": 16.9875,
+      "peak_gpu_allocated_gib": 8.094,
+      "truncated_rate": 0.025
+    },
+    "B2": {
+      "count": 120,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 0.6083333333333333,
+      "macro_f1": 0.6060806611782042,
+      "warn_recall": 0.7666666666666667,
+      "not_applicable_recall": 0.6666666666666666,
+      "insufficient_data_recall": 0.0,
+      "fail_false_positive_rate": 0.4380952380952381,
+      "pair_accuracy": 0.38333333333333336,
+      "unsafe_pass_rate": 0.013333333333333334,
+      "unnecessary_escalation_rate": 0.5111111111111111,
+      "mean_business_cost": 1.6083333333333334,
+      "mean_input_tokens": 2683.45,
+      "p95_latency_s": 31.4128,
+      "peak_gpu_allocated_gib": 10.349,
+      "truncated_rate": 0.0
+    },
+    "B3": {
+      "count": 120,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 0.9083333333333333,
+      "macro_f1": 0.8938678411157266,
+      "warn_recall": 0.9333333333333333,
+      "not_applicable_recall": 1.0,
+      "insufficient_data_recall": 0.7666666666666667,
+      "fail_false_positive_rate": 0.08571428571428572,
+      "pair_accuracy": 0.8166666666666667,
+      "unsafe_pass_rate": 0.02666666666666667,
+      "unnecessary_escalation_rate": 0.07777777777777778,
+      "mean_business_cost": 0.38333333333333336,
+      "mean_input_tokens": 2896.9167,
+      "p95_latency_s": 32.3854,
+      "peak_gpu_allocated_gib": 10.542,
+      "truncated_rate": 0.0
+    }
+  },
+  "best_macro_f1": "B3",
+  "lowest_business_cost": "B3"
+}

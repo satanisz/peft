@@ -1,0 +1,89 @@
+{
+  "valid": true,
+  "errors": [],
+  "warnings": [
+    "Split train zawiera mniej niż docelowe 400 przypadków"
+  ],
+  "summary": {
+    "count": 540,
+    "split_counts": {
+      "development": 60,
+      "test": 120,
+      "train": 240,
+      "validation": 120
+    },
+    "control_type_counts": {
+      "ARITHMETIC": 56,
+      "CROSS_SECTION": 58,
+      "CURRENCY": 64,
+      "DIRECTION": 62,
+      "DISCLOSURE": 62,
+      "EVIDENCE": 56,
+      "PERIOD": 58,
+      "UNIT": 62,
+      "VARIANCE": 62
+    },
+    "status_counts": {
+      "FAIL": 80,
+      "INSUFFICIENT_DATA": 110,
+      "NOT_APPLICABLE": 110,
+      "PASS": 80,
+      "WARN": 160
+    },
+    "difficulty_counts": {
+      "hard": 350,
+      "medium": 190
+    },
+    "family_count": 270,
+    "mutation_count": 6,
+    "mutation_counts": {
+      "not_applicable_insufficient_data__insufficient_data": 110,
+      "not_applicable_insufficient_data__not_applicable": 110,
+      "pass_warn__pass": 80,
+      "pass_warn__warn": 80,
+      "warn_fail__fail": 80,
+      "warn_fail__warn": 80
+    },
+    "source_word_length": {
+      "min": 25,
+      "mean": 31.71,
+      "median": 31.0,
+      "max": 43
+    },
+    "exact_duplicate_count": 0,
+    "leaking_family_count": 0,
+    "file_sha256": "f064cc2225e2e4175ff95e97672a185a01ee568d7fe44b39546cea72e8d1aec1"
+  },
+  "boundary_validation": {
+    "valid": true,
+    "pair_count": 270,
+    "single_premise_pair_count": 270,
+    "not_applicable_control_types": [
+      "ARITHMETIC",
+      "CROSS_SECTION",
+      "CURRENCY",
+      "DIRECTION",
+      "DISCLOSURE",
+      "EVIDENCE",
+      "PERIOD",
+      "UNIT",
+      "VARIANCE"
+    ],
+    "warn_control_types": [
+      "ARITHMETIC",
+      "CROSS_SECTION",
+      "CURRENCY",
+      "DIRECTION",
+      "DISCLOSURE",
+      "EVIDENCE",
+      "PERIOD",
+      "UNIT",
+      "VARIANCE"
+    ],
+    "reviewed_count": 211,
+    "not_applicable_reviewed": 110,
+    "other_reviewed": 101,
+    "critical_review_errors": 0,
+    "owner_signoff": "pending"
+  }
+}

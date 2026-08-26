@@ -1,0 +1,99 @@
+{
+  "name": "financial-control-copilot-baseline-b3-v1",
+  "version": "1.1.0",
+  "status": "frozen_for_validation",
+  "frozen_at": "2026-08-26",
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "license": "Apache-2.0",
+    "dtype": "auto",
+    "device_map": "auto"
+  },
+  "dataset": {
+    "name": "boundary-pack-v1",
+    "version": "1.0.0",
+    "path": "data/generated/boundary_pack_v1.jsonl",
+    "sha256": "f064cc2225e2e4175ff95e97672a185a01ee568d7fe44b39546cea72e8d1aec1",
+    "development_cases": 60,
+    "validation_cases": 120,
+    "test_cases": 120,
+    "test_status": "unopened",
+    "original_test_status": "unopened",
+    "challenge_status": "unopened"
+  },
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_new_tokens": 384,
+    "warmup_tokens": 8,
+    "max_peak_gpu_gib": 11.5,
+    "input_truncation_allowed": false
+  },
+  "variant": {
+    "id": "B3",
+    "description": "Status-aware compact baseline; hierarchy covers five labels and examples cover three difficult labels",
+    "prompt_style": "status_aware",
+    "prompt_mode": "compact_fallback_after_full_smoke",
+    "system_prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+    "demonstration_case_ids": [
+      "BD-0002",
+      "BD-0161",
+      "BD-0162"
+    ],
+    "demonstration_statuses": [
+      "WARN",
+      "NOT_APPLICABLE",
+      "INSUFFICIENT_DATA"
+    ],
+    "selection": "fixed train examples for WARN, NOT_APPLICABLE and INSUFFICIENT_DATA; five-label decision hierarchy in system prompt; target family excluded",
+    "full_prompt_smoke": {
+      "demonstration_count": 5,
+      "outcome": "rejected",
+      "reason": "Observed total GPU use about 11.6 GiB and generation did not complete within 180 seconds.",
+      "formal_results_used": false
+    },
+    "development_history": [
+      {
+        "version": "v0",
+        "macro_f1": 0.8233361180729603,
+        "status_accuracy": 0.85,
+        "warn_recall": 0.9,
+        "not_applicable_recall": 1.0,
+        "insufficient_data_recall": 0.4,
+        "change_reason": "Six applicable cases with missing mandatory material were over-escalated from INSUFFICIENT_DATA to FAIL."
+      },
+      {
+        "version": "v1_frozen",
+        "macro_f1": 0.9125930768951365,
+        "status_accuracy": 0.9166666666666666,
+        "warn_recall": 0.9,
+        "not_applicable_recall": 1.0,
+        "insufficient_data_recall": 0.8,
+        "fail_false_positive_rate": 0.06,
+        "decision": "freeze_for_single_validation_run"
+      }
+    ],
+    "compact_smoke": {
+      "input_tokens": 2894,
+      "latency_s": 17.6222,
+      "peak_gpu_allocated_gib": 10.446,
+      "truncated": false,
+      "outcome": "accepted"
+    }
+  },
+  "evaluation": {
+    "prompt_tuning_split": "development",
+    "formal_split": "validation",
+    "primary_metric": "boundary_macro_f1",
+    "secondary_metrics": [
+      "pair_accuracy",
+      "warn_recall",
+      "not_applicable_recall",
+      "fail_false_positive_rate",
+      "unsafe_pass_rate",
+      "unnecessary_escalation_rate",
+      "mean_business_cost"
+    ]
+  }
+}

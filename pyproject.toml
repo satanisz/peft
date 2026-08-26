@@ -34,6 +34,8 @@ peft-generate-dataset = "peft_workshop.dataset_v1:main"
 peft-audit-dataset = "peft_workshop.data_audit:main"
 peft-token-stats = "peft_workshop.token_stats:main"
 peft-baseline-report = "peft_workshop.baseline_report:main"
+peft-generate-boundary = "peft_workshop.boundary_dataset:main"
+peft-boundary-report = "peft_workshop.boundary_report:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

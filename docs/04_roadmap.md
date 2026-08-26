@@ -40,7 +40,7 @@ Rezultat: zestaw nadający się do uczciwego treningu i ewaluacji.
 
 ## Etap 3.5 — granice etykiet
 
-Status: następny etap
+Status: technicznie ukończony — oczekuje na sign-off M2.5
 
 - polityka `PASS/WARN/FAIL/INSUFFICIENT_DATA/NOT_APPLICABLE`,
 - macierz stosowalności kontroli,
@@ -101,5 +101,5 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Uruchomić Sprint 2.5: zatwierdzić politykę statusów, zbudować boundary pack,
-zamrozić B3 i osiągnąć M2.5 przed treningiem QLoRA.
+Zatwierdzić właścicielsko politykę statusów i M2.5, zamrozić
+`boundary-pack-v1.0.0`, a następnie uruchomić Sprint 3 od Q0 i Q1.

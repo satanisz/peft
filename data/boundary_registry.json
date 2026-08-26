@@ -1,0 +1,21 @@
+{
+  "registry_version": "1.0.0",
+  "datasets": [
+    {
+      "name": "boundary-pack-v1",
+      "version": "1.0.0",
+      "status": "candidate_for_boundary_freeze",
+      "output": "data/generated/boundary_pack_v1.jsonl",
+      "sha256": "f064cc2225e2e4175ff95e97672a185a01ee568d7fe44b39546cea72e8d1aec1",
+      "count": 540,
+      "split_hashes": {
+        "train": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2",
+        "development": "2322939ddb5e1ee913337ef60dc0cfdb801b7f5cfd23dbbd696a326291c49c7a",
+        "validation": "047718b7ee372711b2f64a50915d0363bbb64700f6608074f37ab9566252e020",
+        "test": "80e3e829fd9223a5ed2a8983445c8df43fc45aec985a03f21cdd0ce51aec9437"
+      },
+      "original_dataset_modified": false,
+      "test_status": "unopened"
+    }
+  ]
+}

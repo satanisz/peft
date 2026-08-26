@@ -133,7 +133,8 @@ Baseline i prompt stają się niezmiennym punktem odniesienia dla adapterów.
 
 **Cel:** zdefiniować i zmierzyć granice między statusami przed treningiem.
 
-**Status:** następny sprint — wymagany przed rozpoczęciem Sprintu 3.
+**Status:** technicznie wykonany 26 sierpnia 2026 — oczekuje na właścicielski
+sign-off M2.5 przed rozpoczęciem Sprintu 3.
 
 ### Zakres
 

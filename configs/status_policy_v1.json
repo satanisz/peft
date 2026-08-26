@@ -1,0 +1,125 @@
+{
+  "name": "financial-control-status-policy-v1",
+  "version": "1.0.0",
+  "status": "approved_for_synthetic_workshop",
+  "approved_at": "2026-08-26",
+  "scope": "Kontrakt dydaktyczny dla syntetycznego Financial Control Copilot; nie jest polityką produkcyjną banku.",
+  "decision_order": [
+    "NOT_APPLICABLE",
+    "INSUFFICIENT_DATA",
+    "FAIL",
+    "WARN",
+    "PASS"
+  ],
+  "statuses": {
+    "NOT_APPLICABLE": {
+      "definition": "Kontrola nie dotyczy obiektu, okresu lub zdarzenia.",
+      "severity": "NONE",
+      "requires_human_review": false,
+      "reason_codes": ["OUTSIDE_ENTITY_SCOPE", "OUTSIDE_REPORT_SCOPE", "TRIGGER_ABSENT"]
+    },
+    "INSUFFICIENT_DATA": {
+      "definition": "Kontrola ma zastosowanie, ale brakuje obowiązkowego dowodu lub źródła są nierozstrzygalne.",
+      "severity": "MEDIUM",
+      "requires_human_review": true,
+      "reason_codes": ["REQUIRED_SOURCE_MISSING", "REQUIRED_ATTRIBUTE_MISSING", "CONFLICTING_SOURCES"]
+    },
+    "FAIL": {
+      "definition": "Istnieje potwierdzone i materialne naruszenie reguły kontrolnej.",
+      "severity": "HIGH",
+      "requires_human_review": true,
+      "reason_codes": ["MATERIAL_BREACH", "CONTRADICTED_ASSERTION", "MANDATORY_ELEMENT_MISSING"]
+    },
+    "WARN": {
+      "definition": "Przypadek wymaga wyjaśnienia lub korekty, ale dowody nie uzasadniają materialnego FAIL.",
+      "severity": "MEDIUM",
+      "requires_human_review": true,
+      "reason_codes": ["NON_MATERIAL_DEVIATION", "PARTIAL_DEFICIENCY", "AMBIGUOUS_EVIDENCE", "PROVISIONAL_SOURCE"]
+    },
+    "PASS": {
+      "definition": "Wymaganie jest spełnione, a materiał jest wystarczający.",
+      "severity": "NONE",
+      "requires_human_review": false,
+      "reason_codes": ["CONTROL_SATISFIED"]
+    }
+  },
+  "tie_breakers": [
+    "Brak dowodu nie jest dowodem naruszenia.",
+    "Brak zastosowania opisuje zakres kontroli, a nie brak danych.",
+    "WARN nie jest klasą resztkową i wymaga wskazania konkretnej częściowej niezgodności lub niepewności.",
+    "FAIL wymaga potwierdzonego przekroczenia progu materialności albo naruszenia wymagania obowiązkowego.",
+    "PASS wymaga zarówno zastosowania kontroli, jak i kompletnego materiału."
+  ],
+  "applicability_matrix": {
+    "ARITHMETIC": {
+      "applies_when": "Raport zawiera pozycję Razem wymagającą uzgodnienia ze składnikami.",
+      "not_applicable_when": "Sekcja jest wyłącznie jakościowa i nie zawiera agregacji.",
+      "required_evidence": ["wartości składników", "wartość Razem", "jednostka"],
+      "warn_boundary": "różnica powyżej tolerancji 0,5 i nie większa niż 5 mln PLN",
+      "fail_boundary": "różnica większa niż 5 mln PLN"
+    },
+    "CROSS_SECTION": {
+      "applies_when": "Ta sama miara ma być prezentowana w tabeli i komentarzu.",
+      "not_applicable_when": "Dla raportu nie przewidziano części narracyjnej.",
+      "required_evidence": ["wartość tabeli", "wartość komentarza", "jednostka"],
+      "warn_boundary": "różnica powyżej 0,5 i nie większa niż 5 mln PLN",
+      "fail_boundary": "różnica większa niż 5 mln PLN"
+    },
+    "PERIOD": {
+      "applies_when": "Raport wymaga danych porównawczych.",
+      "not_applicable_when": "Jest to pierwszy okres produktu bez obowiązku danych porównawczych.",
+      "required_evidence": ["okres bieżący", "okres porównawczy", "podstawa porównania"],
+      "warn_boundary": "jawnie opisany okres zastępczy wymagający potwierdzenia",
+      "fail_boundary": "nieujawnione porównanie okresów nieporównywalnych"
+    },
+    "UNIT": {
+      "applies_when": "Kontrolowana sekcja zawiera wartości liczbowe.",
+      "not_applicable_when": "Sekcja zawiera wyłącznie opis jakościowy.",
+      "required_evidence": ["wartość", "jednostka raportowa"],
+      "warn_boundary": "jednostka wynika z nagłówka, ale nie z komentarza",
+      "fail_boundary": "sprzeczne jednostki zmieniają wartość co najmniej tysiąckrotnie"
+    },
+    "CURRENCY": {
+      "applies_when": "Występuje ekspozycja walutowa albo przeliczenie.",
+      "not_applicable_when": "Wszystkie pozycje są pierwotnie i raportowo w PLN.",
+      "required_evidence": ["kwota walutowa", "kurs", "data kursu"],
+      "warn_boundary": "kurs pochodzi z poprzedniego dnia roboczego i wymaga potwierdzenia",
+      "fail_boundary": "kwota jest niezgodna z obowiązującym kursem"
+    },
+    "DIRECTION": {
+      "applies_when": "Komentarz opisuje kierunek zmiany między okresami.",
+      "not_applicable_when": "Pierwszy okres nie wymaga opisu trendu.",
+      "required_evidence": ["wartość bieżąca", "wartość porównawcza", "komentarz"],
+      "warn_boundary": "określenie stabilności przy zmianie 2–5%",
+      "fail_boundary": "komentarz wskazuje kierunek przeciwny do liczb"
+    },
+    "VARIANCE": {
+      "applies_when": "Procedura wymaga analizy odchyleń dla danej miary.",
+      "not_applicable_when": "Miara jest wyłączona z analizy odchyleń dla danego raportu.",
+      "required_evidence": ["wartość bieżąca", "wartość porównawcza", "próg", "komentarz"],
+      "warn_boundary": "próg przekroczony, lecz przyczyna jest ogólna lub wstępna",
+      "fail_boundary": "komentarz przeczy wartościom albo brak obowiązkowego komentarza"
+    },
+    "DISCLOSURE": {
+      "applies_when": "Checklista wymaga ujawnienia dla zakresu raportu.",
+      "not_applicable_when": "Wymóg dotyczy wyłącznie zakresu skonsolidowanego, a raport jest jednostkowy.",
+      "required_evidence": ["zakres raportu", "właściwa checklista", "treść noty"],
+      "warn_boundary": "element jest obecny, ale oparty na wartości wstępnej",
+      "fail_boundary": "brakuje obowiązkowego elementu ujawnienia"
+    },
+    "EVIDENCE": {
+      "applies_when": "Istnieje ustalenie wymagające potwierdzenia.",
+      "not_applicable_when": "Nie sformułowano ustalenia ani tezy do potwierdzenia.",
+      "required_evidence": ["treść ustalenia", "identyfikowalne źródło"],
+      "warn_boundary": "źródło jest właściwe, ale ma status roboczy",
+      "fail_boundary": "źródło jest niepowiązane lub identyfikator nie istnieje"
+    }
+  },
+  "business_cost_matrix": {
+    "PASS": {"PASS": 0, "WARN": 1, "FAIL": 4, "INSUFFICIENT_DATA": 2, "NOT_APPLICABLE": 3},
+    "WARN": {"PASS": 5, "WARN": 0, "FAIL": 3, "INSUFFICIENT_DATA": 2, "NOT_APPLICABLE": 5},
+    "FAIL": {"PASS": 10, "WARN": 7, "FAIL": 0, "INSUFFICIENT_DATA": 6, "NOT_APPLICABLE": 10},
+    "INSUFFICIENT_DATA": {"PASS": 8, "WARN": 4, "FAIL": 4, "INSUFFICIENT_DATA": 0, "NOT_APPLICABLE": 6},
+    "NOT_APPLICABLE": {"PASS": 3, "WARN": 2, "FAIL": 5, "INSUFFICIENT_DATA": 2, "NOT_APPLICABLE": 0}
+  }
+}

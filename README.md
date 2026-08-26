@@ -27,6 +27,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport Sprintu 1](docs/07_sprint_1_report.md)
 - [Raport Sprintu 2 — baseline Qwen3-4B](docs/08_sprint_2_report.md)
 - [Executive plan Sprintu 2.5 — Label Boundary Hardening](docs/09_sprint_2_5_executive_plan.md)
+- [Raport Sprintu 2.5 — wyniki B1/B2/B3](docs/10_sprint_2_5_report.md)
 
 ## Planowane artefakty
 
@@ -42,6 +43,6 @@ trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
 
 ## Najbliższy kamień milowy
 
-Sprint 2 zakończył się zamrożeniem baseline'u Qwen3-4B. Następnym kamieniem
-milowym jest M2.5 Boundary freeze: jednoznaczna polityka statusów, wersjonowany
-boundary pack i label-complete B3. Dopiero potem rozpocznie się trening QLoRA.
+Sprint 2.5 został technicznie wykonany. Boundary pack zawiera 540 przypadków,
+a B3 osiągnął macro-F1 0,894 na boundary validation. Następną decyzją jest
+właścicielski sign-off M2.5, tag `boundary-pack-v1.0.0` i rozpoczęcie Q0/Q1.

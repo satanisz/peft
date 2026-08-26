@@ -114,6 +114,32 @@ uv run peft-token-stats --data data/generated/dataset_v1.jsonl
 Pełny generator zapisuje plik zbiorczy oraz oddzielne pliki dla każdego splitu.
 Karta danych znajduje się w `data/DATASET_CARD.md`.
 
+## Boundary pack i baseline B3
+
+```powershell
+uv run peft-generate-boundary
+uv run peft-workshop validate-data `
+  --data data/generated/boundary_pack_v1.jsonl
+
+uv run peft-baseline `
+  --profile workshop `
+  --variant B3 `
+  --split validation `
+  --data data/generated/boundary_pack_v1.jsonl `
+  --output results/b3_boundary_validation.jsonl
+
+uv run peft-workshop evaluate `
+  results/b3_boundary_validation.jsonl `
+  --data data/generated/boundary_pack_v1.jsonl `
+  --output results/b3_boundary_validation_metrics.json
+```
+
+B3 używa pięcioetykietowej hierarchii decyzji oraz trzech stałych przykładów z
+boundary train dla najtrudniejszych statusów: `WARN`, `NOT_APPLICABLE` i
+`INSUFFICIENT_DATA`. Pełny wariant pięciu demonstracji został odrzucony przez
+smoke test pamięci. Boundary `test`, oryginalny `test` oraz `challenge`
+pozostają zamknięte.
+
 ## Warstwa treningowa — późniejszy etap
 
 ```powershell

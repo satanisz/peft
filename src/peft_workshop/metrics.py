@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections import Counter
+from collections import Counter, defaultdict
 from typing import Any
 
 from .validation import extract_json_object, validate_output, validate_prediction_sources
@@ -124,4 +124,69 @@ def aggregate_scores(scores: list[dict[str, Any]]) -> dict[str, Any]:
         ),
         fail_negatives,
     )
+    fail_positives = sum(item.get("expected_status") == "FAIL" for item in scores)
+    aggregate["fail_false_negative_rate"] = _safe_div(
+        sum(
+            item.get("expected_status") == "FAIL" and item.get("predicted_status") != "FAIL"
+            for item in scores
+        ),
+        fail_positives,
+    )
     return aggregate
+
+
+def aggregate_boundary_scores(
+    scores: list[dict[str, Any]], cost_matrix: dict[str, dict[str, int]]
+) -> dict[str, Any]:
+    if not scores:
+        return {"count": 0}
+    pairs: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for score in scores:
+        pairs[score["group_id"]].append(score)
+    complete_pairs = [pair for pair in pairs.values() if len(pair) == 2]
+    unsafe_cases = [
+        item
+        for item in scores
+        if item.get("expected_status") in {"WARN", "FAIL", "INSUFFICIENT_DATA"}
+    ]
+    escalation_cases = [
+        item
+        for item in scores
+        if item.get("expected_status") in {"WARN", "NOT_APPLICABLE", "INSUFFICIENT_DATA"}
+    ]
+    costs = [
+        cost_matrix.get(str(item.get("expected_status")), {}).get(
+            str(item.get("predicted_status")),
+            max(max(row.values()) for row in cost_matrix.values()),
+        )
+        for item in scores
+    ]
+    pair_correct = sum(all(item["status_correct"] for item in pair) for pair in complete_pairs)
+    return {
+        "count": len(scores),
+        "pair_count": len(complete_pairs),
+        "pair_accuracy": _safe_div(pair_correct, len(complete_pairs)),
+        "flip_consistency": _safe_div(pair_correct, len(complete_pairs)),
+        "unsafe_pass_rate": _safe_div(
+            sum(item.get("predicted_status") == "PASS" for item in unsafe_cases),
+            len(unsafe_cases),
+        ),
+        "unnecessary_escalation_rate": _safe_div(
+            sum(item.get("predicted_status") == "FAIL" for item in escalation_cases),
+            len(escalation_cases),
+        ),
+        "mean_business_cost": _safe_div(sum(costs), len(costs)),
+        "total_business_cost": sum(costs),
+        "applicability_missing_confusion": {
+            "NOT_APPLICABLE->INSUFFICIENT_DATA": sum(
+                item.get("expected_status") == "NOT_APPLICABLE"
+                and item.get("predicted_status") == "INSUFFICIENT_DATA"
+                for item in scores
+            ),
+            "INSUFFICIENT_DATA->NOT_APPLICABLE": sum(
+                item.get("expected_status") == "INSUFFICIENT_DATA"
+                and item.get("predicted_status") == "NOT_APPLICABLE"
+                for item in scores
+            ),
+        },
+    }

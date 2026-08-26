@@ -27,6 +27,24 @@ Dozwolone poziomy severity: NONE, LOW, MEDIUM, HIGH.
 Dozwolone confidence: LOW, MEDIUM, HIGH.
 """
 
+STATUS_AWARE_SYSTEM_PROMPT = SYSTEM_PROMPT + """
+Hierarchia decyzji statusowej — stosuj ją w tej kolejności:
+1. NOT_APPLICABLE tylko wtedy, gdy kontrola jest poza zakresem obiektu, okresu lub zdarzenia. Brak danych nie oznacza braku zastosowania.
+2. INSUFFICIENT_DATA, gdy kontrola ma zastosowanie, ale brakuje obowiązkowego dowodu albo źródła są nierozstrzygalne.
+3. FAIL, gdy dowody potwierdzają materialne naruszenie jawnej reguły lub obowiązkowego elementu.
+4. WARN, gdy istnieje konkretna częściowa, niematerialna, niejednoznaczna lub wstępna niezgodność wymagająca wyjaśnienia, ale nie ma podstaw do FAIL.
+5. PASS, gdy kontrola ma zastosowanie, materiał jest kompletny i wymaganie jest spełnione.
+
+Reguły rozstrzygające:
+- brak dowodu nie jest dowodem naruszenia,
+- jeżeli kontrola ma zastosowanie, ale brakuje choć jednego obowiązkowego źródła lub atrybutu, wybierz INSUFFICIENT_DATA; sam brak materiału nigdy nie uzasadnia FAIL,
+- WARN nie jest dowolną klasą niepewności; wskaż konkretną przesłankę,
+- FAIL wymaga materialności lub naruszenia elementu obowiązkowego,
+- PASS wymaga kompletnego materiału.
+"""
+
+B3_DEMONSTRATION_CASE_IDS = ("BD-0002", "BD-0161", "BD-0162")
+
 NAIVE_SYSTEM_PROMPT = """Jesteś asystentem wspierającym kontrolę finansową.
 Przeanalizuj przekazane dane i zwróć wynik jako jeden obiekt JSON.
 """
@@ -77,22 +95,40 @@ def render_naive_user_prompt(case: dict[str, Any]) -> str:
     )
 
 
+def render_compact_demonstration_prompt(case: dict[str, Any]) -> str:
+    payload = {
+        "control": case["control"],
+        "task": case["input"]["task"],
+        "sources": case["input"]["sources"],
+        "deterministic_check": case["input"]["deterministic_check"],
+    }
+    return "Przykład rozstrzygnięcia według tego samego kontraktu JSON:\n" + json.dumps(
+        payload, ensure_ascii=False, separators=(",", ":")
+    )
+
+
 def build_messages(
     case: dict[str, Any],
     demonstrations: list[dict[str, Any]] | None = None,
     *,
     prompt_style: str = "full",
 ) -> list[dict[str, str]]:
-    if prompt_style not in {"naive", "full"}:
+    if prompt_style not in {"naive", "full", "status_aware"}:
         raise ValueError(f"Nieznany prompt_style: {prompt_style}")
     if prompt_style == "naive":
         return [
             {"role": "system", "content": NAIVE_SYSTEM_PROMPT},
             {"role": "user", "content": render_naive_user_prompt(case)},
         ]
-    messages: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+    system_prompt = STATUS_AWARE_SYSTEM_PROMPT if prompt_style == "status_aware" else SYSTEM_PROMPT
+    messages: list[dict[str, str]] = [{"role": "system", "content": system_prompt}]
     for demonstration in demonstrations or []:
-        messages.append({"role": "user", "content": render_user_prompt(demonstration)})
+        demonstration_prompt = (
+            render_compact_demonstration_prompt(demonstration)
+            if prompt_style == "status_aware"
+            else render_user_prompt(demonstration)
+        )
+        messages.append({"role": "user", "content": demonstration_prompt})
         messages.append(
             {
                 "role": "assistant",
@@ -121,4 +157,27 @@ def select_demonstrations(
                 selected.append(case)
             if len(selected) == count:
                 return selected
+    return selected
+
+
+def select_status_demonstrations(
+    target: dict[str, Any],
+    demonstration_cases: list[dict[str, Any]],
+    case_ids: tuple[str, ...] = B3_DEMONSTRATION_CASE_IDS,
+) -> list[dict[str, Any]]:
+    by_id = {case["case_id"]: case for case in demonstration_cases}
+    selected: list[dict[str, Any]] = []
+    for case_id in case_ids:
+        case = by_id.get(case_id)
+        if case is None:
+            raise ValueError(f"Brak zamrożonej demonstracji B3: {case_id}")
+        if case["split"] != "train":
+            raise ValueError(f"Demonstracja B3 nie pochodzi z train: {case_id}")
+        if case["group_id"] == target["group_id"]:
+            raise ValueError(f"Demonstracja B3 przecieka z rodziną celu: {case_id}")
+        selected.append(case)
+    statuses = {case["expected_output"]["status"] for case in selected}
+    expected = {"WARN", "INSUFFICIENT_DATA", "NOT_APPLICABLE"}
+    if statuses != expected:
+        raise ValueError(f"Demonstracje B3 nie pokrywają statusów: {sorted(statuses)}")
     return selected
