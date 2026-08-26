@@ -1,0 +1,60 @@
+{
+  "name": "financial-control-copilot-baseline-v1",
+  "version": "1.0.0",
+  "status": "frozen",
+  "frozen_at": "2026-08-26",
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "license": "Apache-2.0",
+    "dtype": "auto",
+    "device_map": "auto"
+  },
+  "dataset": {
+    "version": "1.0.0",
+    "path": "data/generated/dataset_v1.jsonl",
+    "sha256": "ffa0da9497872513506655df64d200289b33d608ac6b37c6bc89d906bb843d7c",
+    "development_cases": 50,
+    "validation_cases": 50,
+    "test_status": "unopened",
+    "challenge_status": "unopened"
+  },
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "max_new_tokens": 384,
+    "warmup_tokens": 8
+  },
+  "variants": {
+    "B0": {
+      "description": "Minimalny prompt zero-shot",
+      "prompt_style": "naive",
+      "system_prompt_sha256": "18dc242eb673c9a19af5ec5f35c82a0a3f88c98a63ee0ff07882d9f79cfb7e3b",
+      "demonstrations": 0
+    },
+    "B1": {
+      "description": "Dopracowany prompt zero-shot z kontraktem i zabezpieczeniami",
+      "prompt_style": "full",
+      "system_prompt_sha256": "6dc674c01afd58cab0a091a206aac26b08b63eb3215e227d934d4aa526fd8110",
+      "demonstrations": 0
+    },
+    "B2": {
+      "description": "Dopracowany prompt z dwoma przykładami z train",
+      "prompt_style": "full",
+      "system_prompt_sha256": "6dc674c01afd58cab0a091a206aac26b08b63eb3215e227d934d4aa526fd8110",
+      "demonstrations": 2,
+      "selection": "same control type, then any train case; exclude target group; never inspect target label"
+    }
+  },
+  "evaluation": {
+    "primary_split": "validation",
+    "development_split": "development",
+    "primary_metric": "macro_f1",
+    "guardrails": [
+      "schema_valid_rate",
+      "fail_false_positive_rate",
+      "sources_valid_rate",
+      "human_review_correct_rate"
+    ]
+  }
+}

@@ -25,6 +25,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Zasady współpracy w Git](CONTRIBUTING.md)
 - [Karta dataset-v1](data/DATASET_CARD.md)
 - [Raport Sprintu 1](docs/07_sprint_1_report.md)
+- [Raport Sprintu 2 — baseline Qwen3-4B](docs/08_sprint_2_report.md)
 
 ## Planowane artefakty
 
@@ -40,10 +41,6 @@ trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
 
 ## Najbliższy kamień milowy
 
-Pierwszym działającym rezultatem będzie mały eksperyment end-to-end:
-
-1. syntetyczny fragment sprawozdania fikcyjnego banku,
-2. co najmniej 30 przypadków kontrolnych,
-3. baseline zero-shot,
-4. walidator odpowiedzi JSON,
-5. pierwsze metryki jakości przed fine-tuningiem.
+Sprint 2 zakończył się zamrożeniem baseline'u Qwen3-4B. Następnym kamieniem
+milowym jest działający adapter QLoRA NF4 mieszczący się w 12 GB VRAM i
+poprawiający co najmniej część metryk validation względem B1.

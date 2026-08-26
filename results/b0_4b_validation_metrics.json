@@ -1,0 +1,2205 @@
+{
+  "metadata": {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "profile": "workshop",
+    "split": "validation",
+    "baseline_variant": "B0",
+    "prompt_style": "naive",
+    "prompt_sha256": "18dc242eb673c9a19af5ec5f35c82a0a3f88c98a63ee0ff07882d9f79cfb7e3b",
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "enable_thinking": false,
+    "parameter_dtype": "torch.bfloat16"
+  },
+  "aggregate": {
+    "count": 50,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 0.0,
+    "sources_valid_rate": 0.98,
+    "status_correct_rate": 0.12,
+    "control_type_correct_rate": 0.0,
+    "severity_correct_rate": 0.0,
+    "human_review_correct_rate": 0.0,
+    "mean_evidence_precision": 0.09333333333333334,
+    "mean_evidence_recall": 0.1,
+    "status_confusion": {
+      "PASS->PASS": 6,
+      "INSUFFICIENT_DATA->FAILED": 1,
+      "WARN->FAILED": 1,
+      "NOT_APPLICABLE->FAILED": 1
+    },
+    "per_status": {
+      "PASS": {
+        "precision": 1.0,
+        "recall": 0.375,
+        "f1": 0.5454545454545454,
+        "support": 16
+      },
+      "WARN": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 7
+      },
+      "FAIL": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 15
+      },
+      "INSUFFICIENT_DATA": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      },
+      "NOT_APPLICABLE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 1
+      }
+    },
+    "macro_f1": 0.10909090909090909,
+    "fail_false_positive_rate": 0.0
+  },
+  "runtime": {
+    "latency_s": {
+      "mean": 12.8708,
+      "median": 14.165,
+      "p95": 14.851,
+      "max": 14.9462
+    },
+    "input_tokens": {
+      "mean": 308.96,
+      "median": 308.0,
+      "p95": 363.0,
+      "max": 371.0
+    },
+    "output_tokens": {
+      "mean": 342.3,
+      "median": 375.0,
+      "p95": 384.0,
+      "max": 384.0
+    },
+    "tokens_per_second": {
+      "mean": 26.6192,
+      "median": 26.71,
+      "p95": 27.17,
+      "max": 27.35
+    },
+    "peak_gpu_allocated_gib": {
+      "mean": 7.6339,
+      "median": 7.632,
+      "p95": 7.645,
+      "max": 7.646
+    },
+    "peak_gpu_reserved_gib": {
+      "mean": 7.7743,
+      "median": 7.775,
+      "p95": 7.775,
+      "max": 7.775
+    },
+    "truncated_rate": 0.44
+  },
+  "by_control_type": {
+    "ARITHMETIC": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {},
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "CROSS_SECTION": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {},
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "CURRENCY": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.2,
+      "mean_evidence_recall": 0.2,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.16666666666666666,
+      "fail_false_positive_rate": 0.0
+    },
+    "DIRECTION": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.2,
+      "mean_evidence_recall": 0.2,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.25,
+      "fail_false_positive_rate": 0.0
+    },
+    "DISCLOSURE": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.2,
+      "mean_evidence_recall": 0.2,
+      "status_confusion": {
+        "PASS->PASS": 1,
+        "WARN->FAILED": 1,
+        "NOT_APPLICABLE->FAILED": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.2,
+      "fail_false_positive_rate": 0.0
+    },
+    "EVIDENCE": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 0.8,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.25,
+      "fail_false_positive_rate": 0.0
+    },
+    "INSUFFICIENT_DATA": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {},
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "PERIOD": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.2,
+      "mean_evidence_recall": 0.2,
+      "status_confusion": {
+        "PASS->PASS": 1,
+        "INSUFFICIENT_DATA->FAILED": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.2222222222222222,
+      "fail_false_positive_rate": 0.0
+    },
+    "UNIT": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.2,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.13333333333333333,
+      "mean_evidence_recall": 0.2,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.16666666666666666,
+      "fail_false_positive_rate": 0.0
+    },
+    "VARIANCE": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {},
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    }
+  },
+  "by_expected_status": {
+    "FAIL": {
+      "count": 15,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {},
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 15
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "INSUFFICIENT_DATA": {
+      "count": 11,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->FAILED": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 11
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "NOT_APPLICABLE": {
+      "count": 1,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {
+        "NOT_APPLICABLE->FAILED": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    },
+    "PASS": {
+      "count": 16,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 0.9375,
+      "status_correct_rate": 0.375,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.2916666666666667,
+      "mean_evidence_recall": 0.3125,
+      "status_confusion": {
+        "PASS->PASS": 6
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.375,
+          "f1": 0.5454545454545454,
+          "support": 16
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.5454545454545454,
+      "fail_false_positive_rate": 0.0
+    },
+    "WARN": {
+      "count": 7,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 0.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.0,
+      "control_type_correct_rate": 0.0,
+      "severity_correct_rate": 0.0,
+      "human_review_correct_rate": 0.0,
+      "mean_evidence_precision": 0.0,
+      "mean_evidence_recall": 0.0,
+      "status_confusion": {
+        "WARN->FAILED": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 7
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.0,
+      "fail_false_positive_rate": 0.0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "TR-0046",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC"
+    },
+    {
+      "case_id": "TR-0047",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "ARITHMETIC"
+    },
+    {
+      "case_id": "TR-0048",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "ARITHMETIC"
+    },
+    {
+      "case_id": "TR-0049",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC"
+    },
+    {
+      "case_id": "TR-0050",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "ARITHMETIC"
+    },
+    {
+      "case_id": "TR-0106",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "CROSS_SECTION"
+    },
+    {
+      "case_id": "TR-0107",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "CROSS_SECTION"
+    },
+    {
+      "case_id": "TR-0108",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CROSS_SECTION"
+    },
+    {
+      "case_id": "TR-0109",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "CROSS_SECTION"
+    },
+    {
+      "case_id": "TR-0110",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "CROSS_SECTION"
+    },
+    {
+      "case_id": "TR-0166",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'reason', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.0: 'value' is a required property",
+        "evidence.1: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.1: 'value' is a required property"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "PERIOD"
+    },
+    {
+      "case_id": "TR-0167",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "PERIOD"
+    },
+    {
+      "case_id": "TR-0168",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "status: 'FAILED' is not one of ['PASS', 'WARN', 'FAIL', 'INSUFFICIENT_DATA', 'NOT_APPLICABLE']"
+      ],
+      "predicted_status": "FAILED",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "PERIOD"
+    },
+    {
+      "case_id": "TR-0169",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "PERIOD"
+    },
+    {
+      "case_id": "TR-0170",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "PERIOD"
+    },
+    {
+      "case_id": "TR-0226",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.6666666666666666,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'reason', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.0: 'value' is a required property",
+        "evidence.1: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.1: 'value' is a required property",
+        "evidence.2: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.2: 'value' is a required property"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "UNIT"
+    },
+    {
+      "case_id": "TR-0227",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "UNIT"
+    },
+    {
+      "case_id": "TR-0228",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "UNIT"
+    },
+    {
+      "case_id": "TR-0229",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "UNIT"
+    },
+    {
+      "case_id": "TR-0230",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "UNIT"
+    },
+    {
+      "case_id": "TR-0286",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'reason', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.0: 'value' is a required property",
+        "evidence.1: Additional properties are not allowed ('content' was unexpected)",
+        "evidence.1: 'value' is a required property"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "CURRENCY"
+    },
+    {
+      "case_id": "TR-0287",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CURRENCY"
+    },
+    {
+      "case_id": "TR-0288",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "CURRENCY"
+    },
+    {
+      "case_id": "TR-0289",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'reason', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "CURRENCY"
+    },
+    {
+      "case_id": "TR-0290",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "CURRENCY"
+    },
+    {
+      "case_id": "TR-0346",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'notes', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: Additional properties are not allowed ('content', 'reason' were unexpected)",
+        "evidence.0: 'value' is a required property",
+        "evidence.1: Additional properties are not allowed ('content', 'reason' were unexpected)",
+        "evidence.1: 'value' is a required property",
+        "evidence.2: Additional properties are not allowed ('content', 'reason' were unexpected)",
+        "evidence.2: 'value' is a required property"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "DIRECTION"
+    },
+    {
+      "case_id": "TR-0347",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "DIRECTION"
+    },
+    {
+      "case_id": "TR-0348",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "DIRECTION"
+    },
+    {
+      "case_id": "TR-0349",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('assessment', 'case_id', 'control', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "DIRECTION"
+    },
+    {
+      "case_id": "TR-0350",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "DIRECTION"
+    },
+    {
+      "case_id": "TR-0406",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "VARIANCE"
+    },
+    {
+      "case_id": "TR-0407",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "VARIANCE"
+    },
+    {
+      "case_id": "TR-0408",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "VARIANCE"
+    },
+    {
+      "case_id": "TR-0409",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "VARIANCE"
+    },
+    {
+      "case_id": "TR-0410",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "VARIANCE"
+    },
+    {
+      "case_id": "TR-0466",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: Additional properties are not allowed ('match' was unexpected)",
+        "evidence.0: 'value' is a required property",
+        "evidence.1: Additional properties are not allowed ('match' was unexpected)",
+        "evidence.1: 'value' is a required property"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "DISCLOSURE"
+    },
+    {
+      "case_id": "TR-0467",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "DISCLOSURE"
+    },
+    {
+      "case_id": "TR-0468",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "status: 'FAILED' is not one of ['PASS', 'WARN', 'FAIL', 'INSUFFICIENT_DATA', 'NOT_APPLICABLE']"
+      ],
+      "predicted_status": "FAILED",
+      "expected_status": "WARN",
+      "control_type": "DISCLOSURE"
+    },
+    {
+      "case_id": "TR-0469",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('analysis', 'case_id', 'control', 'decision', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "status: 'FAILED' is not one of ['PASS', 'WARN', 'FAIL', 'INSUFFICIENT_DATA', 'NOT_APPLICABLE']"
+      ],
+      "predicted_status": "FAILED",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DISCLOSURE"
+    },
+    {
+      "case_id": "TR-0470",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "DISCLOSURE"
+    },
+    {
+      "case_id": "TR-0526",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": false,
+      "status_correct": true,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'reason', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property",
+        "evidence.0: 'evidence.f09.table' is not of type 'object'",
+        "evidence.1: 'evidence.f09.finding' is not of type 'object'",
+        "Każdy element evidence musi być obiektem"
+      ],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "EVIDENCE"
+    },
+    {
+      "case_id": "TR-0527",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "EVIDENCE"
+    },
+    {
+      "case_id": "TR-0528",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "EVIDENCE"
+    },
+    {
+      "case_id": "TR-0529",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "EVIDENCE"
+    },
+    {
+      "case_id": "TR-0530",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'control_result', 'deterministic_check', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "EVIDENCE"
+    },
+    {
+      "case_id": "TR-0586",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "PASS",
+      "control_type": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "TR-0587",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "TR-0588",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'evaluation', 'reason', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "TR-0589",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('id', 'procedure', 'type' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "WARN",
+      "control_type": "INSUFFICIENT_DATA"
+    },
+    {
+      "case_id": "TR-0590",
+      "json_valid": true,
+      "schema_valid": false,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": false,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.0,
+      "evidence_recall": 0.0,
+      "errors": [
+        "$: Additional properties are not allowed ('case_id', 'control', 'deterministic_check', 'result', 'sources', 'task' were unexpected)",
+        "$: 'control_id' is a required property",
+        "$: 'control_type' is a required property",
+        "$: 'status' is a required property",
+        "$: 'severity' is a required property",
+        "$: 'finding' is a required property",
+        "$: 'evidence' is a required property",
+        "$: 'recommended_action' is a required property",
+        "$: 'requires_human_review' is a required property",
+        "$: 'confidence' is a required property"
+      ],
+      "predicted_status": null,
+      "expected_status": "FAIL",
+      "control_type": "INSUFFICIENT_DATA"
+    }
+  ]
+}

@@ -14,8 +14,7 @@ Rezultat: wiadomo dokładnie, czego uczymy i jak zmierzymy wynik.
 
 ## Etap 2 — minimalny benchmark bez fine-tuningu
 
-Status: ukończony dla profilu smoke; docelowy baseline 4B pozostaje częścią
-etapu 5.
+Status: ukończony — `baseline-v1.0.0`, M2 Baseline freeze
 
 - stworzenie fikcyjnego mini-sprawozdania,
 - przygotowanie 30–50 przypadków kontrolnych,
@@ -41,7 +40,7 @@ Rezultat: zestaw nadający się do uczciwego treningu i ewaluacji.
 
 ## Etap 4 — pipeline LoRA/QLoRA
 
-Status: po wykonaniu docelowego baseline 4B
+Status: następny etap
 
 - wybór i przypięcie modelu,
 - konfiguracja LoRA BF16,
@@ -87,5 +86,5 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Uruchomić Sprint 2: docelowy baseline Qwen3-4B dla B0/B1/B2, zamrozić prompt i
-zebrać rzeczywiste pomiary pamięci, latencji oraz jakości przed treningiem.
+Uruchomić Sprint 3: preflight NF4, trening QLoRA, ponowne ładowanie adaptera i
+porównanie pierwszego kandydata z zamrożonym B1 na validation.

@@ -86,4 +86,42 @@ def aggregate_scores(scores: list[dict[str, Any]]) -> dict[str, Any]:
             if item.get("predicted_status") is not None
         )
     )
+    labels = ["PASS", "WARN", "FAIL", "INSUFFICIENT_DATA", "NOT_APPLICABLE"]
+    per_label: dict[str, dict[str, float | int]] = {}
+    f1_values: list[float] = []
+    for label in labels:
+        true_positive = sum(
+            item.get("expected_status") == label and item.get("predicted_status") == label
+            for item in scores
+        )
+        false_positive = sum(
+            item.get("expected_status") != label and item.get("predicted_status") == label
+            for item in scores
+        )
+        false_negative = sum(
+            item.get("expected_status") == label and item.get("predicted_status") != label
+            for item in scores
+        )
+        support = sum(item.get("expected_status") == label for item in scores)
+        precision = _safe_div(true_positive, true_positive + false_positive)
+        recall = _safe_div(true_positive, true_positive + false_negative)
+        f1 = _safe_div(2 * precision * recall, precision + recall)
+        per_label[label] = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "support": support,
+        }
+        if support:
+            f1_values.append(f1)
+    aggregate["per_status"] = per_label
+    aggregate["macro_f1"] = sum(f1_values) / len(f1_values) if f1_values else 0.0
+    fail_negatives = sum(item.get("expected_status") != "FAIL" for item in scores)
+    aggregate["fail_false_positive_rate"] = _safe_div(
+        sum(
+            item.get("expected_status") != "FAIL" and item.get("predicted_status") == "FAIL"
+            for item in scores
+        ),
+        fail_negatives,
+    )
     return aggregate
