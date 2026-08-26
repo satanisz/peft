@@ -38,13 +38,27 @@ Status: ukończony — `dataset-v1.0.0`, M1 Data freeze
 
 Rezultat: zestaw nadający się do uczciwego treningu i ewaluacji.
 
-## Etap 4 — pipeline LoRA/QLoRA
+## Etap 3.5 — granice etykiet
 
 Status: następny etap
+
+- polityka `PASS/WARN/FAIL/INSUFFICIENT_DATA/NOT_APPLICABLE`,
+- macierz stosowalności kontroli,
+- 540 przypadków w minimalnych parach,
+- osobny boundary train/development/validation/test,
+- B3 label-complete i formalna ocena validation,
+- ręczny review i zamrożenie `boundary-pack-v1.0.0`.
+
+Rezultat: mierzalne granice decyzji i uczciwy kontrakt dla adaptera.
+
+## Etap 4 — pipeline LoRA/QLoRA
+
+Status: po M2.5 Boundary freeze
 
 - wybór i przypięcie modelu,
 - konfiguracja LoRA BF16,
 - konfiguracja QLoRA NF4,
+- trening kontrolny bez boundary pack oraz główny trening z boundary pack,
 - trening, checkpointing i logowanie,
 - zapis, ładowanie i scalanie adaptera,
 - test na docelowym GPU.
@@ -53,9 +67,10 @@ Rezultat: powtarzalny trening oraz gotowy adapter demonstracyjny.
 
 ## Etap 5 — pełny benchmark
 
-- B0/B1/B2/L1/Q1/Q2/Q3,
+- B0/B1/B2/B3/L1/Q0/Q1/Q1b/Q2/Q3,
 - trzy seedy dla głównych wariantów,
 - metryki techniczne,
+- metryki granic, minimalnych par i kosztu błędu,
 - testy adversarial i regresyjne,
 - ślepa ocena wybranych odpowiedzi,
 - katalog najlepszych i najgorszych przykładów.
@@ -86,5 +101,5 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Uruchomić Sprint 3: preflight NF4, trening QLoRA, ponowne ładowanie adaptera i
-porównanie pierwszego kandydata z zamrożonym B1 na validation.
+Uruchomić Sprint 2.5: zatwierdzić politykę statusów, zbudować boundary pack,
+zamrozić B3 i osiągnąć M2.5 przed treningiem QLoRA.

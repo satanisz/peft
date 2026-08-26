@@ -136,7 +136,9 @@ będzie korzystać z podzbioru danych i gotowego adaptera awaryjnego.
 
 ## Następny krok
 
-Sprint 3 rozpocznie się od instalacji warstwy treningowej i testu NF4. Kandydat
-QLoRA przejdzie dalej tylko wtedy, gdy mieści się w 12 GB VRAM, można go ponownie
-załadować i poprawia część metryk validation względem B1. Główna ocena końcowa
-na `test` nastąpi dopiero po wyborze adaptera.
+Przed Sprintem 3 wykonujemy Sprint 2.5 — Label Boundary Hardening. Powstanie
+jednoznaczna polityka statusów, osobny boundary pack oraz label-complete B3.
+Nie zmieniamy zamrożonych wyników tego raportu. QLoRA przejdzie dalej dopiero po
+M2.5 i będzie oceniane względem B1, B2 i B3 na oryginalnym oraz boundary
+validation. Główna ocena na obu splitach `test` nastąpi dopiero po wyborze
+adaptera.

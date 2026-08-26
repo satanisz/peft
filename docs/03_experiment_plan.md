@@ -17,6 +17,10 @@ fałszywych alarmów i regresji na zadaniach ogólnych?
 5. RAG poprawi zgodność z procedurą, ale nie zastąpi uczenia zachowania.
 6. Zbyt agresywny trening zwiększy false positives lub pogorszy odpowiedzi na
    zadaniach spoza domeny.
+7. Kontrastowe dane graniczne poprawią `WARN` i `NOT_APPLICABLE` bardziej niż
+   szeroki sweep ranku na niezmienionym zbiorze.
+8. Label-complete prompt zmniejszy część błędów, ale adapter może osiągnąć
+   podobną lub lepszą jakość przy istotnie krótszym wejściu.
 
 ## Porównywane warianty
 
@@ -25,11 +29,14 @@ fałszywych alarmów i regresji na zadaniach ogólnych?
 | B0 | model bazowy, zero-shot | minimalny baseline |
 | B1 | model bazowy, dopracowany prompt | wartość prompt engineeringu |
 | B2 | model bazowy, few-shot | koszt przykładów w kontekście |
+| B3 | model bazowy, status-aware label-complete | najsilniejszy baseline promptowy |
 | L1 | LoRA BF16 | wpływ adaptera bez kwantyzacji bazowych wag |
-| Q1 | QLoRA NF4 | główna metoda warsztatowa |
+| Q0 | QLoRA NF4 na dataset-v1 | kontrola wpływu boundary data |
+| Q1 | QLoRA NF4 na dataset-v1 + boundary pack | główna metoda warsztatowa |
+| Q1b | Q1 z samplingiem granicznym | wariant naprawczy, jeśli Q1 nie spełni M3 |
 | Q2 | QLoRA + kontrole Python/SQL | architektura rekomendowana |
 | Q3 | QLoRA + kontrole + kontekst procedury | pełny wzorzec rozwiązania |
-| D1 | DoRA lub rsLoRA | opcjonalne rozszerzenie dla prowadzącego |
+| D1 | DoRA lub rsLoRA | backlog po wersji warsztatowej |
 
 Pełny fine-tuning może zostać pokazany jako wynik referencyjny dla mniejszego
 modelu, ale nie jest wymagany do demonstracji na żywo.
@@ -69,7 +76,18 @@ modelu, ale nie jest wymagany do demonstracji na żywo.
 - evidence precision i evidence recall,
 - zgodność liczb z przekazanym wynikiem deterministycznym,
 - prawidłowe użycie `INSUFFICIENT_DATA`,
+- prawidłowe odróżnienie `NOT_APPLICABLE` od `INSUFFICIENT_DATA`,
 - liczba twierdzeń bez pokrycia w źródłach.
+
+### Granice decyzji
+
+- precision, recall, F1 i support dla każdego z pięciu statusów,
+- pair accuracy i flip consistency dla minimalnych par,
+- recall `WARN` oraz `NOT_APPLICABLE`,
+- pomyłki `NOT_APPLICABLE` ↔ `INSUFFICIENT_DATA`,
+- unsafe PASS rate,
+- unnecessary escalation rate,
+- ważony koszt błędu według jawnej macierzy biznesowej.
 
 ### Jakość operacyjna
 
@@ -101,17 +119,18 @@ Osobny, niewykorzystany podczas treningu zestaw obejmie:
 
 ## Ablations dla prowadzącego
 
-Poza głównym szkoleniem przygotujemy porównania:
+Priorytetowe porównania dla wersji warsztatowej:
 
-- rank `4/8/16/32`,
+- dataset-v1 vs dataset-v1 + boundary pack,
+- sampling standardowy vs zorientowany na granice, jeśli Q1 nie spełni M3,
+- rank `8/16`,
 - adapter tylko na attention vs `all-linear`,
-- różne wartości `alpha`,
-- LoRA dropout `0` vs wartość dodatnia,
-- 1, 2 i 3 epoki,
-- mały i pełny zbiór treningowy,
-- FP16/BF16, jeśli sprzęt pozwala,
-- klasyczne skalowanie vs rsLoRA,
-- dane czyste vs dane z trudnymi negatywami.
+- 1 vs 3 epoki dla głównej konfiguracji,
+- LoRA BF16 vs QLoRA, jeśli sprzęt pozwala.
+
+Szerokie rank `4/8/16/32`, wiele wartości `alpha`, DoRA, rsLoRA i drugi model
+bazowy pozostają w backlogu. Uruchomimy je dopiero po zamknięciu pakietu
+dowodowego, jeśli nie zagrożą materiałom szkoleniowym.
 
 Nie będziemy wybierać najlepszego wariantu na podstawie pojedynczego wyniku.
 Raport pokaże średnią, rozrzut między seedami i analizę typów błędów.
@@ -120,24 +139,30 @@ Raport pokaże średnią, rozrzut między seedami i analizę typów błędów.
 
 - pipeline działa od surowego przypadku do raportu metryk,
 - baseline jest zapisany przed treningiem,
-- model QLoRA generuje poprawny schemat w co najmniej 95% przypadków testowych,
-- poprawa macro-F1 jest widoczna względem B1, ale raport nie ukrywa regresji,
+- model QLoRA generuje poprawny schemat w co najmniej 98% przypadków,
+- na boundary validation poprawia macro-F1 o co najmniej 0,05 względem
+  najlepszego z B1/B2/B3 albo pozostaje w granicy 0,02 przy co najmniej 30%
+  redukcji input tokens,
+- recall `WARN` nie spada względem najlepszego baseline'u, a recall
+  `NOT_APPLICABLE` wynosi co najmniej 60% przy wsparciu 30 przypadków,
+- recall `PASS` i `FAIL` nie spada o więcej niż 5 punktów procentowych,
+- FAIL FPR nie przekracza 15%,
 - false positive rate jest raportowany osobno,
 - żadna liczba prezentowana jako wynik eksperymentu nie pochodzi z train setu,
 - wynik można odtworzyć z konfiguracji zapisanej w repozytorium.
 
-Próg 95% dla schematu jest kryterium inżynieryjnym projektu, a nie obietnicą
-wyniku. Jeżeli eksperyment go nie osiągnie, pokazujemy przyczynę i poprawiamy
+Progi są kryteriami inżynieryjnymi projektu, a nie obietnicą wyniku. Jeżeli
+eksperyment ich nie osiągnie, pokazujemy przyczynę i poprawiamy
 pipeline albo walidację.
 
 ## Scenariusz prezentacji wyniku
 
 1. Pokazać trzy odpowiedzi B0, w tym odpowiedź przekonującą, ale błędną.
-2. Uruchomić automatyczny benchmark B0/B1/B2.
+2. Uruchomić automatyczny benchmark B0/B1/B2/B3 i pokazać koszt kontekstu.
 3. Pokazać liczbę trenowanych parametrów i aktualne zużycie pamięci.
 4. Uruchomić krótki trening QLoRA.
 5. Załadować wcześniej przygotowany pełny adapter.
-6. Porównać Q1 z B1 na identycznych przypadkach.
+6. Porównać Q0 i Q1 z najlepszym z B1/B2/B3 na identycznych przypadkach,
+   w tym na minimalnej parze granicznej.
 7. Dodać wynik deterministycznej kontroli i pokazać Q2.
 8. Zakończyć tabelą jakości, kosztu i typowych błędów.
-

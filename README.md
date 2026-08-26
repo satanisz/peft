@@ -26,6 +26,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Karta dataset-v1](data/DATASET_CARD.md)
 - [Raport Sprintu 1](docs/07_sprint_1_report.md)
 - [Raport Sprintu 2 — baseline Qwen3-4B](docs/08_sprint_2_report.md)
+- [Executive plan Sprintu 2.5 — Label Boundary Hardening](docs/09_sprint_2_5_executive_plan.md)
 
 ## Planowane artefakty
 
@@ -42,5 +43,5 @@ trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
 ## Najbliższy kamień milowy
 
 Sprint 2 zakończył się zamrożeniem baseline'u Qwen3-4B. Następnym kamieniem
-milowym jest działający adapter QLoRA NF4 mieszczący się w 12 GB VRAM i
-poprawiający co najmniej część metryk validation względem B1.
+milowym jest M2.5 Boundary freeze: jednoznaczna polityka statusów, wersjonowany
+boundary pack i label-complete B3. Dopiero potem rozpocznie się trening QLoRA.

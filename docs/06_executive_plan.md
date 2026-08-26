@@ -27,9 +27,10 @@ Na dzień 26 sierpnia 2026 gotowe są:
 - działające środowisko z RTX 5070 Ti 12 GB i CUDA 12.8,
 - testy automatyczne oraz instrukcja uruchomienia.
 
-Po ukończeniu Sprintu 1 stan realizacji całego programu szacujemy na około 40%.
-Dataset `v1.0.0` jest zamrożony; największa część pozostałej pracy dotyczy
-baseline 4B, QLoRA, pełnego benchmarku i materiałów dydaktycznych.
+Sprinty 1 i 2 są ukończone, a `dataset-v1.0.0` i `baseline-v1.0.0` zamrożone.
+Baseline 4B ujawnił słabe granice `WARN` i `NOT_APPLICABLE`, dlatego przed
+QLoRA wprowadzamy Sprint 2.5. Największa część pozostałej pracy dotyczy
+utwardzenia etykiet, QLoRA, pełnego benchmarku i materiałów dydaktycznych.
 
 ## 3. Oczekiwane rezultaty biznesowe
 
@@ -46,9 +47,10 @@ Po zakończeniu projektu:
 
 ## 4. Model realizacji
 
-Plan zakłada sześć kolejnych sprintów. Czas podano w dniach roboczych przy
-skoncentrowanej pracy nad projektem. Łączny horyzont to około **4–5 tygodni**,
-czyli **18–24 dni robocze**. Treningi mogą działać poza czasem aktywnej pracy.
+Plan zakłada siedem etapów wykonawczych, w tym bramkowy Sprint 2.5. Czas podano
+w dniach roboczych przy skoncentrowanej pracy nad projektem. Łączny horyzont to
+około **4–6 tygodni**, czyli **20–26 dni roboczych**. Treningi mogą działać
+poza czasem aktywnej pracy.
 
 Każdy sprint kończy się bramką decyzyjną. Nie przechodzimy dalej wyłącznie na
 podstawie spadającego lossu — wymagane są określone artefakty i pomiary.
@@ -125,6 +127,45 @@ Zamrażamy wersję `dataset-v1` i dopiero wtedy uruchamiamy docelowe baseline'y.
 
 Baseline i prompt stają się niezmiennym punktem odniesienia dla adapterów.
 
+## Sprint 2.5 — Label Boundary Hardening
+
+**Czas:** 2 dni
+
+**Cel:** zdefiniować i zmierzyć granice między statusami przed treningiem.
+
+**Status:** następny sprint — wymagany przed rozpoczęciem Sprintu 3.
+
+### Zakres
+
+- polityka statusów i macierz stosowalności kontroli,
+- trzy rodziny minimalnych par: `PASS/WARN`, `WARN/FAIL` oraz
+  `NOT_APPLICABLE/INSUFFICIENT_DATA`,
+- osobny `boundary-pack-v1.0.0` z 540 rekordami,
+- B3: label-complete baseline z hierarchią decyzji,
+- ręczny review 100% `NOT_APPLICABLE` i minimum 20% pozostałych danych,
+- metryki granic, kosztów błędów i spójności par.
+
+### Rezultaty
+
+- zamrożona polityka pięciu statusów,
+- boundary train/development/validation/test bez leakage,
+- raport B1/B2/B3 na boundary validation,
+- rekomendacja danych i metryk dla adaptera.
+
+### Kryteria odbioru
+
+- dokładnie 540 poprawnych rekordów i zadany rozkład klas,
+- `NOT_APPLICABLE` występuje w co najmniej 4 typach kontroli, a `WARN` w 6,
+- żadna rodzina par nie jest współdzielona między splitami,
+- B3 ma zapisany prompt, demo IDs, hash i formalny wynik validation,
+- boundary test, oryginalny test i challenge pozostają nieotwarte.
+
+### Bramka M2.5 — Boundary freeze
+
+Polityka statusów, dane graniczne i B3 stają się wersjonowanym kontraktem dla
+adapterów. Szczegółowy zakres zawiera
+[`09_sprint_2_5_executive_plan.md`](09_sprint_2_5_executive_plan.md).
+
 ## Sprint 3 — LoRA i QLoRA
 
 **Czas:** 3–4 dni  
@@ -136,7 +177,11 @@ Baseline i prompt stają się niezmiennym punktem odniesienia dla adapterów.
 - test kwantyzacji NF4 na GPU 12 GB,
 - pipeline tokenizacji i chat template,
 - LoRA BF16, jeśli pozwoli pamięć,
-- QLoRA 4-bit jako główna konfiguracja,
+- Q0: QLoRA 4-bit trenowane tylko na `dataset-v1.0.0` jako kontrola wpływu
+  nowych danych,
+- Q1: QLoRA 4-bit trenowane na train v1 oraz boundary train jako główna
+  konfiguracja,
+- Q1b: sampling zorientowany na granice tylko wtedy, gdy Q1 nie spełnia bramki,
 - checkpointing, logowanie lossu i pomiar VRAM,
 - zapis, ładowanie, przełączanie i scalanie adaptera,
 - krótki trening demonstracyjny oraz pełny trening referencyjny.
@@ -155,12 +200,25 @@ Baseline i prompt stają się niezmiennym punktem odniesienia dla adapterów.
 - proces mieści się w 12 GB VRAM bez niestabilnego offloadu,
 - checkpoint można ponownie załadować i wykorzystać do inferencji,
 - wersja pokazowa treningu mieści się w 10–15 minutach,
-- nie oceniamy jakości na danych treningowych.
+- nie oceniamy jakości na danych treningowych,
+- wybór konfiguracji wykorzystuje oryginalny i boundary validation; oba testy
+  pozostają zamknięte.
 
 ### Bramka M3 — Adapter candidate
 
-Adapter przechodzi do pełnej oceny tylko wtedy, gdy działa technicznie i poprawia
-co najmniej część metryk walidacyjnych względem B1.
+Adapter przechodzi do pełnej oceny tylko wtedy, gdy działa technicznie i wobec
+najlepszego z B1/B2/B3:
+
+- poprawia boundary macro-F1 o co najmniej 0,05 albo pozostaje w granicy 0,02
+  przy redukcji input tokens o co najmniej 30%,
+- nie obniża recall `WARN`, a celem kierunkowym jest co najmniej 60%,
+- osiąga recall `NOT_APPLICABLE` co najmniej 60% przy wsparciu 30 przypadków,
+- utrzymuje FAIL FPR nie wyżej niż 15%,
+- nie pogarsza recall `PASS` ani `FAIL` o więcej niż 5 punktów procentowych.
+
+Jeżeli bramka nie zostanie spełniona, najpierw analizujemy politykę i dobór
+danych. Nie rozpoczynamy szerokiego sweepu hiperparametrów w celu znalezienia
+pojedynczego korzystnego wyniku.
 
 ## Sprint 4 — benchmark i eksperymenty zaawansowane
 
@@ -170,19 +228,21 @@ co najmniej część metryk walidacyjnych względem B1.
 ### Zakres
 
 - L1: LoRA BF16,
-- Q1: QLoRA,
+- Q0: QLoRA na samym train v1,
+- Q1: QLoRA na train v1 + boundary train,
+- Q1b: QLoRA z samplingiem granicznym, jeśli wymagane,
 - Q2: QLoRA + kontrole deterministyczne,
 - Q3: QLoRA + kontrole + procedura w kontekście,
 - trzy seedy dla głównych konfiguracji,
-- ablations: rank, `alpha`, attention-only vs `all-linear`,
-- opcjonalnie rsLoRA i DoRA,
+- priorytetowe ablations: dane standardowe vs boundary, rank `8/16` oraz
+  attention-only vs `all-linear`,
 - testy adversarial, regresyjne i braku danych,
 - analiza false positives i false negatives,
 - katalog najlepszych oraz najgorszych odpowiedzi.
 
 ### Rezultaty
 
-- końcowa macierz porównawcza B0–Q3,
+- końcowa macierz porównawcza B0/B1/B2/B3/L1/Q0/Q1/Q1b/Q2/Q3,
 - wykresy jakości, czasu, VRAM i rozmiaru adaptera,
 - raport analizy błędów,
 - rekomendacja architektury dla przypadku bankowego.
@@ -192,6 +252,9 @@ co najmniej część metryk walidacyjnych względem B1.
 - wyniki główne raportują średnią i rozrzut między seedami,
 - false positive rate jest raportowany oddzielnie,
 - `INSUFFICIENT_DATA` i przypadki wysokiego ryzyka mają osobne metryki,
+- `WARN`, `NOT_APPLICABLE`, pair accuracy i koszty biznesowe mają osobne
+  metryki,
+- oryginalny test, boundary test i challenge są raportowane oddzielnie,
 - nie ukrywamy regresji ani wariantów, które nie poprawiły jakości,
 - wszystkie liczby na przyszłych slajdach prowadzą do zapisanego artefaktu.
 
@@ -212,6 +275,7 @@ Zamrażamy wyniki, konfiguracje i przykłady używane w materiałach szkoleniowy
 - diagramy LoRA, QLoRA i architektury bankowej,
 - ściąga parametrów i troubleshooting,
 - katalog zastosowań PEFT w banku,
+- moduł o taksonomii etykiet, alert fatigue i data-centric fine-tuningu,
 - pytania uczestników i sugerowane odpowiedzi,
 - materiał po szkoleniu i ćwiczenia rozszerzające.
 
@@ -246,6 +310,7 @@ Po tej bramce zmieniamy już tylko błędy, czas prezentacji i problemy technicz
 - pomiar czasu każdego modułu,
 - praca bez internetu,
 - symulacja awarii treningu i braku modelu,
+- próba demonstracji przypadku granicznego i ścieżki eskalacji alertu,
 - sprawdzenie adaptera awaryjnego,
 - końcowa korekta materiałów,
 - utworzenie tagu wydania.
@@ -271,27 +336,32 @@ Projekt otrzymuje tag `workshop-v1.0` i jest gotowy do użycia.
 
 ## 5. Harmonogram wykonawczy
 
-| Sprint | Czas | Kamień milowy | Udział w pozostałej pracy |
+| Sprint | Czas | Kamień milowy | Udział programu |
 |---|---:|---|---:|
-| 1. Dane | 3–4 dni | M1 Data freeze | 20% |
+| 1. Dane | 3–4 dni | M1 Data freeze | 15% |
 | 2. Baseline 4B | 2–3 dni | M2 Baseline freeze | 10% |
+| 2.5. Granice etykiet | 2 dni | M2.5 Boundary freeze | 10% |
 | 3. LoRA/QLoRA | 3–4 dni | M3 Adapter candidate | 20% |
 | 4. Benchmark | 4–5 dni | M4 Evidence package | 20% |
-| 5. Materiały | 4–5 dni | M5 Content freeze | 20% |
+| 5. Materiały | 4–5 dni | M5 Content freeze | 15% |
 | 6. Próba i wydanie | 2–3 dni | M6 Workshop ready | 10% |
 
-Szacunek zakłada około 8–15 godzin wykorzystania GPU dla treningów głównych i
-eksperymentów. Czas może wzrosnąć, jeżeli wykonamy szeroki sweep hiperparametrów
-albo zwiększymy zbiór powyżej 700 przykładów.
+Szacunek zakłada około 10–18 godzin wykorzystania GPU dla treningów głównych i
+eksperymentów. Szeroki sweep oraz metody opcjonalne pozostają poza ścieżką
+krytyczną.
 
 ## 6. Kluczowe wskaźniki projektu
 
 ### Jakość rozwiązania
 
-- schema validity co najmniej 95%,
-- poprawa macro-F1 względem najlepszego baseline'u promptowego,
+- schema validity co najmniej 98% dla kandydata,
+- poprawa boundary macro-F1 o co najmniej 0,05 względem najlepszego z B1/B2/B3
+  albo wynik w granicy 0,02 przy redukcji input tokens o co najmniej 30%,
+- recall `WARN` bez regresji względem najlepszego baseline'u i cel co najmniej
+  60%,
+- recall `NOT_APPLICABLE` co najmniej 60% przy wsparciu 30 przypadków,
 - raportowany false positive rate,
-- osobny wynik dla `INSUFFICIENT_DATA`,
+- osobny wynik dla `WARN`, `NOT_APPLICABLE`, `INSUFFICIENT_DATA` i par,
 - brak nieistniejących `source_id` w zaakceptowanej konfiguracji,
 - odporność na przygotowany zestaw prompt injection.
 
@@ -314,7 +384,10 @@ się do demonstracji.
 | Syntetyczne dane są zbyt proste | wysoki | trudne negatywy, ręczny review, test kombinacji błędów |
 | Leakage między train i test | wysoki | grupowy split, identyfikatory rodzin, kontrola podobieństwa |
 | QLoRA nie mieści się w 12 GB | wysoki | krótsze sekwencje, batch 1, checkpointing, NF4 |
-| Adapter uczy biasu do FAIL lub PASS | wysoki | balans klas i analiza macierzy pomyłek |
+| Adapter uczy biasu do FAIL lub PASS | wysoki | boundary pack, koszt błędu i macierz pomyłek |
+| N/A jest skrótem dla typu DISCLOSURE | wysoki | przypadki N/A w co najmniej 4 typach kontroli |
+| WARN pozostaje klasą resztkową | wysoki | zamknięta polityka, reason codes i minimalne pary |
+| Benchmark diagnostyczny zniekształca priory produkcyjne | średni | osobne raportowanie i jawne ograniczenie |
 | Dobry JSON maskuje złą decyzję | wysoki | osobne metryki struktury i treści |
 | Training demo trwa zbyt długo | średni | krótki dataset demonstracyjny i gotowy adapter |
 | Brak internetu na sali | wysoki | lokalny cache wszystkich artefaktów |
@@ -327,9 +400,10 @@ się do demonstracji.
 ### Must have
 
 - dataset i jego dokumentacja,
-- baseline 4B,
+- baseline 4B oraz label-complete B3,
+- polityka statusów i boundary pack,
 - działający QLoRA,
-- benchmark B0/B1/B2/Q1/Q2,
+- benchmark B0/B1/B2/B3/Q0/Q1/Q2,
 - notebook demonstracyjny,
 - slajdy i trainer guide,
 - próba generalna oraz adapter awaryjny.
@@ -340,11 +414,11 @@ się do demonstracji.
 - Q3 z kontekstem procedury,
 - trzy seedy,
 - testy adversarial i regresyjne,
-- analiza ranku i modułów docelowych.
+- analiza ranku `8/16`, modułów docelowych oraz wpływu boundary data.
 
 ### Could have
 
-- DoRA i rsLoRA,
+- DoRA, rsLoRA i szeroki sweep ranków,
 - większy dataset 1500–3000 przykładów,
 - dashboard wyników,
 - porównanie drugiej rodziny modeli,
@@ -360,13 +434,15 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 - małe wyniki JSON, konfiguracje i syntetyczne dane są wersjonowane,
 - modele, checkpointy, adaptery i sekrety nie trafiają do zwykłego Git,
 - ciężkie artefakty będą przechowywane jako release assets albo przez Git LFS,
-- proponowane tagi: `dataset-v1`, `baseline-v1`, `adapter-v0.1`,
+- proponowane tagi: `dataset-v1.0.0`, `baseline-v1.0.0`,
+  `boundary-pack-v1.0.0`, `baseline-v1.1.0`, `adapter-v0.1`,
   `content-freeze-v1`, `workshop-v1.0`,
 - komunikaty commitów używają formy `feat:`, `fix:`, `docs:`, `test:`,
   `experiment:` i `chore:`.
 
 ## 10. Następna decyzja wykonawcza
 
-Rozpoczynamy Sprint 3 od testu kwantyzacji NF4 na docelowym GPU. Główny kandydat
-to QLoRA; konfiguracja przejdzie dalej po technicznym teście ładowania adaptera
-i poprawie co najmniej części metryk validation względem zamrożonego B1.
+Rozpoczynamy Sprint 2.5 od zatwierdzenia polityki statusów i wzorcowych par.
+Sprint 3 może rozpocząć się dopiero po M2.5 Boundary freeze. Główny kandydat
+QLoRA będzie następnie oceniany względem B1, B2 i B3 na dwóch osobno
+raportowanych zbiorach validation.
