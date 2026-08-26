@@ -16,10 +16,19 @@ Zasady nadrzędne:
 7. System jedynie wspiera kontrolera; ustalenia wymagające działania muszą trafić do człowieka.
 8. Zwróć wyłącznie jeden obiekt JSON, bez Markdown i bez dodatkowego komentarza.
 9. Dla statusów PASS i NOT_APPLICABLE użyj severity NONE.
+10. Zwróć dokładnie pola kontraktu; nie kopiuj obiektu wejściowego ani pól content.
+11. Każdy element evidence ma dokładnie pola source_id i value.
+12. calculation.performed_by musi mieć dokładnie wartość deterministic_control, gdy używasz deterministic_check, albo not_performed w pozostałych przypadkach.
+13. recommended_action musi być niepusty także dla PASS; wtedy wskaż zachowanie wyniku kontroli bez działań korygujących.
+14. Pisz zwięźle: finding i recommended_action po jednym krótkim zdaniu, tylko niezbędne dowody.
 
 Dozwolone statusy: PASS, WARN, FAIL, INSUFFICIENT_DATA, NOT_APPLICABLE.
 Dozwolone poziomy severity: NONE, LOW, MEDIUM, HIGH.
 Dozwolone confidence: LOW, MEDIUM, HIGH.
+"""
+
+NAIVE_SYSTEM_PROMPT = """Jesteś asystentem wspierającym kontrolę finansową.
+Przeanalizuj przekazane dane i zwróć wynik jako jeden obiekt JSON.
 """
 
 
@@ -45,7 +54,7 @@ def render_user_prompt(case: dict[str, Any]) -> str:
                 "result": "liczba albo null",
                 "unit": "jednostka albo pusty tekst",
             },
-            "recommended_action": "konkretne dalsze działanie",
+            "recommended_action": "zawsze niepuste; konkretne działanie albo dla PASS zachowanie wyniku bez korekty",
             "requires_human_review": "true albo false",
             "confidence": "LOW, MEDIUM albo HIGH",
         },
@@ -55,10 +64,32 @@ def render_user_prompt(case: dict[str, Any]) -> str:
     )
 
 
+def render_naive_user_prompt(case: dict[str, Any]) -> str:
+    payload = {
+        "case_id": case["case_id"],
+        "control": case["control"],
+        "task": case["input"]["task"],
+        "sources": case["input"]["sources"],
+        "deterministic_check": case["input"]["deterministic_check"],
+    }
+    return "Oceń poniższy przypadek i zwróć wynik kontroli w JSON:\n" + json.dumps(
+        payload, ensure_ascii=False, indent=2
+    )
+
+
 def build_messages(
     case: dict[str, Any],
     demonstrations: list[dict[str, Any]] | None = None,
+    *,
+    prompt_style: str = "full",
 ) -> list[dict[str, str]]:
+    if prompt_style not in {"naive", "full"}:
+        raise ValueError(f"Nieznany prompt_style: {prompt_style}")
+    if prompt_style == "naive":
+        return [
+            {"role": "system", "content": NAIVE_SYSTEM_PROMPT},
+            {"role": "user", "content": render_naive_user_prompt(case)},
+        ]
     messages: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
     for demonstration in demonstrations or []:
         messages.append({"role": "user", "content": render_user_prompt(demonstration)})
@@ -83,11 +114,8 @@ def select_demonstrations(
         if case["split"] == "train" and case["group_id"] != target["group_id"]
     ]
     same_type = [case for case in candidates if case["control"]["type"] == target["control"]["type"]]
-    different_status = [
-        case for case in candidates if case["expected_output"]["status"] != target["expected_output"]["status"]
-    ]
     selected: list[dict[str, Any]] = []
-    for pool in (same_type, different_status, candidates):
+    for pool in (same_type, candidates):
         for case in pool:
             if case not in selected:
                 selected.append(case)

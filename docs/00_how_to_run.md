@@ -36,8 +36,9 @@ modeli, ale zwiększa limity pobierania.
 ## Oglądanie promptu
 
 ```powershell
-uv run peft-workshop show-prompt FC-003 --mode zero-shot
-uv run peft-workshop show-prompt FC-003 --mode few-shot
+uv run peft-workshop show-prompt FC-003 --variant B0
+uv run peft-workshop show-prompt FC-003 --variant B1
+uv run peft-workshop show-prompt FC-003 --variant B2
 ```
 
 ## Baseline smoke
@@ -47,7 +48,7 @@ Zero-shot na splicie walidacyjnym:
 ```powershell
 uv run peft-baseline `
   --profile smoke `
-  --mode zero-shot `
+  --variant B1 `
   --split validation `
   --output results/b0_smoke_zero_shot_validation.jsonl
 
@@ -61,7 +62,7 @@ Few-shot:
 ```powershell
 uv run peft-baseline `
   --profile smoke `
-  --mode few-shot `
+  --variant B2 `
   --split validation `
   --output results/b2_smoke_few_shot_validation.jsonl
 
@@ -73,6 +74,28 @@ uv run peft-workshop evaluate `
 Profil `smoke` służy do testu przepływu, nie do wyznaczania docelowej jakości.
 Formalny benchmark na splicie `test` wykonamy dopiero dla przypiętego modelu 4B,
 po zamrożeniu promptu i konfiguracji.
+
+## Zamrożony baseline 4B
+
+Przykład odtworzenia B1 na splicie validation:
+
+```powershell
+$env:HF_HUB_OFFLINE = "1"
+uv run peft-baseline `
+  --profile workshop `
+  --variant B1 `
+  --split validation `
+  --data data/generated/dataset_v1.jsonl `
+  --output results/b1_4b_validation.jsonl
+
+uv run peft-workshop evaluate `
+  results/b1_4b_validation.jsonl `
+  --data data/generated/dataset_v1.jsonl `
+  --output results/b1_4b_validation_metrics.json
+```
+
+Analogicznie uruchamiamy B0 i B2. Zamrożone ustawienia znajdują się w
+`configs/baseline_v1.json`, a pełne wyniki w `docs/08_sprint_2_report.md`.
 
 ## Dataset-v1
 

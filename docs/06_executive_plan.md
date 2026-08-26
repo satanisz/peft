@@ -95,6 +95,8 @@ Zamrażamy wersję `dataset-v1` i dopiero wtedy uruchamiamy docelowe baseline'y.
 **Czas:** 2–3 dni  
 **Cel:** ustalić punkt odniesienia przed fine-tuningiem.
 
+**Status:** ukończony 26 sierpnia 2026 — `baseline-v1.0.0`, M2 Baseline freeze.
+
 ### Zakres
 
 - uruchomienie przypiętej rewizji Qwen3-4B-Instruct,
@@ -365,6 +367,6 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 
 ## 10. Następna decyzja wykonawcza
 
-Rozpoczynamy Sprint 1. Pierwszy przegląd następuje po wygenerowaniu próbnych
-100–150 rekordów, zanim rozszerzymy zbiór do pełnej wielkości. Pozwala to
-skorygować jakość szablonów bez kosztownego przebudowywania całego datasetu.
+Rozpoczynamy Sprint 3 od testu kwantyzacji NF4 na docelowym GPU. Główny kandydat
+to QLoRA; konfiguracja przejdzie dalej po technicznym teście ładowania adaptera
+i poprawie co najmniej części metryk validation względem zamrożonego B1.
