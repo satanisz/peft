@@ -43,6 +43,8 @@ trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
 
 ## Najbliższy kamień milowy
 
-Sprint 2.5 został technicznie wykonany. Boundary pack zawiera 540 przypadków,
-a B3 osiągnął macro-F1 0,894 na boundary validation. Następną decyzją jest
-właścicielski sign-off M2.5, tag `boundary-pack-v1.0.0` i rozpoczęcie Q0/Q1.
+Sprint 2.5 został warunkowo zaakceptowany do celów warsztatowych. Boundary
+pack zawiera 540 przypadków, a B3 osiągnął macro-F1 0,894 na boundary
+validation. Sprint 3 (Q0/Q1) rozpocznie się po 21:00; formalne zamrożenie
+`boundary-pack-v1.0.0` dla użycia poza warsztatem wymaga niezależnego review
+eksperckiego.

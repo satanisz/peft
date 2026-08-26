@@ -2,11 +2,11 @@
 
 ## Decyzja wykonawcza
 
-Sprint 2.5 jest **technicznie ukończony i gotowy do właścicielskiego sign-offu
-M2.5**. Powstały polityka statusów, 540-elementowy boundary pack, rozszerzone
-metryki oraz formalne porównanie B1/B2/B3. Nie zmieniono `dataset-v1.0.0` ani
+Sprint 2.5 jest **warunkowo zaakceptowany do celów warsztatowych**. Powstały
+polityka statusów, 540-elementowy boundary pack, rozszerzone metryki oraz
+formalne porównanie B1/B2/B3. Nie zmieniono `dataset-v1.0.0` ani
 `baseline-v1.0.0`; oryginalne `test` i `challenge` oraz boundary `test`
-pozostają nieotwarte.
+pozostają nieotwarte. Sprint 3 może rozpocząć się po 21:00.
 
 B3 jest nowym, najsilniejszym baseline'em promptowym dla granic etykiet. Na
 boundary validation osiąga macro-F1 0,894 i pair accuracy 81,7%, ale wymaga
@@ -138,9 +138,24 @@ zużywa o około 175% więcej tokenów wejściowych niż B1.
 | Konfiguracje, demo IDs, hashe i wyniki | PASS |
 | Testy i challenge nieotwarte | PASS |
 
-**Status bramki:** `READY_FOR_OWNER_SIGNOFF`. Po akceptacji polityki przez
-właściciela projektu można zmienić rejestr na `frozen`, utworzyć tag
-`boundary-pack-v1.0.0` i rozpocząć Sprint 3.
+**Status bramki:** `CONDITIONALLY_ACCEPTED_FOR_WORKSHOP` — decyzja z 26
+sierpnia 2026. Sprint 3 może rozpocząć się po 21:00.
+
+### Warunki akceptacji
+
+1. Polityka statusów i wagi kosztów są syntetycznymi artefaktami warsztatowymi,
+   a nie polityką produkcyjną banku.
+2. Dla rzeczywistych danych bankowych pozostaje wymagany human-in-the-loop i
+   niezależny review ekspercki.
+3. Sprint 3 raportuje osobno `WARN`, `NOT_APPLICABLE`, `INSUFFICIENT_DATA`,
+   unsafe `PASS` oraz nadmierną eskalację.
+4. Boundary test, oryginalny test i challenge pozostają nieotwarte do Sprintu
+   4.
+5. Ryzyka jawnie zachowane w rejestrze: 7 przypadków
+   `INSUFFICIENT_DATA → FAIL` i 2 przypadki `WARN → PASS` dla B3.
+
+Nie tworzono taga `boundary-pack-v1.0.0`: formalne zamrożenie danych wymaga
+odrębnej decyzji przed użyciem poza kontekstem warsztatowym.
 
 ## Konsekwencje dla Sprintu 3
 

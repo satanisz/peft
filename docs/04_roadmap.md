@@ -40,20 +40,21 @@ Rezultat: zestaw nadający się do uczciwego treningu i ewaluacji.
 
 ## Etap 3.5 — granice etykiet
 
-Status: technicznie ukończony — oczekuje na sign-off M2.5
+Status: warunkowo zaakceptowany 26 sierpnia 2026 — gotowy do rozpoczęcia
+Sprintu 3 po 21:00.
 
 - polityka `PASS/WARN/FAIL/INSUFFICIENT_DATA/NOT_APPLICABLE`,
 - macierz stosowalności kontroli,
 - 540 przypadków w minimalnych parach,
 - osobny boundary train/development/validation/test,
 - B3 label-complete i formalna ocena validation,
-- ręczny review i zamrożenie `boundary-pack-v1.0.0`.
+- review, rejestr warunkowej akceptacji i jawne ograniczenia wykorzystania.
 
 Rezultat: mierzalne granice decyzji i uczciwy kontrakt dla adaptera.
 
 ## Etap 4 — pipeline LoRA/QLoRA
 
-Status: po M2.5 Boundary freeze
+Status: można rozpocząć po 21:00 na podstawie warunkowej akceptacji M2.5
 
 - wybór i przypięcie modelu,
 - konfiguracja LoRA BF16,
@@ -101,5 +102,6 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Zatwierdzić właścicielsko politykę statusów i M2.5, zamrozić
-`boundary-pack-v1.0.0`, a następnie uruchomić Sprint 3 od Q0 i Q1.
+Po 21:00 rozpocząć Sprint 3 od preflightu QLoRA oraz konfiguracji Q0 i Q1.
+Przed użyciem poza warsztatem wymagany jest niezależny sign-off ekspercki i
+formalna decyzja o zamrożeniu `boundary-pack-v1.0.0`.

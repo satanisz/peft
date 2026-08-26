@@ -133,8 +133,9 @@ Baseline i prompt stają się niezmiennym punktem odniesienia dla adapterów.
 
 **Cel:** zdefiniować i zmierzyć granice między statusami przed treningiem.
 
-**Status:** technicznie wykonany 26 sierpnia 2026 — oczekuje na właścicielski
-sign-off M2.5 przed rozpoczęciem Sprintu 3.
+**Status:** warunkowo zaakceptowany 26 sierpnia 2026 do celów warsztatowych;
+Sprint 3 rozpoczynamy po 21:00. Przed wykorzystaniem poza warsztatem wymagany
+jest niezależny sign-off ekspercki.
 
 ### Zakres
 
@@ -166,6 +167,13 @@ sign-off M2.5 przed rozpoczęciem Sprintu 3.
 Polityka statusów, dane graniczne i B3 stają się wersjonowanym kontraktem dla
 adapterów. Szczegółowy zakres zawiera
 [`09_sprint_2_5_executive_plan.md`](09_sprint_2_5_executive_plan.md).
+
+**Decyzja właściciela:** warunkowa akceptacja do kontynuacji projektu. Polityka
+i wagi kosztu pozostają artefaktami syntetycznymi do warsztatu; użycie dla
+rzeczywistych danych bankowych wymaga review eksperckiego. Sprint 3 raportuje
+osobno wyniki `WARN`, `NOT_APPLICABLE`, `INSUFFICIENT_DATA`, unsafe `PASS` i
+nadzmierną eskalację. Boundary test, oryginalny test i challenge pozostają
+nieotwarte do Sprintu 4.
 
 ## Sprint 3 — LoRA i QLoRA
 
