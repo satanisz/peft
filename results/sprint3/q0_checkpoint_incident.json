@@ -1,0 +1,38 @@
+{
+  "incident_id": "S3-Q0-CHECKPOINT-001",
+  "date": "2026-08-27",
+  "run": "Q0",
+  "status": "run_rejected_as_formal_result",
+  "last_completed_step": 50,
+  "planned_steps": 150,
+  "completed_epochs": 1.0,
+  "trigger": "Trainer checkpoint with paged_adamw_8bit optimizer state on Windows",
+  "observed": {
+    "adapter_checkpoint_written": true,
+    "adapter_checkpoint_path": "artifacts/adapters/q0-v0.1/checkpoint-50",
+    "adapter_weight_bytes": 66127776,
+    "optimizer_serialization_stack": [
+      "torch.serialization._save",
+      "transformers.Trainer._save_optimizer_and_scheduler",
+      "transformers.Trainer._save_checkpoint",
+      "trl.SFTTrainer._save_checkpoint"
+    ],
+    "gpu_memory_mib_during_stall": 11893,
+    "write_progress_after_stall": false,
+    "process_accepted_soft_interrupt": false,
+    "process_accepted_force_termination": false,
+    "cuda_context_release_requires_restart": true
+  },
+  "impact": {
+    "formal_q0_result_available": false,
+    "demo_adapter_affected": false,
+    "training_data_affected": false,
+    "protected_splits_opened": false
+  },
+  "resolution": {
+    "configuration_change": "save_only_model=true for Q0 and Q1 checkpoints",
+    "rationale": "Adapter checkpoints are sufficient for inference and workshop recovery; optimizer-state resume is not required for the reference run.",
+    "required_next_action": "Restart Windows, rerun Q0 from the beginning, then run Q1.",
+    "diagnostic_checkpoint_policy": "Do not use checkpoint-50 as an M3 result."
+  }
+}

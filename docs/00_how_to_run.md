@@ -140,11 +140,87 @@ boundary train dla najtrudniejszych statusów: `WARN`, `NOT_APPLICABLE` i
 smoke test pamięci. Boundary `test`, oryginalny `test` oraz `challenge`
 pozostają zamknięte.
 
-## Warstwa treningowa — późniejszy etap
+## Sprint 3 — QLoRA
 
 ```powershell
 uv sync --extra llm --extra train
+uv run peft-preflight --output results/sprint3/environment.json
 ```
 
-Instaluje PEFT, TRL, datasets i bitsandbytes. Przed treningiem powstaną osobne
-skrypty preflight dla kwantyzacji NF4 i pomiaru pamięci GPU.
+Instaluje PEFT, TRL, datasets i bitsandbytes. Suche przebiegi sprawdzają
+lineage, rozkład etykiet oraz to, że pipeline otwiera wyłącznie train:
+
+```powershell
+uv run peft-train --config configs/qlora_q0_v1.json --dry-run
+uv run peft-train --config configs/qlora_q1_v1.json --dry-run
+```
+
+Rzeczywisty trening pokazowy:
+
+```powershell
+uv run peft-train --config configs/qlora_demo_v1.json
+```
+
+Pełne kontrolowane treningi referencyjne:
+
+```powershell
+uv run peft-train --config configs/qlora_q0_v1.json
+uv run peft-train --config configs/qlora_q1_v1.json
+```
+
+Q0 używa wyłącznie 400 rekordów train v1. Q1 dodaje 240 rekordów boundary
+train; pozostałe parametry są identyczne. Maksymalna długość 1728 pokrywa
+zmierzone maksimum 1672 tokenów, a pipeline zatrzyma trening przy jakimkolwiek
+obcięciu. Checkpointy referencyjne zapisują model-only: umożliwiają inferencję,
+ale nie przechowują stanu optymalizatora do automatycznego resume. Jest to
+świadomy workaround dla kosztownej serializacji `paged_adamw_8bit` na Windows.
+
+Ponowne ładowanie i inferencja na dozwolonym validation:
+
+```powershell
+uv run peft-adapter `
+  --config configs/qlora_q1_v1.json `
+  --data data/generated/dataset_v1/validation.jsonl `
+  --output results/sprint3/q1_original_validation.jsonl
+
+uv run peft-adapter `
+  --config configs/qlora_q1_v1.json `
+  --data data/splits/boundary_validation.jsonl `
+  --output results/sprint3/q1_boundary_validation.jsonl
+```
+
+Ocena używa tego samego narzędzia co baseline:
+
+```powershell
+uv run peft-workshop evaluate `
+  results/sprint3/q1_original_validation.jsonl `
+  --data data/generated/dataset_v1/validation.jsonl `
+  --output results/sprint3/q1_original_validation_metrics.json
+
+uv run peft-workshop evaluate `
+  results/sprint3/q1_boundary_validation.jsonl `
+  --data data/splits/boundary_validation.jsonl `
+  --output results/sprint3/q1_boundary_validation_metrics.json
+```
+
+Inspekcja, scalenie i formalna bramka M3:
+
+```powershell
+uv run peft-adapter-ops inspect `
+  --config configs/qlora_q1_v1.json `
+  --output results/sprint3/q1_adapter_manifest.json
+
+uv run peft-adapter-ops merge `
+  --config configs/qlora_q1_v1.json `
+  --output artifacts/merged/q1-v0.1-bf16 `
+  --manifest results/sprint3/q1_merge_manifest.json
+
+uv run peft-sprint3-report
+```
+
+Wagi w `artifacts/`, checkpointy oraz model scalony są lokalne i ignorowane
+przez Git. Repozytorium przechowuje konfiguracje, hashe, metryki i manifesty.
+Oryginalny test, boundary test i challenge pozostają zamknięte do Sprintu 4.
+
+Preflight oraz raporty treningowe zapisują środowisko, zużycie pamięci,
+przepustowość, długości tokenów, trainable parameters i hashe artefaktów.

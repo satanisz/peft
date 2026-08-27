@@ -36,6 +36,10 @@ peft-token-stats = "peft_workshop.token_stats:main"
 peft-baseline-report = "peft_workshop.baseline_report:main"
 peft-generate-boundary = "peft_workshop.boundary_dataset:main"
 peft-boundary-report = "peft_workshop.boundary_report:main"
+peft-train = "peft_workshop.train:main"
+peft-adapter = "peft_workshop.adapter_inference:main"
+peft-sprint3-report = "peft_workshop.sprint3_report:main"
+peft-adapter-ops = "peft_workshop.adapter_ops:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

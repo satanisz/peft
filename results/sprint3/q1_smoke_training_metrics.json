@@ -1,0 +1,164 @@
+{
+  "run_id": "Q1-DEMO",
+  "config_path": "configs/qlora_demo_v1.json",
+  "config_sha256": "d9498aaeceb52ffae2b1cf2ec37c8f7ef53a70c8328cdbc87a0cc652ac479798",
+  "git_commit_at_start": "c84386c7862f4cbe9fc2416ed13df0294d9efa00",
+  "dataset_audit": {
+    "variant": "Q1-DEMO",
+    "sources": [
+      {
+        "name": "dataset-v1",
+        "path": "data/generated/dataset_v1/train.jsonl",
+        "sha256": "3eea05da2c8c2a4c06fa6bda4f338cdd27640373e0ec6dcafbdb10fcc0bcdd9c",
+        "case_count": 400
+      },
+      {
+        "name": "boundary-pack-v1",
+        "path": "data/splits/boundary_train.jsonl",
+        "sha256": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2",
+        "case_count": 240
+      }
+    ],
+    "selected_case_count": 50,
+    "group_count": 44,
+    "status_counts": {
+      "FAIL": 10,
+      "INSUFFICIENT_DATA": 10,
+      "NOT_APPLICABLE": 10,
+      "PASS": 10,
+      "WARN": 10
+    },
+    "source_counts": {
+      "boundary-pack-v1": 24,
+      "dataset-v1": 26
+    },
+    "control_type_counts": {
+      "ARITHMETIC": 7,
+      "CROSS_SECTION": 5,
+      "CURRENCY": 6,
+      "DIRECTION": 2,
+      "DISCLOSURE": 4,
+      "EVIDENCE": 5,
+      "INSUFFICIENT_DATA": 4,
+      "PERIOD": 4,
+      "UNIT": 5,
+      "VARIANCE": 8
+    },
+    "case_ids_sha256": "dd2719e13099755c902856e484b84d56b087d52dfdf75717fd19f98b617f476b",
+    "system_prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+    "opened_splits": [
+      "train"
+    ],
+    "protected_splits_opened": false
+  },
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "accelerate": "1.14.0",
+    "bitsandbytes": "0.49.2",
+    "peft": "0.19.1",
+    "trl": "0.29.1",
+    "datasets": "4.8.5"
+  },
+  "status": "completed",
+  "token_stats": {
+    "max_length": 1728,
+    "prompt_tokens": {
+      "min": 1253,
+      "mean": 1361.54,
+      "p95": 1428,
+      "max": 1455
+    },
+    "total_tokens": {
+      "min": 1379,
+      "mean": 1535.82,
+      "p95": 1642,
+      "max": 1672
+    },
+    "total_tokens_one_epoch": 76791,
+    "truncated_case_count": 0,
+    "truncated_case_rate": 0.0
+  },
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "trainable_parameters": 16515072,
+    "total_parameters_visible": 2222325248,
+    "trainable_percent": 0.743144
+  },
+  "training_metrics": {
+    "train_runtime": 8.1481,
+    "train_samples_per_second": 0.491,
+    "train_steps_per_second": 0.123,
+    "total_flos": 129999361916928.0,
+    "train_loss": 1.4779406785964966
+  },
+  "wall_clock_seconds": 8.451,
+  "peak_gpu_allocated_gib": 7.359,
+  "peak_gpu_reserved_gib": 15.289,
+  "effective_batch_size": 4,
+  "max_length": 1728,
+  "adapter_dir": "artifacts/adapters/q1-smoke-1728",
+  "adapter_files": [
+    {
+      "path": "adapter_config.json",
+      "bytes": 1152,
+      "sha256": "ab96a8278d2c35a33b67b6b9ad97142a778feb879d3e010a032b720fb878502b"
+    },
+    {
+      "path": "adapter_model.safetensors",
+      "bytes": 33096960,
+      "sha256": "1860980e08b1fdc90b3202f5482d0a186705e9fa47699873b7689eac4be6e35f"
+    },
+    {
+      "path": "chat_template.jinja",
+      "bytes": 2690,
+      "sha256": "0ab115e84509e86db2bb05a63edf63778ae7fe624972cdfa982b1e59053d6710"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5220,
+      "sha256": "e4917fd3f34b903ca24612f2639b024fb771e84704c04f70d62a610094f9113a"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 11422650,
+      "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 725,
+      "sha256": "a312139b5701f38b824c42b238cf3a99b89a81ba0cdd364e3ca02caccb4c52d1"
+    },
+    {
+      "path": "training_args.bin",
+      "bytes": 5713,
+      "sha256": "57a92e216a7ae7fc84a8db5c0d6be1bbc6f52082123a874de6a3b2827e9c4407"
+    }
+  ],
+  "log_history": [
+    {
+      "loss": 1.4779406785964966,
+      "grad_norm": 2.75,
+      "learning_rate": 0.0,
+      "entropy": 0.8149513304233551,
+      "num_tokens": 5915.0,
+      "mean_token_accuracy": 0.8537335395812988,
+      "epoch": 0.08,
+      "num_input_tokens_seen": 5936,
+      "train_runtime": 8.1471,
+      "train_tokens_per_second": 728.599,
+      "step": 1
+    },
+    {
+      "train_runtime": 8.1481,
+      "train_samples_per_second": 0.491,
+      "train_steps_per_second": 0.123,
+      "total_flos": 129999361916928.0,
+      "train_loss": 1.4779406785964966,
+      "epoch": 0.08,
+      "num_input_tokens_seen": 5936,
+      "step": 1
+    }
+  ]
+}
