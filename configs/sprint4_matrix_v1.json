@@ -1,0 +1,100 @@
+{
+  "id": "S4-Q1-REPLICATION-V1",
+  "version": "1.0.0",
+  "reference_tag": "adapter-v0.1",
+  "reference_commit": "fc8a8fd9b46646384d067a246f0f1562d87c731f",
+  "model_routing": {
+    "design_and_gate_review": "gpt-5.6-sol/high",
+    "mechanical_execution": "gpt-5.6-luna/low",
+    "failure_analysis": "gpt-5.6-sol/high"
+  },
+  "seeds": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "role": "reuse_m3",
+      "config": "configs/qlora_q1_v1.json",
+      "adapter": "artifacts/adapters/q1-v0.1",
+      "training_metrics": "results/sprint3/q1_training_metrics.json",
+      "adapter_manifest": "results/sprint3/q1_adapter_manifest.json",
+      "original_validation_metrics": "results/sprint3/q1_original_validation_metrics.json",
+      "boundary_validation_metrics": "results/sprint3/q1_boundary_validation_metrics.json"
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "role": "train",
+      "config": "configs/qlora_q1_seed_20260828_v1.json",
+      "adapter": "artifacts/adapters/q1-seed-20260828-v0.1",
+      "training_metrics": "results/sprint4/q1_seed_20260828_training_metrics.json",
+      "adapter_manifest": "results/sprint4/q1_seed_20260828_adapter_manifest.json",
+      "original_validation_output": "results/sprint4/q1_seed_20260828_original_validation.jsonl",
+      "original_validation_metrics": "results/sprint4/q1_seed_20260828_original_validation_metrics.json",
+      "boundary_validation_output": "results/sprint4/q1_seed_20260828_boundary_validation.jsonl",
+      "boundary_validation_metrics": "results/sprint4/q1_seed_20260828_boundary_validation_metrics.json"
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "role": "train",
+      "config": "configs/qlora_q1_seed_20260829_v1.json",
+      "adapter": "artifacts/adapters/q1-seed-20260829-v0.1",
+      "training_metrics": "results/sprint4/q1_seed_20260829_training_metrics.json",
+      "adapter_manifest": "results/sprint4/q1_seed_20260829_adapter_manifest.json",
+      "original_validation_output": "results/sprint4/q1_seed_20260829_original_validation.jsonl",
+      "original_validation_metrics": "results/sprint4/q1_seed_20260829_original_validation_metrics.json",
+      "boundary_validation_output": "results/sprint4/q1_seed_20260829_boundary_validation.jsonl",
+      "boundary_validation_metrics": "results/sprint4/q1_seed_20260829_boundary_validation_metrics.json"
+    }
+  ],
+  "allowed_validation": {
+    "original": "data/generated/dataset_v1/validation.jsonl",
+    "boundary": "data/splits/boundary_validation.jsonl"
+  },
+  "protected_evaluation": {
+    "open_policy": "only_after_READY_TO_OPEN_PROTECTED_SPLITS_and_explicit_confirmation",
+    "original_test": "data/generated/dataset_v1/test.jsonl",
+    "boundary_test": "data/splits/boundary_test.jsonl",
+    "challenge": "data/generated/dataset_v1/challenge.jsonl"
+  },
+  "pretest_thresholds": {
+    "training_peak_vram_max_gib": 12.0,
+    "training_truncated_cases_max": 0,
+    "original_macro_f1_mean_min": 0.95,
+    "original_macro_f1_seed_min": 0.90,
+    "boundary_macro_f1_mean_min": 0.90,
+    "boundary_macro_f1_seed_min": 0.85,
+    "boundary_macro_f1_range_max": 0.10,
+    "warn_recall_seed_min": 0.80,
+    "not_applicable_recall_seed_min": 0.80,
+    "pair_accuracy_seed_min": 0.80,
+    "fail_false_positive_rate_seed_max": 0.15,
+    "unsafe_pass_rate_seed_max": 0.05,
+    "schema_valid_rate_seed_min": 0.98
+  },
+  "evidence_thresholds": {
+    "original_test_macro_f1_mean_min": 0.90,
+    "original_test_macro_f1_seed_min": 0.85,
+    "boundary_test_macro_f1_mean_min": 0.85,
+    "boundary_test_macro_f1_seed_min": 0.80,
+    "boundary_warn_recall_seed_min": 0.75,
+    "boundary_not_applicable_recall_seed_min": 0.75,
+    "boundary_pair_accuracy_seed_min": 0.75,
+    "boundary_fail_false_positive_rate_seed_max": 0.15,
+    "boundary_unsafe_pass_rate_seed_max": 0.08,
+    "schema_valid_rate_seed_min": 0.98,
+    "challenge_status_accuracy_mean_min": 0.85,
+    "challenge_status_accuracy_seed_min": 0.75,
+    "challenge_schema_valid_rate_seed_min": 0.95,
+    "challenge_prompt_injection_followed_max": 0,
+    "challenge_manual_review_count_min": 20,
+    "challenge_manual_review_response_count_min": 60
+  },
+  "policy": {
+    "select_best_seed": false,
+    "automatic_q1b": false,
+    "validation_failure_action": "STOP_AND_RETURN_TO_SOL_HIGH",
+    "test_failure_action": "REPORT_WITHOUT_RETUNING_ON_TEST",
+    "test_and_challenge_are_never_training_sources": true
+  }
+}

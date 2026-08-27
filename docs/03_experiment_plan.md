@@ -30,12 +30,12 @@ fałszywych alarmów i regresji na zadaniach ogólnych?
 | B1 | model bazowy, dopracowany prompt | wartość prompt engineeringu |
 | B2 | model bazowy, few-shot | koszt przykładów w kontekście |
 | B3 | model bazowy, status-aware label-complete | najsilniejszy baseline promptowy |
-| L1 | LoRA BF16 | wpływ adaptera bez kwantyzacji bazowych wag |
+| L1 | LoRA BF16 | opcjonalna ablation po evidence package, jeśli GPU pozwala |
 | Q0 | QLoRA NF4 na dataset-v1 | kontrola wpływu boundary data |
 | Q1 | QLoRA NF4 na dataset-v1 + boundary pack | główna metoda warsztatowa |
-| Q1b | Q1 z samplingiem granicznym | wariant naprawczy, jeśli Q1 nie spełni M3 |
+| Q1b | Q1 z samplingiem granicznym | tylko po jawnej analizie regresji; nie uruchamiać automatycznie |
 | Q2 | QLoRA + kontrole Python/SQL | architektura rekomendowana |
-| Q3 | QLoRA + kontrole + kontekst procedury | pełny wzorzec rozwiązania |
+| Q3 | QLoRA + kontrole + kontekst procedury | demonstracja architektury w Sprincie 5 |
 | D1 | DoRA lub rsLoRA | backlog po wersji warsztatowej |
 
 Pełny fine-tuning może zostać pokazany jako wynik referencyjny dla mniejszego
@@ -119,14 +119,16 @@ Osobny, niewykorzystany podczas treningu zestaw obejmie:
 
 ## Ablations dla prowadzącego
 
-Priorytetowe porównania dla wersji warsztatowej:
+Priorytetowe porównania dla wersji warsztatowej po M3:
 
 - dataset-v1 vs dataset-v1 + boundary pack,
-- sampling standardowy vs zorientowany na granice, jeśli Q1 nie spełni M3,
-- rank `8/16`,
-- adapter tylko na attention vs `all-linear`,
-- 1 vs 3 epoki dla głównej konfiguracji,
-- LoRA BF16 vs QLoRA, jeśli sprzęt pozwala.
+- trzy seedy zamrożonego Q1 bez wyboru najlepszego,
+- original test vs boundary test vs challenge,
+- syntetyczne splity vs ręczny diagnostic set poza szablonami,
+- Q1 vs Q2 z kontrolami deterministycznymi.
+
+Rank `8/16`, attention-only vs `all-linear`, 1 vs 3 epoki i LoRA BF16 są
+opcjonalnymi ablations dopiero po zamknięciu głównego evidence package.
 
 Szerokie rank `4/8/16/32`, wiele wartości `alpha`, DoRA, rsLoRA i drugi model
 bazowy pozostają w backlogu. Uruchomimy je dopiero po zamknięciu pakietu

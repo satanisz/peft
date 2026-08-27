@@ -68,8 +68,12 @@ Rezultat: powtarzalny trening oraz gotowy adapter demonstracyjny.
 
 ## Etap 5 — pełny benchmark
 
-- B0/B1/B2/B3/L1/Q0/Q1/Q1b/Q2/Q3,
-- trzy seedy dla głównych wariantów,
+Status: przygotowany do uruchomienia — zmodyfikowany po M3; dwa nowe seedy Q1,
+automatyczna bramka pre-test i jawna ochrona test/challenge.
+
+- zamrożone B3/Q0 oraz trzy seedy Q1 bez wyboru najlepszego,
+- Q2 jako eksperyment z kontrolami deterministycznymi,
+- jawny backlog L1/Q1b/Q3 po zamknięciu evidence package,
 - metryki techniczne,
 - metryki granic, minimalnych par i kosztu błędu,
 - testy adversarial i regresyjne,
@@ -102,10 +106,12 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Rozpocząć Sprint 4 od przypięcia Q1 jako jednoseedowego adapter candidate,
-uruchomienia trzech seedów oraz jednorazowego otwarcia zamrożonych testów po
-zamrożeniu konfiguracji. Następnie wykonać challenge i porównać Q1 z Q2, czyli
-adapterem uzupełnionym o kontrole deterministyczne.
+Uruchomić przygotowany runner Sprintu 4 dla dwóch brakujących seedów. Istniejący
+wynik M3 jest seedem pierwszym. Runner kończy się na dozwolonym validation i
+bramce pre-test; protected splits wymagają osobnej decyzji Sol/high i jawnego
+potwierdzenia operatora.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
+
+Szczegóły: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).

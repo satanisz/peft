@@ -30,6 +30,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport Sprintu 2.5 — wyniki B1/B2/B3](docs/10_sprint_2_5_report.md)
 - [Scenariusz demonstracyjny Sprintu 3](docs/11_sprint_3_training_scenario.md)
 - [Raport Sprintu 3 — QLoRA i M3](docs/12_sprint_3_report.md)
+- [Zrewidowany executive plan Sprintu 4](docs/13_sprint_4_executive_plan.md)
 
 ## Planowane artefakty
 
@@ -51,3 +52,7 @@ poprawności 60 minimalnych par na boundary validation, zachowując macro-F1
 Q1 jest kandydatem `adapter-v0.1` do pełnego benchmarku Sprintu 4. Wyniki są
 syntetyczne i jednoseedowe; testy oraz challenge pozostają zamknięte, a użycie
 poza warsztatem wymaga niezależnego review eksperckiego.
+
+Zrewidowany Sprint 4 jest gotowy do mechanicznego uruchomienia: wykorzystuje
+seed z M3 i trenuje tylko dwa brakujące seedy, a automatyczna bramka chroni
+test/challenge przed przedwczesnym otwarciem.

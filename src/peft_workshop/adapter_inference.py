@@ -13,6 +13,33 @@ from .prompts import STATUS_AWARE_SYSTEM_PROMPT, build_messages
 from .train import load_config
 
 
+def validate_inference_path(data_path: Path, *, allow_protected_split: bool) -> None:
+    protected_names = {"test", "boundary_test", "challenge"}
+    forbidden = protected_names & ({part.lower() for part in data_path.parts} | {data_path.stem.lower()})
+    if forbidden and not allow_protected_split:
+        raise ValueError(f"Chroniony split wymaga jawnego --allow-protected-split: {data_path}")
+
+
+def validate_inference_scope(
+    data_path: Path, cases: list[dict[str, Any]], *, allow_protected_split: bool
+) -> None:
+    validate_inference_path(data_path, allow_protected_split=allow_protected_split)
+    case_splits = {str(case["split"]).lower() for case in cases}
+    protected_case_splits = case_splits - {"development", "validation"}
+    if protected_case_splits and not allow_protected_split:
+        raise ValueError(f"Chroniony split wymaga jawnego --allow-protected-split: {data_path}")
+    allowed = {"development", "validation", "test", "boundary_test", "challenge"}
+    if not case_splits <= allowed:
+        raise ValueError(f"Nieobsługiwany split inferencji: {sorted(case_splits - allowed)}")
+
+
+def load_scoped_cases(data_path: Path, *, allow_protected_split: bool) -> list[dict[str, Any]]:
+    validate_inference_path(data_path, allow_protected_split=allow_protected_split)
+    cases = load_cases(data_path)
+    validate_inference_scope(data_path, cases, allow_protected_split=allow_protected_split)
+    return cases
+
+
 def resolve_inference_artifact(
     args: argparse.Namespace, config: dict[str, Any]
 ) -> tuple[str, Path, Path | None]:
@@ -37,13 +64,8 @@ def run_adapter(args: argparse.Namespace) -> Path:
     quant = config["quantization"]
     artifact_type, model_source, adapter_path = resolve_inference_artifact(args, config)
     data_path = resolve_project_path(args.data)
-    protected_names = {"test", "boundary_test", "challenge"}
-    forbidden = protected_names & ({part.lower() for part in data_path.parts} | {data_path.stem.lower()})
-    if forbidden:
-        raise ValueError(f"Sprint 3 nie otwiera chronionego splitu: {data_path}")
-    cases = load_cases(data_path)
-    if any(case["split"] not in {"development", "validation"} for case in cases):
-        raise ValueError("Inferencja Sprintu 3 przyjmuje wyłącznie development lub validation")
+    allow_protected_split = bool(getattr(args, "allow_protected_split", False))
+    cases = load_scoped_cases(data_path, allow_protected_split=allow_protected_split)
     if args.limit:
         cases = cases[: args.limit]
 
@@ -118,6 +140,7 @@ def run_adapter(args: argparse.Namespace) -> Path:
                 "artifact_type": artifact_type,
                 "adapter_path": project_relative(adapter_path) if adapter_path else None,
                 "merged_model_path": project_relative(model_source) if artifact_type == "merged" else None,
+                "protected_split_authorized": allow_protected_split,
                 "prompt_style": "status_aware_zero_shot",
                 "prompt_sha256": prompt_hash,
                 "demonstration_count": 0,
@@ -140,7 +163,7 @@ def run_adapter(args: argparse.Namespace) -> Path:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Inferencja adaptera QLoRA bez demonstracji few-shot")
+    parser = argparse.ArgumentParser(description="Inferencja adaptera lub modelu scalonego bez few-shot")
     parser.add_argument("--config", required=True)
     parser.add_argument("--adapter")
     parser.add_argument("--merged-model", help="Scalony model lokalny zamiast modelu bazowego + adaptera")
@@ -149,6 +172,11 @@ def main() -> int:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--max-new-tokens", type=int)
     parser.add_argument("--no-warmup", action="store_true")
+    parser.add_argument(
+        "--allow-protected-split",
+        action="store_true",
+        help="Jawna autoryzacja test/challenge; używać dopiero po bramce pre-test Sprintu 4",
+    )
     args = parser.parse_args()
     output = run_adapter(args)
     print(f"Zapisano odpowiedzi: {output}")

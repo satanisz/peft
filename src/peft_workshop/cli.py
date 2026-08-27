@@ -130,6 +130,11 @@ def command_evaluate(args: argparse.Namespace) -> int:
             "do_sample",
             "enable_thinking",
             "parameter_dtype",
+            "adapter_id",
+            "adapter_path",
+            "artifact_type",
+            "merged_model_path",
+            "protected_split_authorized",
         )
     } if predictions else {}
     report = {

@@ -1,0 +1,11 @@
+{
+  "review_version": "1.0.0",
+  "reviewer": "FILL_IN",
+  "review_date": "YYYY-MM-DD",
+  "reviewed_case_count": 0,
+  "reviewed_response_count": 0,
+  "prompt_injection_followed_count": null,
+  "critical_error_count": null,
+  "approved_for_m4_review": false,
+  "notes": []
+}

@@ -243,27 +243,27 @@ Szczegóły: [`12_sprint_3_report.md`](12_sprint_3_report.md).
 
 ## Sprint 4 — benchmark i eksperymenty zaawansowane
 
-**Czas:** 4–5 dni  
-**Cel:** udowodnić, gdzie QLoRA pomaga, a gdzie nie wystarcza.
+**Czas:** 3–5 dni, w tym około 8–10 godzin GPU
+**Cel:** potwierdzić stabilność Q1 między seedami i zbudować zamknięty evidence
+package bez strojenia na test.
 
 ### Zakres
 
-- L1: LoRA BF16,
-- Q0: QLoRA na samym train v1,
-- Q1: QLoRA na train v1 + boundary train,
-- Q1b: QLoRA z samplingiem granicznym, jeśli wymagane,
+- wykorzystanie wyniku M3 jako pierwszego z trzech seedów Q1,
+- trening wyłącznie dwóch brakujących seedów Q1,
+- automatyczna bramka stabilności przed otwarciem testów,
+- jednorazowe otwarcie original test, boundary test i challenge,
 - Q2: QLoRA + kontrole deterministyczne,
-- Q3: QLoRA + kontrole + procedura w kontekście,
-- trzy seedy dla głównych konfiguracji,
-- priorytetowe ablations: dane standardowe vs boundary, rank `8/16` oraz
-  attention-only vs `all-linear`,
+- ręczny diagnostic set poza szablonami generatora,
+- Q3 jako demonstracja do Sprintu 5, jeśli Q2 nie ujawni wcześniej luki,
+- L1 BF16, rank i target modules jako opcjonalne ablations po evidence package,
 - testy adversarial, regresyjne i braku danych,
 - analiza false positives i false negatives,
 - katalog najlepszych oraz najgorszych odpowiedzi.
 
 ### Rezultaty
 
-- końcowa macierz porównawcza B0/B1/B2/B3/L1/Q0/Q1/Q1b/Q2/Q3,
+- główna macierz B3/Q0/Q1-3seeds/Q2 oraz jawny backlog L1/Q1b/Q3,
 - wykresy jakości, czasu, VRAM i rozmiaru adaptera,
 - raport analizy błędów,
 - rekomendacja architektury dla przypadku bankowego.
@@ -282,6 +282,9 @@ Szczegóły: [`12_sprint_3_report.md`](12_sprint_3_report.md).
 ### Bramka M4 — Evidence package
 
 Zamrażamy wyniki, konfiguracje i przykłady używane w materiałach szkoleniowych.
+M4 wymaga trzech seedów bez selekcji najlepszego, oddzielnych testów, ręcznego
+review challenge i diagnostic setu poza szablonami. Szczegółowy, obowiązujący
+plan: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
 
 ## Sprint 5 — materiały szkoleniowe
 

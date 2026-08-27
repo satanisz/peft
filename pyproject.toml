@@ -40,6 +40,9 @@ peft-train = "peft_workshop.train:main"
 peft-adapter = "peft_workshop.adapter_inference:main"
 peft-sprint3-report = "peft_workshop.sprint3_report:main"
 peft-adapter-ops = "peft_workshop.adapter_ops:main"
+peft-sprint4-preflight = "peft_workshop.sprint4_preflight:main"
+peft-sprint4-report = "peft_workshop.sprint4_report:main"
+peft-sprint4-evidence-report = "peft_workshop.sprint4_evidence_report:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

@@ -1,0 +1,56 @@
+{
+  "id": "Q1-S3",
+  "version": "0.1.0",
+  "purpose": "Replikacja Q1, seed 3 z 3",
+  "model": {
+    "id": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "attn_implementation": "sdpa"
+  },
+  "dataset": {
+    "train_sources": [
+      {"name": "dataset-v1", "path": "data/generated/dataset_v1/train.jsonl"},
+      {"name": "boundary-pack-v1", "path": "data/splits/boundary_train.jsonl"}
+    ],
+    "require_all_statuses": true
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "quant_type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16"
+  },
+  "lora": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "training": {
+    "seed": 20260829,
+    "epochs": 3,
+    "max_steps": -1,
+    "micro_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 0.0001,
+    "lr_scheduler": "cosine",
+    "warmup_steps": 12,
+    "optimizer": "paged_adamw_8bit",
+    "weight_decay": 0.01,
+    "max_grad_norm": 0.3,
+    "max_length": 1728,
+    "allow_truncation": false,
+    "packing": false,
+    "gradient_checkpointing": true,
+    "logging_steps": 5,
+    "save_strategy": "steps",
+    "save_steps": 80,
+    "save_total_limit": 2,
+    "save_only_model": true
+  },
+  "evaluation": {"max_new_tokens": 384, "prompt_style": "status_aware_zero_shot"},
+  "artifacts": {
+    "output_dir": "artifacts/adapters/q1-seed-20260829-v0.1",
+    "metrics_output": "results/sprint4/q1_seed_20260829_training_metrics.json"
+  }
+}

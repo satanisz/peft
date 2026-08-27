@@ -231,3 +231,56 @@ Oryginalny test, boundary test i challenge pozostają zamknięte do Sprintu 4.
 
 Preflight oraz raporty treningowe zapisują środowisko, zużycie pamięci,
 przepustowość, długości tokenów, trainable parameters i hashe artefaktów.
+
+## Sprint 4 — trzy seedy i evidence package
+
+Sprint 4 wykorzystuje adapter Q1 z M3 jako pierwszy seed i trenuje tylko dwa
+brakujące seedy. Przed długim uruchomieniem:
+
+```powershell
+.\scripts\run_sprint4_training.ps1 -Phase preflight
+```
+
+Oczekiwany wynik to `READY_FOR_TRAINING`. Pełny bezpieczny przebieg otwartych
+etapów:
+
+```powershell
+.\scripts\run_sprint4_training.ps1 -Phase all
+```
+
+Faza `all` wykonuje kolejno preflight, dwa treningi, inspekcję adapterów,
+original validation, boundary validation i bramkę pre-test. Jest wznawialna na
+poziomie ukończonych artefaktów. Nie otwiera original test, boundary test ani
+challenge.
+
+Można też uruchamiać etapy oddzielnie:
+
+```powershell
+.\scripts\run_sprint4_training.ps1 -Phase train
+.\scripts\run_sprint4_training.ps1 -Phase inspect
+.\scripts\run_sprint4_training.ps1 -Phase validation
+```
+
+Po wyniku `READY_TO_OPEN_PROTECTED_SPLITS` należy wrócić do Sol/high, wykonać
+review raportu i dopiero po jawnej decyzji uruchomić:
+
+```powershell
+.\scripts\run_sprint4_evidence.ps1 -ConfirmOpenProtectedSplits
+```
+
+Bez przełącznika, bez raportu pre-test albo przy decyzji STOP skrypt kończy się
+przed odczytem chronionych danych. Szczegóły metodologiczne i progi zawiera
+[`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
+
+Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
+
+```powershell
+Copy-Item `
+  configs/sprint4_challenge_review_template.json `
+  results/sprint4/challenge_manual_review.json
+
+uv run peft-sprint4-evidence-report
+```
+
+Raport nie wydaje automatycznej decyzji M4 PASS; kieruje wynik do review
+Sol/high.

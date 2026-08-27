@@ -230,7 +230,7 @@ def run_training(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Powtarzalny trening LoRA/QLoRA dla Sprintu 3")
+    parser = argparse.ArgumentParser(description="Powtarzalny trening LoRA/QLoRA dla warsztatu PEFT")
     parser.add_argument("--config", required=True)
     parser.add_argument("--max-steps", type=int, help="Nadpisanie wyłącznie do kontrolowanego smoke testu")
     parser.add_argument("--output-dir")
