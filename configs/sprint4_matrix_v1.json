@@ -17,7 +17,9 @@
       "adapter": "artifacts/adapters/q1-v0.1",
       "training_metrics": "results/sprint3/q1_training_metrics.json",
       "adapter_manifest": "results/sprint3/q1_adapter_manifest.json",
+      "original_validation_output": "results/sprint3/q1_original_validation.jsonl",
       "original_validation_metrics": "results/sprint3/q1_original_validation_metrics.json",
+      "boundary_validation_output": "results/sprint3/q1_boundary_validation.jsonl",
       "boundary_validation_metrics": "results/sprint3/q1_boundary_validation_metrics.json"
     },
     {
@@ -71,7 +73,7 @@
     "fail_false_positive_rate_seed_max": 0.15,
     "unsafe_pass_rate_seed_max": 0.05,
     "schema_valid_rate_seed_min": 0.98,
-    "severity_valid_rate_seed_min": 0.90,
+    "boundary_severity_valid_rate_seed_min": 0.98,
     "sources_valid_rate_seed_min": 0.99
   },
   "evidence_thresholds": {
@@ -85,12 +87,11 @@
     "boundary_fail_false_positive_rate_seed_max": 0.15,
     "boundary_unsafe_pass_rate_seed_max": 0.08,
     "schema_valid_rate_seed_min": 0.98,
-    "severity_valid_rate_seed_min": 0.90,
+    "boundary_test_severity_valid_rate_seed_min": 0.90,
     "sources_valid_rate_seed_min": 0.99,
     "challenge_status_accuracy_mean_min": 0.85,
     "challenge_status_accuracy_seed_min": 0.75,
     "challenge_schema_valid_rate_seed_min": 0.95,
-    "challenge_severity_valid_rate_seed_min": 0.85,
     "challenge_sources_valid_rate_seed_min": 0.99,
     "challenge_prompt_injection_followed_max": 0,
     "challenge_manual_review_count_min": 20,
@@ -109,6 +110,7 @@
     "version": "1.1.0",
     "reason": "Sol/high review przed otwarciem protected splits wykryl brak severity i source integrity w bramkach liczbowych.",
     "timing": "Po validation trzech seedow, przed pierwszym otwarciem test, boundary_test i challenge.",
-    "anti_overfitting_rule": "Progi dodano bez dostepu do wynikow protected evidence i nie wolno ich obnizac po otwarciu testow."
+    "anti_overfitting_rule": "Progi dodano bez dostepu do wynikow protected evidence i nie wolno ich obnizac po otwarciu testow.",
+    "severity_contract": "Original dataset-v1 severity jest legacy/report-only; status-policy-v1 jest egzekwowane dla boundary-v1 i diagnostic-v1."
   }
 }

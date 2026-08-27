@@ -19,7 +19,7 @@
 | boundary_macro_each_seed | PASS |
 | boundary_macro_seed_range | PASS |
 | schema_each_seed | PASS |
-| severity_each_seed | PASS |
+| boundary_severity_each_seed | PASS |
 | sources_each_seed | PASS |
 | warn_recall_each_seed | PASS |
 | not_applicable_recall_each_seed | PASS |

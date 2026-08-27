@@ -70,18 +70,18 @@ class Sprint4ReportTests(unittest.TestCase):
         self.assertEqual(summary["decision"], "STOP_AND_RETURN_TO_SOL_HIGH")
         self.assertFalse(summary["checks"]["sources_each_seed"])
 
-    def test_weak_severity_stops_before_test(self) -> None:
-        weak_severity = copy.deepcopy(self.original)
+    def test_weak_boundary_severity_stops_before_test(self) -> None:
+        weak_severity = copy.deepcopy(self.boundary)
         weak_severity["aggregate"]["severity_correct_rate"] = 0.89
         summary = build_pretest_summary(
             self.matrix,
             [copy.deepcopy(self.training) for _ in range(3)],
-            [copy.deepcopy(self.original), copy.deepcopy(self.original), weak_severity],
-            [copy.deepcopy(self.boundary) for _ in range(3)],
+            [copy.deepcopy(self.original) for _ in range(3)],
+            [copy.deepcopy(self.boundary), copy.deepcopy(self.boundary), weak_severity],
         )
 
         self.assertEqual(summary["decision"], "STOP_AND_RETURN_TO_SOL_HIGH")
-        self.assertFalse(summary["checks"]["severity_each_seed"])
+        self.assertFalse(summary["checks"]["boundary_severity_each_seed"])
 
 
 if __name__ == "__main__":

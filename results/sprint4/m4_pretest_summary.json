@@ -11,7 +11,7 @@
     "boundary_macro_each_seed": true,
     "boundary_macro_seed_range": true,
     "schema_each_seed": true,
-    "severity_each_seed": true,
+    "boundary_severity_each_seed": true,
     "sources_each_seed": true,
     "warn_recall_each_seed": true,
     "not_applicable_recall_each_seed": true,
@@ -33,7 +33,7 @@
     "fail_false_positive_rate_seed_max": 0.15,
     "unsafe_pass_rate_seed_max": 0.05,
     "schema_valid_rate_seed_min": 0.98,
-    "severity_valid_rate_seed_min": 0.9,
+    "boundary_severity_valid_rate_seed_min": 0.98,
     "sources_valid_rate_seed_min": 0.99
   },
   "seed_results": [

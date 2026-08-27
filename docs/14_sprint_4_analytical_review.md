@@ -98,6 +98,21 @@ Ten etap staje się obowiązkowy przed S4.3:
 7. Wykonać ponowny review Sol/high. Dopiero decyzja
    `APPROVED_TO_OPEN_PROTECTED_SPLITS` odblokowuje runner S4.3.
 
+### Aktualizacja 28 sierpnia 2026 — przygotowanie Sprintu 4.2A
+
+- 30 przypadków zostało ręcznie zaprojektowanych i przechodzi walidację 30/30,
+- Q2/source integrity guard został zaimplementowany i wykrywa znany błąd
+  `BD-0360`, blokując odpowiedź bez automatycznego zgadywania źródła,
+- analiza wykazała, że 24% severity w dostępnych splitach starego dataset-v1
+  jest niezgodne z późniejszym `status-policy-v1`, podczas gdy boundary-v1 ma
+  0% takich niespójności,
+- original severity zostało sklasyfikowane jako legacy/report-only; policy-v1
+  jest egzekwowane dla boundary-v1 i diagnostic-v1,
+- formalna inferencja diagnostic pozostaje zablokowana do niezależnego review
+  30/30 przypadków.
+
+Status: `DESIGNED_PENDING_INDEPENDENT_REVIEW_AND_DIAGNOSTIC_RUN`.
+
 Szacunek: 1–2 dni pracy aktywnej, około 1–2 godzin GPU na inference i review.
 Nie jest potrzebny nowy trening Q1.
 

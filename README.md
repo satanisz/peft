@@ -32,6 +32,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport Sprintu 3 — QLoRA i M3](docs/12_sprint_3_report.md)
 - [Zrewidowany executive plan Sprintu 4](docs/13_sprint_4_executive_plan.md)
 - [Analityczny review Sprintu 4](docs/14_sprint_4_analytical_review.md)
+- [Executive plan Sprintu 4.2A](docs/15_sprint_4_2a_executive_plan.md)
 
 ## Planowane artefakty
 

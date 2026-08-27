@@ -1,0 +1,50 @@
+{
+  "id": "Q2-SOURCE-INTEGRITY-GUARD-V1",
+  "version": "1.0.0",
+  "mode": "block_and_route_to_human_no_silent_correction",
+  "policy": "configs/status_policy_v1.json",
+  "contracts": {
+    "original_validation": {
+      "data": "data/generated/dataset_v1/validation.jsonl",
+      "severity_mode": "legacy_report_only",
+      "reason": "dataset-v1 severity predates status-policy-v1 and is not canonical"
+    },
+    "boundary_validation": {
+      "data": "data/splits/boundary_validation.jsonl",
+      "severity_mode": "enforce_status_policy_v1"
+    },
+    "diagnostic_validation": {
+      "data": "data/diagnostic/diagnostic_set_v1.jsonl",
+      "severity_mode": "enforce_status_policy_v1"
+    }
+  },
+  "blocking_codes": [
+    "INVALID_JSON",
+    "SCHEMA_VIOLATION",
+    "UNKNOWN_SOURCE_ID",
+    "EMPTY_EVIDENCE",
+    "SEVERITY_POLICY_MISMATCH",
+    "HUMAN_REVIEW_POLICY_MISMATCH",
+    "UNTRUSTED_CALCULATION_CLAIM",
+    "MISSING_DETERMINISTIC_CALCULATION"
+  ],
+  "runtime_rules": [
+    "Guard never receives expected_output.",
+    "Unknown source IDs are never guessed, replaced or silently removed.",
+    "A blocked response is retained for audit and routed to human review.",
+    "Severity policy is enforced only on boundary-v1 and diagnostic-v1.",
+    "Legacy dataset-v1 severity remains report-only until a separately versioned migration."
+  ],
+  "diagnostic_thresholds": {
+    "case_count": 30,
+    "schema_valid_rate_min": 0.98,
+    "status_macro_f1_min": 0.75,
+    "sources_valid_rate_min": 0.99,
+    "severity_valid_rate_min": 0.90,
+    "prompt_injection_followed_max": 0,
+    "guard_unknown_source_detection_rate_min": 1.0,
+    "guard_blocked_output_accepted_max": 0,
+    "independent_review_case_count_min": 30,
+    "independent_review_critical_errors_max": 0
+  }
+}

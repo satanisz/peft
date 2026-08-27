@@ -106,13 +106,14 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Wykonać Sprint 4.2A: zamrozić wyniki trzech seedów, przygotować 30 ręcznych
-przypadków poza szablonami, wdrożyć Q2/source integrity guard i porównać Q1–Q2
-na dozwolonych validation. Protected splits pozostają zamknięte do decyzji
-`APPROVED_TO_OPEN_PROTECTED_SPLITS`.
+Ukończyć Sprint 4.2A: diagnostic set 30 przypadków i Q2 guard są przygotowane.
+Następnie niezależny SME wykonuje review 30/30, Luna/low uruchamia trzy seedy na
+zamrożonym zbiorze, a Sol/high analizuje Q1–Q2. Protected splits pozostają
+zamknięte do decyzji `APPROVED_TO_OPEN_PROTECTED_SPLITS`.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
 
 Szczegóły: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
 Review: [`14_sprint_4_analytical_review.md`](14_sprint_4_analytical_review.md).
+Sprint 4.2A: [`15_sprint_4_2a_executive_plan.md`](15_sprint_4_2a_executive_plan.md).

@@ -1,0 +1,12 @@
+{
+  "count": 120,
+  "pass_through_count": 119,
+  "blocked_count": 1,
+  "pass_through_rate": 0.9916666666666667,
+  "blocked_output_accepted_count": 0,
+  "issue_counts": {
+    "UNKNOWN_SOURCE_ID": 1
+  },
+  "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
+  "severity_mode": "enforce_status_policy_v1"
+}

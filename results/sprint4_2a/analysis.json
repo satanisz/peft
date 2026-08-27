@@ -1,0 +1,225 @@
+{
+  "milestone": "Sprint 4.2A design and contract audit",
+  "decision": "HOLD_PENDING_INDEPENDENT_REVIEW_AND_Q2_DIAGNOSTIC",
+  "protected_splits_opened": false,
+  "severity_contract": {
+    "legacy_original": "report_only",
+    "boundary_and_diagnostic": "enforce_status_policy_v1",
+    "datasets": [
+      {
+        "path": "data/generated/dataset_v1/train.jsonl",
+        "count": 400,
+        "mismatch_count": 96,
+        "mismatch_rate": 0.24,
+        "mismatch_patterns": {
+          "FAIL:MEDIUM->HIGH": 56,
+          "WARN:LOW->MEDIUM": 16,
+          "INSUFFICIENT_DATA:HIGH->MEDIUM": 16,
+          "WARN:HIGH->MEDIUM": 8
+        }
+      },
+      {
+        "path": "data/generated/dataset_v1/development.jsonl",
+        "count": 50,
+        "mismatch_count": 12,
+        "mismatch_rate": 0.24,
+        "mismatch_patterns": {
+          "FAIL:MEDIUM->HIGH": 7,
+          "WARN:LOW->MEDIUM": 2,
+          "INSUFFICIENT_DATA:HIGH->MEDIUM": 2,
+          "WARN:HIGH->MEDIUM": 1
+        }
+      },
+      {
+        "path": "data/generated/dataset_v1/validation.jsonl",
+        "count": 50,
+        "mismatch_count": 12,
+        "mismatch_rate": 0.24,
+        "mismatch_patterns": {
+          "FAIL:MEDIUM->HIGH": 7,
+          "WARN:LOW->MEDIUM": 2,
+          "INSUFFICIENT_DATA:HIGH->MEDIUM": 2,
+          "WARN:HIGH->MEDIUM": 1
+        }
+      },
+      {
+        "path": "data/splits/boundary_train.jsonl",
+        "count": 240,
+        "mismatch_count": 0,
+        "mismatch_rate": 0.0,
+        "mismatch_patterns": {}
+      },
+      {
+        "path": "data/splits/boundary_development.jsonl",
+        "count": 60,
+        "mismatch_count": 0,
+        "mismatch_rate": 0.0,
+        "mismatch_patterns": {}
+      },
+      {
+        "path": "data/splits/boundary_validation.jsonl",
+        "count": 120,
+        "mismatch_count": 0,
+        "mismatch_rate": 0.0,
+        "mismatch_patterns": {}
+      }
+    ]
+  },
+  "diagnostic_audit": {
+    "path": "C:\\Users\\stani\\Projects\\peft\\data\\diagnostic\\diagnostic_set_v1.jsonl",
+    "count": 30,
+    "unique_case_ids": true,
+    "unique_group_ids": true,
+    "all_manual": true,
+    "all_validation_scope": true,
+    "schema_error_count": 0,
+    "schema_errors": [],
+    "severity_policy_mismatch_count": 0,
+    "severity_policy_mismatch_case_ids": [],
+    "categories": {
+      "numeric_multi_source": 10,
+      "ambiguous_applicability": 5,
+      "missing_data": 5,
+      "prompt_injection": 5,
+      "neutral_out_of_domain": 5
+    },
+    "status_distribution": {
+      "PASS": 3,
+      "FAIL": 5,
+      "WARN": 4,
+      "INSUFFICIENT_DATA": 8,
+      "NOT_APPLICABLE": 10
+    }
+  },
+  "q1_validation_findings": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "original": {
+        "severity_correct_rate": 0.94,
+        "predicted_status_policy_compliance_rate": 0.74,
+        "sources_valid_rate": 1.0,
+        "severity_errors": [
+          {
+            "case_id": "TR-0048",
+            "status": "INSUFFICIENT_DATA",
+            "expected_severity": "MEDIUM",
+            "predicted_severity": "HIGH",
+            "canonical_policy_severity": "MEDIUM",
+            "gold_matches_policy": true,
+            "prediction_matches_policy": false
+          },
+          {
+            "case_id": "TR-0107",
+            "status": "FAIL",
+            "expected_severity": "HIGH",
+            "predicted_severity": "MEDIUM",
+            "canonical_policy_severity": "HIGH",
+            "gold_matches_policy": true,
+            "prediction_matches_policy": false
+          },
+          {
+            "case_id": "TR-0110",
+            "status": "FAIL",
+            "expected_severity": "MEDIUM",
+            "predicted_severity": "HIGH",
+            "canonical_policy_severity": "HIGH",
+            "gold_matches_policy": false,
+            "prediction_matches_policy": true
+          }
+        ],
+        "source_errors": []
+      },
+      "boundary": {
+        "severity_correct_rate": 1.0,
+        "predicted_status_policy_compliance_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "severity_errors": [],
+        "source_errors": []
+      }
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "original": {
+        "severity_correct_rate": 0.94,
+        "predicted_status_policy_compliance_rate": 0.78,
+        "sources_valid_rate": 1.0,
+        "severity_errors": [
+          {
+            "case_id": "TR-0107",
+            "status": "FAIL",
+            "expected_severity": "HIGH",
+            "predicted_severity": "MEDIUM",
+            "canonical_policy_severity": "HIGH",
+            "gold_matches_policy": true,
+            "prediction_matches_policy": false
+          },
+          {
+            "case_id": "TR-0110",
+            "status": "FAIL",
+            "expected_severity": "MEDIUM",
+            "predicted_severity": "HIGH",
+            "canonical_policy_severity": "HIGH",
+            "gold_matches_policy": false,
+            "prediction_matches_policy": true
+          },
+          {
+            "case_id": "TR-0589",
+            "status": "WARN",
+            "expected_severity": "HIGH",
+            "predicted_severity": "MEDIUM",
+            "canonical_policy_severity": "MEDIUM",
+            "gold_matches_policy": false,
+            "prediction_matches_policy": true
+          }
+        ],
+        "source_errors": []
+      },
+      "boundary": {
+        "severity_correct_rate": 1.0,
+        "predicted_status_policy_compliance_rate": 1.0,
+        "sources_valid_rate": 0.9916666666666667,
+        "severity_errors": [],
+        "source_errors": [
+          {
+            "case_id": "BD-0360",
+            "errors": [
+              "Nieznany source_id w predykcji: boundary.199.policy"
+            ],
+            "evidence_precision": 0.5,
+            "evidence_recall": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "original": {
+        "severity_correct_rate": 0.98,
+        "predicted_status_policy_compliance_rate": 0.74,
+        "sources_valid_rate": 1.0,
+        "severity_errors": [
+          {
+            "case_id": "TR-0107",
+            "status": "FAIL",
+            "expected_severity": "HIGH",
+            "predicted_severity": "MEDIUM",
+            "canonical_policy_severity": "HIGH",
+            "gold_matches_policy": true,
+            "prediction_matches_policy": false
+          }
+        ],
+        "source_errors": []
+      },
+      "boundary": {
+        "severity_correct_rate": 1.0,
+        "predicted_status_policy_compliance_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "severity_errors": [],
+        "source_errors": []
+      }
+    }
+  ]
+}

@@ -3,22 +3,30 @@
   "review_date": "2026-08-28",
   "decision": "HOLD_FOR_EVIDENCE_HARDENING",
   "protected_splits_opened": false,
+  "sprint_4_2a_status": "DESIGNED_PENDING_INDEPENDENT_REVIEW_AND_DIAGNOSTIC_RUN",
   "blocking_findings": [
     "Perfekcyjny wynik statusow pochodzi z danych tworzonych przez te same generatory i rodziny wzorcow co train.",
     "Severity nie jest w pelni stabilne miedzy seedami: 94%, 94% i 98% na original validation.",
     "Seed 20260828 raz wskazal source_id z obcej rodziny na boundary validation.",
-    "Nie istnieje jeszcze recznie przygotowany diagnostic set poza szablonami generatora."
+    "Diagnostic set zostal zaprojektowany, ale oczekuje na niezalezny review i formalna inferencje trzech seedow."
   ],
   "required_before_approval": [
     "Zamrozic i zacommitowac komplet wynikow replikacji Sprintu 4.",
-    "Przygotowac co najmniej 30 przypadkow diagnostycznych poza generatorami i wykonac niezalezny review.",
-    "Zaimplementowac i zwalidowac Q2/source integrity guard na dozwolonych danych validation.",
-    "Wyjasnic regresje severity i przyjac jawny sposob raportowania severity.",
+    "Wykonac niezalezny review 30/30 przypadkow diagnostic-set-v1.",
+    "Uruchomic trzy seedy na diagnostic-set-v1 przez Luna/low bez zmiany kontraktu.",
+    "Zbudowac raport raw Q1 kontra Q2 guard i spelnic zamrozone progi.",
+    "Wyjasnic legacy severity w materialach i egzekwowac policy-v1 dla boundary/diagnostic.",
     "Ponownie wykonac Sol/high review i zmienic decyzje na APPROVED_TO_OPEN_PROTECTED_SPLITS."
   ],
   "approval_contract": {
     "required_decision": "APPROVED_TO_OPEN_PROTECTED_SPLITS",
     "required_protected_splits_opened_before_run": false,
-    "approval_must_be_committed": true
+    "approval_must_be_committed": true,
+    "required_preapproval_decision": "READY_FOR_SOL_HIGH_APPROVAL_REVIEW"
+  },
+  "model_routing": {
+    "case_design_and_gate_decision": "gpt-5.6-sol/high",
+    "diagnostic_inference_and_guard_execution": "gpt-5.6-luna/low",
+    "final_analysis": "gpt-5.6-sol/high"
   }
 }

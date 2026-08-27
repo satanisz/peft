@@ -43,6 +43,9 @@ peft-adapter-ops = "peft_workshop.adapter_ops:main"
 peft-sprint4-preflight = "peft_workshop.sprint4_preflight:main"
 peft-sprint4-report = "peft_workshop.sprint4_report:main"
 peft-sprint4-evidence-report = "peft_workshop.sprint4_evidence_report:main"
+peft-q2-guard = "peft_workshop.q2_guard:main"
+peft-sprint4-2a-analysis = "peft_workshop.sprint4_2a_analysis:main"
+peft-sprint4-2a-gate = "peft_workshop.sprint4_2a_gate:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

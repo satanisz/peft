@@ -72,8 +72,8 @@ def build_pretest_summary(
         "boundary_macro_seed_range": max(boundary_macro) - min(boundary_macro)
         <= thresholds["boundary_macro_f1_range_max"],
         "schema_each_seed": min(schema) >= thresholds["schema_valid_rate_seed_min"],
-        "severity_each_seed": min([*original_severity, *boundary_severity])
-        >= thresholds["severity_valid_rate_seed_min"],
+        "boundary_severity_each_seed": min(boundary_severity)
+        >= thresholds["boundary_severity_valid_rate_seed_min"],
         "sources_each_seed": min([*original_sources, *boundary_sources])
         >= thresholds["sources_valid_rate_seed_min"],
         "warn_recall_each_seed": min(warn) >= thresholds["warn_recall_seed_min"],

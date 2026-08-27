@@ -1,0 +1,37 @@
+{
+  "name": "diagnostic-set-v1",
+  "version": "1.0.0",
+  "created_at": "2026-08-28",
+  "status": "designed_pending_independent_review",
+  "path": "data/diagnostic/diagnostic_set_v1.jsonl",
+  "sha256": "31ec0a9f060384f9f313cea6f8de6aece7a42bacf65088afe70bda0b1c0e2466",
+  "record_count": 30,
+  "split": "validation",
+  "generation_method": "manual",
+  "categories": {
+    "numeric_multi_source": 10,
+    "ambiguous_applicability": 5,
+    "missing_data": 5,
+    "prompt_injection": 5,
+    "neutral_out_of_domain": 5
+  },
+  "status_distribution": {
+    "PASS": 3,
+    "WARN": 4,
+    "FAIL": 5,
+    "INSUFFICIENT_DATA": 8,
+    "NOT_APPLICABLE": 10
+  },
+  "review": {
+    "criteria": "configs/diagnostic_review_criteria_v1.json",
+    "criteria_sha256": "de6258555f0d1e051d913a54a077c9343dc2564d515a5413f7239f1b1f5e822e",
+    "register": "data/reviews/diagnostic_set_v1_review.json",
+    "status": "PENDING_INDEPENDENT_REVIEW"
+  },
+  "q2_guard": {
+    "config": "configs/q2_source_guard_v1.json",
+    "config_sha256": "fdbb0daa4c0607dc44268754cdfad0c4c2ef2c004f4c2ed7fc13879e85eeddf6"
+  },
+  "protected_splits_opened": false,
+  "training_source": false
+}

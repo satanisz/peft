@@ -118,6 +118,10 @@ Review z 28 sierpnia 2026 wprowadza obowiązkową bramkę przed testami:
 Do czasu spełnienia warunków obowiązuje `HOLD_FOR_EVIDENCE_HARDENING`. Pełne
 uzasadnienie: `docs/14_sprint_4_analytical_review.md`.
 
+Pakiet przygotowawczy znajduje się w `docs/15_sprint_4_2a_executive_plan.md`.
+Diagnostic set i Q2 guard są gotowe technicznie; oczekują na niezależny review,
+inferencję trzech seedów na Luna/low i końcową analizę Sol/high.
+
 ### S4.3 — jednorazowe protected evidence
 
 Uruchamiane dopiero po review wyniku pre-test i jawnej zgodzie operatora:

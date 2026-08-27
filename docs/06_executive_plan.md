@@ -252,6 +252,11 @@ protected evidence w stanie `CONDITIONAL_HOLD`. Przed otwarciem testów wymagany
 jest Sprint 4.2A: diagnostic set poza szablonami, Q2/source integrity guard,
 analiza severity i ponowna decyzja Sol/high.
 
+Stan przygotowania Sprintu 4.2A: 30 ręcznych przypadków oraz guard są gotowe;
+oczekują na niezależny review i formalną inferencję. Legacy severity z
+dataset-v1 jest raportowane informacyjnie, natomiast boundary/diagnostic
+egzekwują `status-policy-v1`.
+
 ### Zakres
 
 - wykorzystanie wyniku M3 jako pierwszego z trzech seedów Q1,

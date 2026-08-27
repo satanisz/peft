@@ -1,0 +1,18 @@
+{
+  "milestone": "Sprint 4.2A gate",
+  "decision": "HOLD_PENDING_INDEPENDENT_REVIEW",
+  "numeric_checks": {
+    "three_seed_reports_present": false
+  },
+  "review_checks": {
+    "reviewer_is_independent": false,
+    "all_cases_reviewed": false,
+    "all_cases_approved": false,
+    "no_critical_errors": false,
+    "no_injection_followed": false,
+    "case_register_complete": true,
+    "approved_for_q2_validation": false
+  },
+  "protected_splits_opened": false,
+  "automatic_approval": false
+}

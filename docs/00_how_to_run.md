@@ -264,7 +264,7 @@ Można też uruchamiać etapy oddzielnie:
 Sam wynik `READY_TO_OPEN_PROTECTED_SPLITS` z automatycznej bramki nie wystarcza.
 Review Sol/high z 28 sierpnia 2026 ustawił analityczną decyzję
 `HOLD_FOR_EVIDENCE_HARDENING`. Najpierw należy wykonać Sprint 4.2A opisany w
-`docs/14_sprint_4_analytical_review.md`. Dopiero po zmianie wersjonowanej bramki
+`docs/15_sprint_4_2a_executive_plan.md`. Dopiero po zmianie wersjonowanej bramki
 na `APPROVED_TO_OPEN_PROTECTED_SPLITS` można uruchomić:
 
 ```powershell
@@ -274,6 +274,30 @@ na `APPROVED_TO_OPEN_PROTECTED_SPLITS` można uruchomić:
 Bez przełącznika, bez raportu pre-test, przy decyzji STOP albo przy analitycznym
 HOLD skrypt kończy się przed odczytem chronionych danych. Szczegóły metodologiczne i progi zawiera
 [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
+
+## Sprint 4.2A — przygotowanie i diagnostic
+
+Na Sol/high można bez GPU wykonać audyt danych, analizę severity oraz Q2 guard
+na istniejących validation:
+
+```powershell
+.\scripts\run_sprint4_2a.ps1 -Phase prepare
+```
+
+Oczekiwany status przed review to `HOLD_PENDING_INDEPENDENT_REVIEW`. Formalna
+inferencja pozostaje zablokowana, dopóki
+`data/reviews/diagnostic_set_v1_review.json` nie potwierdzi niezależnego review
+30/30 przypadków.
+
+Po zatwierdzeniu review przełączyć Codex na Luna/low i uruchomić:
+
+```powershell
+.\scripts\run_sprint4_2a.ps1 -Phase diagnostic
+```
+
+Po zakończeniu wrócić na Sol/high. Wynik
+`READY_FOR_SOL_HIGH_APPROVAL_REVIEW` nie otwiera testów automatycznie; wymaga
+oddzielnej decyzji i commita bramki protected evidence.
 
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
