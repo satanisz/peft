@@ -62,6 +62,13 @@ modelu, ale nie jest wymagany do demonstracji na żywo.
 - kompletność wymaganych pól,
 - zgodność typów i dozwolonych etykiet.
 
+### Integralność decyzji i dowodów
+
+- `severity_correct_rate` raportowane oddzielnie od statusu,
+- `sources_valid_rate` i liczba nieistniejących `source_id`,
+- evidence precision/recall,
+- odsetek odpowiedzi wymagających korekty przez deterministic guard.
+
 ### Wykrywanie problemów
 
 - precision, recall i F1 dla `FAIL`,

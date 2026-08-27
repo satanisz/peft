@@ -41,7 +41,8 @@ class Sprint4ReportTests(unittest.TestCase):
 
         self.assertEqual(summary["decision"], "READY_TO_OPEN_PROTECTED_SPLITS")
         self.assertFalse(summary["protected_splits_opened"])
-        self.assertIn("jawnego potwierdzenia", render_markdown(summary))
+        self.assertTrue(summary["automated_gate_only"])
+        self.assertIn("review analityczny", render_markdown(summary))
 
     def test_weak_warn_seed_stops_before_test(self) -> None:
         weak = copy.deepcopy(self.boundary)
@@ -55,6 +56,32 @@ class Sprint4ReportTests(unittest.TestCase):
 
         self.assertEqual(summary["decision"], "STOP_AND_RETURN_TO_SOL_HIGH")
         self.assertFalse(summary["checks"]["warn_recall_each_seed"])
+
+    def test_invalid_sources_stop_before_test(self) -> None:
+        invalid_sources = copy.deepcopy(self.boundary)
+        invalid_sources["aggregate"]["sources_valid_rate"] = 0.98
+        summary = build_pretest_summary(
+            self.matrix,
+            [copy.deepcopy(self.training) for _ in range(3)],
+            [copy.deepcopy(self.original) for _ in range(3)],
+            [copy.deepcopy(self.boundary), copy.deepcopy(self.boundary), invalid_sources],
+        )
+
+        self.assertEqual(summary["decision"], "STOP_AND_RETURN_TO_SOL_HIGH")
+        self.assertFalse(summary["checks"]["sources_each_seed"])
+
+    def test_weak_severity_stops_before_test(self) -> None:
+        weak_severity = copy.deepcopy(self.original)
+        weak_severity["aggregate"]["severity_correct_rate"] = 0.89
+        summary = build_pretest_summary(
+            self.matrix,
+            [copy.deepcopy(self.training) for _ in range(3)],
+            [copy.deepcopy(self.original), copy.deepcopy(self.original), weak_severity],
+            [copy.deepcopy(self.boundary) for _ in range(3)],
+        )
+
+        self.assertEqual(summary["decision"], "STOP_AND_RETURN_TO_SOL_HIGH")
+        self.assertFalse(summary["checks"]["severity_each_seed"])
 
 
 if __name__ == "__main__":

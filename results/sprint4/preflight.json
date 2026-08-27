@@ -1,0 +1,199 @@
+{
+  "milestone": "Sprint 4 training preflight",
+  "decision": "READY_FOR_TRAINING",
+  "checks": {
+    "exactly_three_seeds": true,
+    "one_reused_and_two_new_seeds": true,
+    "seed_values_are_unique": true,
+    "seed_names_are_unique": true,
+    "training_contracts_are_identical": true,
+    "matrix_seeds_match_configs": true,
+    "all_training_sources_are_train_only": true,
+    "all_configs_disallow_truncation": true,
+    "all_configs_use_model_only_checkpoints": true,
+    "adapter_outputs_are_unique": true,
+    "training_metric_outputs_are_unique": true,
+    "m3_seed_training_is_completed": true,
+    "m3_seed_adapter_is_present": true,
+    "m3_seed_adapter_manifest_is_compatible": true,
+    "protected_paths_are_declared_but_not_training_sources": true,
+    "reference_tag_matches_m3_commit": true,
+    "current_commit_descends_from_m3": true,
+    "git_source_worktree_is_clean": true
+  },
+  "matrix": "configs/sprint4_matrix_v1.json",
+  "matrix_sha256": "f96397859d7670aa5901df46145439c398dbe929dcc19602a34ff140f41dea11",
+  "config_sha256": {
+    "seed_20260827": "be5dc547b48dba126fc3da74a98baa31b463b573c3b67db5736ead074a897770",
+    "seed_20260828": "536f8013c4c337448e2a8789707a64d7f398bf5a439f7a1ec2af98c4b0c559d6",
+    "seed_20260829": "7cd7f756ecd9c15ba011ab6fc622057205c85a4d35ba127ad195c01f3990eb92"
+  },
+  "current_git_commit": "a9c207aeadb9f2c03b1698b04d6109a37e132166",
+  "data_audits": {
+    "seed_20260827": {
+      "variant": "Q1",
+      "sources": [
+        {
+          "name": "dataset-v1",
+          "path": "data/generated/dataset_v1/train.jsonl",
+          "sha256": "3eea05da2c8c2a4c06fa6bda4f338cdd27640373e0ec6dcafbdb10fcc0bcdd9c",
+          "case_count": 400
+        },
+        {
+          "name": "boundary-pack-v1",
+          "path": "data/splits/boundary_train.jsonl",
+          "sha256": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2",
+          "case_count": 240
+        }
+      ],
+      "selected_case_count": 640,
+      "group_count": 200,
+      "status_counts": {
+        "FAIL": 160,
+        "INSUFFICIENT_DATA": 128,
+        "NOT_APPLICABLE": 48,
+        "PASS": 168,
+        "WARN": 136
+      },
+      "source_counts": {
+        "boundary-pack-v1": 240,
+        "dataset-v1": 400
+      },
+      "control_type_counts": {
+        "ARITHMETIC": 66,
+        "CROSS_SECTION": 66,
+        "CURRENCY": 68,
+        "DIRECTION": 68,
+        "DISCLOSURE": 68,
+        "EVIDENCE": 64,
+        "INSUFFICIENT_DATA": 40,
+        "PERIOD": 66,
+        "UNIT": 66,
+        "VARIANCE": 68
+      },
+      "case_ids_sha256": "4b5290ffa1bc223af6f337f76a226452a8649a301d6908864c3f837e4c17ca65",
+      "system_prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+      "opened_splits": [
+        "train"
+      ],
+      "protected_splits_opened": false
+    },
+    "seed_20260828": {
+      "variant": "Q1-S2",
+      "sources": [
+        {
+          "name": "dataset-v1",
+          "path": "data/generated/dataset_v1/train.jsonl",
+          "sha256": "3eea05da2c8c2a4c06fa6bda4f338cdd27640373e0ec6dcafbdb10fcc0bcdd9c",
+          "case_count": 400
+        },
+        {
+          "name": "boundary-pack-v1",
+          "path": "data/splits/boundary_train.jsonl",
+          "sha256": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2",
+          "case_count": 240
+        }
+      ],
+      "selected_case_count": 640,
+      "group_count": 200,
+      "status_counts": {
+        "FAIL": 160,
+        "INSUFFICIENT_DATA": 128,
+        "NOT_APPLICABLE": 48,
+        "PASS": 168,
+        "WARN": 136
+      },
+      "source_counts": {
+        "boundary-pack-v1": 240,
+        "dataset-v1": 400
+      },
+      "control_type_counts": {
+        "ARITHMETIC": 66,
+        "CROSS_SECTION": 66,
+        "CURRENCY": 68,
+        "DIRECTION": 68,
+        "DISCLOSURE": 68,
+        "EVIDENCE": 64,
+        "INSUFFICIENT_DATA": 40,
+        "PERIOD": 66,
+        "UNIT": 66,
+        "VARIANCE": 68
+      },
+      "case_ids_sha256": "4b5290ffa1bc223af6f337f76a226452a8649a301d6908864c3f837e4c17ca65",
+      "system_prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+      "opened_splits": [
+        "train"
+      ],
+      "protected_splits_opened": false
+    },
+    "seed_20260829": {
+      "variant": "Q1-S3",
+      "sources": [
+        {
+          "name": "dataset-v1",
+          "path": "data/generated/dataset_v1/train.jsonl",
+          "sha256": "3eea05da2c8c2a4c06fa6bda4f338cdd27640373e0ec6dcafbdb10fcc0bcdd9c",
+          "case_count": 400
+        },
+        {
+          "name": "boundary-pack-v1",
+          "path": "data/splits/boundary_train.jsonl",
+          "sha256": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2",
+          "case_count": 240
+        }
+      ],
+      "selected_case_count": 640,
+      "group_count": 200,
+      "status_counts": {
+        "FAIL": 160,
+        "INSUFFICIENT_DATA": 128,
+        "NOT_APPLICABLE": 48,
+        "PASS": 168,
+        "WARN": 136
+      },
+      "source_counts": {
+        "boundary-pack-v1": 240,
+        "dataset-v1": 400
+      },
+      "control_type_counts": {
+        "ARITHMETIC": 66,
+        "CROSS_SECTION": 66,
+        "CURRENCY": 68,
+        "DIRECTION": 68,
+        "DISCLOSURE": 68,
+        "EVIDENCE": 64,
+        "INSUFFICIENT_DATA": 40,
+        "PERIOD": 66,
+        "UNIT": 66,
+        "VARIANCE": 68
+      },
+      "case_ids_sha256": "4b5290ffa1bc223af6f337f76a226452a8649a301d6908864c3f837e4c17ca65",
+      "system_prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
+      "opened_splits": [
+        "train"
+      ],
+      "protected_splits_opened": false
+    }
+  },
+  "run_queue": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "config": "configs/qlora_q1_v1.json",
+      "action": "reuse"
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "config": "configs/qlora_q1_seed_20260828_v1.json",
+      "action": "train"
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "config": "configs/qlora_q1_seed_20260829_v1.json",
+      "action": "train"
+    }
+  ],
+  "protected_splits_opened": false
+}

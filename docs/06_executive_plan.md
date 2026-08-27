@@ -247,6 +247,11 @@ Szczegóły: [`12_sprint_3_report.md`](12_sprint_3_report.md).
 **Cel:** potwierdzić stabilność Q1 między seedami i zbudować zamknięty evidence
 package bez strojenia na test.
 
+**Status po review 28 sierpnia 2026:** replikacja trzech seedów ukończona;
+protected evidence w stanie `CONDITIONAL_HOLD`. Przed otwarciem testów wymagany
+jest Sprint 4.2A: diagnostic set poza szablonami, Q2/source integrity guard,
+analiza severity i ponowna decyzja Sol/high.
+
 ### Zakres
 
 - wykorzystanie wyniku M3 jako pierwszego z trzech seedów Q1,
@@ -271,6 +276,7 @@ package bez strojenia na test.
 ### Kryteria odbioru
 
 - wyniki główne raportują średnią i rozrzut między seedami,
+- severity i poprawność `source_id` są osobnymi kryteriami bramkowymi,
 - false positive rate jest raportowany oddzielnie,
 - `INSUFFICIENT_DATA` i przypadki wysokiego ryzyka mają osobne metryki,
 - `WARN`, `NOT_APPLICABLE`, pair accuracy i koszty biznesowe mają osobne
@@ -284,7 +290,8 @@ package bez strojenia na test.
 Zamrażamy wyniki, konfiguracje i przykłady używane w materiałach szkoleniowych.
 M4 wymaga trzech seedów bez selekcji najlepszego, oddzielnych testów, ręcznego
 review challenge i diagnostic setu poza szablonami. Szczegółowy, obowiązujący
-plan: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
+plan: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md). Review
+przed protected evidence: [`14_sprint_4_analytical_review.md`](14_sprint_4_analytical_review.md).
 
 ## Sprint 5 — materiały szkoleniowe
 

@@ -261,15 +261,18 @@ Można też uruchamiać etapy oddzielnie:
 .\scripts\run_sprint4_training.ps1 -Phase validation
 ```
 
-Po wyniku `READY_TO_OPEN_PROTECTED_SPLITS` należy wrócić do Sol/high, wykonać
-review raportu i dopiero po jawnej decyzji uruchomić:
+Sam wynik `READY_TO_OPEN_PROTECTED_SPLITS` z automatycznej bramki nie wystarcza.
+Review Sol/high z 28 sierpnia 2026 ustawił analityczną decyzję
+`HOLD_FOR_EVIDENCE_HARDENING`. Najpierw należy wykonać Sprint 4.2A opisany w
+`docs/14_sprint_4_analytical_review.md`. Dopiero po zmianie wersjonowanej bramki
+na `APPROVED_TO_OPEN_PROTECTED_SPLITS` można uruchomić:
 
 ```powershell
 .\scripts\run_sprint4_evidence.ps1 -ConfirmOpenProtectedSplits
 ```
 
-Bez przełącznika, bez raportu pre-test albo przy decyzji STOP skrypt kończy się
-przed odczytem chronionych danych. Szczegóły metodologiczne i progi zawiera
+Bez przełącznika, bez raportu pre-test, przy decyzji STOP albo przy analitycznym
+HOLD skrypt kończy się przed odczytem chronionych danych. Szczegóły metodologiczne i progi zawiera
 [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
 
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:

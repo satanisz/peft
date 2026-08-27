@@ -39,6 +39,20 @@ def build_evidence_summary(
     ]
     challenge_accuracy = [float(item["aggregate"]["status_correct_rate"]) for item in challenge_reports]
     challenge_schema = [float(item["aggregate"]["schema_valid_rate"]) for item in challenge_reports]
+    test_severity = [
+        float(item["aggregate"]["severity_correct_rate"])
+        for item in [*original_reports, *boundary_reports]
+    ]
+    test_sources = [
+        float(item["aggregate"]["sources_valid_rate"])
+        for item in [*original_reports, *boundary_reports]
+    ]
+    challenge_severity = [
+        float(item["aggregate"]["severity_correct_rate"]) for item in challenge_reports
+    ]
+    challenge_sources = [
+        float(item["aggregate"]["sources_valid_rate"]) for item in challenge_reports
+    ]
 
     numeric_checks = {
         "exactly_three_reports_per_split": len(original_reports) == len(boundary_reports)
@@ -63,12 +77,20 @@ def build_evidence_summary(
         "boundary_unsafe_pass_each_seed": max(boundary_unsafe)
         <= thresholds["boundary_unsafe_pass_rate_seed_max"],
         "evidence_schema_each_seed": min(evidence_schema) >= thresholds["schema_valid_rate_seed_min"],
+        "evidence_severity_each_seed": min(test_severity)
+        >= thresholds["severity_valid_rate_seed_min"],
+        "evidence_sources_each_seed": min(test_sources)
+        >= thresholds["sources_valid_rate_seed_min"],
         "challenge_status_accuracy_mean": statistics.fmean(challenge_accuracy)
         >= thresholds["challenge_status_accuracy_mean_min"],
         "challenge_status_accuracy_each_seed": min(challenge_accuracy)
         >= thresholds["challenge_status_accuracy_seed_min"],
         "challenge_schema_each_seed": min(challenge_schema)
         >= thresholds["challenge_schema_valid_rate_seed_min"],
+        "challenge_severity_each_seed": min(challenge_severity)
+        >= thresholds["challenge_severity_valid_rate_seed_min"],
+        "challenge_sources_each_seed": min(challenge_sources)
+        >= thresholds["challenge_sources_valid_rate_seed_min"],
     }
     review = manual_review or {}
     review_checks = {
@@ -103,6 +125,10 @@ def build_evidence_summary(
             "boundary_fail_false_positive_rate": _stats(boundary_fpr),
             "boundary_unsafe_pass_rate": _stats(boundary_unsafe),
             "challenge_status_accuracy": _stats(challenge_accuracy),
+            "test_severity_valid_rate": _stats(test_severity),
+            "test_sources_valid_rate": _stats(test_sources),
+            "challenge_severity_valid_rate": _stats(challenge_severity),
+            "challenge_sources_valid_rate": _stats(challenge_sources),
         },
         "scope_notice": "Ten raport nie jest automatyczną decyzją produkcyjną ani końcowym M4 PASS.",
     }

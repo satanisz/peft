@@ -13,6 +13,14 @@ $projectRoot = Split-Path -Parent $scriptRoot
 Set-Location -LiteralPath $projectRoot
 $pythonPath = Join-Path $projectRoot ".venv\Scripts\python.exe"
 $matrix = Get-Content -Raw -LiteralPath (Join-Path $projectRoot "configs\sprint4_matrix_v1.json") | ConvertFrom-Json
+$analyticalGatePath = Join-Path $projectRoot "configs\sprint4_protected_open_gate_v1.json"
+if (-not (Test-Path -LiteralPath $analyticalGatePath)) {
+    throw "Brak analitycznej bramki protected evidence. Wymagany review Sol/high."
+}
+$analyticalGate = Get-Content -Raw -LiteralPath $analyticalGatePath | ConvertFrom-Json
+if ($analyticalGate.decision -ne "APPROVED_TO_OPEN_PROTECTED_SPLITS" -or $analyticalGate.protected_splits_opened) {
+    throw "Analityczny review nie zezwala na otwarcie protected splits: $($analyticalGate.decision)"
+}
 $gatePath = Join-Path $projectRoot "results\sprint4\m4_pretest_summary.json"
 if (-not (Test-Path -LiteralPath $gatePath)) {
     throw "Brak m4_pretest_summary.json. Najpierw ukończ trzy seedy i validation."
@@ -30,6 +38,7 @@ $authorization = [ordered]@{
     authorized_at_utc = [DateTime]::UtcNow.ToString("o")
     pretest_summary_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $gatePath).Hash.ToLowerInvariant()
     matrix_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $projectRoot "configs\sprint4_matrix_v1.json")).Hash.ToLowerInvariant()
+    analytical_gate_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $analyticalGatePath).Hash.ToLowerInvariant()
     git_commit = (& git rev-parse HEAD).Trim()
     explicit_operator_confirmation = $true
 }

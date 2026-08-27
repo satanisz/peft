@@ -36,7 +36,22 @@ def build_pretest_summary(
     thresholds = matrix["pretest_thresholds"]
     original_macro = [float(item["aggregate"]["macro_f1"]) for item in original_reports]
     boundary_macro = [float(item["aggregate"]["macro_f1"]) for item in boundary_reports]
-    schema = [float(item["aggregate"]["schema_valid_rate"]) for item in boundary_reports]
+    schema = [
+        float(item["aggregate"]["schema_valid_rate"])
+        for item in [*original_reports, *boundary_reports]
+    ]
+    original_severity = [
+        float(item["aggregate"]["severity_correct_rate"]) for item in original_reports
+    ]
+    boundary_severity = [
+        float(item["aggregate"]["severity_correct_rate"]) for item in boundary_reports
+    ]
+    original_sources = [
+        float(item["aggregate"]["sources_valid_rate"]) for item in original_reports
+    ]
+    boundary_sources = [
+        float(item["aggregate"]["sources_valid_rate"]) for item in boundary_reports
+    ]
     warn = [_recall(item, "WARN") for item in boundary_reports]
     not_applicable = [_recall(item, "NOT_APPLICABLE") for item in boundary_reports]
     pair_accuracy = [float(item["boundary"]["pair_accuracy"]) for item in boundary_reports]
@@ -57,6 +72,10 @@ def build_pretest_summary(
         "boundary_macro_seed_range": max(boundary_macro) - min(boundary_macro)
         <= thresholds["boundary_macro_f1_range_max"],
         "schema_each_seed": min(schema) >= thresholds["schema_valid_rate_seed_min"],
+        "severity_each_seed": min([*original_severity, *boundary_severity])
+        >= thresholds["severity_valid_rate_seed_min"],
+        "sources_each_seed": min([*original_sources, *boundary_sources])
+        >= thresholds["sources_valid_rate_seed_min"],
         "warn_recall_each_seed": min(warn) >= thresholds["warn_recall_seed_min"],
         "not_applicable_recall_each_seed": min(not_applicable)
         >= thresholds["not_applicable_recall_seed_min"],
@@ -76,6 +95,10 @@ def build_pretest_summary(
                 "peak_gpu_allocated_gib": training.get("peak_gpu_allocated_gib"),
                 "original_macro_f1": original["aggregate"]["macro_f1"],
                 "boundary_macro_f1": boundary["aggregate"]["macro_f1"],
+                "original_severity_valid_rate": original["aggregate"]["severity_correct_rate"],
+                "boundary_severity_valid_rate": boundary["aggregate"]["severity_correct_rate"],
+                "original_sources_valid_rate": original["aggregate"]["sources_valid_rate"],
+                "boundary_sources_valid_rate": boundary["aggregate"]["sources_valid_rate"],
                 "warn_recall": _recall(boundary, "WARN"),
                 "not_applicable_recall": _recall(boundary, "NOT_APPLICABLE"),
                 "pair_accuracy": boundary["boundary"]["pair_accuracy"],
@@ -94,6 +117,10 @@ def build_pretest_summary(
         "aggregate": {
             "original_macro_f1": _stats(original_macro),
             "boundary_macro_f1": _stats(boundary_macro),
+            "original_severity_valid_rate": _stats(original_severity),
+            "boundary_severity_valid_rate": _stats(boundary_severity),
+            "original_sources_valid_rate": _stats(original_sources),
+            "boundary_sources_valid_rate": _stats(boundary_sources),
             "warn_recall": _stats(warn),
             "not_applicable_recall": _stats(not_applicable),
             "pair_accuracy": _stats(pair_accuracy),
@@ -102,18 +129,21 @@ def build_pretest_summary(
             "training_peak_vram_gib": _stats(peak_vram),
         },
         "protected_splits_opened": False,
+        "automated_gate_only": True,
+        "analytical_gate_path": matrix["policy"].get("analytical_gate_path"),
         "policy": matrix["policy"],
     }
 
 
 def render_markdown(summary: dict[str, Any]) -> str:
     rows = [
-        "| Seed | Oryginalny F1 | Boundary F1 | WARN | N/A | Pary | FAIL FPR | Unsafe PASS |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        "| Seed | Oryginalny F1 | Boundary F1 | Severity orig. | Sources boundary | WARN | N/A | Pary | FAIL FPR | Unsafe PASS |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
     for item in summary["seed_results"]:
         rows.append(
             f"| {item['seed']} | {item['original_macro_f1']:.3f} | {item['boundary_macro_f1']:.3f} | "
+            f"{item['original_severity_valid_rate']:.1%} | {item['boundary_sources_valid_rate']:.1%} | "
             f"{item['warn_recall']:.1%} | {item['not_applicable_recall']:.1%} | "
             f"{item['pair_accuracy']:.1%} | {item['fail_false_positive_rate']:.1%} | "
             f"{item['unsafe_pass_rate']:.1%} |"
@@ -131,7 +161,8 @@ def render_markdown(summary: dict[str, Any]) -> str:
             "|---|---|",
             *checks,
             "",
-            "Protected splits pozostają nieotwarte. Decyzja READY wymaga jeszcze jawnego potwierdzenia operatora.",
+            "Protected splits pozostają nieotwarte. Decyzja READY dotyczy wyłącznie bramki automatycznej; "
+            "obowiązuje także osobny review analityczny i jawne potwierdzenie operatora.",
         ]
     ) + "\n"
 

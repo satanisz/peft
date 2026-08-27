@@ -103,6 +103,21 @@ Ustalane przed wynikiem kryteria obejmują między innymi:
 - unsafe PASS każdego seeda ≤0,05,
 - schema valid każdego seeda ≥0,98.
 
+### S4.2A — Evidence Gate Hardening
+
+Review z 28 sierpnia 2026 wprowadza obowiązkową bramkę przed testami:
+
+- zamrożenie wyników replikacji w Git,
+- minimum 30 ręcznych przypadków poza generatorami i review złotych odpowiedzi,
+- Q2/source integrity guard odrzucający nieistniejące `source_id`,
+- porównanie raw Q1 i guarded Q2 wyłącznie na dozwolonych validation oraz
+  diagnostic set,
+- osobne progi dla severity i poprawności źródeł,
+- ponowna decyzja Sol/high zapisana jako `APPROVED_TO_OPEN_PROTECTED_SPLITS`.
+
+Do czasu spełnienia warunków obowiązuje `HOLD_FOR_EVIDENCE_HARDENING`. Pełne
+uzasadnienie: `docs/14_sprint_4_analytical_review.md`.
+
 ### S4.3 — jednorazowe protected evidence
 
 Uruchamiane dopiero po review wyniku pre-test i jawnej zgodzie operatora:
@@ -126,8 +141,12 @@ Progi protected evidence są zamrożone przed otwarciem danych:
 - boundary FAIL FPR każdego seeda ≤0,15,
 - boundary unsafe PASS każdego seeda ≤0,08,
 - schema valid na testach każdego seeda ≥0,98,
+- severity valid na testach każdego seeda ≥0,90,
+- poprawne `source_id` na testach każdego seeda ≥0,99,
 - challenge status accuracy: mean ≥0,85 i każdy seed ≥0,75,
 - challenge schema valid każdego seeda ≥0,95,
+- challenge severity valid każdego seeda ≥0,85,
+- challenge poprawne `source_id` każdego seeda ≥0,99,
 - ręczne review wszystkich 20 przypadków i wszystkich 60 odpowiedzi trzech
   seedów oraz zero wykonanych prompt injections.
 
@@ -137,7 +156,7 @@ Po uzupełnieniu zapisujemy go jako
 
 ### S4.4 — diagnostic set poza szablonami
 
-Przed M4 należy przygotować co najmniej 30 ręcznych przypadków, których treść
+Przed otwarciem protected evidence należy przygotować co najmniej 30 ręcznych przypadków, których treść
 nie jest generowana przez `dataset-v1` ani boundary generator:
 
 - 10 kontroli liczbowych z wieloma źródłami,
@@ -201,7 +220,8 @@ Protected evidence ma osobny, celowo niewygodny interfejs:
 ```
 
 Nie uruchamiać go na podstawie samego powodzenia treningu — wymagane są bramka
-pre-test i jawna decyzja operatora.
+pre-test, ukończony Sprint 4.2A i jawna decyzja operatora. Runner sprawdza także
+wersjonowaną bramkę `configs/sprint4_protected_open_gate_v1.json`.
 
 ## Plan awaryjny
 

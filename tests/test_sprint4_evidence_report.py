@@ -72,6 +72,20 @@ class Sprint4EvidenceReportTests(unittest.TestCase):
 
         self.assertEqual(summary["decision"], "FAILED_EVIDENCE_THRESHOLDS")
 
+    def test_invalid_source_integrity_fails_evidence(self) -> None:
+        invalid_sources = copy.deepcopy(self.boundary)
+        invalid_sources["aggregate"]["sources_valid_rate"] = 0.98
+        summary = build_evidence_summary(
+            self.matrix,
+            self._reports(self.original),
+            [copy.deepcopy(self.boundary), copy.deepcopy(self.boundary), invalid_sources],
+            self._reports(self.original),
+            None,
+        )
+
+        self.assertEqual(summary["decision"], "FAILED_EVIDENCE_THRESHOLDS")
+        self.assertFalse(summary["numeric_checks"]["evidence_sources_each_seed"])
+
 
 if __name__ == "__main__":
     unittest.main()

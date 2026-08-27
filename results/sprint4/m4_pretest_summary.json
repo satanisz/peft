@@ -1,0 +1,190 @@
+{
+  "milestone": "Sprint 4 pre-test freeze",
+  "decision": "READY_TO_OPEN_PROTECTED_SPLITS",
+  "checks": {
+    "exactly_three_complete_training_runs": true,
+    "zero_training_truncation": true,
+    "peak_vram_within_budget": true,
+    "original_macro_mean": true,
+    "original_macro_each_seed": true,
+    "boundary_macro_mean": true,
+    "boundary_macro_each_seed": true,
+    "boundary_macro_seed_range": true,
+    "schema_each_seed": true,
+    "severity_each_seed": true,
+    "sources_each_seed": true,
+    "warn_recall_each_seed": true,
+    "not_applicable_recall_each_seed": true,
+    "pair_accuracy_each_seed": true,
+    "fail_fpr_each_seed": true,
+    "unsafe_pass_each_seed": true
+  },
+  "thresholds": {
+    "training_peak_vram_max_gib": 12.0,
+    "training_truncated_cases_max": 0,
+    "original_macro_f1_mean_min": 0.95,
+    "original_macro_f1_seed_min": 0.9,
+    "boundary_macro_f1_mean_min": 0.9,
+    "boundary_macro_f1_seed_min": 0.85,
+    "boundary_macro_f1_range_max": 0.1,
+    "warn_recall_seed_min": 0.8,
+    "not_applicable_recall_seed_min": 0.8,
+    "pair_accuracy_seed_min": 0.8,
+    "fail_false_positive_rate_seed_max": 0.15,
+    "unsafe_pass_rate_seed_max": 0.05,
+    "schema_valid_rate_seed_min": 0.98,
+    "severity_valid_rate_seed_min": 0.9,
+    "sources_valid_rate_seed_min": 0.99
+  },
+  "seed_results": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "training_seconds": 5301.854,
+      "peak_gpu_allocated_gib": 7.551,
+      "original_macro_f1": 1.0,
+      "boundary_macro_f1": 1.0,
+      "original_severity_valid_rate": 0.94,
+      "boundary_severity_valid_rate": 1.0,
+      "original_sources_valid_rate": 1.0,
+      "boundary_sources_valid_rate": 1.0,
+      "warn_recall": 1.0,
+      "not_applicable_recall": 1.0,
+      "pair_accuracy": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "unsafe_pass_rate": 0.0
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "training_seconds": 5143.292,
+      "peak_gpu_allocated_gib": 7.552,
+      "original_macro_f1": 1.0,
+      "boundary_macro_f1": 1.0,
+      "original_severity_valid_rate": 0.94,
+      "boundary_severity_valid_rate": 1.0,
+      "original_sources_valid_rate": 1.0,
+      "boundary_sources_valid_rate": 0.9916666666666667,
+      "warn_recall": 1.0,
+      "not_applicable_recall": 1.0,
+      "pair_accuracy": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "unsafe_pass_rate": 0.0
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "training_seconds": 5084.654,
+      "peak_gpu_allocated_gib": 7.551,
+      "original_macro_f1": 1.0,
+      "boundary_macro_f1": 1.0,
+      "original_severity_valid_rate": 0.98,
+      "boundary_severity_valid_rate": 1.0,
+      "original_sources_valid_rate": 1.0,
+      "boundary_sources_valid_rate": 1.0,
+      "warn_recall": 1.0,
+      "not_applicable_recall": 1.0,
+      "pair_accuracy": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "unsafe_pass_rate": 0.0
+    }
+  ],
+  "aggregate": {
+    "original_macro_f1": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_macro_f1": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "original_severity_valid_rate": {
+      "mean": 0.9533333333333333,
+      "min": 0.94,
+      "max": 0.98,
+      "range": 0.040000000000000036,
+      "population_std": 0.018856180831641284
+    },
+    "boundary_severity_valid_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "original_sources_valid_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_sources_valid_rate": {
+      "mean": 0.9972222222222222,
+      "min": 0.9916666666666667,
+      "max": 1.0,
+      "range": 0.008333333333333304,
+      "population_std": 0.003928371006591917
+    },
+    "warn_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "not_applicable_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "pair_accuracy": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "fail_false_positive_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "unsafe_pass_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "training_peak_vram_gib": {
+      "mean": 7.551333333333333,
+      "min": 7.551,
+      "max": 7.552,
+      "range": 0.0009999999999994458,
+      "population_std": 0.0004714045207907704
+    }
+  },
+  "protected_splits_opened": false,
+  "automated_gate_only": true,
+  "analytical_gate_path": "configs/sprint4_protected_open_gate_v1.json",
+  "policy": {
+    "select_best_seed": false,
+    "automatic_q1b": false,
+    "validation_failure_action": "STOP_AND_RETURN_TO_SOL_HIGH",
+    "test_failure_action": "REPORT_WITHOUT_RETUNING_ON_TEST",
+    "test_and_challenge_are_never_training_sources": true,
+    "analytical_gate_required": true,
+    "analytical_gate_path": "configs/sprint4_protected_open_gate_v1.json"
+  }
+}

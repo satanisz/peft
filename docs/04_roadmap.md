@@ -68,8 +68,8 @@ Rezultat: powtarzalny trening oraz gotowy adapter demonstracyjny.
 
 ## Etap 5 — pełny benchmark
 
-Status: przygotowany do uruchomienia — zmodyfikowany po M3; dwa nowe seedy Q1,
-automatyczna bramka pre-test i jawna ochrona test/challenge.
+Status: replikacja ukończona; `CONDITIONAL_HOLD_BEFORE_PROTECTED_EVIDENCE` po
+review z 28 sierpnia 2026. Przed testami wymagany Evidence Gate Hardening.
 
 - zamrożone B3/Q0 oraz trzy seedy Q1 bez wyboru najlepszego,
 - Q2 jako eksperyment z kontrolami deterministycznymi,
@@ -106,12 +106,13 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Uruchomić przygotowany runner Sprintu 4 dla dwóch brakujących seedów. Istniejący
-wynik M3 jest seedem pierwszym. Runner kończy się na dozwolonym validation i
-bramce pre-test; protected splits wymagają osobnej decyzji Sol/high i jawnego
-potwierdzenia operatora.
+Wykonać Sprint 4.2A: zamrozić wyniki trzech seedów, przygotować 30 ręcznych
+przypadków poza szablonami, wdrożyć Q2/source integrity guard i porównać Q1–Q2
+na dozwolonych validation. Protected splits pozostają zamknięte do decyzji
+`APPROVED_TO_OPEN_PROTECTED_SPLITS`.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
 
 Szczegóły: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
+Review: [`14_sprint_4_analytical_review.md`](14_sprint_4_analytical_review.md).
