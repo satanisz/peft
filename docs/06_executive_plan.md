@@ -229,6 +229,18 @@ Jeżeli bramka nie zostanie spełniona, najpierw analizujemy politykę i dobór
 danych. Nie rozpoczynamy szerokiego sweepu hiperparametrów w celu znalezienia
 pojedynczego korzystnego wyniku.
 
+### Wynik Sprintu 3 — 27 sierpnia 2026
+
+Status: **ukończony, M3 PASS**. Q1 osiągnął boundary macro-F1 1,000 i 100%
+poprawności minimalnych par przy redukcji średniego inputu o 51,6% względem B3.
+Q0 potwierdził, że sam standardowy train nie uczy bezpiecznie granic etykiet:
+boundary macro-F1 0,786 oraz WARN recall 66,7%. Model scalony BF16 został
+zapisany i ponownie załadowany w kontrolowanym smoke teście.
+
+Decyzja dotyczy adapter candidate do Sprintu 4. Testy i challenge pozostają
+zamknięte, wynik pochodzi z jednego seeda i nie stanowi zgody produkcyjnej.
+Szczegóły: [`12_sprint_3_report.md`](12_sprint_3_report.md).
+
 ## Sprint 4 — benchmark i eksperymenty zaawansowane
 
 **Czas:** 4–5 dni  

@@ -1,0 +1,9 @@
+{
+  "adapter_id": "Q1",
+  "adapter_path": "artifacts/adapters/q1-v0.1",
+  "merged_path": "artifacts/merged/q1-v0.1-bf16",
+  "dtype": "torch.bfloat16",
+  "safe_merge": true,
+  "config_sha256": "61add0ba7d99d4d831d0f2bc0048d9c4ce368cd7364444ed3531f30bae17526b",
+  "total_bytes": 8056443216
+}

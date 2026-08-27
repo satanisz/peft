@@ -1,0 +1,57 @@
+{
+  "adapter_id": "Q1",
+  "adapter_path": "artifacts/adapters/q1-v0.1",
+  "expected_base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "actual_base_model": "Qwen/Qwen3-4B-Instruct-2507",
+  "base_model_compatible": true,
+  "peft_type": "LORA",
+  "rank": 16,
+  "alpha": 32,
+  "target_modules": [
+    "up_proj",
+    "o_proj",
+    "v_proj",
+    "gate_proj",
+    "q_proj",
+    "k_proj",
+    "down_proj"
+  ],
+  "files": [
+    {
+      "name": "adapter_config.json",
+      "bytes": 1153,
+      "sha256": "0adddda57dcc303897e8936cf56ac189e5253e893f05702c69aeadef68aaa3ce"
+    },
+    {
+      "name": "adapter_model.safetensors",
+      "bytes": 66127776,
+      "sha256": "a2c2574521072cfcb18e31127d714246ccc604be31b34647768718022564d555"
+    },
+    {
+      "name": "chat_template.jinja",
+      "bytes": 2690,
+      "sha256": "0ab115e84509e86db2bb05a63edf63778ae7fe624972cdfa982b1e59053d6710"
+    },
+    {
+      "name": "README.md",
+      "bytes": 1483,
+      "sha256": "b22454e670691b6245e960a99bad0f9bedd2cf4466ec6933485e3fddf33dab0b"
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 11422650,
+      "sha256": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 725,
+      "sha256": "a312139b5701f38b824c42b238cf3a99b89a81ba0cdd364e3ca02caccb4c52d1"
+    },
+    {
+      "name": "training_args.bin",
+      "bytes": 5649,
+      "sha256": "1bff712f8b8d58794515e9d5cc4b02683abbe0c8d7bd4ed5d6166926d971f603"
+    }
+  ],
+  "total_bytes": 77562126
+}

@@ -2,7 +2,7 @@
   "incident_id": "S3-Q0-CHECKPOINT-001",
   "date": "2026-08-27",
   "run": "Q0",
-  "status": "run_rejected_as_formal_result",
+  "status": "resolved",
   "last_completed_step": 50,
   "planned_steps": 150,
   "completed_epochs": 1.0,
@@ -32,7 +32,14 @@
   "resolution": {
     "configuration_change": "save_only_model=true for Q0 and Q1 checkpoints",
     "rationale": "Adapter checkpoints are sufficient for inference and workshop recovery; optimizer-state resume is not required for the reference run.",
-    "required_next_action": "Restart Windows, rerun Q0 from the beginning, then run Q1.",
-    "diagnostic_checkpoint_policy": "Do not use checkpoint-50 as an M3 result."
+    "required_next_action": "completed",
+    "verification": {
+      "q0_rerun_status": "completed_150_of_150_steps",
+      "q1_run_status": "completed_240_of_240_steps",
+      "model_only_checkpoints_written": true,
+      "final_adapters_inspected": true,
+      "merged_q1_reload_smoke_passed": true
+    },
+    "diagnostic_checkpoint_policy": "The original checkpoint-50 remains excluded from M3 and is archived under artifacts/diagnostics."
   }
 }

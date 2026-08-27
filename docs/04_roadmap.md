@@ -54,7 +54,7 @@ Rezultat: mierzalne granice decyzji i uczciwy kontrakt dla adaptera.
 
 ## Etap 4 — pipeline LoRA/QLoRA
 
-Status: można rozpocząć po 21:00 na podstawie warunkowej akceptacji M2.5
+Status: ukończony 27 sierpnia 2026 — M3 PASS, Q1 jako `adapter-v0.1` candidate
 
 - wybór i przypięcie modelu,
 - konfiguracja LoRA BF16,
@@ -102,6 +102,10 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Po 21:00 rozpocząć Sprint 3 od preflightu QLoRA oraz konfiguracji Q0 i Q1.
-Przed użyciem poza warsztatem wymagany jest niezależny sign-off ekspercki i
-formalna decyzja o zamrożeniu `boundary-pack-v1.0.0`.
+Rozpocząć Sprint 4 od przypięcia Q1 jako jednoseedowego adapter candidate,
+uruchomienia trzech seedów oraz jednorazowego otwarcia zamrożonych testów po
+zamrożeniu konfiguracji. Następnie wykonać challenge i porównać Q1 z Q2, czyli
+adapterem uzupełnionym o kontrole deterministyczne.
+
+M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
+niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.

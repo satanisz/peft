@@ -215,6 +215,13 @@ uv run peft-adapter-ops merge `
   --output artifacts/merged/q1-v0.1-bf16 `
   --manifest results/sprint3/q1_merge_manifest.json
 
+uv run peft-adapter `
+  --config configs/qlora_q1_v1.json `
+  --merged-model artifacts/merged/q1-v0.1-bf16 `
+  --data data/generated/dataset_v1/development.jsonl `
+  --limit 1 `
+  --output results/sprint3/q1_merged_reload_smoke.jsonl
+
 uv run peft-sprint3-report
 ```
 

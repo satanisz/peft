@@ -28,6 +28,8 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport Sprintu 2 — baseline Qwen3-4B](docs/08_sprint_2_report.md)
 - [Executive plan Sprintu 2.5 — Label Boundary Hardening](docs/09_sprint_2_5_executive_plan.md)
 - [Raport Sprintu 2.5 — wyniki B1/B2/B3](docs/10_sprint_2_5_report.md)
+- [Scenariusz demonstracyjny Sprintu 3](docs/11_sprint_3_training_scenario.md)
+- [Raport Sprintu 3 — QLoRA i M3](docs/12_sprint_3_report.md)
 
 ## Planowane artefakty
 
@@ -43,8 +45,9 @@ trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
 
 ## Najbliższy kamień milowy
 
-Sprint 2.5 został warunkowo zaakceptowany do celów warsztatowych. Boundary
-pack zawiera 540 przypadków, a B3 osiągnął macro-F1 0,894 na boundary
-validation. Sprint 3 (Q0/Q1) rozpocznie się po 21:00; formalne zamrożenie
-`boundary-pack-v1.0.0` dla użycia poza warsztatem wymaga niezależnego review
-eksperckiego.
+Sprint 3 zakończył się decyzją M3 PASS. Q1 osiągnął macro-F1 1,000 oraz 100%
+poprawności 60 minimalnych par na boundary validation, zachowując macro-F1
+1,000 na oryginalnym validation i redukując input tokens o 51,6% względem B3.
+Q1 jest kandydatem `adapter-v0.1` do pełnego benchmarku Sprintu 4. Wyniki są
+syntetyczne i jednoseedowe; testy oraz challenge pozostają zamknięte, a użycie
+poza warsztatem wymaga niezależnego review eksperckiego.

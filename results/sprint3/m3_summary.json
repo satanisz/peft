@@ -1,0 +1,167 @@
+{
+  "milestone": "M3 Adapter candidate",
+  "decision": "PASS",
+  "checks": {
+    "q0_training_completed": true,
+    "q1_training_completed": true,
+    "q1_zero_training_truncation": true,
+    "q1_peak_vram_at_most_12_gib": true,
+    "demo_at_most_15_minutes": true,
+    "adapter_reload_schema_valid": true,
+    "schema_valid_at_least_98_percent": true,
+    "boundary_quality_or_token_efficiency": true,
+    "warn_recall_no_regression": true,
+    "not_applicable_recall_at_least_60_percent": true,
+    "fail_false_positive_rate_at_most_15_percent": true,
+    "pass_recall_regression_at_most_5pp": true,
+    "fail_recall_regression_at_most_5pp": true
+  },
+  "comparison": {
+    "B3_boundary": {
+      "count": 120,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 0.9083333333333333,
+      "macro_f1": 0.8938678411157266,
+      "fail_false_positive_rate": 0.08571428571428572,
+      "recall": {
+        "PASS": 0.8666666666666667,
+        "WARN": 0.9333333333333333,
+        "FAIL": 1.0,
+        "INSUFFICIENT_DATA": 0.7666666666666667,
+        "NOT_APPLICABLE": 1.0
+      },
+      "mean_input_tokens": 2896.9167,
+      "p95_latency_s": 32.3854,
+      "peak_gpu_allocated_gib": 10.542,
+      "truncated_rate": 0.0,
+      "pair_count": 60,
+      "pair_accuracy": 0.8166666666666667,
+      "flip_consistency": 0.8166666666666667,
+      "unsafe_pass_rate": 0.02666666666666667,
+      "unnecessary_escalation_rate": 0.07777777777777778,
+      "mean_business_cost": 0.38333333333333336,
+      "total_business_cost": 46,
+      "applicability_missing_confusion": {
+        "NOT_APPLICABLE->INSUFFICIENT_DATA": 0,
+        "INSUFFICIENT_DATA->NOT_APPLICABLE": 0
+      }
+    },
+    "Q0_original_validation": {
+      "count": 50,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "recall": {
+        "PASS": 1.0,
+        "WARN": 1.0,
+        "FAIL": 1.0,
+        "INSUFFICIENT_DATA": 1.0,
+        "NOT_APPLICABLE": 1.0
+      },
+      "mean_input_tokens": 1310.96,
+      "p95_latency_s": 20.5785,
+      "peak_gpu_allocated_gib": 3.454,
+      "truncated_rate": 0.0
+    },
+    "Q0_boundary_validation": {
+      "count": 120,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 0.8,
+      "macro_f1": 0.7859032294326412,
+      "fail_false_positive_rate": 0.09523809523809523,
+      "recall": {
+        "PASS": 0.8666666666666667,
+        "WARN": 0.6666666666666666,
+        "FAIL": 0.8,
+        "INSUFFICIENT_DATA": 0.9,
+        "NOT_APPLICABLE": 0.8
+      },
+      "mean_input_tokens": 1400.9167,
+      "p95_latency_s": 18.7103,
+      "peak_gpu_allocated_gib": 3.533,
+      "truncated_rate": 0.0,
+      "pair_count": 60,
+      "pair_accuracy": 0.6166666666666667,
+      "flip_consistency": 0.6166666666666667,
+      "unsafe_pass_rate": 0.08,
+      "unnecessary_escalation_rate": 0.1111111111111111,
+      "mean_business_cost": 0.8166666666666667,
+      "total_business_cost": 98,
+      "applicability_missing_confusion": {
+        "NOT_APPLICABLE->INSUFFICIENT_DATA": 3,
+        "INSUFFICIENT_DATA->NOT_APPLICABLE": 0
+      }
+    },
+    "Q1_original_validation": {
+      "count": 50,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "recall": {
+        "PASS": 1.0,
+        "WARN": 1.0,
+        "FAIL": 1.0,
+        "INSUFFICIENT_DATA": 1.0,
+        "NOT_APPLICABLE": 1.0
+      },
+      "mean_input_tokens": 1310.96,
+      "p95_latency_s": 21.1876,
+      "peak_gpu_allocated_gib": 3.454,
+      "truncated_rate": 0.0
+    },
+    "Q1_boundary_validation": {
+      "count": 120,
+      "schema_valid_rate": 1.0,
+      "status_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "recall": {
+        "PASS": 1.0,
+        "WARN": 1.0,
+        "FAIL": 1.0,
+        "INSUFFICIENT_DATA": 1.0,
+        "NOT_APPLICABLE": 1.0
+      },
+      "mean_input_tokens": 1400.9167,
+      "p95_latency_s": 24.5987,
+      "peak_gpu_allocated_gib": 3.533,
+      "truncated_rate": 0.0,
+      "pair_count": 60,
+      "pair_accuracy": 1.0,
+      "flip_consistency": 1.0,
+      "unsafe_pass_rate": 0.0,
+      "unnecessary_escalation_rate": 0.0,
+      "mean_business_cost": 0.0,
+      "total_business_cost": 0,
+      "applicability_missing_confusion": {
+        "NOT_APPLICABLE->INSUFFICIENT_DATA": 0,
+        "INSUFFICIENT_DATA->NOT_APPLICABLE": 0
+      }
+    }
+  },
+  "ablation": {
+    "boundary_data_macro_f1_delta": 0.21409677056735876,
+    "boundary_data_pair_accuracy_delta": 0.3833333333333333,
+    "boundary_data_warn_recall_delta": 0.33333333333333337,
+    "boundary_data_not_applicable_recall_delta": 0.19999999999999996,
+    "boundary_data_insufficient_recall_delta": 0.09999999999999998,
+    "boundary_data_unsafe_pass_delta": -0.08,
+    "boundary_data_unnecessary_escalation_delta": -0.1111111111111111
+  },
+  "efficiency": {
+    "q1_input_token_reduction_vs_b3": 0.5164111208306404,
+    "q0_training_seconds": 3293.28,
+    "q1_training_seconds": 5301.854,
+    "demo_training_seconds": 102.343,
+    "q0_peak_gpu_allocated_gib": 7.384,
+    "q1_peak_gpu_allocated_gib": 7.551
+  },
+  "protected_splits": {
+    "original_test": "unopened",
+    "boundary_test": "unopened",
+    "challenge": "unopened"
+  },
+  "scope_notice": "Wyniki dotyczą danych syntetycznych i nie stanowią polityki produkcyjnej banku; wymagany jest human-in-the-loop."
+}

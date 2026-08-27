@@ -13,6 +13,17 @@ from .prompts import STATUS_AWARE_SYSTEM_PROMPT, build_messages
 from .train import load_config
 
 
+def resolve_inference_artifact(
+    args: argparse.Namespace, config: dict[str, Any]
+) -> tuple[str, Path, Path | None]:
+    """Resolve an adapter or a merged model without changing evaluation semantics."""
+    if args.merged_model:
+        merged_path = resolve_project_path(args.merged_model)
+        return "merged", merged_path, None
+    adapter_path = resolve_project_path(args.adapter or config["artifacts"]["output_dir"])
+    return "adapter", adapter_path, adapter_path
+
+
 def run_adapter(args: argparse.Namespace) -> Path:
     try:
         import torch
@@ -24,7 +35,7 @@ def run_adapter(args: argparse.Namespace) -> Path:
     config, _ = load_config(args.config)
     model_config = config["model"]
     quant = config["quantization"]
-    adapter_path = resolve_project_path(args.adapter or config["artifacts"]["output_dir"])
+    artifact_type, model_source, adapter_path = resolve_inference_artifact(args, config)
     data_path = resolve_project_path(args.data)
     protected_names = {"test", "boundary_test", "challenge"}
     forbidden = protected_names & ({part.lower() for part in data_path.parts} | {data_path.stem.lower()})
@@ -43,16 +54,20 @@ def run_adapter(args: argparse.Namespace) -> Path:
         bnb_4bit_use_double_quant=bool(quant["double_quant"]),
         bnb_4bit_compute_dtype=compute_dtype,
     )
-    tokenizer = AutoTokenizer.from_pretrained(adapter_path)
+    tokenizer = AutoTokenizer.from_pretrained(model_source)
+    model_load_kwargs: dict[str, Any] = {
+        "quantization_config": bnb_config,
+        "device_map": {"": 0},
+        "dtype": compute_dtype,
+        "attn_implementation": model_config.get("attn_implementation", "sdpa"),
+    }
+    if artifact_type == "adapter":
+        model_load_kwargs["revision"] = model_config["revision"]
     base_model = AutoModelForCausalLM.from_pretrained(
-        model_config["id"],
-        revision=model_config["revision"],
-        quantization_config=bnb_config,
-        device_map={"": 0},
-        dtype=compute_dtype,
-        attn_implementation=model_config.get("attn_implementation", "sdpa"),
+        model_source if artifact_type == "merged" else model_config["id"],
+        **model_load_kwargs,
     )
-    model = PeftModel.from_pretrained(base_model, adapter_path)
+    model = PeftModel.from_pretrained(base_model, adapter_path) if adapter_path else base_model
     model.eval()
     model.config.use_cache = True
     output = resolve_project_path(args.output)
@@ -100,7 +115,9 @@ def run_adapter(args: argparse.Namespace) -> Path:
                 "model_id": model_config["id"],
                 "model_revision": model_config["revision"],
                 "adapter_id": config["id"],
-                "adapter_path": project_relative(adapter_path),
+                "artifact_type": artifact_type,
+                "adapter_path": project_relative(adapter_path) if adapter_path else None,
+                "merged_model_path": project_relative(model_source) if artifact_type == "merged" else None,
                 "prompt_style": "status_aware_zero_shot",
                 "prompt_sha256": prompt_hash,
                 "demonstration_count": 0,
@@ -126,6 +143,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Inferencja adaptera QLoRA bez demonstracji few-shot")
     parser.add_argument("--config", required=True)
     parser.add_argument("--adapter")
+    parser.add_argument("--merged-model", help="Scalony model lokalny zamiast modelu bazowego + adaptera")
     parser.add_argument("--data", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--limit", type=int)
