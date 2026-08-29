@@ -1,9 +1,10 @@
 # Karta danych — shadow-challenge-v1
 
-**Wersja:** `shadow-challenge-1.0.0`  
+**Wersja:** `shadow-challenge-1.0.0`
 **Status:** authoring i kontrola wspomagana zakończone; oczekuje na niezależne
-review człowieka/SME.  
-**Język:** polski  
+review człowieka/SME.
+
+**Język:** polski
 **Charakter:** wyłącznie dane syntetyczne, fikcyjny bank i fikcyjne źródła.
 
 ## Przeznaczenie

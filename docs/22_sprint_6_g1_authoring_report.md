@@ -1,8 +1,10 @@
 # Sprint 6 — raport authoringu S6-G1 Shadow freeze
 
-**Data:** 29 sierpnia 2026  
-**Model authoringu i kontroli:** Sol/high  
-**Decyzja:** `S6_G1_HOLD_PENDING_HUMAN_SME`  
+**Data:** 29 sierpnia 2026
+
+**Model authoringu i kontroli:** Sol/high
+
+**Decyzja:** `S6_G1_HOLD_PENDING_HUMAN_SME`
 **Protected evidence:** zamknięte; zero odczytanej treści i zero inferencji.
 
 ## Wynik
