@@ -1,0 +1,76 @@
+{
+  "milestone": "S6-G2 Technical readiness",
+  "decision": "S6_G2_PASS",
+  "checks": {
+    "g0_pass": true,
+    "g1_pass": true,
+    "demo_completed": true,
+    "demo_exactly_12_steps": true,
+    "demo_within_15_minutes": true,
+    "demo_no_training_truncation": true,
+    "demo_protected_closed": true,
+    "fresh_reload_schema_valid": true,
+    "fresh_reload_uses_384_tokens": true,
+    "fresh_reload_protected_closed": true,
+    "adapter_files_present": true,
+    "local_cache_or_adapter_available": true,
+    "offline_mode_is_local_only": true,
+    "notebooks_compile": true,
+    "unit_tests_pass": true,
+    "failure_fallbacks_rehearsed": true,
+    "shadow_not_used_for_training": true
+  },
+  "unit_tests": {
+    "passed": true,
+    "count": 77,
+    "returncode": 0,
+    "tail": "----------------------------------------------------------------------\nRan 77 tests in 0.859s\n\nOK\n"
+  },
+  "notebooks": {
+    "notebook_count": 3,
+    "compiled_code_cells": 13
+  },
+  "failure_rehearsal": {
+    "all_expected_fallbacks": true,
+    "scenarios": {
+      "oom": {
+        "injected": true,
+        "caught": true,
+        "fallback": "compact_demo"
+      },
+      "missing_model": {
+        "injected": true,
+        "caught": true,
+        "fallback": "precomputed_artifact"
+      },
+      "checkpoint_error": {
+        "injected": true,
+        "caught": true,
+        "fallback": "last_verified_adapter"
+      },
+      "offline_cache": {
+        "injected": true,
+        "caught": true,
+        "fallback": "local_only"
+      }
+    }
+  },
+  "demo": {
+    "run_id": "Q1-DEMO",
+    "steps": 12,
+    "wall_clock_seconds": 114.361,
+    "peak_gpu_allocated_gib": 7.487,
+    "adapter_dir": "artifacts/adapters/q1-demo-v0.1"
+  },
+  "offline": {
+    "mode": "simulated_HF_HUB_OFFLINE",
+    "local_cache_or_adapter_present": true,
+    "network_called": false
+  },
+  "protected_splits_opened": false,
+  "protected_content_read": false,
+  "inference_run": false,
+  "next_allowed_action": "SOL_HIGH_REVIEW_AND_OPERATOR_APPROVAL",
+  "scope_notice": "G2 potwierdza gotowość techniczną na zamrożonych artefaktach. Nie otwiera protected evidence i nie jest zgodą produkcyjną.",
+  "wall_clock_seconds": 1.322
+}

@@ -114,7 +114,8 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 S6-G0 zakończyło się PASS: kontrakt dowodowy, progi i hashe adapterów są
 zamrożone, a protected evidence nie zostało odczytane. Authoring i kontrola
 wspomagana oraz review człowieka/SME 50/50 są kompletne; S6-G1 ma status PASS.
-Następny krok to próba techniczna S6-G2 na Luna/low. Protected
+Próba techniczna S6-G2 na Luna/low zakończyła się PASS; następny krok to review
+pakietu G0/G1/G2 na Sol/high. Protected
 splits można otworzyć dopiero po PASS G1/G2, osobnej decyzji Sol/high i jawnym
 potwierdzeniu operatora.
 

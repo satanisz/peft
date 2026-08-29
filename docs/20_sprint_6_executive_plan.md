@@ -10,9 +10,9 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
-**Status wykonania:** `S6_G1_PASS` — 29 sierpnia 2026. Authoring, review 50/50
-i freeze hashy są zakończone. Następny krok: próba techniczna S6-G2 na
-Luna/low. Protected evidence pozostaje zamknięte.
+**Status wykonania:** `S6_G2_PASS` — 29 sierpnia 2026. Authoring, review 50/50,
+freeze hashy i próba techniczna są zakończone. Następny krok: review kompletnego
+pakietu na Sol/high. Protected evidence pozostaje zamknięte.
 
 ## Zasada metodologiczna
 
@@ -131,6 +131,11 @@ zatwierdził 50/50 goldów. Decyzja końcowa: `S6_G1_PASS`. Raport:
 
 Wszystkie ścieżki podstawowe i fallback przechodzą, demo nie przekracza 15
 minut, a nieudane demo nie blokuje dalszej narracji.
+
+**Wynik 29 sierpnia 2026:** `S6_G2_PASS`. Q1-DEMO miało 12 kroków i 114,361 s;
+fresh reload, offline/cache, 3 notebooki, 77 testów i 4 kontrolowane fallbacki
+przeszły. Raport:
+[`23_sprint_6_g2_technical_readiness_report.md`](23_sprint_6_g2_technical_readiness_report.md).
 
 ## S6.4 — jawna decyzja i jednorazowe protected evidence
 

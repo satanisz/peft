@@ -41,6 +41,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport S6-G0 Evidence Contract Freeze](docs/21_sprint_6_g0_report.md)
 - [Raport authoringu S6-G1 Shadow freeze](docs/22_sprint_6_g1_authoring_report.md)
 - [Karta shadow-challenge-v1](data/shadow/SHADOW_DATASET_CARD.md)
+- [Raport S6-G2 Technical readiness](docs/23_sprint_6_g2_technical_readiness_report.md)
 - [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty
@@ -65,5 +66,6 @@ Sprint 6 obejmuje próbę od czystego środowiska, 50 nowych przypadków shadow
 challenge, kontrolowane protected evidence i pełny dry-run 180 minut. Protected
 evidence pozostaje zamknięte. S6-G0 ma status PASS, a 50 goldów shadow challenge
 przeszło authoring, audyt, kontrolę wspomaganą i review człowieka/SME 50/50.
-S6-G1 ma status PASS; następny krok to próba techniczna S6-G2 na Luna/low. Wyniki dotyczą danych
+S6-G1 i S6-G2 mają status PASS; następny krok to review kompletnego pakietu na
+Sol/high. Wyniki dotyczą danych
 syntetycznych i nie stanowią zgody produkcyjnej.

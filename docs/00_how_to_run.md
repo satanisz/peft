@@ -377,7 +377,8 @@ pozwala jeszcze otworzyć protected evidence.
 
 **Bieżący stan projektu:** człowiek/SME zatwierdził 50/50 goldów, a bramka
 wydała `S6_G1_PASS`. Generator tej wersji jest zablokowany przed nadpisaniem;
-należy przejść do S6-G2.
+należy przejść do S6-G2. S6-G2 zakończyło się `S6_G2_PASS`; przed protected
+evidence wymagany jest jeszcze review Sol/high i osobna decyzja operatora.
 
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
