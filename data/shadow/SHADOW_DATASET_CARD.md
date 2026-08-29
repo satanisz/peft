@@ -1,8 +1,8 @@
 # Karta danych — shadow-challenge-v1
 
 **Wersja:** `shadow-challenge-1.0.0`
-**Status:** authoring i kontrola wspomagana zakończone; oczekuje na niezależne
-review człowieka/SME.
+**Status:** `FROZEN_S6_G1_PASS`; niezależne review człowieka/SME 50/50
+zakończone 29 sierpnia 2026.
 
 **Język:** polski
 **Charakter:** wyłącznie dane syntetyczne, fikcyjny bank i fikcyjne źródła.
@@ -49,10 +49,9 @@ Audyt authoringu wykazał zero dokładnych duplikatów i zero wspólnych
 ## Review i freeze
 
 Kontrola wspomagana Sol/high objęła 50/50 przypadków i nie wykazała uwag
-krytycznych. Nie jest ona niezależna od authoringu. Bramka S6-G1 wymaga osobnej
-akceptacji 50/50 przypadków przez człowieka/SME, nazwiska recenzenta, daty oraz
-zera nierozstrzygniętych błędów krytycznych. Do tego czasu status to
-`S6_G1_HOLD_PENDING_HUMAN_SME`.
+krytycznych. Następnie właściciel projektu jako człowiek/SME jawnie zatwierdził
+50/50 goldów bez uwag krytycznych. Bramka wydała `S6_G1_PASS`; dataset, goldy i
+pakiet źródłowy są zamrożone przed pierwszą inferencją.
 
 ## Ograniczenia
 

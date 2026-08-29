@@ -12,7 +12,17 @@ from peft_workshop.sprint6_g1_gate import build_g1_report
 
 class Sprint6G1GateTests(unittest.TestCase):
     def test_pending_human_review_holds_gate(self) -> None:
-        report = build_g1_report()
+        review = json.loads(Path("data/reviews/shadow_challenge_v1_review.json").read_text(encoding="utf-8"))
+        review.update({"review_status": "PENDING_HUMAN_SME_APPROVAL", "reviewer_name": None, "reviewed_at": None})
+        for row in review["cases"]:
+            row["decision"] = "PENDING"
+            row["critical_error"] = None
+        review["summary"] = {"reviewed_case_count": 0, "approved_case_count": 0, "critical_error_count": None, "approved_for_shadow_freeze": False}
+        with tempfile.TemporaryDirectory() as folder:
+            target = Path(folder) / "review.json"
+            target.write_text(json.dumps(review), encoding="utf-8")
+            with patch("peft_workshop.sprint6_g1_gate.resolve_project_path", side_effect=lambda value: Path(value) if Path(value).is_absolute() else Path(value)):
+                report = build_g1_report(target.resolve())
         self.assertEqual(report["decision"], "S6_G1_HOLD_PENDING_HUMAN_SME")
         self.assertTrue(all(report["mechanical_checks"].values()))
         self.assertFalse(report["protected_content_read"])

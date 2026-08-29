@@ -1,7 +1,7 @@
 {
   "dataset_id": "shadow-challenge-v1",
   "dataset_version": "shadow-challenge-1.0.0",
-  "status": "AUTHORED_ASSISTED_REVIEW_COMPLETE_PENDING_HUMAN_SME",
+  "status": "FROZEN_S6_G1_PASS",
   "dataset_path": "data/shadow/shadow_challenge_v1.jsonl",
   "dataset_sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93",
   "source_pack_path": "data/source/fictional_bank_shadow_2026.json",

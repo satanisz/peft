@@ -375,6 +375,10 @@ wszystkie uwagi. Następnie uruchamia samą bramkę:
 G1 PASS pozwala rozpocząć wyłącznie próbę techniczną S6-G2 na Luna/low. Nie
 pozwala jeszcze otworzyć protected evidence.
 
+**Bieżący stan projektu:** człowiek/SME zatwierdził 50/50 goldów, a bramka
+wydała `S6_G1_PASS`. Generator tej wersji jest zablokowany przed nadpisaniem;
+należy przejść do S6-G2.
+
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
 ```powershell

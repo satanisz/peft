@@ -5,7 +5,7 @@ from collections import Counter
 import json
 from pathlib import Path
 
-from peft_workshop.shadow_challenge import build_cases
+from peft_workshop.shadow_challenge import build_cases, write_artifacts
 
 
 class ShadowChallengeTests(unittest.TestCase):
@@ -28,6 +28,10 @@ class ShadowChallengeTests(unittest.TestCase):
         self.assertTrue(all(audit["checks"].values()))
         self.assertFalse(audit["protected_content_read"])
         self.assertEqual(audit["summary"]["exact_content_overlap"], 0)
+
+    def test_approved_dataset_cannot_be_regenerated_in_place(self) -> None:
+        with self.assertRaisesRegex(RuntimeError, "zamrożony po akceptacji SME"):
+            write_artifacts()
 
 
 if __name__ == "__main__":

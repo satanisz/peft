@@ -4,7 +4,7 @@
 
 **Model authoringu i kontroli:** Sol/high
 
-**Decyzja:** `S6_G1_HOLD_PENDING_HUMAN_SME`
+**Decyzja końcowa:** `S6_G1_PASS`
 **Protected evidence:** zamknięte; zero odczytanej treści i zero inferencji.
 
 ## Wynik
@@ -24,8 +24,9 @@ Audyt niezależności od dozwolonych wcześniejszych danych wykazał:
 - brak odczytu primary protected evidence.
 
 Kontrola wspomagana Sol/high objęła 50/50 goldów i nie wskazała błędu
-krytycznego. Ponieważ autor i reviewer wspomagany nie są od siebie niezależni,
-nie jest to formalna akceptacja SME.
+krytycznego. Właściciel projektu jako człowiek/SME następnie jawnie zatwierdził
+50/50 goldów 29 sierpnia 2026. Wszystkie kontrole ludzkie i mechaniczne G1
+przeszły; nie było nierozstrzygniętych błędów krytycznych.
 
 ## Artefakty i integralność
 
@@ -38,12 +39,11 @@ nie jest to formalna akceptacja SME.
 - szablon niezależnego review: `data/reviews/shadow_challenge_v1_review.json`,
 - wynik bramki: `results/sprint6/g1_shadow_freeze.json`.
 
-## Znaczenie decyzji HOLD
+## Znaczenie decyzji PASS
 
-Warstwa mechaniczna G1 jest kompletna. HOLD nie oznacza błędu zbioru; chroni
-rozdział ról i uniemożliwia modelowi samodzielne zatwierdzenie własnych goldów.
-Następny krok to review 50/50 przypadków przez człowieka/SME. Po wypełnieniu
-szablonu ponowne uruchomienie bramki może wydać `S6_G1_PASS`.
+`S6_G1_PASS` zamraża 50 przypadków, goldy, źródła i ich hashe przed pierwszą
+inferencją. Ponowne uruchomienie generatora tej wersji jest blokowane po
+akceptacji SME. Następny krok to próba techniczna S6-G2 na Luna/low.
 
 Nawet G1 PASS nie otwiera protected evidence. Kolejnym etapem jest S6-G2 na
 Luna/low, następnie osobny review Sol/high i jawna decyzja operatora.

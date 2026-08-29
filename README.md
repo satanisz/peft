@@ -64,6 +64,6 @@ uczestnika/prowadzącego są zamrożone jako M5 Content freeze.
 Sprint 6 obejmuje próbę od czystego środowiska, 50 nowych przypadków shadow
 challenge, kontrolowane protected evidence i pełny dry-run 180 minut. Protected
 evidence pozostaje zamknięte. S6-G0 ma status PASS, a 50 goldów shadow challenge
-przeszło authoring, audyt i kontrolę wspomaganą. Bieżący status
-`S6_G1_HOLD_PENDING_HUMAN_SME` oczekuje na niezależne review 50/50. Wyniki dotyczą danych
+przeszło authoring, audyt, kontrolę wspomaganą i review człowieka/SME 50/50.
+S6-G1 ma status PASS; następny krok to próba techniczna S6-G2 na Luna/low. Wyniki dotyczą danych
 syntetycznych i nie stanowią zgody produkcyjnej.

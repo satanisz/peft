@@ -606,6 +606,12 @@ def _sha256(path: Path) -> str:
 
 
 def write_artifacts() -> dict[str, Any]:
+    if DEFAULT_HUMAN_REVIEW.exists():
+        existing_review = json.loads(DEFAULT_HUMAN_REVIEW.read_text(encoding="utf-8"))
+        if existing_review.get("review_status") == "APPROVED_FOR_SHADOW_FREEZE":
+            raise RuntimeError(
+                "shadow-challenge-v1 jest zamrożony po akceptacji SME; nowa wersja wymaga nowych ścieżek i identyfikatora"
+            )
     cases, registry_rows = build_cases()
     audit = audit_cases(cases, registry_rows)
     if audit["decision"] == "BLOCKED":

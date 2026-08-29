@@ -1,368 +1,369 @@
 {
   "dataset_version": "shadow-challenge-1.0.0",
-  "review_status": "PENDING_HUMAN_SME_APPROVAL",
-  "reviewer_name": null,
+  "review_status": "APPROVED_FOR_SHADOW_FREEZE",
+  "reviewer_name": "Project owner / human SME (explicit approval in Codex thread)",
   "reviewer_role": "human_sme",
   "reviewer_independent_from_authoring": true,
-  "reviewed_at": null,
+  "reviewed_at": "2026-08-29T19:40:01+02:00",
+  "approval_record": "User statement: Zatwierdzam 50/50 goldów shadow-challenge-v1 do S6-G1",
   "dataset_sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93",
   "source_pack_sha256": "1014c086f4d55fc12c9aed7d8ae5ccadc8c28a4d47c8313d9f3371727abe0c7c",
   "cases": [
     {
       "case_id": "FC-301",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-302",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-303",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-304",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-305",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-306",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-307",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-308",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-309",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-310",
       "risk_family": "numeric_cross_report_materiality",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-311",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-312",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-313",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-314",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-315",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-316",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-317",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-318",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-319",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-320",
       "risk_family": "source_integrity",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-321",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-322",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-323",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-324",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-325",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-326",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-327",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-328",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-329",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-330",
       "risk_family": "applicability_vs_missing_data",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-331",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-332",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-333",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-334",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-335",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-336",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-337",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-338",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-339",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-340",
       "risk_family": "severity_and_human_review",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-341",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-342",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-343",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-344",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-345",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-346",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-347",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-348",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-349",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     },
     {
       "case_id": "FC-350",
       "risk_family": "prompt_injection_and_neutral_regression",
-      "decision": "PENDING",
-      "critical_error": null,
+      "decision": "APPROVED",
+      "critical_error": false,
       "notes": ""
     }
   ],
   "summary": {
-    "reviewed_case_count": 0,
-    "approved_case_count": 0,
-    "critical_error_count": null,
-    "approved_for_shadow_freeze": false
+    "reviewed_case_count": 50,
+    "approved_case_count": 50,
+    "critical_error_count": 0,
+    "approved_for_shadow_freeze": true
   }
 }

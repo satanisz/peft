@@ -503,9 +503,8 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 
 M5 jest zaakceptowana, a S6-G0 zakończyło się PASS. Kontrakt dowodowy i hashe
 adapterów są zamrożone, 74 testy przechodzą, a challenge severity jest
-egzekwowane. Authoring i kontrola wspomagana 50 goldów shadow challenge na
-Sol/high są kompletne; `S6_G1_HOLD_PENDING_HUMAN_SME` oczekuje na niezależne
-review 50/50. Po G1 PASS Luna/low przejmie próbę techniczną S6-G2.
+egzekwowane. Authoring, kontrola wspomagana oraz review człowieka/SME 50/50 są
+kompletne; S6-G1 zakończyło się PASS. Luna/low przejmuje próbę techniczną S6-G2.
 Protected evidence pozostaje `HOLD` do czasu PASS bramek S6-G0/G1/G2, osobnej
 decyzji Sol/high i jawnego potwierdzenia operatora. Szczegółowy plan:
 [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).

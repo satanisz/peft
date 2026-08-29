@@ -1,6 +1,6 @@
 {
   "milestone": "S6-G1 Shadow freeze",
-  "decision": "S6_G1_HOLD_PENDING_HUMAN_SME",
+  "decision": "S6_G1_PASS",
   "mechanical_checks": {
     "g0_pass": true,
     "g0_records_protected_closed": true,
@@ -17,15 +17,15 @@
     "protected_content_not_read": true
   },
   "human_sme_checks": {
-    "human_review_status_approved": false,
-    "human_reviewer_named": false,
+    "human_review_status_approved": true,
+    "human_reviewer_named": true,
     "human_reviewer_is_sme": true,
     "human_reviewer_independent": true,
-    "human_review_timestamp_present": false,
-    "human_reviewed_50_cases": false,
-    "human_approved_50_cases": false,
-    "zero_critical_human_findings": false,
-    "human_approved_for_shadow_freeze": false
+    "human_review_timestamp_present": true,
+    "human_reviewed_50_cases": true,
+    "human_approved_50_cases": true,
+    "zero_critical_human_findings": true,
+    "human_approved_for_shadow_freeze": true
   },
   "dataset": "data/shadow/shadow_challenge_v1.jsonl",
   "dataset_sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93",
@@ -35,6 +35,6 @@
   "protected_content_read": false,
   "inference_run": false,
   "automatic_approval": false,
-  "next_allowed_action": "HUMAN_SME_REVIEW_50_CASES",
+  "next_allowed_action": "COMMIT_SHADOW_FREEZE_THEN_RUN_S6_G2",
   "scope_notice": "G1 zamraża wyłącznie shadow challenge. Nie zezwala na otwarcie protected evidence; nadal wymagane są G2 i osobna jawna decyzja operatora."
 }
