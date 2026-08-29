@@ -3,14 +3,20 @@
     "model_id": "Qwen/Qwen3-4B-Instruct-2507",
     "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
     "profile": null,
-    "split": "development",
+    "split": "validation",
     "baseline_variant": null,
     "prompt_style": "status_aware_zero_shot",
+    "prompt_contract": "v1",
     "prompt_sha256": "897fb505891b33d1538ecd9288c46ebe0e4d3e593d91a24975f259915783ae2f",
     "max_new_tokens": 384,
     "do_sample": false,
     "enable_thinking": false,
-    "parameter_dtype": "torch.bfloat16"
+    "parameter_dtype": "torch.bfloat16",
+    "adapter_id": "Q1-DEMO",
+    "adapter_path": "artifacts/adapters/q1-demo-v0.1",
+    "artifact_type": "adapter",
+    "merged_model_path": null,
+    "protected_split_authorized": false
   },
   "aggregate": {
     "count": 1,
@@ -64,40 +70,40 @@
   },
   "runtime": {
     "latency_s": {
-      "mean": 20.4386,
-      "median": 20.4386,
-      "p95": 20.4386,
-      "max": 20.4386
+      "mean": 21.2199,
+      "median": 21.2199,
+      "p95": 21.2199,
+      "max": 21.2199
     },
     "input_tokens": {
-      "mean": 1365.0,
-      "median": 1365.0,
-      "p95": 1365.0,
-      "max": 1365.0
+      "mean": 1358.0,
+      "median": 1358.0,
+      "p95": 1358.0,
+      "max": 1358.0
     },
     "output_tokens": {
-      "mean": 206.0,
-      "median": 206.0,
-      "p95": 206.0,
-      "max": 206.0
+      "mean": 207.0,
+      "median": 207.0,
+      "p95": 207.0,
+      "max": 207.0
     },
     "tokens_per_second": {
-      "mean": 10.08,
-      "median": 10.08,
-      "p95": 10.08,
-      "max": 10.08
+      "mean": 9.76,
+      "median": 9.76,
+      "p95": 9.76,
+      "max": 9.76
     },
     "peak_gpu_allocated_gib": {
-      "mean": 3.388,
-      "median": 3.388,
-      "p95": 3.388,
-      "max": 3.388
+      "mean": 3.382,
+      "median": 3.382,
+      "p95": 3.382,
+      "max": 3.382
     },
     "peak_gpu_reserved_gib": {
-      "mean": 3.516,
-      "median": 3.516,
-      "p95": 3.516,
-      "max": 3.516
+      "mean": 3.512,
+      "median": 3.512,
+      "p95": 3.512,
+      "max": 3.512
     },
     "truncated_rate": 0.0
   },
@@ -207,7 +213,7 @@
   },
   "cases": [
     {
-      "case_id": "TR-0041",
+      "case_id": "TR-0046",
       "json_valid": true,
       "schema_valid": true,
       "sources_valid": true,
@@ -221,7 +227,7 @@
       "predicted_status": "PASS",
       "expected_status": "PASS",
       "control_type": "ARITHMETIC",
-      "group_id": "v1-arithmetic-f08",
+      "group_id": "v1-arithmetic-f09",
       "boundary_type": null
     }
   ]
