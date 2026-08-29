@@ -1,8 +1,10 @@
 # Sprint 6 — raport S6-G2 Technical readiness
 
-**Data:** 29 sierpnia 2026  
-**Model wykonawczy:** Luna/low  
-**Decyzja:** `S6_G2_PASS`  
+**Data:** 29 sierpnia 2026
+
+**Model wykonawczy:** Luna/low
+
+**Decyzja:** `S6_G2_PASS`
 **Protected evidence:** zamknięte; zero odczytanej treści i zero inferencji.
 
 ## Zakres i wynik
