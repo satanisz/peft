@@ -86,6 +86,20 @@ class Sprint4EvidenceReportTests(unittest.TestCase):
         self.assertEqual(summary["decision"], "FAILED_EVIDENCE_THRESHOLDS")
         self.assertFalse(summary["numeric_checks"]["evidence_sources_each_seed"])
 
+    def test_weak_challenge_severity_fails_evidence(self) -> None:
+        weak_challenge = copy.deepcopy(self.original)
+        weak_challenge["aggregate"]["severity_correct_rate"] = 0.80
+        summary = build_evidence_summary(
+            self.matrix,
+            self._reports(self.original),
+            self._reports(self.boundary),
+            [copy.deepcopy(self.original), copy.deepcopy(self.original), weak_challenge],
+            None,
+        )
+
+        self.assertEqual(summary["decision"], "FAILED_EVIDENCE_THRESHOLDS")
+        self.assertFalse(summary["numeric_checks"]["challenge_severity_each_seed"])
+
 
 if __name__ == "__main__":
     unittest.main()

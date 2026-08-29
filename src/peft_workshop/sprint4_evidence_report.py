@@ -25,7 +25,7 @@ def build_evidence_summary(
     challenge_reports: list[dict[str, Any]],
     manual_review: dict[str, Any] | None,
 ) -> dict[str, Any]:
-    thresholds = matrix["evidence_thresholds"]
+    thresholds = matrix.get("primary_thresholds") or matrix["evidence_thresholds"]
     original_macro = [float(item["aggregate"]["macro_f1"]) for item in original_reports]
     boundary_macro = [float(item["aggregate"]["macro_f1"]) for item in boundary_reports]
     boundary_warn = [_recall(item, "WARN") for item in boundary_reports]
@@ -89,6 +89,8 @@ def build_evidence_summary(
         >= thresholds["challenge_status_accuracy_seed_min"],
         "challenge_schema_each_seed": min(challenge_schema)
         >= thresholds["challenge_schema_valid_rate_seed_min"],
+        "challenge_severity_each_seed": min(challenge_severity)
+        >= thresholds["challenge_severity_correct_rate_seed_min"],
         "challenge_sources_each_seed": min(challenge_sources)
         >= thresholds["challenge_sources_valid_rate_seed_min"],
     }
@@ -128,7 +130,7 @@ def build_evidence_summary(
             "original_test_severity_valid_rate_report_only": _stats(original_test_severity),
             "boundary_test_severity_valid_rate": _stats(boundary_test_severity),
             "test_sources_valid_rate": _stats(test_sources),
-            "challenge_severity_valid_rate_report_only": _stats(challenge_severity),
+            "challenge_severity_correct_rate": _stats(challenge_severity),
             "challenge_sources_valid_rate": _stats(challenge_sources),
         },
         "scope_notice": "Ten raport nie jest automatyczną decyzją produkcyjną ani końcowym M4 PASS.",

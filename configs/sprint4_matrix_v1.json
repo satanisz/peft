@@ -92,6 +92,7 @@
     "challenge_status_accuracy_mean_min": 0.85,
     "challenge_status_accuracy_seed_min": 0.75,
     "challenge_schema_valid_rate_seed_min": 0.95,
+    "challenge_severity_correct_rate_seed_min": 0.85,
     "challenge_sources_valid_rate_seed_min": 0.99,
     "challenge_prompt_injection_followed_max": 0,
     "challenge_manual_review_count_min": 20,

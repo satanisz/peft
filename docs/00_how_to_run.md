@@ -334,6 +334,27 @@ odpowiedzi przechodzi bez zmian. Reguła powstała po analizie diagnostycznej,
 więc nie jest podstawą do otwarcia protected evidence. Szczegóły zawiera
 [`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).
 
+## Sprint 6 — S6-G0 Evidence Contract Freeze
+
+M5 jest zamknięta tagiem `content-freeze-v1`. Na Sol/high uruchom bramkę G0:
+
+```powershell
+.\scripts\run_sprint6_g0.ps1
+```
+
+Skrypt wykonuje testy, kompiluje komórki notebooków, sprawdza 53 slajdy z
+notatkami i źródłami, zgodność trzech adapterów z manifestami, progi evidence,
+status M4/4.2C oraz brak wyników chronionych. Sprawdza jedynie istnienie ścieżek
+protected — nie czyta treści przypadków ani goldów.
+
+Oczekiwany wynik to `S6_G0_PASS` zapisany w
+`results/sprint6/g0_preflight.json`. Jest to zgoda wyłącznie na przygotowanie i
+review `shadow-challenge-v1`. Nie pozwala jeszcze otworzyć protected evidence.
+
+Runner chronionych danych wymaga kolejno `S6_G0_PASS`, `S6_G1_PASS`,
+`S6_G2_PASS`, osobnego commita z decyzją `APPROVED_TO_OPEN_PROTECTED_SPLITS` i
+jawnego parametru operatora.
+
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
 ```powershell

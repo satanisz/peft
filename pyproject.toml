@@ -48,6 +48,7 @@ peft-sprint4-2a-analysis = "peft_workshop.sprint4_2a_analysis:main"
 peft-sprint4-2a-gate = "peft_workshop.sprint4_2a_gate:main"
 peft-sprint4-2b-compare = "peft_workshop.sprint4_2b_compare:main"
 peft-sprint4-2c-report = "peft_workshop.sprint4_2c_report:main"
+peft-sprint6-preflight = "peft_workshop.sprint6_preflight:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]
