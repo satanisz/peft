@@ -44,6 +44,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Raport S6-G2 Technical readiness](docs/23_sprint_6_g2_technical_readiness_report.md)
 - [G2.1A — hardening approval, runnera i raportowania](docs/24_sprint_6_g2_1a_contract_hardening.md)
 - [Raport G2.1B — rzeczywisty offline i fallback](docs/25_sprint_6_g2_1b_technical_hardening_report.md)
+- [Końcowe review G0/G1/G2.1](docs/26_sprint_6_final_g0_g1_g2_1_review.md)
 - [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty

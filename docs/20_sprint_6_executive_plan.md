@@ -12,9 +12,10 @@ wyniku.
 
 **Status wykonania:** G0 i G1 są PASS. Po review Sol/high wykonano G2.1A
 (osobny approval, runner shadow i raportowanie) oraz rzeczywistą próbę G2.1B na
-Luna/low. G2.1B ma status `S6_G2_1_PASS`; następny krok to review całego pakietu
-przez Sol/high i ewentualne utworzenie osobnego approval. Protected evidence
-pozostaje zamknięte.
+Luna/low. G2.1B ma status `S6_G2_1_PASS`. Końcowe review Sol/high zaakceptowało
+utworzenie osobnego approval z ograniczeniami operacyjnymi; jawne potwierdzenie
+operatora nadal nie zostało skonsumowane. Protected evidence pozostaje
+zamknięte.
 
 ## Zasada metodologiczna
 
