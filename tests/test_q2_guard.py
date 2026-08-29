@@ -23,6 +23,18 @@ class Q2GuardTests(unittest.TestCase):
             .splitlines()[0]
         )
         cls.output = copy.deepcopy(cls.case["expected_output"])
+        cls.fc209 = next(
+            json.loads(line)
+            for line in (ROOT / "data" / "diagnostic" / "diagnostic_set_v1.jsonl")
+            .read_text(encoding="utf-8")
+            .splitlines()
+            if json.loads(line)["case_id"] == "FC-209"
+        )
+        cls.fc209_rule = json.loads(
+            (ROOT / "configs" / "deterministic_decision_rules_v1.json").read_text(
+                encoding="utf-8"
+            )
+        )["rules_by_case_id"]["FC-209"]
 
     def _assess(self, output: dict, *, enforce: bool = True) -> dict:
         return assess_response(
@@ -76,6 +88,55 @@ class Q2GuardTests(unittest.TestCase):
         report = build_guard_report([passed, blocked])
         self.assertEqual(report["pass_through_count"], 1)
         self.assertEqual(report["blocked_count"], 1)
+
+    def test_deterministic_decision_rule_blocks_status_contradiction(self) -> None:
+        output = copy.deepcopy(self.fc209["expected_output"])
+        output["status"] = "PASS"
+        output["severity"] = "NONE"
+        output["requires_human_review"] = False
+        result = assess_response(
+            self.fc209,
+            json.dumps(output, ensure_ascii=False),
+            enforce_status_severity=True,
+            status_policy=self.policy,
+            decision_rule=self.fc209_rule,
+        )
+        self.assertEqual(result["decision"], "BLOCK_FOR_HUMAN_REVIEW")
+        self.assertIsNone(result["guarded_output"])
+        self.assertEqual(
+            result["deterministic_decision"]["required_status"], "FAIL"
+        )
+        self.assertIn(
+            "DETERMINISTIC_DECISION_MISMATCH",
+            {item["code"] for item in result["issues"]},
+        )
+
+    def test_deterministic_decision_rule_passes_consistent_status(self) -> None:
+        result = assess_response(
+            self.fc209,
+            json.dumps(self.fc209["expected_output"], ensure_ascii=False),
+            enforce_status_severity=True,
+            status_policy=self.policy,
+            decision_rule=self.fc209_rule,
+        )
+        self.assertEqual(result["decision"], "PASS_THROUGH")
+        self.assertEqual(result["deterministic_decision"]["required_status"], "FAIL")
+
+    def test_deterministic_decision_rule_blocks_changed_numeric_result(self) -> None:
+        output = copy.deepcopy(self.fc209["expected_output"])
+        output["calculation"]["result"] = 4
+        result = assess_response(
+            self.fc209,
+            json.dumps(output, ensure_ascii=False),
+            enforce_status_severity=True,
+            status_policy=self.policy,
+            decision_rule=self.fc209_rule,
+        )
+        self.assertEqual(result["decision"], "BLOCK_FOR_HUMAN_REVIEW")
+        self.assertIn(
+            "DETERMINISTIC_RESULT_MISMATCH",
+            {item["code"] for item in result["issues"]},
+        )
 
 
 if __name__ == "__main__":

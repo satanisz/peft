@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+import operator
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -15,12 +17,114 @@ def _issue(code: str, message: str) -> dict[str, str]:
     return {"code": code, "message": message}
 
 
+_COMPARATORS = {
+    "GT": operator.gt,
+    "GTE": operator.ge,
+    "LT": operator.lt,
+    "LTE": operator.le,
+    "EQ": operator.eq,
+    "NE": operator.ne,
+}
+
+
+def _numeric(value: Any, *, label: str) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise ValueError(f"{label} musi być liczbą.")
+    number = float(value)
+    if not math.isfinite(number):
+        raise ValueError(f"{label} musi być liczbą skończoną.")
+    return number
+
+
+def _assess_deterministic_decision(
+    case: dict[str, Any], output: dict[str, Any], rule: dict[str, Any]
+) -> tuple[dict[str, Any], list[dict[str, str]]]:
+    """Evaluate a versioned numeric rule without consulting expected_output."""
+    issues: list[dict[str, str]] = []
+    rule_id = str(rule.get("rule_id", "UNNAMED_RULE"))
+    deterministic = case["input"].get("deterministic_check")
+    try:
+        if not isinstance(deterministic, dict):
+            raise ValueError("przypadek nie zawiera deterministic_check")
+        value_field = str(rule["value_field"])
+        if value_field not in {"result", "reported"}:
+            raise ValueError(f"niedozwolone value_field: {value_field}")
+        value = _numeric(
+            deterministic.get(value_field),
+            label=f"deterministic_check.{value_field}",
+        )
+        if rule.get("absolute_value", False):
+            value = abs(value)
+        comparator_name = str(rule["operator"])
+        comparator = _COMPARATORS.get(comparator_name)
+        if comparator is None:
+            raise ValueError(f"niedozwolony operator: {comparator_name}")
+        threshold = _numeric(rule["threshold"], label="threshold")
+        condition_met = comparator(value, threshold)
+        expected_status = str(
+            rule["status_if_true"] if condition_met else rule["status_if_false"]
+        )
+    except (KeyError, ValueError) as error:
+        issues.append(
+            _issue(
+                "INVALID_DETERMINISTIC_DECISION_RULE",
+                f"Reguła {rule_id} nie może zostać wykonana: {error}.",
+            )
+        )
+        return {"rule_id": rule_id, "evaluated": False}, issues
+
+    calculation = output.get("calculation")
+    output_result = calculation.get("result") if isinstance(calculation, dict) else None
+    try:
+        output_result_number = _numeric(output_result, label="calculation.result")
+        trusted_result = _numeric(
+            deterministic.get("result"), label="deterministic_check.result"
+        )
+        if not math.isclose(
+            output_result_number, trusted_result, rel_tol=1e-9, abs_tol=1e-9
+        ):
+            issues.append(
+                _issue(
+                    "DETERMINISTIC_RESULT_MISMATCH",
+                    f"Reguła {rule_id}: calculation.result={output_result_number:g} nie zgadza się "
+                    f"z zaufanym wynikiem {trusted_result:g}.",
+                )
+            )
+    except ValueError as error:
+        issues.append(
+            _issue(
+                "DETERMINISTIC_RESULT_MISMATCH", f"Reguła {rule_id}: {error}"
+            )
+        )
+
+    actual_status = output.get("status")
+    if actual_status != expected_status:
+        issues.append(
+            _issue(
+                "DETERMINISTIC_DECISION_MISMATCH",
+                f"Reguła {rule_id}: {value:g} {comparator_name} {threshold:g} wymaga statusu "
+                f"{expected_status}, otrzymano {actual_status}.",
+            )
+        )
+    return {
+        "rule_id": rule_id,
+        "evaluated": True,
+        "value": value,
+        "operator": comparator_name,
+        "threshold": threshold,
+        "condition_met": condition_met,
+        "required_status": expected_status,
+        "actual_status": actual_status,
+    }, issues
+
+
 def assess_response(
     case: dict[str, Any],
     response_text: str,
     *,
     enforce_status_severity: bool,
     status_policy: dict[str, Any],
+    decision_rule: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Assess a model response without using the case's expected_output."""
     issues: list[dict[str, str]] = []
@@ -33,6 +137,7 @@ def assess_response(
             "allowed_source_ids": sorted(item["source_id"] for item in case["input"]["sources"]),
             "used_source_ids": [],
             "unknown_source_ids": [],
+            "deterministic_decision": None,
             "guarded_output": None,
         }
 
@@ -94,6 +199,13 @@ def assess_response(
             )
         )
 
+    deterministic_decision = None
+    if decision_rule is not None:
+        deterministic_decision, decision_issues = _assess_deterministic_decision(
+            case, output, decision_rule
+        )
+        issues.extend(decision_issues)
+
     decision = "PASS_THROUGH" if not issues else "BLOCK_FOR_HUMAN_REVIEW"
     return {
         "decision": decision,
@@ -101,6 +213,7 @@ def assess_response(
         "allowed_source_ids": sorted(allowed),
         "used_source_ids": sorted(used),
         "unknown_source_ids": sorted(unknown),
+        "deterministic_decision": deterministic_decision,
         "guarded_output": output if decision == "PASS_THROUGH" else None,
     }
 
@@ -116,12 +229,16 @@ def build_guard_report(records: list[dict[str, Any]]) -> dict[str, Any]:
         and item["guard"].get("guarded_output") is not None
         for item in records
     )
+    deterministic_rule_count = sum(
+        item["guard"].get("deterministic_decision") is not None for item in records
+    )
     return {
         "count": count,
         "pass_through_count": decisions["PASS_THROUGH"],
         "blocked_count": decisions["BLOCK_FOR_HUMAN_REVIEW"],
         "pass_through_rate": decisions["PASS_THROUGH"] / count if count else 0.0,
         "blocked_output_accepted_count": blocked_output_accepted_count,
+        "deterministic_rule_count": deterministic_rule_count,
         "issue_counts": dict(sorted(issue_codes.items())),
         "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
     }
@@ -133,12 +250,26 @@ def main() -> int:
     parser.add_argument("--predictions", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--report", required=True)
-    parser.add_argument("--severity-mode", choices=["legacy_report_only", "enforce_status_policy_v1"], required=True)
+    parser.add_argument(
+        "--severity-mode",
+        choices=["legacy_report_only", "enforce_status_policy_v1"],
+        required=True,
+    )
+    parser.add_argument(
+        "--decision-rules",
+        help="Opcjonalny wersjonowany plik reguł decyzji deterministycznych.",
+    )
     args = parser.parse_args()
 
     cases = {item["case_id"]: item for item in load_cases(resolve_project_path(args.data))}
     predictions = load_cases(resolve_project_path(args.predictions))
     policy = json.loads((CONFIG_DIR / "status_policy_v1.json").read_text(encoding="utf-8"))
+    decision_rules: dict[str, Any] = {}
+    if args.decision_rules:
+        rules_config = json.loads(
+            resolve_project_path(args.decision_rules).read_text(encoding="utf-8")
+        )
+        decision_rules = rules_config.get("rules_by_case_id", {})
     records = []
     for prediction in predictions:
         case_id = prediction["case_id"]
@@ -149,6 +280,7 @@ def main() -> int:
             prediction["response"],
             enforce_status_severity=args.severity_mode == "enforce_status_policy_v1",
             status_policy=policy,
+            decision_rule=decision_rules.get(case_id),
         )
         records.append({**prediction, "guard": guard})
 

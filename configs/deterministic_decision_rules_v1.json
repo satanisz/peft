@@ -1,0 +1,25 @@
+{
+  "id": "DETERMINISTIC-DECISION-RULES-V1",
+  "version": "1.0.0",
+  "scope": "diagnostic-v1-retrospective-demo",
+  "mode": "block_and_route_to_human_no_silent_correction",
+  "rules_by_case_id": {
+    "FC-209": {
+      "rule_id": "CROSS-REPORT-MATERIAL-DIFFERENCE-V1",
+      "description": "Po potwierdzeniu wspólnej podstawy różnica powyżej 5 mln PLN jest materialna.",
+      "value_field": "result",
+      "absolute_value": true,
+      "operator": "GT",
+      "threshold": 5.0,
+      "status_if_true": "FAIL",
+      "status_if_false": "PASS"
+    }
+  },
+  "governance": {
+    "expected_output_access_at_runtime": false,
+    "silent_correction": false,
+    "created_after_diagnostic_observation": true,
+    "may_authorize_protected_evidence": false,
+    "purpose": "Warsztatowa demonstracja hybrydowej architektury LLM plus kontrola deterministyczna."
+  }
+}

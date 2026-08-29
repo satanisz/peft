@@ -318,6 +318,22 @@ Runner zachowuje baseline v1, zapisuje osobne wyniki promptu v2 i porównuje 29
 niezmienionych przypadków. `FC-209` raportuje osobno. Protected splits pozostają
 zamknięte.
 
+Sprint 4.2B zakończył się decyzją `HOLD_PROMPT_V2_THRESHOLDS`. Prompt v2
+ustabilizował severity, review oraz source integrity, ale wszystkie trzy seedy
+poprawnie obliczyły 27 mln PLN w FC-209 i mimo to zwróciły `PASS` przy progu
+5 mln PLN. Sprint 4.2C demonstruje blokadę takiej sprzeczności przez regułę
+deterministyczną, bez kolejnej inferencji:
+
+```powershell
+.\scripts\run_sprint4_2c_guard.ps1
+```
+
+Oczekiwany wynik to `READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`: FC-209 jest
+blokowany i kierowany do człowieka we wszystkich seedach, a pozostałe 29
+odpowiedzi przechodzi bez zmian. Reguła powstała po analizie diagnostycznej,
+więc nie jest podstawą do otwarcia protected evidence. Szczegóły zawiera
+[`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).
+
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
 ```powershell

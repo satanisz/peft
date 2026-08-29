@@ -106,10 +106,12 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Ukończyć Sprint 4.2A: diagnostic set 30 przypadków i Q2 guard są przygotowane.
-Następnie niezależny SME wykonuje review 30/30, Luna/low uruchamia trzy seedy na
-zamrożonym zbiorze, a Sol/high analizuje Q1–Q2. Protected splits pozostają
-zamknięte do decyzji `APPROVED_TO_OPEN_PROTECTED_SPLITS`.
+Sprinty 4.2A i 4.2B zostały zakończone. Sprint 4.2C blokuje stabilny błąd
+decyzji liczbowej FC-209 we wszystkich seedach i ma status
+`READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`. Następny krok to Sprint 5:
+przygotowanie materiałów szkoleniowych pokazujących zarówno poprawę promptu v2,
+jak i potrzebę hybrydowej architektury LLM + deterministic guard + human review.
+Protected splits pozostają zamknięte.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
@@ -117,3 +119,5 @@ niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
 Szczegóły: [`13_sprint_4_executive_plan.md`](13_sprint_4_executive_plan.md).
 Review: [`14_sprint_4_analytical_review.md`](14_sprint_4_analytical_review.md).
 Sprint 4.2A: [`15_sprint_4_2a_executive_plan.md`](15_sprint_4_2a_executive_plan.md).
+Sprint 4.2B: [`16_sprint_4_2b_error_analysis_and_rerun_plan.md`](16_sprint_4_2b_error_analysis_and_rerun_plan.md).
+Sprint 4.2C: [`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).

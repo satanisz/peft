@@ -1,0 +1,17 @@
+{
+  "milestone": "Sprint 4.2C deterministic decision containment",
+  "demo_decision": "READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD",
+  "protected_evidence_decision": "HOLD",
+  "checks": {
+    "three_guard_reports_present": true,
+    "retrospective_rule_cannot_authorize_protected": true,
+    "case_count_each_seed": true,
+    "one_deterministic_rule_each_seed": true,
+    "fc209_blocked_each_seed": true,
+    "blocked_output_never_accepted": true,
+    "all_other_cases_pass_through": true,
+    "exactly_one_block_each_seed": true
+  },
+  "protected_splits_opened": false,
+  "automatic_approval": false
+}

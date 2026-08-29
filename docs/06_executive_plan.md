@@ -252,10 +252,12 @@ protected evidence w stanie `CONDITIONAL_HOLD`. Przed otwarciem testów wymagany
 jest Sprint 4.2A: diagnostic set poza szablonami, Q2/source integrity guard,
 analiza severity i ponowna decyzja Sol/high.
 
-Stan przygotowania Sprintu 4.2A: 30 ręcznych przypadków oraz guard są gotowe;
-oczekują na niezależny review i formalną inferencję. Legacy severity z
-dataset-v1 jest raportowane informacyjnie, natomiast boundary/diagnostic
-egzekwują `status-policy-v1`.
+Stan po Sprintach 4.2A–4.2C: 30 ręcznych przypadków przeszło niezależny review
+i inferencję dla trzech seedów. Prompt v2 ustabilizował pola pochodne i source
+integrity, lecz nie usunął stabilnego błędu liczbowego FC-209. Wersjonowany
+deterministic decision guard blokuje ten błąd bez cichego poprawiania. Wynik ma
+status `READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`; protected evidence pozostaje
+zamknięte, ponieważ regułę dodano retrospektywnie po analizie diagnostic.
 
 ### Zakres
 

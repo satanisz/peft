@@ -1,0 +1,18 @@
+{
+  "id": "Q2-DETERMINISTIC-DECISION-GUARD-V2",
+  "version": "2.0.0",
+  "extends": "configs/q2_source_guard_v1.json",
+  "decision_rules": "configs/deterministic_decision_rules_v1.json",
+  "mode": "block_and_route_to_human_no_silent_correction",
+  "additional_blocking_codes": [
+    "INVALID_DETERMINISTIC_DECISION_RULE",
+    "DETERMINISTIC_RESULT_MISMATCH",
+    "DETERMINISTIC_DECISION_MISMATCH"
+  ],
+  "constraints": [
+    "Reguły nie odczytują expected_output.",
+    "Guard nie zmienia statusu ani treści odpowiedzi modelu.",
+    "Reguła retrospektywna nie może odblokować protected evidence.",
+    "Zablokowana odpowiedź trafia do human review wraz z wynikiem reguły."
+  ]
+}
