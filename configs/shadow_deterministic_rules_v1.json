@@ -1,0 +1,25 @@
+{
+  "id": "SHADOW-DETERMINISTIC-RULES-V1",
+  "version": "1.0.0",
+  "scope": "shadow-challenge-v1-risk-directed-evidence",
+  "mode": "block_and_route_to_human_no_silent_correction",
+  "rules_by_case_id": {
+    "FC-301": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC301", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-302": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC302", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-303": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC303", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-304": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC304", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-305": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC305", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-306": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC306", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-331": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC331", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-335": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC335", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-341": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC341", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-343": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC343", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"},
+    "FC-345": {"rule_id": "SHADOW-MATERIALITY-BANDS-V1-FC345", "value_field": "check_result", "calculation_result_field": "check_result", "absolute_value": true, "bands": [{"max_inclusive": 0.5, "status": "PASS"}, {"max_inclusive": 5.0, "status": "WARN"}], "default_status": "FAIL"}
+  },
+  "governance": {
+    "expected_output_access_at_runtime": false,
+    "silent_correction": false,
+    "authored_before_first_shadow_inference": true,
+    "quality_failure_action": "report_without_retuning_or_rerun"
+  }
+}

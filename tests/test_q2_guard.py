@@ -35,6 +35,18 @@ class Q2GuardTests(unittest.TestCase):
                 encoding="utf-8"
             )
         )["rules_by_case_id"]["FC-209"]
+        cls.shadow_cases = {
+            row["case_id"]: row
+            for row in (
+                json.loads(line)
+                for line in (ROOT / "data" / "shadow" / "shadow_challenge_v1.jsonl")
+                .read_text(encoding="utf-8")
+                .splitlines()
+            )
+        }
+        cls.shadow_rules = json.loads(
+            (ROOT / "configs" / "shadow_deterministic_rules_v1.json").read_text(encoding="utf-8")
+        )["rules_by_case_id"]
 
     def _assess(self, output: dict, *, enforce: bool = True) -> dict:
         return assess_response(
@@ -137,6 +149,33 @@ class Q2GuardTests(unittest.TestCase):
             "DETERMINISTIC_RESULT_MISMATCH",
             {item["code"] for item in result["issues"]},
         )
+
+    def test_shadow_band_rules_accept_all_frozen_gold_outputs(self) -> None:
+        for case_id, rule in self.shadow_rules.items():
+            case = self.shadow_cases[case_id]
+            with self.subTest(case_id=case_id):
+                result = assess_response(
+                    case,
+                    json.dumps(case["expected_output"], ensure_ascii=False),
+                    enforce_status_severity=True,
+                    status_policy=self.policy,
+                    decision_rule=rule,
+                )
+                self.assertEqual(result["decision"], "PASS_THROUGH")
+
+    def test_shadow_band_rule_blocks_material_pass(self) -> None:
+        case = self.shadow_cases["FC-305"]
+        output = copy.deepcopy(case["expected_output"])
+        output.update({"status": "PASS", "severity": "NONE", "requires_human_review": False})
+        result = assess_response(
+            case,
+            json.dumps(output, ensure_ascii=False),
+            enforce_status_severity=True,
+            status_policy=self.policy,
+            decision_rule=self.shadow_rules["FC-305"],
+        )
+        self.assertEqual(result["decision"], "BLOCK_FOR_HUMAN_REVIEW")
+        self.assertIn("DETERMINISTIC_DECISION_MISMATCH", {item["code"] for item in result["issues"]})
 
 
 if __name__ == "__main__":

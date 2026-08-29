@@ -52,6 +52,8 @@ peft-sprint6-preflight = "peft_workshop.sprint6_preflight:main"
 peft-shadow-challenge = "peft_workshop.shadow_challenge:main"
 peft-sprint6-g1 = "peft_workshop.sprint6_g1_gate:main"
 peft-sprint6-g2 = "peft_workshop.sprint6_g2_gate:main"
+peft-sprint6-open-approval = "peft_workshop.sprint6_open_approval:main"
+peft-sprint6-evidence-report = "peft_workshop.sprint6_evidence_report:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/peft_workshop"]

@@ -1,0 +1,44 @@
+{
+  "id": "S6-PROTECTED-OPEN-CONTRACT-V1",
+  "version": "1.0.0",
+  "approval_path": "results/sprint6/protected_open_approval.json",
+  "required_decision": "APPROVED_TO_OPEN_PROTECTED_SPLITS",
+  "operator_confirmation_required": true,
+  "protected_splits_must_be_closed_at_approval": true,
+  "required_gate_decisions": {
+    "results/sprint6/g0_preflight.json": "S6_G0_PASS",
+    "results/sprint6/g1_shadow_freeze.json": "S6_G1_PASS",
+    "results/sprint6/g2_technical_readiness.json": "S6_G2_PASS"
+  },
+  "required_tags": [
+    "s6-g0-pass",
+    "s6-g1-pass",
+    "s6-g2-pass",
+    "s6-g2.1-pass"
+  ],
+  "bind_files": [
+    "configs/sprint6_protected_open_contract_v1.json",
+    "configs/sprint4_matrix_v1.json",
+    "configs/sprint6_evidence_gate_v1.json",
+    "configs/status_policy_v1.json",
+    "configs/q2_source_guard_v1.json",
+    "configs/q2_decision_guard_v2.json",
+    "configs/deterministic_decision_rules_v1.json",
+    "configs/shadow_deterministic_rules_v1.json",
+    "schemas/financial_control_output.schema.json",
+    "results/sprint6/g0_preflight.json",
+    "results/sprint6/g1_shadow_freeze.json",
+    "results/sprint6/g2_technical_readiness.json",
+    "data/shadow/shadow_challenge_v1.jsonl",
+    "data/shadow_registry.json",
+    "data/reviews/shadow_challenge_v1_review.json",
+    "scripts/run_sprint4_evidence.ps1",
+    "scripts/run_sprint6_g2.ps1",
+    "src/peft_workshop/adapter_inference.py",
+    "src/peft_workshop/metrics.py",
+    "src/peft_workshop/q2_guard.py",
+    "src/peft_workshop/sprint6_g2_gate.py",
+    "src/peft_workshop/sprint6_evidence_report.py",
+    "src/peft_workshop/sprint6_open_approval.py"
+  ]
+}

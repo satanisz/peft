@@ -10,9 +10,10 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
-**Status wykonania:** `S6_G2_PASS` — 29 sierpnia 2026. Authoring, review 50/50,
-freeze hashy i próba techniczna są zakończone. Następny krok: review kompletnego
-pakietu na Sol/high. Protected evidence pozostaje zamknięte.
+**Status wykonania:** review Sol/high utrzymał G0/G1 PASS, lecz zmienił G2 na
+`HOLD_PENDING_G2_1_HARDENING`. G2.1A (approval, runner shadow i raportowanie)
+jest zakończone; następny krok to realna próba G2.1B na Luna/low. Protected
+evidence pozostaje zamknięte.
 
 ## Zasada metodologiczna
 
@@ -136,6 +137,12 @@ minut, a nieudane demo nie blokuje dalszej narracji.
 fresh reload, offline/cache, 3 notebooki, 77 testów i 4 kontrolowane fallbacki
 przeszły. Raport:
 [`23_sprint_6_g2_technical_readiness_report.md`](23_sprint_6_g2_technical_readiness_report.md).
+
+**Review Sol/high:** PASS pozostaje wynikiem historycznym, ale nie uprawnia do
+approval. G2.1A rozdziela zamrożony kontrakt od approval, dodaje shadow 50×3 i
+wspólny raport. G2.1B musi zastąpić deklaratywny offline/fallback realną próbą.
+Szczegóły:
+[`24_sprint_6_g2_1a_contract_hardening.md`](24_sprint_6_g2_1a_contract_hardening.md).
 
 ## S6.4 — jawna decyzja i jednorazowe protected evidence
 

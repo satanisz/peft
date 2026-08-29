@@ -5,6 +5,10 @@
 **Model wykonawczy:** Luna/low
 
 **Decyzja:** `S6_G2_PASS`
+
+**Status po review Sol/high:** wynik zachowany historycznie, ale niewystarczający
+do otwarcia protected evidence. Offline i fallback były deklaratywne; wymagany
+jest G2.1B oraz tag `s6-g2.1-pass`.
 **Protected evidence:** zamknięte; zero odczytanej treści i zero inferencji.
 
 ## Zakres i wynik

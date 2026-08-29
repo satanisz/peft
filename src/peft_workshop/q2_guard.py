@@ -47,7 +47,7 @@ def _assess_deterministic_decision(
         if not isinstance(deterministic, dict):
             raise ValueError("przypadek nie zawiera deterministic_check")
         value_field = str(rule["value_field"])
-        if value_field not in {"result", "reported"}:
+        if value_field not in {"result", "reported", "check_result"}:
             raise ValueError(f"niedozwolone value_field: {value_field}")
         value = _numeric(
             deterministic.get(value_field),
@@ -55,15 +55,34 @@ def _assess_deterministic_decision(
         )
         if rule.get("absolute_value", False):
             value = abs(value)
-        comparator_name = str(rule["operator"])
-        comparator = _COMPARATORS.get(comparator_name)
-        if comparator is None:
-            raise ValueError(f"niedozwolony operator: {comparator_name}")
-        threshold = _numeric(rule["threshold"], label="threshold")
-        condition_met = comparator(value, threshold)
-        expected_status = str(
-            rule["status_if_true"] if condition_met else rule["status_if_false"]
-        )
+        if "bands" in rule:
+            bands = rule["bands"]
+            if not isinstance(bands, list) or not bands:
+                raise ValueError("bands musi być niepustą listą")
+            parsed_bands = [
+                (_numeric(item["max_inclusive"], label="bands.max_inclusive"), str(item["status"]))
+                for item in bands
+            ]
+            if parsed_bands != sorted(parsed_bands, key=lambda item: item[0]):
+                raise ValueError("bands muszą być uporządkowane rosnąco")
+            expected_status = str(rule["default_status"])
+            for maximum, band_status in parsed_bands:
+                if value <= maximum:
+                    expected_status = band_status
+                    break
+            comparator_name = "BANDS"
+            threshold = [maximum for maximum, _ in parsed_bands]
+            condition_met = True
+        else:
+            comparator_name = str(rule["operator"])
+            comparator = _COMPARATORS.get(comparator_name)
+            if comparator is None:
+                raise ValueError(f"niedozwolony operator: {comparator_name}")
+            threshold = _numeric(rule["threshold"], label="threshold")
+            condition_met = comparator(value, threshold)
+            expected_status = str(
+                rule["status_if_true"] if condition_met else rule["status_if_false"]
+            )
     except (KeyError, ValueError) as error:
         issues.append(
             _issue(
@@ -77,8 +96,12 @@ def _assess_deterministic_decision(
     output_result = calculation.get("result") if isinstance(calculation, dict) else None
     try:
         output_result_number = _numeric(output_result, label="calculation.result")
+        trusted_result_field = str(rule.get("calculation_result_field", "result"))
+        if trusted_result_field not in {"result", "reported", "check_result"}:
+            raise ValueError(f"niedozwolone calculation_result_field: {trusted_result_field}")
         trusted_result = _numeric(
-            deterministic.get("result"), label="deterministic_check.result"
+            deterministic.get(trusted_result_field),
+            label=f"deterministic_check.{trusted_result_field}",
         )
         if not math.isclose(
             output_result_number, trusted_result, rel_tol=1e-9, abs_tol=1e-9
@@ -102,7 +125,7 @@ def _assess_deterministic_decision(
         issues.append(
             _issue(
                 "DETERMINISTIC_DECISION_MISMATCH",
-                f"Reguła {rule_id}: {value:g} {comparator_name} {threshold:g} wymaga statusu "
+                f"Reguła {rule_id}: wartość {value:g}, tryb {comparator_name}, próg {threshold} wymaga statusu "
                 f"{expected_status}, otrzymano {actual_status}.",
             )
         )

@@ -504,8 +504,9 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 M5 jest zaakceptowana, a S6-G0 zakończyło się PASS. Kontrakt dowodowy i hashe
 adapterów są zamrożone, 74 testy przechodzą, a challenge severity jest
 egzekwowane. Authoring, kontrola wspomagana oraz review człowieka/SME 50/50 są
-kompletne; S6-G1 i S6-G2 zakończyły się PASS. Następny krok to review pakietu
-G0/G1/G2 na Sol/high.
+kompletne; S6-G1 zakończyło się PASS. Review Sol/high skierował G2 do G2.1.
+Część G2.1A naprawiająca approval, shadow runner i reporting jest gotowa;
+Luna/low przejmuje realną próbę offline/fallback G2.1B.
 Protected evidence pozostaje `HOLD` do czasu PASS bramek S6-G0/G1/G2, osobnej
 decyzji Sol/high i jawnego potwierdzenia operatora. Szczegółowy plan:
 [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).

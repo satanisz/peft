@@ -14,16 +14,17 @@ Set-Location -LiteralPath $projectRoot
 $pythonPath = Join-Path $projectRoot ".venv\Scripts\python.exe"
 $matrix = Get-Content -Raw -LiteralPath (Join-Path $projectRoot "configs\sprint4_matrix_v1.json") | ConvertFrom-Json
 $analyticalGatePath = Join-Path $projectRoot "configs\sprint6_evidence_gate_v1.json"
+$approvalPath = Join-Path $projectRoot "results\sprint6\protected_open_approval.json"
 if (-not (Test-Path -LiteralPath $analyticalGatePath)) {
-    throw "Brak bramki Sprintu 6 protected evidence. Wymagany review Sol/high."
+    throw "Brak zamrożonego kontraktu Sprintu 6."
 }
 $analyticalGate = Get-Content -Raw -LiteralPath $analyticalGatePath | ConvertFrom-Json
-if (
-    $analyticalGate.decision -ne "APPROVED_TO_OPEN_PROTECTED_SPLITS" -or
-    $analyticalGate.protected_splits_opened -or
-    $analyticalGate.m5_status -ne "M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD"
-) {
-    throw "Bramka Sprintu 6 nie zezwala na otwarcie protected splits: $($analyticalGate.decision)"
+if ($analyticalGate.decision -ne "HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL" -or $analyticalGate.protected_splits_opened) {
+    throw "Zamrożony kontrakt Sprintu 6 został zmieniony; approval musi być osobnym artefaktem."
+}
+& $pythonPath -m peft_workshop.sprint6_open_approval --approval $approvalPath --require-approved --no-output
+if ($LASTEXITCODE -ne 0) {
+    throw "Brak poprawnego, osobnego approval Sol/high dla protected evidence."
 }
 $s6Gates = @(
     @{ Path = "results\sprint6\g0_preflight.json"; Decision = "S6_G0_PASS" },
@@ -57,7 +58,8 @@ $authorization = [ordered]@{
     authorized_at_utc = [DateTime]::UtcNow.ToString("o")
     pretest_summary_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $gatePath).Hash.ToLowerInvariant()
     matrix_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $projectRoot "configs\sprint4_matrix_v1.json")).Hash.ToLowerInvariant()
-    analytical_gate_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $analyticalGatePath).Hash.ToLowerInvariant()
+    frozen_evidence_contract_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $analyticalGatePath).Hash.ToLowerInvariant()
+    protected_open_approval_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath $approvalPath).Hash.ToLowerInvariant()
     s6_g0_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $projectRoot "results\sprint6\g0_preflight.json")).Hash.ToLowerInvariant()
     s6_g1_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $projectRoot "results\sprint6\g1_shadow_freeze.json")).Hash.ToLowerInvariant()
     s6_g2_sha256 = (Get-FileHash -Algorithm SHA256 -LiteralPath (Join-Path $projectRoot "results\sprint6\g2_technical_readiness.json")).Hash.ToLowerInvariant()
@@ -86,19 +88,22 @@ function Test-CompletedEvaluation {
     $config = Get-Content -Raw -LiteralPath (Join-Path $projectRoot $SeedSpec.config) | ConvertFrom-Json
     return $metrics.aggregate.count -eq $ExpectedCount -and
         $metrics.metadata.adapter_id -eq $config.id -and
-        $metrics.metadata.protected_split_authorized
+        $metrics.metadata.protected_split_authorized -and
+        $metrics.metadata.prompt_contract -eq "v2" -and
+        $metrics.metadata.max_new_tokens -eq 384
 }
 
 $datasets = @(
-    @{ Name = "original_test"; Path = $matrix.protected_evaluation.original_test; Count = 100 },
-    @{ Name = "boundary_test"; Path = $matrix.protected_evaluation.boundary_test; Count = 120 },
-    @{ Name = "challenge"; Path = $matrix.protected_evaluation.challenge; Count = 20 }
+    @{ Name = "original_test"; Path = $matrix.protected_evaluation.original_test; Count = 100; ResultRoot = "results/sprint4" },
+    @{ Name = "boundary_test"; Path = $matrix.protected_evaluation.boundary_test; Count = 120; ResultRoot = "results/sprint4" },
+    @{ Name = "challenge"; Path = $matrix.protected_evaluation.challenge; Count = 20; ResultRoot = "results/sprint4" },
+    @{ Name = "shadow_challenge"; Path = "data/shadow/shadow_challenge_v1.jsonl"; Count = 50; ResultRoot = "results/sprint6" }
 )
 
-foreach ($seedSpec in $matrix.seeds) {
-    foreach ($dataset in $datasets) {
-        $output = "results/sprint4/$($seedSpec.name)_$($dataset.Name).jsonl"
-        $metrics = "results/sprint4/$($seedSpec.name)_$($dataset.Name)_metrics.json"
+foreach ($dataset in $datasets) {
+    foreach ($seedSpec in $matrix.seeds) {
+        $output = "$($dataset.ResultRoot)/$($seedSpec.name)_$($dataset.Name).jsonl"
+        $metrics = "$($dataset.ResultRoot)/$($seedSpec.name)_$($dataset.Name)_metrics.json"
         if (Test-CompletedEvaluation -SeedSpec $seedSpec -MetricsPath $metrics -ExpectedCount $dataset.Count) {
             Write-Host "SKIP: $($seedSpec.name) / $($dataset.Name) jest kompletne."
             continue
@@ -108,6 +113,8 @@ foreach ($seedSpec in $matrix.seeds) {
             "--config", $seedSpec.config,
             "--data", $dataset.Path,
             "--output", $output,
+            "--prompt-contract", "v2",
+            "--max-new-tokens", "384",
             "--allow-protected-split"
         )
         Invoke-Python -Arguments @(
@@ -118,5 +125,17 @@ foreach ($seedSpec in $matrix.seeds) {
     }
 }
 
-Invoke-Python -Arguments @("-m", "peft_workshop.sprint4_evidence_report", "--matrix", "configs/sprint4_matrix_v1.json")
-Write-Host "Protected evidence wygenerowane. Nie dostrajaj na testach; wróć do Sol/high po analizę M4."
+foreach ($seedSpec in $matrix.seeds) {
+    Invoke-Python -Arguments @(
+        "-m", "peft_workshop.q2_guard",
+        "--data", "data/shadow/shadow_challenge_v1.jsonl",
+        "--predictions", "results/sprint6/$($seedSpec.name)_shadow_challenge.jsonl",
+        "--output", "results/sprint6/$($seedSpec.name)_shadow_challenge_guarded.jsonl",
+        "--report", "results/sprint6/$($seedSpec.name)_shadow_challenge_guard_report.json",
+        "--severity-mode", "enforce_status_policy_v1",
+        "--decision-rules", "configs/shadow_deterministic_rules_v1.json"
+    )
+}
+
+Invoke-Python -Arguments @("-m", "peft_workshop.sprint6_evidence_report")
+Write-Host "Primary i shadow evidence wygenerowane bez retuningu. Wróć do Sol/high po analizę i manual review."

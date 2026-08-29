@@ -377,8 +377,25 @@ pozwala jeszcze otworzyć protected evidence.
 
 **Bieżący stan projektu:** człowiek/SME zatwierdził 50/50 goldów, a bramka
 wydała `S6_G1_PASS`. Generator tej wersji jest zablokowany przed nadpisaniem;
-należy przejść do S6-G2. S6-G2 zakończyło się `S6_G2_PASS`; przed protected
-evidence wymagany jest jeszcze review Sol/high i osobna decyzja operatora.
+należy przejść do S6-G2. Pierwszy G2 zachowano historycznie, ale review Sol/high
+wymaga G2.1B. Protected evidence nadal jest zamknięte.
+
+Po przyszłym `s6-g2.1-pass` Sol/high tworzy osobny szablon approval:
+
+```powershell
+uv run peft-sprint6-open-approval --write-template
+```
+
+Szablon ma status HOLD. Dopiero jawne review uzupełnia decyzję, recenzenta,
+czas i reviewed commit, po czym approval jest commitowane osobno. Zamrożonego
+`configs/sprint6_evidence_gate_v1.json` nie wolno zmieniać.
+
+Runner pozostaje zablokowany bez zatwierdzonego approval i parametru operatora.
+Po obu decyzjach wykona primary i shadow w zamrożonej kolejności:
+
+```powershell
+.\scripts\run_sprint4_evidence.ps1 -ConfirmOpenProtectedSplits
+```
 
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 

@@ -56,6 +56,22 @@ def _failure_rehearsal() -> dict[str, Any]:
     return {"all_expected_fallbacks": all(item["caught"] and item["fallback"] for item in scenarios.values()), "scenarios": scenarios}
 
 
+def _training_source_audit() -> dict[str, Any]:
+    forbidden = {
+        "data/generated/dataset_v1/test.jsonl",
+        "data/splits/boundary_test.jsonl",
+        "data/generated/dataset_v1/challenge.jsonl",
+        "data/shadow/shadow_challenge_v1.jsonl",
+    }
+    used: list[dict[str, str]] = []
+    for path in sorted(resolve_project_path("configs").glob("qlora*.json")):
+        config = json.loads(path.read_text(encoding="utf-8"))
+        for source in config.get("dataset", {}).get("train_sources", []):
+            used.append({"config": project_relative(path), "path": str(source.get("path"))})
+    violations = [row for row in used if row["path"] in forbidden]
+    return {"checked_sources": used, "forbidden_sources": sorted(forbidden), "violations": violations}
+
+
 def build_g2_report() -> dict[str, Any]:
     g0 = _read("results/sprint6/g0_preflight.json")
     g1 = _read("results/sprint6/g1_shadow_freeze.json")
@@ -65,6 +81,7 @@ def build_g2_report() -> dict[str, Any]:
     tests = _run_tests()
     notebooks = _compile_notebooks()
     failure = _failure_rehearsal()
+    training_sources = _training_source_audit()
     adapter_dir = resolve_project_path(demo["adapter_dir"])
     required_adapter_files = [adapter_dir / "adapter_config.json", adapter_dir / "adapter_model.safetensors"]
     cache_root = Path(os.environ.get("HF_HOME", Path.home() / ".cache" / "huggingface"))
@@ -86,7 +103,7 @@ def build_g2_report() -> dict[str, Any]:
         "notebooks_compile": notebooks["notebook_count"] == 3 and notebooks["compiled_code_cells"] >= 13,
         "unit_tests_pass": tests["passed"] and tests["count"] >= 65,
         "failure_fallbacks_rehearsed": failure["all_expected_fallbacks"],
-        "shadow_not_used_for_training": not bool(g1.get("inference_run")) or g1.get("inference_run") is False,
+        "protected_and_shadow_not_used_for_training": not training_sources["violations"],
     }
     decision = "S6_G2_PASS" if all(checks.values()) else "S6_G2_BLOCKED_TECHNICAL_READINESS"
     return {
@@ -96,6 +113,7 @@ def build_g2_report() -> dict[str, Any]:
         "unit_tests": tests,
         "notebooks": notebooks,
         "failure_rehearsal": failure,
+        "training_source_audit": training_sources,
         "demo": {"run_id": demo.get("run_id"), "steps": config["training"]["max_steps"], "wall_clock_seconds": demo.get("wall_clock_seconds"), "peak_gpu_allocated_gib": demo.get("peak_gpu_allocated_gib"), "adapter_dir": project_relative(adapter_dir)},
         "offline": {"mode": "simulated_HF_HUB_OFFLINE", "local_cache_or_adapter_present": local_cache_present, "network_called": False},
         "protected_splits_opened": False,
