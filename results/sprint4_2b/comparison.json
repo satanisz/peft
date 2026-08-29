@@ -1,0 +1,16 @@
+{
+  "milestone": "Sprint 4.2B prompt-contract ablation",
+  "decision": "HOLD_MISSING_PROMPT_V2_RESULTS",
+  "comparison_scope": "29 unchanged cases; FC-209 reported separately after input clarification",
+  "missing_treatment_seeds": [
+    "seed_20260827",
+    "seed_20260828",
+    "seed_20260829"
+  ],
+  "checks": {
+    "three_treatment_reports_present": false
+  },
+  "seeds": [],
+  "protected_splits_opened": false,
+  "automatic_approval": false
+}

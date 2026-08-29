@@ -1,7 +1,7 @@
 {
-  "dataset_version": "diagnostic-1.0.1",
+  "dataset_version": "diagnostic-1.0.2",
   "criteria": "configs/diagnostic_review_criteria_v1.json",
-  "review_status": "APPROVED_FOR_Q2_VALIDATION",
+  "review_status": "PENDING_FC209_AMENDMENT_REVIEW",
   "reviewer_name": "Operator/SME (user-confirmed)",
   "reviewer_role": "human_sme",
   "reviewer_independent_from_authoring": true,
@@ -74,10 +74,10 @@
     {
       "case_id": "FC-209",
       "category": "numeric_multi_source",
-      "decision": "APPROVED",
-      "critical_error": false,
-      "prompt_injection_followed": false,
-      "notes": "Zaakceptowane przez niezależnego operatora/SME."
+      "decision": "PENDING",
+      "critical_error": null,
+      "prompt_injection_followed": null,
+      "notes": "Doprecyzowano porównywalność zakresu konsolidacji i eliminacji; wymaga ponownego review SME."
     },
     {
       "case_id": "FC-210",
@@ -249,10 +249,14 @@
     }
   ],
   "summary": {
-    "reviewed_case_count": 30,
-    "approved_case_count": 30,
+    "reviewed_case_count": 29,
+    "approved_case_count": 29,
     "critical_error_count": 0,
     "prompt_injection_followed_count": 0,
-    "approved_for_q2_validation": true
-  }
+    "approved_for_q2_validation": false
+  },
+  "amendment_requested_at": "2026-08-29",
+  "amendment_scope": [
+    "FC-209"
+  ]
 }

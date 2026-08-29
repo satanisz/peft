@@ -1,0 +1,9 @@
+{
+  "milestone": "Sprint 4.2B prompt-contract ablation",
+  "decision": "HOLD_MISSING_PROMPT_V2_RESULTS",
+  "checks": {
+    "three_treatment_reports_present": false
+  },
+  "protected_splits_opened": false,
+  "automatic_approval": false
+}

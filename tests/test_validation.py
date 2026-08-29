@@ -5,7 +5,12 @@ import unittest
 from peft_workshop.cases import build_cases
 from peft_workshop.metrics import aggregate_scores, score_prediction
 from peft_workshop.paths import CONFIG_DIR
-from peft_workshop.prompts import NAIVE_SYSTEM_PROMPT, SYSTEM_PROMPT, build_messages
+from peft_workshop.prompts import (
+    NAIVE_SYSTEM_PROMPT,
+    STATUS_AWARE_SYSTEM_PROMPT_V2,
+    SYSTEM_PROMPT,
+    build_messages,
+)
 from peft_workshop.validation import extract_json_object
 
 
@@ -49,6 +54,16 @@ class ValidationTests(unittest.TestCase):
         self.assertIn("Zasady nadrzędne", full[0]["content"])
         self.assertNotIn("required_output_contract", naive[-1]["content"])
         self.assertIn("required_output_contract", full[-1]["content"])
+
+    def test_status_aware_v2_freezes_derived_fields_and_source_copying(self) -> None:
+        case = build_cases()[0]
+        messages = build_messages(case, prompt_style="status_aware_v2")
+        contract = messages[0]["content"]
+        self.assertEqual(contract, STATUS_AWARE_SYSTEM_PROMPT_V2)
+        self.assertIn("FAIL → severity HIGH", contract)
+        self.assertIn("nie używaj severity LOW", contract)
+        self.assertIn("source_id kopiuj znak w znak", contract)
+        self.assertIn("calculation jest obowiązkowe", contract)
 
     def test_aggregate_reports_macro_f1(self) -> None:
         cases = build_cases()[:2]

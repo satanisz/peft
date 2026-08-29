@@ -125,6 +125,7 @@ def command_evaluate(args: argparse.Namespace) -> int:
             "split",
             "baseline_variant",
             "prompt_style",
+            "prompt_contract",
             "prompt_sha256",
             "max_new_tokens",
             "do_sample",

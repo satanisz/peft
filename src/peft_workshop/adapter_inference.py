@@ -9,7 +9,11 @@ from typing import Any
 
 from .cases import load_cases
 from .paths import project_relative, resolve_project_path
-from .prompts import STATUS_AWARE_SYSTEM_PROMPT, build_messages
+from .prompts import (
+    STATUS_AWARE_SYSTEM_PROMPT,
+    STATUS_AWARE_SYSTEM_PROMPT_V2,
+    build_messages,
+)
 from .train import load_config
 
 
@@ -94,12 +98,19 @@ def run_adapter(args: argparse.Namespace) -> Path:
     model.config.use_cache = True
     output = resolve_project_path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
-    prompt_hash = hashlib.sha256(STATUS_AWARE_SYSTEM_PROMPT.encode("utf-8")).hexdigest()
+    prompt_contract = getattr(args, "prompt_contract", "v1")
+    if prompt_contract == "v2":
+        system_prompt = STATUS_AWARE_SYSTEM_PROMPT_V2
+        prompt_style = "status_aware_v2"
+    else:
+        system_prompt = STATUS_AWARE_SYSTEM_PROMPT
+        prompt_style = "status_aware"
+    prompt_hash = hashlib.sha256(system_prompt.encode("utf-8")).hexdigest()
     max_new_tokens = int(args.max_new_tokens or config["evaluation"]["max_new_tokens"])
 
     if cases and not args.no_warmup:
         warmup = tokenizer.apply_chat_template(
-            build_messages(cases[0], prompt_style="status_aware"),
+            build_messages(cases[0], prompt_style=prompt_style),
             add_generation_prompt=True,
             return_tensors="pt",
             return_dict=True,
@@ -112,7 +123,7 @@ def run_adapter(args: argparse.Namespace) -> Path:
     with output.open("w", encoding="utf-8", newline="\n") as handle:
         for index, case in enumerate(cases, start=1):
             inputs = tokenizer.apply_chat_template(
-                build_messages(case, prompt_style="status_aware"),
+                build_messages(case, prompt_style=prompt_style),
                 add_generation_prompt=True,
                 return_tensors="pt",
                 return_dict=True,
@@ -141,7 +152,8 @@ def run_adapter(args: argparse.Namespace) -> Path:
                 "adapter_path": project_relative(adapter_path) if adapter_path else None,
                 "merged_model_path": project_relative(model_source) if artifact_type == "merged" else None,
                 "protected_split_authorized": allow_protected_split,
-                "prompt_style": "status_aware_zero_shot",
+                "prompt_style": "status_aware_zero_shot" if prompt_contract == "v1" else "status_aware_v2_zero_shot",
+                "prompt_contract": prompt_contract,
                 "prompt_sha256": prompt_hash,
                 "demonstration_count": 0,
                 "max_new_tokens": max_new_tokens,
@@ -171,6 +183,7 @@ def main() -> int:
     parser.add_argument("--output", required=True)
     parser.add_argument("--limit", type=int)
     parser.add_argument("--max-new-tokens", type=int)
+    parser.add_argument("--prompt-contract", choices=["v1", "v2"], default="v1")
     parser.add_argument("--no-warmup", action="store_true")
     parser.add_argument(
         "--allow-protected-split",

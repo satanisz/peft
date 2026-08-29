@@ -299,6 +299,25 @@ Po zakończeniu wrócić na Sol/high. Wynik
 `READY_FOR_SOL_HIGH_APPROVAL_REVIEW` nie otwiera testów automatycznie; wymaga
 oddzielnej decyzji i commita bramki protected evidence.
 
+Sprint 4.2A zakończył się decyzją `HOLD_DIAGNOSTIC_THRESHOLDS`. Analiza per
+przypadek wykazała drift kontraktu severity i nadmierne użycie WARN, dlatego
+Sprint 4.2B wykonuje prompt-only ablation bez kolejnego treningu. Najpierw na
+Sol/high przygotować i zwalidować eksperyment:
+
+```powershell
+.\scripts\run_sprint4_2b_prompt_rerun.ps1 -Phase prepare
+```
+
+Po ponownym review poprawki `FC-209` przez SME przełączyć Codex na Luna/low:
+
+```powershell
+.\scripts\run_sprint4_2b_prompt_rerun.ps1 -Phase rerun
+```
+
+Runner zachowuje baseline v1, zapisuje osobne wyniki promptu v2 i porównuje 29
+niezmienionych przypadków. `FC-209` raportuje osobno. Protected splits pozostają
+zamknięte.
+
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
 ```powershell

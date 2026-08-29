@@ -43,6 +43,25 @@ Reguły rozstrzygające:
 - PASS wymaga kompletnego materiału.
 """
 
+STATUS_AWARE_SYSTEM_PROMPT_V2 = STATUS_AWARE_SYSTEM_PROMPT + """
+Kontrakt wykonawczy v2 — pola pochodne wyznaczaj deterministycznie:
+- NOT_APPLICABLE → severity NONE, requires_human_review false,
+- INSUFFICIENT_DATA → severity MEDIUM, requires_human_review true,
+- FAIL → severity HIGH, requires_human_review true,
+- WARN → severity MEDIUM, requires_human_review true,
+- PASS → severity NONE, requires_human_review false.
+W status-policy-v1 nie używaj severity LOW.
+
+Checklista przed odpowiedzią:
+1. Najpierw ustal, czy istnieje trigger i czy obiekt jest w zakresie. Jeżeli nie — NOT_APPLICABLE.
+2. Jeżeli kontrola ma zastosowanie, sprawdź kompletność obowiązkowych dowodów i rozstrzygalność źródeł. Brak dowodu albo konflikt równorzędnych źródeł bez reguły pierwszeństwa — INSUFFICIENT_DATA.
+3. Dopiero przy kompletnym materiale oceń próg materialności z dostarczonej procedury. Nie zastępuj jawnego progu własną oceną.
+4. WARN stosuj wyłącznie dla konkretnej częściowej, wstępnej lub niematerialnej wady; nie jako klasę resztkową.
+5. Jeżeli deterministic_check nie jest null, calculation jest obowiązkowe i musi używać performed_by=deterministic_control oraz danych z tego pola.
+6. Każdy source_id kopiuj znak w znak z wejścia. Nie rekonstruuj ani nie poprawiaj identyfikatorów z pamięci.
+7. Przed zwróceniem JSON sprawdź zgodność statusu z severity i requires_human_review według powyższej tabeli.
+"""
+
 B3_DEMONSTRATION_CASE_IDS = ("BD-0002", "BD-0161", "BD-0162")
 
 NAIVE_SYSTEM_PROMPT = """Jesteś asystentem wspierającym kontrolę finansową.
@@ -113,19 +132,24 @@ def build_messages(
     *,
     prompt_style: str = "full",
 ) -> list[dict[str, str]]:
-    if prompt_style not in {"naive", "full", "status_aware"}:
+    if prompt_style not in {"naive", "full", "status_aware", "status_aware_v2"}:
         raise ValueError(f"Nieznany prompt_style: {prompt_style}")
     if prompt_style == "naive":
         return [
             {"role": "system", "content": NAIVE_SYSTEM_PROMPT},
             {"role": "user", "content": render_naive_user_prompt(case)},
         ]
-    system_prompt = STATUS_AWARE_SYSTEM_PROMPT if prompt_style == "status_aware" else SYSTEM_PROMPT
+    if prompt_style == "status_aware_v2":
+        system_prompt = STATUS_AWARE_SYSTEM_PROMPT_V2
+    elif prompt_style == "status_aware":
+        system_prompt = STATUS_AWARE_SYSTEM_PROMPT
+    else:
+        system_prompt = SYSTEM_PROMPT
     messages: list[dict[str, str]] = [{"role": "system", "content": system_prompt}]
     for demonstration in demonstrations or []:
         demonstration_prompt = (
             render_compact_demonstration_prompt(demonstration)
-            if prompt_style == "status_aware"
+            if prompt_style in {"status_aware", "status_aware_v2"}
             else render_user_prompt(demonstration)
         )
         messages.append({"role": "user", "content": demonstration_prompt})

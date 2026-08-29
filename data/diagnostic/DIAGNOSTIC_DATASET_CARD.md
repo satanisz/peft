@@ -2,7 +2,7 @@
 
 ## Cel
 
-`diagnostic-set-v1.0.1` jest ręcznie napisanym benchmarkiem poza generatorami
+`diagnostic-set-v1.0.2` jest ręcznie napisanym benchmarkiem poza generatorami
 `dataset-v1` i `boundary-pack-v1`. Ma sprawdzić, czy Q1 nauczył się reguł
 kontroli, czy jedynie stylu syntetycznych szablonów.
 
@@ -39,8 +39,9 @@ raportowaniu wyników.
 Walidacja schematu i spójności implementacyjnej: wykonana. Review wspomagany
 Sol/high: wykonany dla 30/30 przypadków; po review usunięto trzy wskazówki
 etykietowe i poprawiono jedną rekomendację operacyjną. Złote statusy oraz
-obliczenia nie wymagały zmian. Niezależny review eksperta pozostaje:
-`PENDING_INDEPENDENT_REVIEW`.
+obliczenia nie wymagały zmian. Po diagnostyce doprecyzowano porównywalność
+zakresu w `FC-209`; złoty status pozostał bez zmian. Ponownego review SME
+wymaga wyłącznie ten przypadek: `PENDING_FC209_AMENDMENT_REVIEW`.
 
 Kryteria: `configs/diagnostic_review_criteria_v1.json`.
 Formularz: `data/reviews/diagnostic_set_v1_review.json`.
