@@ -34,28 +34,29 @@ zbudowanego wokół zastosowań bankowych.
 - [Analityczny review Sprintu 4](docs/14_sprint_4_analytical_review.md)
 - [Executive plan Sprintu 4.2A](docs/15_sprint_4_2a_executive_plan.md)
 - [Analiza błędów i prompt rerun Sprintu 4.2B](docs/16_sprint_4_2b_error_analysis_and_rerun_plan.md)
+- [Deterministic guard Sprintu 4.2C](docs/17_sprint_4_2c_deterministic_guard.md)
+- [Narracja i scenariusze Sprintu 5](docs/18_sprint_5_narrative_and_scenarios.md)
+- [Raport aktualizacji materiałów Sprintu 5](docs/19_sprint_5_material_update_report.md)
+- [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty
 
 ```text
 data/                 dane źródłowe, wygenerowane i podziały benchmarkowe
-notebooks/            demonstracje od baseline'u do QLoRA
 src/                  generowanie danych, trening i ewaluacja
 configs/              jawne konfiguracje eksperymentów
 results/              wyniki, wykresy i przykłady błędów
-slides/               slajdy i notatki prowadzącego
-trainer_guide/        scenariusz, pytania, troubleshooting i plan awaryjny
+materials/            talia, ściąga, ćwiczenia, FAQ i katalog zastosowań
+notebooks/            trzy demonstracje prowadzącego bez auto-startu treningu
 ```
 
 ## Najbliższy kamień milowy
 
-Sprint 3 zakończył się decyzją M3 PASS. Q1 osiągnął macro-F1 1,000 oraz 100%
-poprawności 60 minimalnych par na boundary validation, zachowując macro-F1
-1,000 na oryginalnym validation i redukując input tokens o 51,6% względem B3.
-Q1 jest kandydatem `adapter-v0.1` do pełnego benchmarku Sprintu 4. Wyniki są
-syntetyczne i jednoseedowe; testy oraz challenge pozostają zamknięte, a użycie
-poza warsztatem wymaga niezależnego review eksperckiego.
+Sprint 5 ma status `READY_FOR_M5_CONTENT_FREEZE_REVIEW_WITH_PROTECTED_HOLD`.
+Q1-DEMO ukończyło 12 kroków w 114,361 s, zapisało adapter rank 8 i przeszło
+fresh reload przy limicie 384 tokenów. Talia 53 slajdów, trzy notebooki i pakiet
+uczestnika/prowadzącego są gotowe do review właściciela.
 
-Replikacja Sprintu 4 została ukończona dla trzech seedów. Review z 28 sierpnia
-2026 wstrzymał otwarcie test/challenge do czasu zbudowania diagnostic setu poza
-szablonami, Q2/source integrity guard i ponownej decyzji Sol/high.
+Po akceptacji M5 rozpoczyna się Sprint 6: próba od czystego środowiska i pełny
+dry-run 180 minut. Protected evidence pozostaje zamknięte. Wyniki dotyczą danych
+syntetycznych i nie stanowią zgody produkcyjnej.

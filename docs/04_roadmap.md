@@ -84,9 +84,11 @@ Rezultat: dane do wykresów, slajdów i dyskusji biznesowej.
 
 ## Etap 6 — materiały szkoleniowe
 
-Status: narracja Sol/high, 53 slajdy, notatki prowadzącego i trzy scenariusze
-warsztatowe ukończone 29 sierpnia 2026. M5 pozostaje otwarta do czasu próby
-treningu demonstracyjnego i domknięcia materiałów pomocniczych.
+Status: `READY_FOR_M5_CONTENT_FREEZE_REVIEW` po aktualizacji 29 sierpnia 2026.
+Trening Q1-DEMO i fresh reload zakończyły się poprawnie; 53 slajdy zawierają
+rzeczywiste metryki, a pakiet pomocniczy i trzy notebooki są gotowe. M5 pozostaje
+otwarta do akceptacji treści przez właściciela; pełny dry-run 180 minut należy do
+Sprintu 6.
 
 - slajdy uczestnika,
 - rozszerzone notatki prowadzącego,
@@ -110,12 +112,11 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Warstwa projektowa Sprintu 5 jest ukończona: narracja, 53 slajdy, notatki
-prowadzącego, ćwiczenia i fallback demonstracji są gotowe. Następny krok dla
-Luna/low to kontrolowany dry-run 12-krokowego treningu demonstracyjnego,
-sprawdzenie reloadu adaptera oraz zebranie logu do próby generalnej. Protected
-splits pozostają zamknięte; obowiązuje status
-`READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`.
+Właściciel wykonuje review pakietu M5. Po akceptacji Luna/low przeprowadza w
+Sprincie 6 techniczną próbę od czystego uruchomienia, a następnie pełny dry-run
+180 minut z pomiarem segmentów, symulacją braku internetu i przełączeniem na
+fallback. Protected splits pozostają zamknięte; obowiązuje status
+`READY_FOR_M5_CONTENT_FREEZE_REVIEW_WITH_PROTECTED_HOLD`.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
@@ -125,3 +126,4 @@ Review: [`14_sprint_4_analytical_review.md`](14_sprint_4_analytical_review.md).
 Sprint 4.2A: [`15_sprint_4_2a_executive_plan.md`](15_sprint_4_2a_executive_plan.md).
 Sprint 4.2B: [`16_sprint_4_2b_error_analysis_and_rerun_plan.md`](16_sprint_4_2b_error_analysis_and_rerun_plan.md).
 Sprint 4.2C: [`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).
+Sprint 5: [`19_sprint_5_material_update_report.md`](19_sprint_5_material_update_report.md).

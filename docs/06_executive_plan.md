@@ -305,11 +305,12 @@ przed protected evidence: [`14_sprint_4_analytical_review.md`](14_sprint_4_analy
 **Czas:** 4–5 dni  
 **Cel:** zamienić eksperyment w profesjonalne szkolenie.
 
-**Status 29 sierpnia 2026:** ukończona warstwa projektowa Sol/high: narracja
-180 minut, 53 slajdy, notatki prowadzącego z blokami źródeł, trzy ćwiczenia i
-scenariusz demonstracji z twardym limitem 15 minut. M5 pozostaje otwarta do
-dry-runu Luna/low, sprawdzenia reloadu i domknięcia pozostałych materiałów
-pomocniczych.
+**Status po aktualizacji 29 sierpnia 2026:**
+`READY_FOR_M5_CONTENT_FREEZE_REVIEW`. Trening Q1-DEMO zakończył się w 114,361 s,
+fresh reload przeszedł przy limicie 384 tokenów, a wyniki zostały włączone do 53
+slajdów i notatek. Gotowe są trzy notebooki, ściąga, karty ćwiczeń z kluczem,
+FAQ, katalog zastosowań bankowych i checklista. M5 pozostaje otwarta wyłącznie
+do review treści przez właściciela; pełna próba 180 minut należy do Sprintu 6.
 
 ### Zakres
 
@@ -341,6 +342,10 @@ pomocniczych.
 ### Bramka M5 — Content freeze
 
 Po tej bramce zmieniamy już tylko błędy, czas prezentacji i problemy techniczne.
+
+**Kandydat do decyzji:** spełniono kryteria artefaktów i technicznego demo.
+Rekomendowana decyzja właściciela: zaakceptować M5 po krótkim review pakietu,
+bez zmiany statusu protected evidence (`HOLD`).
 
 ## Sprint 6 — próba generalna i wydanie
 
@@ -486,7 +491,9 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 
 ## 10. Następna decyzja wykonawcza
 
-Rozpoczynamy Sprint 2.5 od zatwierdzenia polityki statusów i wzorcowych par.
-Sprint 3 może rozpocząć się dopiero po M2.5 Boundary freeze. Główny kandydat
-QLoRA będzie następnie oceniany względem B1, B2 i B3 na dwóch osobno
-raportowanych zbiorach validation.
+Właściciel wykonuje review kandydata M5 i zatwierdza Content freeze. Następnie
+Luna/low prowadzi Sprint 6: instalację od zera, techniczną próbę demo, pełny
+dry-run 180 minut i test fallbacku. Sol/high wraca do analizy tylko w razie
+problemu merytorycznego, niespójności dowodów lub konieczności zmiany narracji.
+Protected evidence pozostaje `HOLD`; Sprint 6 nie otwiera ani nie stroi na
+chronionych splitach.

@@ -68,13 +68,13 @@ governance bez przedstawiania adaptera jako rozwiązania produkcyjnego.
 | 31 | Dobry JSON nie oznacza dobrej decyzji — baseline 0.6B |
 | 32 | Q0 vs Q1 izoluje wartość danych granicznych, nie samego treningu |
 | 33 | Ćwiczenie 2: oznacz status i wskaż przesłankę rozstrzygającą |
-| 34 | Demo ma pokazać pipeline, nie udawać pełnego eksperymentu |
+| 34 | Demo potwierdziło pipeline w 114 sekund: 12 kroków, 7,487 GiB, reload 1/1 |
 | 35 | Trening obserwujemy w warstwach uczenia, zasobów i danych |
 | 36 | Q1: rank 16, alpha 32, all-linear, 640 przykładów, 240 kroków |
-| 37 | Produktem treningu jest mały adapter i manifest, nie katalog checkpointów |
+| 37 | Rank 8 dał 33,1 MB wag adaptera, a rank 16 — 66,1 MB |
 | 38 | Reload jest częścią testu; merge to decyzja wdrożeniowa |
 | 39 | Checkpoint może zawieść przy zapisie mimo poprawnego kroku treningu |
-| 40 | Plan B jest elementem profesjonalnego demo, nie oznaką porażki |
+| 40 | Limit odpowiedzi jest częścią kontraktu: 128 vs 384 tokeny |
 | 41 | Macro-F1 jest początkiem rozmowy, a nie końcową zgodą |
 | 42 | Boundary data zmieniły wynik Q1: 1,000 F1 i 100% par |
 | 43 | Trzy seedy usuwają wygodną historię o jednym szczęśliwym przebiegu |
@@ -122,21 +122,38 @@ koniecznością review goldów.
 
 ## Scenariusz demonstracji QLoRA
 
-**Czas:** 35–43 minuty. **Model wykonawczy:** Luna/low.
+**Czas segmentu:** 35–43 minuty. **Model wykonawczy:** Luna/low.
+**Zweryfikowany czas samego treningu:** 114,361 s.
 
 1. Pokaż konfigurację demo i policz trainable parameters.
 2. Uruchom 12-krokowy trening na 50 zbalansowanych przykładach.
-3. Co kilka kroków pokaż loss, peak VRAM i brak truncation.
+3. Co kilka kroków pokaż loss, peak VRAM 7,487 GiB i brak truncation.
 4. W trakcie treningu omów NF4, BF16 compute i gradient accumulation.
-5. Po treningu pokaż katalog adaptera oraz manifest.
-6. W świeżym procesie wykonaj reload i jedną inferencję.
+5. Po treningu pokaż katalog adaptera, manifest i 33,1 MB wag adaptera.
+6. W świeżym procesie wykonaj reload i jedną inferencję z limitem 384 tokenów.
 7. Porównaj demo z przygotowanymi wynikami Q0/Q1; nie wyciągaj wniosków
    jakościowych z 12 kroków.
 
+Zweryfikowany reload 1/1 przeszedł JSON, schema, status, severity i źródła przy
+`max_new_tokens=384`. Pierwsza próba przy 128 tokenach dała poprawny JSON, ale
+niepełny schemat. To celowa lekcja: limit odpowiedzi należy do kontraktu testu.
+
 Plan awaryjny: jeżeli trening przekroczy 15 minut albo środowisko GPU zawiedzie,
-zatrzymaj go, pokaż zapisany log `results/sprint3/demo_dry_run.json`, załaduj
-referencyjny adapter Q1 i kontynuuj od reloadu. Uczestnicy zawsze widzą
-rzeczywisty artefakt oraz pełne, wcześniej zamrożone wyniki.
+zatrzymaj go, pokaż `results/sprint3/q1_demo_training_metrics.json`, manifest
+Q1-DEMO i zweryfikowany fresh reload. Następnie przejdź do pełnego Q1. Uczestnicy
+zawsze widzą rzeczywisty artefakt oraz pełne, wcześniej zamrożone wyniki.
+
+## Pakiet pomocniczy
+
+- `materials/quick_reference_lora_qlora.md` — ściąga uczestnika,
+- `materials/workshop_exercises.md` — karty ćwiczeń,
+- `materials/trainer_answer_key.md` — odpowiedzi i rubryka,
+- `materials/faq_troubleshooting.md` — pytania i fallback,
+- `materials/banking_use_cases.md` — portfel bankowych zastosowań,
+- `materials/workshop_checklist.md` — checklista prowadzącego,
+- `notebooks/01_method_and_boundary_data.ipynb` — interwencja i leakage,
+- `notebooks/02_qlora_demo.ipynb` — konfiguracja, wyniki treningu i reload,
+- `notebooks/03_benchmark_and_guard.ipynb` — benchmark, FC-209 i bramka.
 
 ## Scenariusz ćwiczenia 3 — decyzja bramkowa
 
@@ -170,8 +187,14 @@ jest gotowy do wykorzystania w materiale szkoleniowym.
 
 - 53 slajdy z notatkami prowadzącego i blokami źródeł,
 - trzy ćwiczenia z oczekiwanymi odpowiedziami,
+- trzy notebooki prowadzącego, domyślnie bez kosztownego treningu,
+- ściąga, FAQ, katalog zastosowań i checklista,
 - pełny scenariusz demo oraz plan awaryjny,
 - realne wyniki projektu, bez otwierania protected evidence,
 - jasne rozdzielenie jakości modelu, bezpieczeństwa systemu i gotowości
   produkcyjnej,
 - zweryfikowany wizualnie plik PPTX.
+
+Status po aktualizacji 29 sierpnia 2026: `READY_FOR_M5_CONTENT_FREEZE_REVIEW`.
+M5 wymaga jeszcze akceptacji treści przez właściciela i pełnej próby czasowej w
+Sprincie 6; protected evidence pozostaje `HOLD`.
