@@ -8,7 +8,7 @@
   "required_gate_decisions": {
     "results/sprint6/g0_preflight.json": "S6_G0_PASS",
     "results/sprint6/g1_shadow_freeze.json": "S6_G1_PASS",
-    "results/sprint6/g2_technical_readiness.json": "S6_G2_PASS"
+    "results/sprint6/g2_technical_readiness.json": "S6_G2_1_PASS"
   },
   "required_tags": [
     "s6-g0-pass",

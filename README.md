@@ -43,6 +43,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Karta shadow-challenge-v1](data/shadow/SHADOW_DATASET_CARD.md)
 - [Raport S6-G2 Technical readiness](docs/23_sprint_6_g2_technical_readiness_report.md)
 - [G2.1A — hardening approval, runnera i raportowania](docs/24_sprint_6_g2_1a_contract_hardening.md)
+- [Raport G2.1B — rzeczywisty offline i fallback](docs/25_sprint_6_g2_1b_technical_hardening_report.md)
 - [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty
@@ -67,7 +68,8 @@ Sprint 6 obejmuje próbę od czystego środowiska, 50 nowych przypadków shadow
 challenge, kontrolowane protected evidence i pełny dry-run 180 minut. Protected
 evidence pozostaje zamknięte. S6-G0 ma status PASS, a 50 goldów shadow challenge
 przeszło authoring, audyt, kontrolę wspomaganą i review człowieka/SME 50/50.
-S6-G1 ma status PASS. Review Sol/high wykazał luki G2; część G2.1A dotycząca
-approval, shadow 50×3 i raportowania jest gotowa. Następny krok to realna próba
-G2.1B na Luna/low. Wyniki dotyczą danych
-syntetycznych i nie stanowią zgody produkcyjnej.
+S6-G1 ma status PASS. Po review Sol/high wykonano G2.1A dotyczące osobnego
+approval, shadow 50×3 i raportowania oraz G2.1B z realnym local-only loadem,
+wykonanymi fallbackami i próbą czystej instalacji offline. G2.1B ma status
+`S6_G2_1_PASS`; następny krok to review Sol/high i osobna decyzja approval.
+Wyniki dotyczą danych syntetycznych i nie stanowią zgody produkcyjnej.

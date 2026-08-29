@@ -1,6 +1,6 @@
 {
-  "milestone": "S6-G2 Technical readiness",
-  "decision": "S6_G2_PASS",
+  "milestone": "S6-G2.1 Technical readiness hardening",
+  "decision": "S6_G2_1_PASS",
   "checks": {
     "g0_pass": true,
     "g1_pass": true,
@@ -13,47 +13,178 @@
     "fresh_reload_uses_384_tokens": true,
     "fresh_reload_protected_closed": true,
     "adapter_files_present": true,
-    "local_cache_or_adapter_available": true,
-    "offline_mode_is_local_only": true,
-    "notebooks_compile": true,
+    "exact_revision_loads_local_only_with_complete_weights": true,
+    "notebooks_execute_without_training": true,
     "unit_tests_pass": true,
-    "failure_fallbacks_rehearsed": true,
-    "shadow_not_used_for_training": true
+    "failure_injection_executes_verified_fallbacks": true,
+    "clean_environment_installs_offline": true,
+    "protected_and_shadow_not_used_for_training": true
   },
   "unit_tests": {
     "passed": true,
-    "count": 77,
+    "count": 87,
     "returncode": 0,
-    "tail": "----------------------------------------------------------------------\nRan 77 tests in 0.859s\n\nOK\n"
+    "tail": "----------------------------------------------------------------------\nRan 87 tests in 7.709s\n\nOK\n"
   },
   "notebooks": {
     "notebook_count": 3,
-    "compiled_code_cells": 13
+    "executed_code_cells": 13,
+    "errors": [],
+    "training_switches": [
+      {
+        "notebook": "02_qlora_demo.ipynb",
+        "run_training": false
+      }
+    ],
+    "training_was_not_started": true
   },
   "failure_rehearsal": {
     "all_expected_fallbacks": true,
     "scenarios": {
       "oom": {
-        "injected": true,
+        "injection": "torch.OutOfMemoryError",
         "caught": true,
-        "fallback": "compact_demo"
+        "exception_type": "OutOfMemoryError",
+        "exception_message": "S6-G2.1 controlled CUDA OOM injection; no allocation performed",
+        "fallback": "verified_precomputed_adapter",
+        "fallback_executed": true,
+        "fallback_result": {
+          "passed": true,
+          "adapter_path": "artifacts/adapters/q1-demo-v0.1",
+          "verified_file_count": 7,
+          "manifest_file_count": 7,
+          "mismatches": []
+        },
+        "passed": true
       },
       "missing_model": {
-        "injected": true,
+        "injection": "missing Hugging Face revision with local_files_only=True",
         "caught": true,
-        "fallback": "precomputed_artifact"
+        "exception_type": "LocalEntryNotFoundError",
+        "exception_message": "Cannot find an appropriate cached snapshot folder for the specified revision on the local disk and outgoing traffic has been disabled. To enable repo look-ups and downloads online, pass 'local_files_only=False' as input.",
+        "fallback": "exact_revision_local_only",
+        "fallback_executed": true,
+        "fallback_result": {
+          "passed": true,
+          "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+          "requested_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "resolved_snapshot": "C:\\Users\\stani\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-4B-Instruct-2507\\snapshots\\cdbee75f17c01a7cc42f958dc650907174af0554",
+          "snapshot_matches_revision": true,
+          "local_files_only": true,
+          "network_called": false,
+          "config_class": "Qwen3Config",
+          "tokenizer_class": "Qwen2Tokenizer",
+          "weight_index": "model.safetensors.index.json",
+          "indexed_tensor_count": 398,
+          "required_shards": [
+            "model-00001-of-00003.safetensors",
+            "model-00002-of-00003.safetensors",
+            "model-00003-of-00003.safetensors"
+          ],
+          "verified_shard_count": 3,
+          "verified_weight_bytes": 8044982000,
+          "missing_shards": [],
+          "empty_shards": [],
+          "missing_tensors": []
+        },
+        "passed": true
       },
       "checkpoint_error": {
-        "injected": true,
+        "injection": "missing adapter checkpoint path",
         "caught": true,
-        "fallback": "last_verified_adapter"
+        "exception_type": "FileNotFoundError",
+        "exception_message": "Checkpoint nie istnieje: C:\\Users\\stani\\Projects\\peft\\artifacts\\adapters\\__s6_g2_1_missing_checkpoint__",
+        "fallback": "last_verified_adapter",
+        "fallback_executed": true,
+        "fallback_result": {
+          "passed": true,
+          "adapter_path": "artifacts/adapters/q1-demo-v0.1",
+          "verified_file_count": 7,
+          "manifest_file_count": 7,
+          "mismatches": []
+        },
+        "passed": true
       },
       "offline_cache": {
-        "injected": true,
+        "injection": "blocked network transport with offline environment",
         "caught": true,
-        "fallback": "local_only"
+        "exception_type": "ConnectionError",
+        "exception_message": "S6-G2.1 controlled network transport failure in offline mode",
+        "fallback": "exact_revision_local_only",
+        "fallback_executed": true,
+        "fallback_result": {
+          "passed": true,
+          "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+          "requested_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+          "resolved_snapshot": "C:\\Users\\stani\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-4B-Instruct-2507\\snapshots\\cdbee75f17c01a7cc42f958dc650907174af0554",
+          "snapshot_matches_revision": true,
+          "local_files_only": true,
+          "network_called": false,
+          "config_class": "Qwen3Config",
+          "tokenizer_class": "Qwen2Tokenizer",
+          "weight_index": "model.safetensors.index.json",
+          "indexed_tensor_count": 398,
+          "required_shards": [
+            "model-00001-of-00003.safetensors",
+            "model-00002-of-00003.safetensors",
+            "model-00003-of-00003.safetensors"
+          ],
+          "verified_shard_count": 3,
+          "verified_weight_bytes": 8044982000,
+          "missing_shards": [],
+          "empty_shards": [],
+          "missing_tensors": []
+        },
+        "passed": true
       }
     }
+  },
+  "training_source_audit": {
+    "checked_sources": [
+      {
+        "config": "configs/qlora_demo_v1.json",
+        "path": "data/generated/dataset_v1/train.jsonl"
+      },
+      {
+        "config": "configs/qlora_demo_v1.json",
+        "path": "data/splits/boundary_train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q0_v1.json",
+        "path": "data/generated/dataset_v1/train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_seed_20260828_v1.json",
+        "path": "data/generated/dataset_v1/train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_seed_20260828_v1.json",
+        "path": "data/splits/boundary_train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_seed_20260829_v1.json",
+        "path": "data/generated/dataset_v1/train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_seed_20260829_v1.json",
+        "path": "data/splits/boundary_train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_v1.json",
+        "path": "data/generated/dataset_v1/train.jsonl"
+      },
+      {
+        "config": "configs/qlora_q1_v1.json",
+        "path": "data/splits/boundary_train.jsonl"
+      }
+    ],
+    "forbidden_sources": [
+      "data/generated/dataset_v1/challenge.jsonl",
+      "data/generated/dataset_v1/test.jsonl",
+      "data/shadow/shadow_challenge_v1.jsonl",
+      "data/splits/boundary_test.jsonl"
+    ],
+    "violations": []
   },
   "demo": {
     "run_id": "Q1-DEMO",
@@ -63,14 +194,81 @@
     "adapter_dir": "artifacts/adapters/q1-demo-v0.1"
   },
   "offline": {
-    "mode": "simulated_HF_HUB_OFFLINE",
-    "local_cache_or_adapter_present": true,
-    "network_called": false
+    "passed": true,
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "requested_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "resolved_snapshot": "C:\\Users\\stani\\.cache\\huggingface\\hub\\models--Qwen--Qwen3-4B-Instruct-2507\\snapshots\\cdbee75f17c01a7cc42f958dc650907174af0554",
+    "snapshot_matches_revision": true,
+    "local_files_only": true,
+    "network_called": false,
+    "config_class": "Qwen3Config",
+    "tokenizer_class": "Qwen2Tokenizer",
+    "weight_index": "model.safetensors.index.json",
+    "indexed_tensor_count": 398,
+    "required_shards": [
+      "model-00001-of-00003.safetensors",
+      "model-00002-of-00003.safetensors",
+      "model-00003-of-00003.safetensors"
+    ],
+    "verified_shard_count": 3,
+    "verified_weight_bytes": 8044982000,
+    "missing_shards": [],
+    "empty_shards": [],
+    "missing_tensors": []
+  },
+  "clean_offline_install": {
+    "passed": true,
+    "isolated_temporary_environment": true,
+    "package_installed_from": ".",
+    "dependency_resolution": "intentionally_skipped; exact model/runtime checks run in the frozen workshop environment",
+    "offline_flags": {
+      "UV_OFFLINE": "1",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "PIP_NO_INDEX": "1"
+    },
+    "network_called": false,
+    "commands": [
+      {
+        "command": [
+          "uv.EXE",
+          "venv",
+          "--python",
+          "C:\\Users\\stani\\Projects\\peft\\.venv\\Scripts\\python.exe",
+          "C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv"
+        ],
+        "returncode": 0,
+        "output_tail": "Using CPython 3.12.12 interpreter at: .venv\\Scripts\\python.exe\nCreating virtual environment at: C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv\nActivate with: C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv\\Scripts\\activate\n"
+      },
+      {
+        "command": [
+          "uv.EXE",
+          "pip",
+          "install",
+          "--offline",
+          "--no-deps",
+          "--python",
+          "C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv\\Scripts\\python.exe",
+          "C:\\Users\\stani\\Projects\\peft"
+        ],
+        "returncode": 0,
+        "output_tail": "Using Python 3.12.12 environment at: C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv\nResolved 1 package in 2ms\n   Building peft-banking-workshop @ file:///C:/Users/stani/Projects/peft\n      Built peft-banking-workshop @ file:///C:/Users/stani/Projects/peft\nPrepared 1 package in 814ms\nInstalled 1 package in 124ms\n + peft-banking-workshop==0.1.0 (from file:///C:/Users/stani/Projects/peft)\n"
+      },
+      {
+        "command": [
+          "python.exe",
+          "-c",
+          "import peft_workshop; from peft_workshop.paths import PROJECT_ROOT; print('offline-clean-import-ok', PROJECT_ROOT)"
+        ],
+        "returncode": 0,
+        "output_tail": "offline-clean-import-ok C:\\Users\\stani\\AppData\\Local\\Temp\\peft-s6-g2-1-offline-geolwpdb\\venv\\Lib\n"
+      }
+    ]
   },
   "protected_splits_opened": false,
   "protected_content_read": false,
   "inference_run": false,
-  "next_allowed_action": "SOL_HIGH_REVIEW_AND_OPERATOR_APPROVAL",
-  "scope_notice": "G2 potwierdza gotowość techniczną na zamrożonych artefaktach. Nie otwiera protected evidence i nie jest zgodą produkcyjną.",
-  "wall_clock_seconds": 1.322
+  "next_allowed_action": "SOL_HIGH_REVIEW_AND_SEPARATE_OPERATOR_APPROVAL",
+  "scope_notice": "G2.1 potwierdza wykonane ścieżki techniczne na zamrożonych artefaktach. Nie otwiera protected evidence i nie jest zgodą produkcyjną.",
+  "wall_clock_seconds": 17.109
 }

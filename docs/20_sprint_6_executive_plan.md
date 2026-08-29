@@ -10,10 +10,11 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
-**Status wykonania:** review Sol/high utrzymał G0/G1 PASS, lecz zmienił G2 na
-`HOLD_PENDING_G2_1_HARDENING`. G2.1A (approval, runner shadow i raportowanie)
-jest zakończone; następny krok to realna próba G2.1B na Luna/low. Protected
-evidence pozostaje zamknięte.
+**Status wykonania:** G0 i G1 są PASS. Po review Sol/high wykonano G2.1A
+(osobny approval, runner shadow i raportowanie) oraz rzeczywistą próbę G2.1B na
+Luna/low. G2.1B ma status `S6_G2_1_PASS`; następny krok to review całego pakietu
+przez Sol/high i ewentualne utworzenie osobnego approval. Protected evidence
+pozostaje zamknięte.
 
 ## Zasada metodologiczna
 
@@ -138,11 +139,14 @@ fresh reload, offline/cache, 3 notebooki, 77 testów i 4 kontrolowane fallbacki
 przeszły. Raport:
 [`23_sprint_6_g2_technical_readiness_report.md`](23_sprint_6_g2_technical_readiness_report.md).
 
-**Review Sol/high:** PASS pozostaje wynikiem historycznym, ale nie uprawnia do
-approval. G2.1A rozdziela zamrożony kontrakt od approval, dodaje shadow 50×3 i
-wspólny raport. G2.1B musi zastąpić deklaratywny offline/fallback realną próbą.
-Szczegóły:
-[`24_sprint_6_g2_1a_contract_hardening.md`](24_sprint_6_g2_1a_contract_hardening.md).
+**Review Sol/high:** pierwotny PASS pozostaje wynikiem historycznym i nie
+uprawnia do approval. G2.1A rozdzieliło zamrożony kontrakt od approval, dodało
+shadow 50×3 i wspólny raport. G2.1B wykonało realny local-only load, kontrolowane
+awarie z fallbackiem, notebooki i instalację projektu offline. Wynik:
+`S6_G2_1_PASS`, 17/17 kontroli i 87 testów. Szczegóły:
+[`24_sprint_6_g2_1a_contract_hardening.md`](24_sprint_6_g2_1a_contract_hardening.md)
+oraz
+[`25_sprint_6_g2_1b_technical_hardening_report.md`](25_sprint_6_g2_1b_technical_hardening_report.md).
 
 ## S6.4 — jawna decyzja i jednorazowe protected evidence
 
@@ -150,7 +154,7 @@ Szczegóły:
 
 **Inferencja i monitoring:** Luna/low. **Czas:** około 5–6 godzin GPU.
 
-Po PASS S6-G0, S6-G1 i S6-G2 Sol/high wykonuje review pakietu. Dopiero osobny,
+Po PASS S6-G0, S6-G1 i S6-G2.1 Sol/high wykonuje review pakietu. Dopiero osobny,
 zacommitowany status `APPROVED_TO_OPEN_PROTECTED_SPLITS` oraz uruchomienie przez
 operatora z parametrem potwierdzającym pozwalają odczytać dane.
 

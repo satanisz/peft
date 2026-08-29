@@ -11,6 +11,10 @@ do otwarcia protected evidence. Offline i fallback były deklaratywne; wymagany
 jest G2.1B oraz tag `s6-g2.1-pass`.
 **Protected evidence:** zamknięte; zero odczytanej treści i zero inferencji.
 
+**Następca raportu:** G2.1B wykonało brakujące próby i osiągnęło
+`S6_G2_1_PASS`; zobacz
+[`25_sprint_6_g2_1b_technical_hardening_report.md`](25_sprint_6_g2_1b_technical_hardening_report.md).
+
 ## Zakres i wynik
 
 Próba techniczna została wykonana na zamrożonych artefaktach. Nie powtarzano

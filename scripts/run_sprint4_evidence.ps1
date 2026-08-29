@@ -29,7 +29,7 @@ if ($LASTEXITCODE -ne 0) {
 $s6Gates = @(
     @{ Path = "results\sprint6\g0_preflight.json"; Decision = "S6_G0_PASS" },
     @{ Path = "results\sprint6\g1_shadow_freeze.json"; Decision = "S6_G1_PASS" },
-    @{ Path = "results\sprint6\g2_technical_readiness.json"; Decision = "S6_G2_PASS" }
+    @{ Path = "results\sprint6\g2_technical_readiness.json"; Decision = "S6_G2_1_PASS" }
 )
 foreach ($requiredGate in $s6Gates) {
     $requiredGatePath = Join-Path $projectRoot $requiredGate.Path

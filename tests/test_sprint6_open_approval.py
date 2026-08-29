@@ -6,6 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from peft_workshop import sprint6_open_approval as approval_module
 from peft_workshop.sprint6_open_approval import build_template, validate_approval
 
 
@@ -23,15 +24,23 @@ class Sprint6OpenApprovalTests(unittest.TestCase):
         self.assertFalse(report["protected_content_read"])
 
     def test_explicit_approval_with_exact_bindings_passes_contract(self) -> None:
-        payload = build_template()
-        payload.update({
-            "decision": "APPROVED_TO_OPEN_PROTECTED_SPLITS",
-            "reviewer": "Test Sol/high reviewer",
-            "reviewed_at": "2026-08-29T20:30:00+02:00",
-            "reviewed_git_commit": __import__("subprocess").check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        })
-        with patch("peft_workshop.sprint6_open_approval._git", side_effect=lambda *args: "" if args[0] == "status" else "test-ref"):
-            report = validate_approval(self._write(payload), require_clean_git=False)
+        real_read = approval_module._read
+
+        def read_with_completed_g2(path):
+            if str(path) == "results/sprint6/g2_technical_readiness.json":
+                return {"decision": "S6_G2_1_PASS"}
+            return real_read(path)
+
+        with patch("peft_workshop.sprint6_open_approval._read", side_effect=read_with_completed_g2):
+            payload = build_template()
+            payload.update({
+                "decision": "APPROVED_TO_OPEN_PROTECTED_SPLITS",
+                "reviewer": "Test Sol/high reviewer",
+                "reviewed_at": "2026-08-29T20:30:00+02:00",
+                "reviewed_git_commit": __import__("subprocess").check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+            })
+            with patch("peft_workshop.sprint6_open_approval._git", side_effect=lambda *args: "" if args[0] == "status" else "test-ref"):
+                report = validate_approval(self._write(payload), require_clean_git=False)
         self.assertEqual(report["decision"], "APPROVED_CONTRACT_VALID")
         self.assertTrue(all(report["checks"].values()))
 

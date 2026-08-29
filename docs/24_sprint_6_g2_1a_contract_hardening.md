@@ -61,9 +61,11 @@ zablokowanych. Nawet pełne progi automatyczne pozostawiają
   odczytem protected evidence,
 - protected outputs i authorization nadal nie istnieją.
 
-## Następny krok
+## Wynik kolejnego kroku
 
-Luna/low wykonuje G2.1B: realny local-only/offline load, kontrolowane
-wstrzyknięcia awarii, wykonanie notebooków z `RUN_TRAINING=False` oraz próbę
-czystego środowiska. Dopiero wynik G2.1 PASS i tag `s6-g2.1-pass` pozwolą
-Sol/high przygotować osobny approval. Protected evidence pozostaje HOLD.
+G2.1B zostało wykonane na Luna/low i osiągnęło `S6_G2_1_PASS`: realny
+local-only load, kontrolowane wstrzyknięcia awarii, wykonanie notebooków z
+`RUN_TRAINING=False` oraz próba czystego środowiska przeszły. Szczegóły zawiera
+[`25_sprint_6_g2_1b_technical_hardening_report.md`](25_sprint_6_g2_1b_technical_hardening_report.md).
+Po tagu `s6-g2.1-pass` Sol/high może wykonać osobny review approval. Protected
+evidence pozostaje HOLD.
