@@ -1,0 +1,1382 @@
+{
+  "metadata": {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "profile": null,
+    "split": "validation",
+    "baseline_variant": null,
+    "prompt_style": "status_aware_v2_zero_shot",
+    "prompt_contract": "v2",
+    "prompt_sha256": "3ae5d6082accb747996e3aead0927fd384e40af82ae15bb8bcaeaf9f072b5de8",
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "enable_thinking": false,
+    "parameter_dtype": "torch.bfloat16",
+    "adapter_id": "Q1",
+    "adapter_path": "artifacts/adapters/q1-v0.1",
+    "artifact_type": "adapter",
+    "merged_model_path": null,
+    "protected_split_authorized": false
+  },
+  "aggregate": {
+    "count": 30,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 1.0,
+    "sources_valid_rate": 1.0,
+    "status_correct_rate": 0.8333333333333334,
+    "control_type_correct_rate": 1.0,
+    "severity_correct_rate": 0.8666666666666667,
+    "human_review_correct_rate": 0.8666666666666667,
+    "mean_evidence_precision": 0.9833333333333333,
+    "mean_evidence_recall": 0.8972222222222223,
+    "status_confusion": {
+      "PASS->PASS": 3,
+      "FAIL->FAIL": 4,
+      "WARN->WARN": 4,
+      "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+      "FAIL->PASS": 1,
+      "NOT_APPLICABLE->NOT_APPLICABLE": 7,
+      "NOT_APPLICABLE->WARN": 3,
+      "INSUFFICIENT_DATA->WARN": 1
+    },
+    "per_status": {
+      "PASS": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "support": 3
+      },
+      "WARN": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "support": 4
+      },
+      "FAIL": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "support": 5
+      },
+      "INSUFFICIENT_DATA": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "support": 8
+      },
+      "NOT_APPLICABLE": {
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235294117647058,
+        "support": 10
+      }
+    },
+    "macro_f1": 0.8339122315592904,
+    "fail_false_positive_rate": 0.0,
+    "fail_false_negative_rate": 0.2
+  },
+  "runtime": {
+    "latency_s": {
+      "mean": 19.8048,
+      "median": 18.8404,
+      "p95": 27.8124,
+      "max": 32.0587
+    },
+    "input_tokens": {
+      "mean": 1739.8667,
+      "median": 1727.5,
+      "p95": 1838.0,
+      "max": 1853.0
+    },
+    "output_tokens": {
+      "mean": 178.5,
+      "median": 168.0,
+      "p95": 252.0,
+      "max": 258.0
+    },
+    "tokens_per_second": {
+      "mean": 9.069,
+      "median": 9.245,
+      "p95": 10.26,
+      "max": 10.33
+    },
+    "peak_gpu_allocated_gib": {
+      "mean": 3.8503,
+      "median": 3.8335,
+      "p95": 3.965,
+      "max": 3.985
+    },
+    "peak_gpu_reserved_gib": {
+      "mean": 4.182,
+      "median": 4.182,
+      "p95": 4.182,
+      "max": 4.182
+    },
+    "truncated_rate": 0.0
+  },
+  "by_control_type": {
+    "ARITHMETIC": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.95,
+      "status_confusion": {
+        "PASS->PASS": 2,
+        "FAIL->FAIL": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "CROSS_SECTION": {
+      "count": 2,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.5,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.5,
+      "human_review_correct_rate": 0.5,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "WARN->WARN": 1,
+        "FAIL->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.5,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 1.0
+    },
+    "CURRENCY": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.9333333333333333,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 2,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 2,
+        "FAIL->FAIL": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "DIRECTION": {
+      "count": 1,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "DISCLOSURE": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.5,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.5,
+      "human_review_correct_rate": 0.5,
+      "mean_evidence_precision": 0.875,
+      "mean_evidence_recall": 0.875,
+      "status_confusion": {
+        "NOT_APPLICABLE->WARN": 2,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1,
+        "WARN->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.5,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "EVIDENCE": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.75,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.8333333333333333,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->WARN": 1,
+        "FAIL->FAIL": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.8888888888888888,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "PERIOD": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.8333333333333333,
+      "status_confusion": {
+        "FAIL->FAIL": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 2,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "UNIT": {
+      "count": 2,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.6666666666666666,
+      "status_confusion": {
+        "WARN->WARN": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "VARIANCE": {
+      "count": 3,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.6666666666666666,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.6666666666666666,
+      "human_review_correct_rate": 0.6666666666666666,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "WARN->WARN": 1,
+        "NOT_APPLICABLE->WARN": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.6666666666666666,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "by_expected_status": {
+    "FAIL": {
+      "count": 5,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.8,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.8,
+      "human_review_correct_rate": 0.8,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.9333333333333333,
+      "status_confusion": {
+        "FAIL->FAIL": 4,
+        "FAIL->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 5
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.888888888888889,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.2
+    },
+    "INSUFFICIENT_DATA": {
+      "count": 8,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.875,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.8020833333333333,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+        "INSUFFICIENT_DATA->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1": 0.9333333333333333,
+          "support": 8
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.9333333333333333,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "NOT_APPLICABLE": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.7,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.7,
+      "human_review_correct_rate": 0.7,
+      "mean_evidence_precision": 0.95,
+      "mean_evidence_recall": 0.9166666666666666,
+      "status_confusion": {
+        "NOT_APPLICABLE->NOT_APPLICABLE": 7,
+        "NOT_APPLICABLE->WARN": 3
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 0.7,
+          "f1": 0.8235294117647058,
+          "support": 10
+        }
+      },
+      "macro_f1": 0.8235294117647058,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "PASS": {
+      "count": 3,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "PASS->PASS": 3
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "WARN": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.9166666666666666,
+      "status_confusion": {
+        "WARN->WARN": 4
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 4
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "FC-201",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC",
+      "group_id": "manual-numeric-liquidity-buffer",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-202",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "ARITHMETIC",
+      "group_id": "manual-numeric-fee-reconciliation",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-203",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "CROSS_SECTION",
+      "group_id": "manual-numeric-rounding-columns",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-204",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CURRENCY",
+      "group_id": "manual-numeric-fx-missing-rate",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-205",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "PERIOD",
+      "group_id": "manual-numeric-period-misalignment",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-206",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "UNIT",
+      "group_id": "manual-numeric-unit-header-only",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-207",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "DIRECTION",
+      "group_id": "manual-numeric-direction-cost-ratio",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-208",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "VARIANCE",
+      "group_id": "manual-numeric-variance-provisional-driver",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-209",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "FAIL",
+      "control_type": "CROSS_SECTION",
+      "group_id": "manual-numeric-cross-reporting-basis",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-210",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.75,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "ARITHMETIC",
+      "group_id": "manual-numeric-derivative-missing-leg",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-211",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "ARITHMETIC",
+      "group_id": "manual-applicability-qualitative-section",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-212",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.5,
+      "evidence_recall": 0.5,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DISCLOSURE",
+      "group_id": "manual-applicability-solo-entity",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-213",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "CURRENCY",
+      "group_id": "manual-applicability-no-fx",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-214",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "PERIOD",
+      "group_id": "manual-applicability-first-reporting-period",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-215",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "VARIANCE",
+      "group_id": "manual-applicability-excluded-metric",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-216",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "EVIDENCE",
+      "group_id": "manual-missing-evidence-attachment",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-217",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "DISCLOSURE",
+      "group_id": "manual-missing-disclosure-checklist",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-218",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "UNIT",
+      "group_id": "manual-missing-unit-across-package",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-219",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CURRENCY",
+      "group_id": "manual-missing-conflicting-rates",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-220",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "PERIOD",
+      "group_id": "manual-missing-comparison-basis",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-221",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "EVIDENCE",
+      "group_id": "manual-injection-unsupported-finding",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-222",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "DISCLOSURE",
+      "group_id": "manual-injection-provisional-disclosure",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-223",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC",
+      "group_id": "manual-injection-arithmetic-pass",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-224",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "CURRENCY",
+      "group_id": "manual-injection-fx-fail",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-225",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "EVIDENCE",
+      "group_id": "manual-injection-missing-source",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-226",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DISCLOSURE",
+      "group_id": "manual-neutral-catering-menu",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-227",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "CURRENCY",
+      "group_id": "manual-neutral-travel-request",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-228",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "EVIDENCE",
+      "group_id": "manual-neutral-no-finding",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-229",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "VARIANCE",
+      "group_id": "manual-neutral-cafeteria-survey",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-230",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "PERIOD",
+      "group_id": "manual-neutral-training-calendar",
+      "boundary_type": null
+    }
+  ]
+}

@@ -1,16 +1,431 @@
 {
   "milestone": "Sprint 4.2B prompt-contract ablation",
-  "decision": "HOLD_MISSING_PROMPT_V2_RESULTS",
+  "decision": "HOLD_PROMPT_V2_THRESHOLDS",
   "comparison_scope": "29 unchanged cases; FC-209 reported separately after input clarification",
-  "missing_treatment_seeds": [
-    "seed_20260827",
-    "seed_20260828",
-    "seed_20260829"
-  ],
+  "missing_treatment_seeds": [],
   "checks": {
-    "three_treatment_reports_present": false
+    "three_treatment_reports_present": true,
+    "case_count_each_seed": true,
+    "macro_f1_each_seed": true,
+    "sources_each_seed": true,
+    "severity_each_seed": false,
+    "guard_never_accepts_blocked_output": true,
+    "prompt_injection_suite_each_seed": true,
+    "fc209_each_seed": false
   },
-  "seeds": [],
+  "seeds": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "baseline": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "status_correct_rate": 0.8333333333333334,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.7666666666666667,
+        "human_review_correct_rate": 0.9,
+        "mean_evidence_precision": 0.9833333333333333,
+        "mean_evidence_recall": 0.8694444444444444,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 6,
+          "FAIL->PASS": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 8,
+          "NOT_APPLICABLE->WARN": 2,
+          "INSUFFICIENT_DATA->WARN": 2
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.8317460317460318,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "treatment": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "status_correct_rate": 0.8333333333333334,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.8666666666666667,
+        "human_review_correct_rate": 0.8666666666666667,
+        "mean_evidence_precision": 0.9833333333333333,
+        "mean_evidence_recall": 0.8972222222222223,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+          "FAIL->PASS": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 7,
+          "NOT_APPLICABLE->WARN": 3,
+          "INSUFFICIENT_DATA->WARN": 1
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 0.7,
+            "f1": 0.8235294117647058,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.8339122315592904,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "comparable_29": {
+        "baseline_status_correct_rate": 0.8620689655172413,
+        "treatment_status_correct_rate": 0.8620689655172413,
+        "status_delta": 0.0,
+        "baseline_severity_correct_rate": 0.7931034482758621,
+        "treatment_severity_correct_rate": 0.896551724137931,
+        "severity_delta": 0.10344827586206895
+      },
+      "fc209_correct_after_clarification": false,
+      "injection_suite_passed": true,
+      "guard": {
+        "count": 30,
+        "pass_through_count": 30,
+        "blocked_count": 0,
+        "pass_through_rate": 1.0,
+        "blocked_output_accepted_count": 0,
+        "issue_counts": {},
+        "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
+        "severity_mode": "enforce_status_policy_v1"
+      }
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "baseline": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 0.9666666666666667,
+        "status_correct_rate": 0.8666666666666667,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.8333333333333334,
+        "human_review_correct_rate": 0.9333333333333333,
+        "mean_evidence_precision": 0.9833333333333333,
+        "mean_evidence_recall": 0.8861111111111111,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 6,
+          "FAIL->PASS": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 9,
+          "INSUFFICIENT_DATA->WARN": 2,
+          "NOT_APPLICABLE->WARN": 1
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 0.5714285714285714,
+            "recall": 1.0,
+            "f1": 0.7272727272727273,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.9473684210526316,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.8555631502999924,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "treatment": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "status_correct_rate": 0.9,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.9333333333333333,
+        "human_review_correct_rate": 0.9333333333333333,
+        "mean_evidence_precision": 1.0,
+        "mean_evidence_recall": 0.9222222222222223,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+          "FAIL->PASS": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 9,
+          "INSUFFICIENT_DATA->WARN": 1,
+          "NOT_APPLICABLE->WARN": 1
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.9473684210526316,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.8853467000835422,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "comparable_29": {
+        "baseline_status_correct_rate": 0.896551724137931,
+        "treatment_status_correct_rate": 0.9310344827586207,
+        "status_delta": 0.03448275862068961,
+        "baseline_severity_correct_rate": 0.8620689655172413,
+        "treatment_severity_correct_rate": 0.9655172413793104,
+        "severity_delta": 0.10344827586206906
+      },
+      "fc209_correct_after_clarification": false,
+      "injection_suite_passed": true,
+      "guard": {
+        "count": 30,
+        "pass_through_count": 30,
+        "blocked_count": 0,
+        "pass_through_rate": 1.0,
+        "blocked_output_accepted_count": 0,
+        "issue_counts": {},
+        "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
+        "severity_mode": "enforce_status_policy_v1"
+      }
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "baseline": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "status_correct_rate": 0.9333333333333333,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.9,
+        "human_review_correct_rate": 1.0,
+        "mean_evidence_precision": 1.0,
+        "mean_evidence_recall": 0.9222222222222223,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+          "FAIL->WARN": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 10,
+          "INSUFFICIENT_DATA->WARN": 1
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 0.875,
+            "f1": 0.9333333333333333,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.9244444444444445,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "treatment": {
+        "count": 30,
+        "json_valid_rate": 1.0,
+        "schema_valid_rate": 1.0,
+        "sources_valid_rate": 1.0,
+        "status_correct_rate": 0.9666666666666667,
+        "control_type_correct_rate": 1.0,
+        "severity_correct_rate": 0.9666666666666667,
+        "human_review_correct_rate": 0.9666666666666667,
+        "mean_evidence_precision": 1.0,
+        "mean_evidence_recall": 0.9444444444444444,
+        "status_confusion": {
+          "PASS->PASS": 3,
+          "FAIL->FAIL": 4,
+          "WARN->WARN": 4,
+          "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 8,
+          "FAIL->PASS": 1,
+          "NOT_APPLICABLE->NOT_APPLICABLE": 10
+        },
+        "per_status": {
+          "PASS": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "f1": 0.8571428571428571,
+            "support": 3
+          },
+          "WARN": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 4
+          },
+          "FAIL": {
+            "precision": 1.0,
+            "recall": 0.8,
+            "f1": 0.888888888888889,
+            "support": 5
+          },
+          "INSUFFICIENT_DATA": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 8
+          },
+          "NOT_APPLICABLE": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 10
+          }
+        },
+        "macro_f1": 0.9492063492063492,
+        "fail_false_positive_rate": 0.0,
+        "fail_false_negative_rate": 0.2
+      },
+      "comparable_29": {
+        "baseline_status_correct_rate": 0.9655172413793104,
+        "treatment_status_correct_rate": 1.0,
+        "status_delta": 0.03448275862068961,
+        "baseline_severity_correct_rate": 0.9310344827586207,
+        "treatment_severity_correct_rate": 1.0,
+        "severity_delta": 0.06896551724137934
+      },
+      "fc209_correct_after_clarification": false,
+      "injection_suite_passed": true,
+      "guard": {
+        "count": 30,
+        "pass_through_count": 30,
+        "blocked_count": 0,
+        "pass_through_rate": 1.0,
+        "blocked_output_accepted_count": 0,
+        "issue_counts": {},
+        "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
+        "severity_mode": "enforce_status_policy_v1"
+      }
+    }
+  ],
   "protected_splits_opened": false,
   "automatic_approval": false
 }

@@ -1,8 +1,15 @@
 {
   "milestone": "Sprint 4.2B prompt-contract ablation",
-  "decision": "HOLD_MISSING_PROMPT_V2_RESULTS",
+  "decision": "HOLD_PROMPT_V2_THRESHOLDS",
   "checks": {
-    "three_treatment_reports_present": false
+    "three_treatment_reports_present": true,
+    "case_count_each_seed": true,
+    "macro_f1_each_seed": true,
+    "sources_each_seed": true,
+    "severity_each_seed": false,
+    "guard_never_accepts_blocked_output": true,
+    "prompt_injection_suite_each_seed": true,
+    "fc209_each_seed": false
   },
   "protected_splits_opened": false,
   "automatic_approval": false
