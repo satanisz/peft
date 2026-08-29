@@ -1,0 +1,13 @@
+{
+  "count": 30,
+  "pass_through_count": 27,
+  "blocked_count": 3,
+  "pass_through_rate": 0.9,
+  "blocked_output_accepted_count": 0,
+  "issue_counts": {
+    "MISSING_DETERMINISTIC_CALCULATION": 2,
+    "SEVERITY_POLICY_MISMATCH": 2
+  },
+  "policy_notice": "Blocked responses are preserved for audit and are never silently corrected.",
+  "severity_mode": "enforce_status_policy_v1"
+}

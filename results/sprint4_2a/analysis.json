@@ -1,6 +1,6 @@
 {
-  "milestone": "Sprint 4.2A design and contract audit",
-  "decision": "HOLD_PENDING_INDEPENDENT_REVIEW_AND_Q2_DIAGNOSTIC",
+  "milestone": "Sprint 4.2A diagnostic analysis",
+  "decision": "HOLD_DIAGNOSTIC_THRESHOLDS",
   "protected_splits_opened": false,
   "severity_contract": {
     "legacy_original": "report_only",
@@ -219,6 +219,87 @@
         "sources_valid_rate": 1.0,
         "severity_errors": [],
         "source_errors": []
+      }
+    }
+  ],
+  "diagnostic_runs": [
+    {
+      "name": "seed_20260827",
+      "seed": 20260827,
+      "count": 30,
+      "macro_f1": 0.8317460317460318,
+      "status_correct_rate": 0.8333333333333334,
+      "sources_valid_rate": 1.0,
+      "severity_correct_rate": 0.7666666666666667,
+      "human_review_correct_rate": 0.9,
+      "guard_pass_through_rate": 0.8333333333333334,
+      "guard_blocked_count": 5,
+      "guard_blocked_output_accepted_count": 0,
+      "guard_issue_counts": {
+        "SEVERITY_POLICY_MISMATCH": 5
+      },
+      "status_confusion": {
+        "PASS->PASS": 3,
+        "FAIL->FAIL": 4,
+        "WARN->WARN": 4,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 6,
+        "FAIL->PASS": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 8,
+        "NOT_APPLICABLE->WARN": 2,
+        "INSUFFICIENT_DATA->WARN": 2
+      }
+    },
+    {
+      "name": "seed_20260828",
+      "seed": 20260828,
+      "count": 30,
+      "macro_f1": 0.8555631502999924,
+      "status_correct_rate": 0.8666666666666667,
+      "sources_valid_rate": 0.9666666666666667,
+      "severity_correct_rate": 0.8333333333333334,
+      "human_review_correct_rate": 0.9333333333333333,
+      "guard_pass_through_rate": 0.8333333333333334,
+      "guard_blocked_count": 5,
+      "guard_blocked_output_accepted_count": 0,
+      "guard_issue_counts": {
+        "SEVERITY_POLICY_MISMATCH": 4,
+        "UNKNOWN_SOURCE_ID": 1
+      },
+      "status_confusion": {
+        "PASS->PASS": 3,
+        "FAIL->FAIL": 4,
+        "WARN->WARN": 4,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 6,
+        "FAIL->PASS": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 9,
+        "INSUFFICIENT_DATA->WARN": 2,
+        "NOT_APPLICABLE->WARN": 1
+      }
+    },
+    {
+      "name": "seed_20260829",
+      "seed": 20260829,
+      "count": 30,
+      "macro_f1": 0.9244444444444445,
+      "status_correct_rate": 0.9333333333333333,
+      "sources_valid_rate": 1.0,
+      "severity_correct_rate": 0.9,
+      "human_review_correct_rate": 1.0,
+      "guard_pass_through_rate": 0.9,
+      "guard_blocked_count": 3,
+      "guard_blocked_output_accepted_count": 0,
+      "guard_issue_counts": {
+        "MISSING_DETERMINISTIC_CALCULATION": 2,
+        "SEVERITY_POLICY_MISMATCH": 2
+      },
+      "status_confusion": {
+        "PASS->PASS": 3,
+        "FAIL->FAIL": 4,
+        "WARN->WARN": 4,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 7,
+        "FAIL->WARN": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 10,
+        "INSUFFICIENT_DATA->WARN": 1
       }
     }
   ]

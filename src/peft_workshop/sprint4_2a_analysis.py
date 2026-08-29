@@ -156,12 +156,44 @@ def analyze_q1_validation(matrix: dict[str, Any], policy: dict[str, Any]) -> lis
     return rows
 
 
+def analyze_diagnostic_runs(matrix: dict[str, Any]) -> list[dict[str, Any]]:
+    rows = []
+    for seed in matrix["seeds"]:
+        metrics_path = resolve_project_path(f"results/sprint4_2a/{seed['name']}_diagnostic_metrics.json")
+        guard_path = resolve_project_path(f"results/sprint4_2a/{seed['name']}_diagnostic_guard_report.json")
+        if not metrics_path.exists() or not guard_path.exists():
+            continue
+        metrics = _read_json(metrics_path)
+        guard = _read_json(guard_path)
+        rows.append(
+            {
+                "name": seed["name"],
+                "seed": seed["seed"],
+                "count": metrics["aggregate"]["count"],
+                "macro_f1": metrics["aggregate"]["macro_f1"],
+                "status_correct_rate": metrics["aggregate"]["status_correct_rate"],
+                "sources_valid_rate": metrics["aggregate"]["sources_valid_rate"],
+                "severity_correct_rate": metrics["aggregate"]["severity_correct_rate"],
+                "human_review_correct_rate": metrics["aggregate"]["human_review_correct_rate"],
+                "guard_pass_through_rate": guard["pass_through_rate"],
+                "guard_blocked_count": guard["blocked_count"],
+                "guard_blocked_output_accepted_count": guard["blocked_output_accepted_count"],
+                "guard_issue_counts": guard["issue_counts"],
+                "status_confusion": metrics["aggregate"]["status_confusion"],
+            }
+        )
+    return rows
+
+
 def build_analysis() -> dict[str, Any]:
     policy = _read_json("configs/status_policy_v1.json")
     matrix = _read_json("configs/sprint4_matrix_v1.json")
+    diagnostic_runs = analyze_diagnostic_runs(matrix)
+    gate_path = resolve_project_path("results/sprint4_2a/gate.json")
+    gate = _read_json(gate_path) if gate_path.exists() else None
     return {
-        "milestone": "Sprint 4.2A design and contract audit",
-        "decision": "HOLD_PENDING_INDEPENDENT_REVIEW_AND_Q2_DIAGNOSTIC",
+        "milestone": "Sprint 4.2A diagnostic analysis" if diagnostic_runs else "Sprint 4.2A design and contract audit",
+        "decision": gate["decision"] if gate else "HOLD_PENDING_INDEPENDENT_REVIEW_AND_Q2_DIAGNOSTIC",
         "protected_splits_opened": False,
         "severity_contract": {
             "legacy_original": "report_only",
@@ -170,6 +202,7 @@ def build_analysis() -> dict[str, Any]:
         },
         "diagnostic_audit": audit_diagnostic_set(policy),
         "q1_validation_findings": analyze_q1_validation(matrix, policy),
+        "diagnostic_runs": diagnostic_runs,
     }
 
 
@@ -209,6 +242,20 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"Diagnostic set: {report['diagnostic_audit']['count']} przypadków, "
             f"błędy schematu: {report['diagnostic_audit']['schema_error_count']}, "
             f"niezgodności severity policy: {report['diagnostic_audit']['severity_policy_mismatch_count']}.",
+            "",
+            "## Q2 — diagnostyczne inferencje",
+            "",
+            "| Seed | Status accuracy | Macro-F1 | Sources | Severity | Human review | Guard pass-through | Guard blocks |",
+            "|---:|---:|---:|---:|---:|---:|---:|---:|",
+            *[
+                f"| {item['seed']} | {item['status_correct_rate']:.1%} | {item['macro_f1']:.3f} | "
+                f"{item['sources_valid_rate']:.1%} | {item['severity_correct_rate']:.1%} | "
+                f"{item['human_review_correct_rate']:.1%} | {item['guard_pass_through_rate']:.1%} | "
+                f"{item['guard_blocked_count']} |"
+                for item in report["diagnostic_runs"]
+            ],
+            "",
+            "Guard blokuje odpowiedzi niespełniające kontraktu i nie wykonuje cichej korekty.",
             "",
             "Protected splits pozostają nieotwarte.",
         ]

@@ -27,6 +27,8 @@ class Sprint42AAnalysisTests(unittest.TestCase):
             for error in seed["boundary"]["source_errors"]
         ]
         self.assertEqual([item["case_id"] for item in source_errors], ["BD-0360"])
+        self.assertEqual(len(report["diagnostic_runs"]), 3)
+        self.assertEqual(report["decision"], "HOLD_DIAGNOSTIC_THRESHOLDS")
 
 
 if __name__ == "__main__":

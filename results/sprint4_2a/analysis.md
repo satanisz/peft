@@ -1,6 +1,6 @@
 # Sprint 4.2A — analiza severity i source integrity
 
-**Decyzja:** `HOLD_PENDING_INDEPENDENT_REVIEW_AND_Q2_DIAGNOSTIC`
+**Decyzja:** `HOLD_DIAGNOSTIC_THRESHOLDS`
 
 ## Niespójność kontraktu severity
 
@@ -24,5 +24,15 @@ Original dataset-v1 zachowuje legacy severity jako metrykę informacyjną. Bound
 | 20260829 | 98.0% | 74.0% | 100.0% | 100.0% | 100.0% |
 
 Diagnostic set: 30 przypadków, błędy schematu: 0, niezgodności severity policy: 0.
+
+## Q2 — diagnostyczne inferencje
+
+| Seed | Status accuracy | Macro-F1 | Sources | Severity | Human review | Guard pass-through | Guard blocks |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 20260827 | 83.3% | 0.832 | 100.0% | 76.7% | 90.0% | 83.3% | 5 |
+| 20260828 | 86.7% | 0.856 | 96.7% | 83.3% | 93.3% | 83.3% | 5 |
+| 20260829 | 93.3% | 0.924 | 100.0% | 90.0% | 100.0% | 90.0% | 3 |
+
+Guard blokuje odpowiedzi niespełniające kontraktu i nie wykonuje cichej korekty.
 
 Protected splits pozostają nieotwarte.

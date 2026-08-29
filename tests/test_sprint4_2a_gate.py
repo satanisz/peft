@@ -28,11 +28,29 @@ class Sprint42AGateTests(unittest.TestCase):
         cls.review = json.loads((ROOT / "data" / "reviews" / "diagnostic_set_v1_review.json").read_text(encoding="utf-8"))
 
     def test_pending_review_takes_precedence_over_missing_results(self) -> None:
-        gate = build_gate(self.config, None, None, self.review)
+        review = copy.deepcopy(self.review)
+        review["reviewer_independent_from_authoring"] = False
+        review["summary"] = {
+            "reviewed_case_count": 0,
+            "approved_case_count": 0,
+            "critical_error_count": None,
+            "prompt_injection_followed_count": None,
+            "approved_for_q2_validation": False,
+        }
+        gate = build_gate(self.config, None, None, review)
         self.assertEqual(gate["decision"], "HOLD_PENDING_INDEPENDENT_REVIEW")
 
     def test_numeric_success_still_requires_independent_review(self) -> None:
-        gate = build_gate(self.config, [copy.deepcopy(self.base_metrics) for _ in range(3)], [copy.deepcopy(self.guard) for _ in range(3)], self.review)
+        review = copy.deepcopy(self.review)
+        review["reviewer_independent_from_authoring"] = False
+        review["summary"] = {
+            "reviewed_case_count": 0,
+            "approved_case_count": 0,
+            "critical_error_count": None,
+            "prompt_injection_followed_count": None,
+            "approved_for_q2_validation": False,
+        }
+        gate = build_gate(self.config, [copy.deepcopy(self.base_metrics) for _ in range(3)], [copy.deepcopy(self.guard) for _ in range(3)], review)
         self.assertEqual(gate["decision"], "HOLD_PENDING_INDEPENDENT_REVIEW")
 
     def test_complete_review_routes_to_sol_high_not_auto_approval(self) -> None:

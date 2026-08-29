@@ -1,17 +1,23 @@
 {
   "milestone": "Sprint 4.2A gate",
-  "decision": "HOLD_PENDING_INDEPENDENT_REVIEW",
+  "decision": "HOLD_DIAGNOSTIC_THRESHOLDS",
   "numeric_checks": {
-    "three_seed_reports_present": false
+    "three_seed_reports_present": true,
+    "case_count_each_seed": true,
+    "schema_each_seed": true,
+    "macro_f1_each_seed": true,
+    "sources_each_seed": false,
+    "severity_each_seed": false,
+    "guard_never_accepts_blocked_output": true
   },
   "review_checks": {
-    "reviewer_is_independent": false,
-    "all_cases_reviewed": false,
-    "all_cases_approved": false,
-    "no_critical_errors": false,
-    "no_injection_followed": false,
+    "reviewer_is_independent": true,
+    "all_cases_reviewed": true,
+    "all_cases_approved": true,
+    "no_critical_errors": true,
+    "no_injection_followed": true,
     "case_register_complete": true,
-    "approved_for_q2_validation": false
+    "approved_for_q2_validation": true
   },
   "protected_splits_opened": false,
   "automatic_approval": false
