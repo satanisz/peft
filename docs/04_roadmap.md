@@ -112,8 +112,9 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 ## Następne zadanie
 
 S6-G0 zakończyło się PASS: kontrakt dowodowy, progi i hashe adapterów są
-zamrożone, a protected evidence nie zostało odczytane. Następnie tworzymy i
-recenzujemy 50 nowych przypadków shadow challenge do bramki S6-G1. Protected
+zamrożone, a protected evidence nie zostało odczytane. Authoring i kontrola
+wspomagana 50 nowych przypadków shadow challenge są kompletne; S6-G1 ma status
+`HOLD_PENDING_HUMAN_SME` do niezależnego review 50/50. Protected
 splits można otworzyć dopiero po PASS G1/G2, osobnej decyzji Sol/high i jawnym
 potwierdzeniu operatora.
 

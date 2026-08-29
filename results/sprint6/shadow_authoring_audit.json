@@ -1,0 +1,56 @@
+{
+  "milestone": "S6-G1 shadow challenge authoring audit",
+  "decision": "READY_FOR_ASSISTED_REVIEW",
+  "checks": {
+    "exactly_50_cases": true,
+    "case_ids_unique": true,
+    "family_ids_unique": true,
+    "exactly_10_per_status": true,
+    "exactly_10_per_risk_family": true,
+    "all_manual_synthetic_polish_challenge": true,
+    "no_shared_family_ids": true,
+    "no_exact_content_overlap": true,
+    "sequence_similarity_below_0_75": true,
+    "jaccard_similarity_below_0_55": true,
+    "all_cases_schema_and_policy_valid": true,
+    "all_gold_source_ids_resolve_to_case_sources": true,
+    "registry_complete": true,
+    "never_primary_independent_evidence": true
+  },
+  "errors": [],
+  "summary": {
+    "case_count": 50,
+    "status_counts": {
+      "FAIL": 10,
+      "INSUFFICIENT_DATA": 10,
+      "NOT_APPLICABLE": 10,
+      "PASS": 10,
+      "WARN": 10
+    },
+    "risk_family_counts": {
+      "applicability_vs_missing_data": 10,
+      "numeric_cross_report_materiality": 10,
+      "prompt_injection_and_neutral_regression": 10,
+      "severity_and_human_review": 10,
+      "source_integrity": 10
+    },
+    "existing_comparison_case_count": 950,
+    "exact_content_overlap": 0,
+    "max_sequence_similarity": 0.595238,
+    "max_jaccard_similarity": 0.392157,
+    "closest_pair": [
+      "FC-309",
+      "FC-211"
+    ]
+  },
+  "protected_content_read": false,
+  "compared_only_with": [
+    "data/generated/dataset_v1/train.jsonl",
+    "data/generated/dataset_v1/development.jsonl",
+    "data/generated/dataset_v1/validation.jsonl",
+    "data/splits/boundary_train.jsonl",
+    "data/splits/boundary_development.jsonl",
+    "data/splits/boundary_validation.jsonl",
+    "data/diagnostic/diagnostic_set_v1.jsonl"
+  ]
+}

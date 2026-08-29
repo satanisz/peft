@@ -355,6 +355,26 @@ Runner chronionych danych wymaga kolejno `S6_G0_PASS`, `S6_G1_PASS`,
 `S6_G2_PASS`, osobnego commita z decyzją `APPROVED_TO_OPEN_PROTECTED_SPLITS` i
 jawnego parametru operatora.
 
+## Sprint 6 — S6-G1 Shadow freeze
+
+Authoring, audyt podobieństwa i kontrolę wspomaganą uruchamia Sol/high:
+
+```powershell
+.\scripts\run_sprint6_g1.ps1 -Phase all
+```
+
+Bez niezależnego review oczekiwany wynik to
+`S6_G1_HOLD_PENDING_HUMAN_SME`. Człowiek/SME sprawdza 50/50 przypadków w
+`data/reviews/shadow_challenge_v1_review.json`, podpisuje review i rozstrzyga
+wszystkie uwagi. Następnie uruchamia samą bramkę:
+
+```powershell
+.\scripts\run_sprint6_g1.ps1 -Phase gate
+```
+
+G1 PASS pozwala rozpocząć wyłącznie próbę techniczną S6-G2 na Luna/low. Nie
+pozwala jeszcze otworzyć protected evidence.
+
 Po wygenerowaniu evidence należy skopiować i uzupełnić szablon review:
 
 ```powershell

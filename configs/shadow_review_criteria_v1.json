@@ -1,0 +1,18 @@
+{
+  "id": "shadow-review-criteria-v1",
+  "dataset_version": "shadow-challenge-1.0.0",
+  "required_case_count": 50,
+  "required_per_status": 10,
+  "required_per_risk_family": 10,
+  "required_review_rate": 1.0,
+  "required_approved_case_count": 50,
+  "critical_error_count_max": 0,
+  "independent_human_sme_required": true,
+  "exact_content_overlap_max": 0,
+  "shared_family_ids_max": 0,
+  "max_sequence_similarity_exclusive": 0.75,
+  "max_jaccard_similarity_exclusive": 0.55,
+  "protected_content_must_remain_closed": true,
+  "inference_required_for_g1": false,
+  "allowed_human_review_status": "APPROVED_FOR_SHADOW_FREEZE"
+}

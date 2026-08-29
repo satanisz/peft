@@ -1,0 +1,40 @@
+{
+  "milestone": "S6-G1 Shadow freeze",
+  "decision": "S6_G1_HOLD_PENDING_HUMAN_SME",
+  "mechanical_checks": {
+    "g0_pass": true,
+    "g0_records_protected_closed": true,
+    "dataset_hash_matches_registry": true,
+    "source_pack_hash_matches_registry": true,
+    "dataset_hash_matches_human_review": true,
+    "source_hash_matches_human_review": true,
+    "exactly_50_cases": true,
+    "all_authoring_checks_pass": true,
+    "similarity_limits_pass": true,
+    "assisted_review_complete": true,
+    "assisted_review_not_misrepresented_as_independent": true,
+    "shadow_never_primary_evidence": true,
+    "protected_content_not_read": true
+  },
+  "human_sme_checks": {
+    "human_review_status_approved": false,
+    "human_reviewer_named": false,
+    "human_reviewer_is_sme": true,
+    "human_reviewer_independent": true,
+    "human_review_timestamp_present": false,
+    "human_reviewed_50_cases": false,
+    "human_approved_50_cases": false,
+    "zero_critical_human_findings": false,
+    "human_approved_for_shadow_freeze": false
+  },
+  "dataset": "data/shadow/shadow_challenge_v1.jsonl",
+  "dataset_sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93",
+  "source_pack_sha256": "1014c086f4d55fc12c9aed7d8ae5ccadc8c28a4d47c8313d9f3371727abe0c7c",
+  "case_count": 50,
+  "protected_splits_opened": false,
+  "protected_content_read": false,
+  "inference_run": false,
+  "automatic_approval": false,
+  "next_allowed_action": "HUMAN_SME_REVIEW_50_CASES",
+  "scope_notice": "G1 zamraża wyłącznie shadow challenge. Nie zezwala na otwarcie protected evidence; nadal wymagane są G2 i osobna jawna decyzja operatora."
+}

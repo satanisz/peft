@@ -10,8 +10,9 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
-**Status wykonania:** `S6_G0_PASS` — 29 sierpnia 2026. Następny krok: S6.2 i
-bramka S6-G1. Protected evidence pozostaje zamknięte.
+**Status wykonania:** authoring S6.2 i mechaniczna część S6-G1 zakończone
+29 sierpnia 2026. Bieżąca decyzja: `S6_G1_HOLD_PENDING_HUMAN_SME`. Następny
+krok: niezależne review 50/50 goldów. Protected evidence pozostaje zamknięte.
 
 ## Zasada metodologiczna
 
@@ -109,6 +110,11 @@ inferencją. Po freeze nie poprawiamy goldów na podstawie odpowiedzi modelu.
   wcześniejszego przypadku,
 - wszystkie źródła syntetyczne i audytowalne,
 - `shadow_challenge_v1` nigdy nie występuje w konfiguracji treningowej.
+
+**Stan 29 sierpnia 2026:** wszystkie kontrole mechaniczne przeszły, authoring i
+assisted review 50/50 są kompletne. Formalny PASS oczekuje wyłącznie na
+niezależne zatwierdzenie człowieka/SME. Raport:
+[`22_sprint_6_g1_authoring_report.md`](22_sprint_6_g1_authoring_report.md).
 
 ## S6.3 — próba techniczna i awarie
 

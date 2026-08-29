@@ -502,9 +502,10 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 ## 10. Następna decyzja wykonawcza
 
 M5 jest zaakceptowana, a S6-G0 zakończyło się PASS. Kontrakt dowodowy i hashe
-adapterów są zamrożone, 68 testów przeszło, a challenge severity jest
-egzekwowane. Następny krok to projekt i review 50 goldów shadow challenge na
-Sol/high; Luna/low przejmie walidację mechaniczną dopiero po ich zamrożeniu.
+adapterów są zamrożone, 74 testy przechodzą, a challenge severity jest
+egzekwowane. Authoring i kontrola wspomagana 50 goldów shadow challenge na
+Sol/high są kompletne; `S6_G1_HOLD_PENDING_HUMAN_SME` oczekuje na niezależne
+review 50/50. Po G1 PASS Luna/low przejmie próbę techniczną S6-G2.
 Protected evidence pozostaje `HOLD` do czasu PASS bramek S6-G0/G1/G2, osobnej
 decyzji Sol/high i jawnego potwierdzenia operatora. Szczegółowy plan:
 [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).
