@@ -10,6 +10,9 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
+**Status wykonania:** `S6_G0_PASS` — 29 sierpnia 2026. Następny krok: S6.2 i
+bramka S6-G1. Protected evidence pozostaje zamknięte.
+
 ## Zasada metodologiczna
 
 Sprint prowadzi dwa oddzielne strumienie dowodowe:
@@ -67,6 +70,9 @@ plików. Preflight nie może parsować treści przypadków ani goldów.
 PASS wymaga: czystego Git, 65+ testów PASS, zgodnych hashy adapterów, zero
 truncation w treningach, świeżego reloadu, kompletu konfiguracji i
 `protected_splits_opened=false`.
+
+**Wynik:** PASS. Raport:
+[`21_sprint_6_g0_report.md`](21_sprint_6_g0_report.md).
 
 ## S6.2 — Shadow challenge v1
 

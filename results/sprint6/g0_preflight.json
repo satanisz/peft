@@ -1,0 +1,166 @@
+{
+  "milestone": "S6-G0 Evidence Contract Freeze",
+  "decision": "S6_G0_PASS",
+  "checks": {
+    "m5_content_freeze_tag_exists": true,
+    "current_commit_descends_from_content_freeze": true,
+    "content_artifacts_match_content_freeze": true,
+    "git_worktree_clean": true,
+    "m5_status_is_accepted_with_hold": true,
+    "s6_gate_is_hold": true,
+    "s6_gate_records_protected_closed": true,
+    "primary_thresholds_match_frozen_matrix": true,
+    "challenge_severity_is_enforced": true,
+    "shadow_is_designed_not_authored": true,
+    "shadow_is_never_training_or_tuning_source": true,
+    "m4_pretest_is_complete": true,
+    "m4_pretest_records_protected_closed": true,
+    "containment_is_complete_with_hold": true,
+    "containment_records_protected_closed": true,
+    "protected_inputs_are_declared_and_present_metadata_only": true,
+    "no_protected_results_or_authorization_exist": true,
+    "deck_contract_is_53_slides_notes_and_sources": true,
+    "three_notebooks_compile": true,
+    "unit_tests_pass_and_count_at_least_65": true,
+    "seed_20260827_training_completed": true,
+    "seed_20260827_zero_training_truncation": true,
+    "seed_20260827_peak_vram_within_12_gib": true,
+    "seed_20260827_protected_training_data_absent": true,
+    "seed_20260827_config_hash_matches_training": true,
+    "seed_20260827_base_model_compatible": true,
+    "seed_20260827_adapter_files_verified": true,
+    "seed_20260828_training_completed": true,
+    "seed_20260828_zero_training_truncation": true,
+    "seed_20260828_peak_vram_within_12_gib": true,
+    "seed_20260828_protected_training_data_absent": true,
+    "seed_20260828_config_hash_matches_training": true,
+    "seed_20260828_base_model_compatible": true,
+    "seed_20260828_adapter_files_verified": true,
+    "seed_20260829_training_completed": true,
+    "seed_20260829_zero_training_truncation": true,
+    "seed_20260829_peak_vram_within_12_gib": true,
+    "seed_20260829_protected_training_data_absent": true,
+    "seed_20260829_config_hash_matches_training": true,
+    "seed_20260829_base_model_compatible": true,
+    "seed_20260829_adapter_files_verified": true,
+    "one_base_model_across_three_seeds": true,
+    "one_prompt_contract_across_three_seeds": true
+  },
+  "content_freeze_tag": "content-freeze-v1",
+  "content_freeze_commit": "9b96741f7c530121fa163e054956d83b513f23c6",
+  "current_git_commit": "e37e9056206d1c60c32c329ec03924a0ca505e91",
+  "frozen_contract_sha256": {
+    "configs/sprint4_matrix_v1.json": "aa65b6adf968b28b4cac1bc1fae9a537f803f2a54f88e087dca86e270423a598",
+    "configs/sprint6_evidence_gate_v1.json": "b690fcf7062db80df7fc76f9e5f78e323bd2f849688a6761adf35472c0b66935",
+    "configs/sprint6_shadow_challenge_v1.json": "18968f46ecc4d896115b58bcd2f7973c1bbdc9253834bbbcb1273805e13b5f41",
+    "configs/status_policy_v1.json": "688cb79256e628dcc4710fe2d44fd6bf8c7afda5f66d261f22da26945cd27136",
+    "configs/q2_source_guard_v1.json": "fdbb0daa4c0607dc44268754cdfad0c4c2ef2c004f4c2ed7fc13879e85eeddf6",
+    "configs/q2_decision_guard_v2.json": "5097165cb9aa5989f377a2b1faf4fcfc2319f4fd6700ac17958c82f7a194292d",
+    "configs/deterministic_decision_rules_v1.json": "2548b993cc4499db57ec6a0040e1dcfd96ab2693e0ac145c9d647cb2403217be",
+    "schemas/financial_control_output.schema.json": "3b5024be9a34f461fa00990459a85c987e269163bd33ce75855739886ff995af"
+  },
+  "adapter_contract": {
+    "seed_20260827": {
+      "config": "configs/qlora_q1_v1.json",
+      "config_sha256": "be5dc547b48dba126fc3da74a98baa31b463b573c3b67db5736ead074a897770",
+      "training_metrics": "results/sprint3/q1_training_metrics.json",
+      "training_metrics_sha256": "765331c054693f2009ee59f396a9ed8c9b32c11069e46b8858bee3292530b93a",
+      "adapter_manifest": "results/sprint3/q1_adapter_manifest.json",
+      "adapter_manifest_sha256": "bdf5da07f2cd8654e928377e7e26b5c2d56ec42b88de9139f7f47e7195d374c9",
+      "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "files": {
+        "adapter_config.json": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        },
+        "adapter_model.safetensors": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        }
+      }
+    },
+    "seed_20260828": {
+      "config": "configs/qlora_q1_seed_20260828_v1.json",
+      "config_sha256": "536f8013c4c337448e2a8789707a64d7f398bf5a439f7a1ec2af98c4b0c559d6",
+      "training_metrics": "results/sprint4/q1_seed_20260828_training_metrics.json",
+      "training_metrics_sha256": "3c7a4a52ee092b2a42d2a069784581f0074b63f763841e700e2794b646f86605",
+      "adapter_manifest": "results/sprint4/q1_seed_20260828_adapter_manifest.json",
+      "adapter_manifest_sha256": "2f10e9c58a740d9586ba749743b29770423fe6b10cdf78c2c47ee8e86e478053",
+      "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "files": {
+        "adapter_config.json": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        },
+        "adapter_model.safetensors": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        }
+      }
+    },
+    "seed_20260829": {
+      "config": "configs/qlora_q1_seed_20260829_v1.json",
+      "config_sha256": "7cd7f756ecd9c15ba011ab6fc622057205c85a4d35ba127ad195c01f3990eb92",
+      "training_metrics": "results/sprint4/q1_seed_20260829_training_metrics.json",
+      "training_metrics_sha256": "b49e3d6460dbceb26e26774811862d5cc91b1ca79a24dffb50fe45b864e44645",
+      "adapter_manifest": "results/sprint4/q1_seed_20260829_adapter_manifest.json",
+      "adapter_manifest_sha256": "1271fb614640aff90d843a44cca95d569f84ac204d651ae28073ccbf2e43737b",
+      "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+      "files": {
+        "adapter_config.json": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        },
+        "adapter_model.safetensors": {
+          "present": true,
+          "size_matches": true,
+          "hash_matches": true,
+          "verification_skipped": false
+        }
+      }
+    }
+  },
+  "deck_contract": {
+    "slides": 53,
+    "notes": 53,
+    "notes_with_sources": 53
+  },
+  "notebook_contract": {
+    "count": 3,
+    "compiled_code_cells": 13
+  },
+  "unit_tests": {
+    "passed": true,
+    "count": 68,
+    "returncode": 0,
+    "tail": "----------------------------------------------------------------------\nRan 68 tests in 0.873s\n\nOK"
+  },
+  "protected_inputs_metadata_only": {
+    "original_test": {
+      "path": "data/generated/dataset_v1/test.jsonl",
+      "exists": true
+    },
+    "boundary_test": {
+      "path": "data/splits/boundary_test.jsonl",
+      "exists": true
+    },
+    "challenge": {
+      "path": "data/generated/dataset_v1/challenge.jsonl",
+      "exists": true
+    }
+  },
+  "protected_result_paths_found": [],
+  "protected_content_read": false,
+  "next_allowed_action": "AUTHOR_AND_REVIEW_SHADOW_CHALLENGE_V1",
+  "scope_notice": "S6-G0 nie otwiera protected evidence i nie jest zgodą produkcyjną. Otwarcie wymaga jeszcze S6-G1, S6-G2, osobnej decyzji Sol/high i potwierdzenia operatora."
+}

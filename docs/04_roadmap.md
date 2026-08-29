@@ -111,10 +111,11 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Rozpoczynamy Sprint 6 według osobnego executive planu. Najpierw zamrażamy
-kontrakt dowodowy i tworzymy 50 nowych przypadków shadow challenge, następnie
-wykonujemy próbę techniczną. Protected splits można otworzyć tylko po PASS trzech
-bramek, osobnej decyzji Sol/high i jawnym potwierdzeniu operatora.
+S6-G0 zakończyło się PASS: kontrakt dowodowy, progi i hashe adapterów są
+zamrożone, a protected evidence nie zostało odczytane. Następnie tworzymy i
+recenzujemy 50 nowych przypadków shadow challenge do bramki S6-G1. Protected
+splits można otworzyć dopiero po PASS G1/G2, osobnej decyzji Sol/high i jawnym
+potwierdzeniu operatora.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
@@ -126,3 +127,4 @@ Sprint 4.2B: [`16_sprint_4_2b_error_analysis_and_rerun_plan.md`](16_sprint_4_2b_
 Sprint 4.2C: [`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).
 Sprint 5: [`19_sprint_5_material_update_report.md`](19_sprint_5_material_update_report.md).
 Sprint 6: [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).
+S6-G0: [`21_sprint_6_g0_report.md`](21_sprint_6_g0_report.md).

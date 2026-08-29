@@ -501,10 +501,10 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 
 ## 10. Następna decyzja wykonawcza
 
-M5 jest zaakceptowana. Rozpoczynamy S6.0/S6.1: zapis Content freeze, zamrożenie
-kontraktu dowodowego oraz domknięcie brakującej kontroli challenge severity.
-Sol/high prowadzi decyzje i projekt goldów; Luna/low przejmie walidację
-mechaniczną, inferencję, monitoring i dry-run.
+M5 jest zaakceptowana, a S6-G0 zakończyło się PASS. Kontrakt dowodowy i hashe
+adapterów są zamrożone, 68 testów przeszło, a challenge severity jest
+egzekwowane. Następny krok to projekt i review 50 goldów shadow challenge na
+Sol/high; Luna/low przejmie walidację mechaniczną dopiero po ich zamrożeniu.
 Protected evidence pozostaje `HOLD` do czasu PASS bramek S6-G0/G1/G2, osobnej
 decyzji Sol/high i jawnego potwierdzenia operatora. Szczegółowy plan:
 [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).
