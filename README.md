@@ -37,6 +37,7 @@ zbudowanego wokół zastosowań bankowych.
 - [Deterministic guard Sprintu 4.2C](docs/17_sprint_4_2c_deterministic_guard.md)
 - [Narracja i scenariusze Sprintu 5](docs/18_sprint_5_narrative_and_scenarios.md)
 - [Raport aktualizacji materiałów Sprintu 5](docs/19_sprint_5_material_update_report.md)
+- [Executive plan Sprintu 6](docs/20_sprint_6_executive_plan.md)
 - [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty
@@ -52,11 +53,12 @@ notebooks/            trzy demonstracje prowadzącego bez auto-startu treningu
 
 ## Najbliższy kamień milowy
 
-Sprint 5 ma status `READY_FOR_M5_CONTENT_FREEZE_REVIEW_WITH_PROTECTED_HOLD`.
+Sprint 5 ma status `M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD`.
 Q1-DEMO ukończyło 12 kroków w 114,361 s, zapisało adapter rank 8 i przeszło
 fresh reload przy limicie 384 tokenów. Talia 53 slajdów, trzy notebooki i pakiet
-uczestnika/prowadzącego są gotowe do review właściciela.
+uczestnika/prowadzącego są zamrożone jako M5 Content freeze.
 
-Po akceptacji M5 rozpoczyna się Sprint 6: próba od czystego środowiska i pełny
-dry-run 180 minut. Protected evidence pozostaje zamknięte. Wyniki dotyczą danych
+Sprint 6 obejmuje próbę od czystego środowiska, 50 nowych przypadków shadow
+challenge, kontrolowane protected evidence i pełny dry-run 180 minut. Protected
+evidence pozostaje zamknięte do osobnej decyzji. Wyniki dotyczą danych
 syntetycznych i nie stanowią zgody produkcyjnej.

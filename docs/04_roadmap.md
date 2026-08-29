@@ -84,11 +84,10 @@ Rezultat: dane do wykresów, slajdów i dyskusji biznesowej.
 
 ## Etap 6 — materiały szkoleniowe
 
-Status: `READY_FOR_M5_CONTENT_FREEZE_REVIEW` po aktualizacji 29 sierpnia 2026.
-Trening Q1-DEMO i fresh reload zakończyły się poprawnie; 53 slajdy zawierają
-rzeczywiste metryki, a pakiet pomocniczy i trzy notebooki są gotowe. M5 pozostaje
-otwarta do akceptacji treści przez właściciela; pełny dry-run 180 minut należy do
-Sprintu 6.
+Status: `M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD` — zaakceptowany przez
+właściciela 29 sierpnia 2026. Trening Q1-DEMO i fresh reload zakończyły się
+poprawnie; 53 slajdy zawierają rzeczywiste metryki, a pakiet pomocniczy i trzy
+notebooki są gotowe. Pełny dry-run 180 minut należy do Sprintu 6.
 
 - slajdy uczestnika,
 - rozszerzone notatki prowadzącego,
@@ -112,11 +111,10 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Właściciel wykonuje review pakietu M5. Po akceptacji Luna/low przeprowadza w
-Sprincie 6 techniczną próbę od czystego uruchomienia, a następnie pełny dry-run
-180 minut z pomiarem segmentów, symulacją braku internetu i przełączeniem na
-fallback. Protected splits pozostają zamknięte; obowiązuje status
-`READY_FOR_M5_CONTENT_FREEZE_REVIEW_WITH_PROTECTED_HOLD`.
+Rozpoczynamy Sprint 6 według osobnego executive planu. Najpierw zamrażamy
+kontrakt dowodowy i tworzymy 50 nowych przypadków shadow challenge, następnie
+wykonujemy próbę techniczną. Protected splits można otworzyć tylko po PASS trzech
+bramek, osobnej decyzji Sol/high i jawnym potwierdzeniu operatora.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.
@@ -127,3 +125,4 @@ Sprint 4.2A: [`15_sprint_4_2a_executive_plan.md`](15_sprint_4_2a_executive_plan.
 Sprint 4.2B: [`16_sprint_4_2b_error_analysis_and_rerun_plan.md`](16_sprint_4_2b_error_analysis_and_rerun_plan.md).
 Sprint 4.2C: [`17_sprint_4_2c_deterministic_guard.md`](17_sprint_4_2c_deterministic_guard.md).
 Sprint 5: [`19_sprint_5_material_update_report.md`](19_sprint_5_material_update_report.md).
+Sprint 6: [`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).

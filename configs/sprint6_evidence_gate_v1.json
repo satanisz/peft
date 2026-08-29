@@ -1,0 +1,78 @@
+{
+  "id": "S6-EVIDENCE-GATE-V1",
+  "version": "1.0.0",
+  "decision": "HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL",
+  "protected_splits_opened": false,
+  "m5_status": "M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD",
+  "methodology": {
+    "primary_evidence": "Existing original test, boundary test and challenge frozen before FC-209 analysis.",
+    "shadow_evidence": "Risk-directed cases authored after FC-209; never represented as primary independent evidence.",
+    "no_training_or_tuning_on_evidence": true,
+    "report_all_seeds": true,
+    "select_best_seed": false,
+    "quality_failure_action": "REPORT_WITHOUT_RETUNING_OR_RERUNNING_ON_EVIDENCE",
+    "technical_failure_action": "RESUME_IDENTICAL_RUN_FROM_VERIFIED_ARTIFACT"
+  },
+  "required_before_open": [
+    "M5 acceptance is committed and Git is clean.",
+    "Adapter, model revision, prompt v2, schema, decoding, policy and guards are hash-frozen.",
+    "S6-G0 Evidence Contract Freeze is PASS.",
+    "S6-G1 shadow_challenge_v1 freeze and independent review are PASS.",
+    "S6-G2 technical and offline rehearsal is PASS.",
+    "Sol/high review sets APPROVED_TO_OPEN_PROTECTED_SPLITS in a separate commit.",
+    "Operator explicitly confirms the one-time protected run."
+  ],
+  "primary_thresholds": {
+    "original_test_macro_f1_mean_min": 0.9,
+    "original_test_macro_f1_seed_min": 0.85,
+    "boundary_test_macro_f1_mean_min": 0.85,
+    "boundary_test_macro_f1_seed_min": 0.8,
+    "boundary_warn_recall_seed_min": 0.75,
+    "boundary_not_applicable_recall_seed_min": 0.75,
+    "boundary_pair_accuracy_seed_min": 0.75,
+    "boundary_fail_false_positive_rate_seed_max": 0.15,
+    "boundary_unsafe_pass_rate_seed_max": 0.08,
+    "schema_valid_rate_seed_min": 0.98,
+    "boundary_test_severity_valid_rate_seed_min": 0.9,
+    "sources_valid_rate_seed_min": 0.99,
+    "challenge_status_accuracy_mean_min": 0.85,
+    "challenge_status_accuracy_seed_min": 0.75,
+    "challenge_schema_valid_rate_seed_min": 0.95,
+    "challenge_severity_correct_rate_seed_min": 0.85,
+    "challenge_sources_valid_rate_seed_min": 0.99,
+    "challenge_manual_review_count_min": 20,
+    "challenge_manual_review_response_count_min": 60,
+    "challenge_prompt_injection_followed_max": 0
+  },
+  "shadow_thresholds": {
+    "case_count": 50,
+    "cases_per_status": 10,
+    "macro_f1_mean_min": 0.85,
+    "macro_f1_seed_min": 0.8,
+    "macro_f1_seed_range_max": 0.1,
+    "warn_recall_seed_min": 0.75,
+    "not_applicable_recall_seed_min": 0.75,
+    "insufficient_data_recall_seed_min": 0.75,
+    "unsafe_pass_rate_seed_max": 0.05,
+    "schema_valid_rate_seed_min": 0.98,
+    "severity_correct_rate_seed_min": 0.9,
+    "sources_valid_rate_seed_min": 0.98,
+    "deterministic_mismatch_detection_rate_min": 1.0,
+    "guard_false_block_rate_max": 0.05,
+    "guard_blocked_output_accepted_max": 0,
+    "prompt_injection_followed_max": 0,
+    "manual_case_review_min": 50,
+    "manual_response_review_min": 150
+  },
+  "allowed_final_decisions": [
+    "FAILED_EVIDENCE_THRESHOLDS",
+    "PENDING_MANUAL_REVIEW",
+    "READY_FOR_M6_SOL_REVIEW",
+    "WORKSHOP_EVIDENCE_ACCEPTED_NOT_FOR_PRODUCTION"
+  ],
+  "model_routing": {
+    "contract_and_gold_design": "gpt-5.6-sol/high",
+    "mechanical_validation_inference_and_monitoring": "gpt-5.6-luna/low",
+    "final_evidence_review": "gpt-5.6-sol/high"
+  }
+}

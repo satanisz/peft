@@ -305,12 +305,12 @@ przed protected evidence: [`14_sprint_4_analytical_review.md`](14_sprint_4_analy
 **Czas:** 4–5 dni  
 **Cel:** zamienić eksperyment w profesjonalne szkolenie.
 
-**Status po aktualizacji 29 sierpnia 2026:**
-`READY_FOR_M5_CONTENT_FREEZE_REVIEW`. Trening Q1-DEMO zakończył się w 114,361 s,
+**Status po akceptacji właściciela 29 sierpnia 2026:**
+`M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD`. Trening Q1-DEMO zakończył się w 114,361 s,
 fresh reload przeszedł przy limicie 384 tokenów, a wyniki zostały włączone do 53
 slajdów i notatek. Gotowe są trzy notebooki, ściąga, karty ćwiczeń z kluczem,
-FAQ, katalog zastosowań bankowych i checklista. M5 pozostaje otwarta wyłącznie
-do review treści przez właściciela; pełna próba 180 minut należy do Sprintu 6.
+FAQ, katalog zastosowań bankowych i checklista. M5 jest zamknięta; pełna próba
+180 minut i finalny pakiet dowodowy należą do Sprintu 6.
 
 ### Zakres
 
@@ -343,13 +343,13 @@ do review treści przez właściciela; pełna próba 180 minut należy do Sprint
 
 Po tej bramce zmieniamy już tylko błędy, czas prezentacji i problemy techniczne.
 
-**Kandydat do decyzji:** spełniono kryteria artefaktów i technicznego demo.
-Rekomendowana decyzja właściciela: zaakceptować M5 po krótkim review pakietu,
-bez zmiany statusu protected evidence (`HOLD`).
+**Decyzja właściciela:** M5 zaakceptowana 29 sierpnia 2026. Protected evidence
+pozostaje `HOLD`. Dalsze działania prowadzi
+[`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).
 
 ## Sprint 6 — próba generalna i wydanie
 
-**Czas:** 2–3 dni  
+**Czas:** 4–6 dni, w tym około 5–6 godzin GPU
 **Cel:** przygotować wersję możliwą do bezpiecznego przeprowadzenia.
 
 ### Zakres
@@ -361,6 +361,10 @@ bez zmiany statusu protected evidence (`HOLD`).
 - symulacja awarii treningu i braku modelu,
 - próba demonstracji przypadku granicznego i ścieżki eskalacji alertu,
 - sprawdzenie adaptera awaryjnego,
+- zamrożenie kontraktu adapter/prompt/guard/progi przed testem,
+- przygotowanie i pełny review 50 przypadków `shadow-challenge-v1`,
+- jednorazowe primary protected evidence po trzech bramkach i jawnej zgodzie,
+- raportowanie wszystkich seedów bez retuningu po wyniku,
 - końcowa korekta materiałów,
 - utworzenie tagu wydania.
 
@@ -369,7 +373,8 @@ bez zmiany statusu protected evidence (`HOLD`).
 - pakiet `workshop-v1.0`,
 - lista kontrolna prowadzącego,
 - lokalna kopia modelu, danych, adaptera i wyników,
-- potwierdzony plan czasowy.
+- potwierdzony plan czasowy,
+- oddzielne raporty primary protected i risk-directed shadow evidence.
 
 ### Kryteria odbioru
 
@@ -377,11 +382,16 @@ bez zmiany statusu protected evidence (`HOLD`).
 - wszystkie testy i notebooki przechodzą na czystym środowisku,
 - szkolenie można przeprowadzić bez dostępu do sieci,
 - awaria treningu nie blokuje benchmarku ani dalszej narracji,
-- wszystkie prezentowane artefakty mają wersję i sumę kontrolną.
+- wszystkie prezentowane artefakty mają wersję i sumę kontrolną,
+- protected evidence nie zostało użyte do strojenia ani wyboru seeda,
+- wynik nieudanego progu jest raportowany bez rerunu jakościowego,
+- manual review protected i shadow evidence jest kompletne.
 
 ### Bramka M6 — Workshop ready
 
-Projekt otrzymuje tag `workshop-v1.0` i jest gotowy do użycia.
+Projekt otrzymuje tag `workshop-v1.0` i jest gotowy do użycia. PASS warsztatowy
+nie oznacza zgody produkcyjnej. Pełne bramki, progi i dozwolone decyzje zawiera
+[`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).
 
 ## 5. Harmonogram wykonawczy
 
@@ -393,7 +403,7 @@ Projekt otrzymuje tag `workshop-v1.0` i jest gotowy do użycia.
 | 3. LoRA/QLoRA | 3–4 dni | M3 Adapter candidate | 20% |
 | 4. Benchmark | 4–5 dni | M4 Evidence package | 20% |
 | 5. Materiały | 4–5 dni | M5 Content freeze | 15% |
-| 6. Próba i wydanie | 2–3 dni | M6 Workshop ready | 10% |
+| 6. Próba, evidence i wydanie | 4–6 dni | M6 Workshop ready | 10% |
 
 Szacunek zakłada około 10–18 godzin wykorzystania GPU dla treningów głównych i
 eksperymentów. Szeroki sweep oraz metody opcjonalne pozostają poza ścieżką
@@ -491,9 +501,10 @@ Elementy `Could have` nie mogą zagrozić terminowi wersji `workshop-v1.0`.
 
 ## 10. Następna decyzja wykonawcza
 
-Właściciel wykonuje review kandydata M5 i zatwierdza Content freeze. Następnie
-Luna/low prowadzi Sprint 6: instalację od zera, techniczną próbę demo, pełny
-dry-run 180 minut i test fallbacku. Sol/high wraca do analizy tylko w razie
-problemu merytorycznego, niespójności dowodów lub konieczności zmiany narracji.
-Protected evidence pozostaje `HOLD`; Sprint 6 nie otwiera ani nie stroi na
-chronionych splitach.
+M5 jest zaakceptowana. Rozpoczynamy S6.0/S6.1: zapis Content freeze, zamrożenie
+kontraktu dowodowego oraz domknięcie brakującej kontroli challenge severity.
+Sol/high prowadzi decyzje i projekt goldów; Luna/low przejmie walidację
+mechaniczną, inferencję, monitoring i dry-run.
+Protected evidence pozostaje `HOLD` do czasu PASS bramek S6-G0/G1/G2, osobnej
+decyzji Sol/high i jawnego potwierdzenia operatora. Szczegółowy plan:
+[`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md).

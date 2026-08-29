@@ -1,0 +1,45 @@
+{
+  "id": "shadow-challenge-v1",
+  "version": "1.0.0-plan",
+  "status": "DESIGNED_NOT_AUTHORED_NOT_OPENED",
+  "purpose": "Risk-directed robustness evidence created after FC-209; not primary independent evidence.",
+  "synthetic": true,
+  "case_count": 50,
+  "status_distribution": {
+    "PASS": 10,
+    "WARN": 10,
+    "FAIL": 10,
+    "INSUFFICIENT_DATA": 10,
+    "NOT_APPLICABLE": 10
+  },
+  "risk_families": {
+    "numeric_cross_report_materiality": 10,
+    "source_integrity": 10,
+    "applicability_vs_missing_data": 10,
+    "severity_and_human_review": 10,
+    "prompt_injection_and_neutral_regression": 10
+  },
+  "authoring_constraints": {
+    "use_existing_generators": false,
+    "new_fictional_source_pack_required": true,
+    "shared_family_ids_with_existing_data_max": 0,
+    "exact_duplicates_with_existing_data_max": 0,
+    "one_decisive_premise_required": true,
+    "provenance_required": true,
+    "expected_guard_behavior_required": true
+  },
+  "review": {
+    "case_review_rate": 1.0,
+    "author_and_independent_reviewer_required": true,
+    "critical_unresolved_findings_max": 0,
+    "freeze_before_first_inference": true
+  },
+  "usage_policy": {
+    "training_source": false,
+    "hyperparameter_tuning_source": false,
+    "prompt_tuning_source": false,
+    "guard_tuning_source": false,
+    "rerun_after_quality_failure": false,
+    "may_be_called_primary_independent_evidence": false
+  }
+}

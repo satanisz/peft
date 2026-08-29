@@ -1,7 +1,7 @@
 # Sprint 5 — raport aktualizacji materiałów
 
 **Data:** 29 sierpnia 2026  
-**Status:** `READY_FOR_M5_CONTENT_FREEZE_REVIEW_WITH_PROTECTED_HOLD`
+**Status:** `M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD`
 
 ## Wynik
 
@@ -42,9 +42,12 @@ otwierają protected splits.
 
 ## Decyzja i ograniczenia
 
-Rekomendacja: właściciel może zaakceptować M5 Content freeze po krótkim review
-treści. Kolejny etap to Sprint 6: próba od czystego środowiska i pełny dry-run
-180 minut z pomiarem czasu oraz symulacją fallbacku.
+Właściciel zaakceptował M5 Content freeze 29 sierpnia 2026. Po tej decyzji
+zmieniamy wyłącznie błędy, czas, problemy techniczne oraz osobny raport finalnych
+dowodów. Kolejny etap opisuje
+[`20_sprint_6_executive_plan.md`](20_sprint_6_executive_plan.md): próba od
+czystego środowiska, primary protected evidence, risk-directed shadow challenge
+i pełny dry-run 180 minut.
 
 Protected evidence pozostaje `HOLD`. Materiał wykorzystuje dane syntetyczne i
 nie stanowi zgody produkcyjnej ani polityki banku.
