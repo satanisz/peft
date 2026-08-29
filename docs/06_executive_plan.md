@@ -305,6 +305,12 @@ przed protected evidence: [`14_sprint_4_analytical_review.md`](14_sprint_4_analy
 **Czas:** 4–5 dni  
 **Cel:** zamienić eksperyment w profesjonalne szkolenie.
 
+**Status 29 sierpnia 2026:** ukończona warstwa projektowa Sol/high: narracja
+180 minut, 53 slajdy, notatki prowadzącego z blokami źródeł, trzy ćwiczenia i
+scenariusz demonstracji z twardym limitem 15 minut. M5 pozostaje otwarta do
+dry-runu Luna/low, sprawdzenia reloadu i domknięcia pozostałych materiałów
+pomocniczych.
+
 ### Zakres
 
 - 45–55 slajdów,

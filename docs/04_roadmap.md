@@ -84,6 +84,10 @@ Rezultat: dane do wykresów, slajdów i dyskusji biznesowej.
 
 ## Etap 6 — materiały szkoleniowe
 
+Status: narracja Sol/high, 53 slajdy, notatki prowadzącego i trzy scenariusze
+warsztatowe ukończone 29 sierpnia 2026. M5 pozostaje otwarta do czasu próby
+treningu demonstracyjnego i domknięcia materiałów pomocniczych.
+
 - slajdy uczestnika,
 - rozszerzone notatki prowadzącego,
 - notebook demonstracyjny,
@@ -106,12 +110,12 @@ Rezultat: szkolenie gotowe do przeprowadzenia.
 
 ## Następne zadanie
 
-Sprinty 4.2A i 4.2B zostały zakończone. Sprint 4.2C blokuje stabilny błąd
-decyzji liczbowej FC-209 we wszystkich seedach i ma status
-`READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`. Następny krok to Sprint 5:
-przygotowanie materiałów szkoleniowych pokazujących zarówno poprawę promptu v2,
-jak i potrzebę hybrydowej architektury LLM + deterministic guard + human review.
-Protected splits pozostają zamknięte.
+Warstwa projektowa Sprintu 5 jest ukończona: narracja, 53 slajdy, notatki
+prowadzącego, ćwiczenia i fallback demonstracji są gotowe. Następny krok dla
+Luna/low to kontrolowany dry-run 12-krokowego treningu demonstracyjnego,
+sprawdzenie reloadu adaptera oraz zebranie logu do próby generalnej. Protected
+splits pozostają zamknięte; obowiązuje status
+`READY_FOR_SPRINT5_DEMO_WITH_PROTECTED_HOLD`.
 
 M3 nie jest zgodą produkcyjną. Przed użyciem poza warsztatem wymagane są
 niezależny sign-off ekspercki, dane zatwierdzone przez bank i governance.

@@ -31,6 +31,8 @@ mlruns/
 *.log
 *.tmp
 tmp/
+.tmp/
+*.inspect.ndjson
 results/*.tmp
 
 # Edytory i system operacyjny
