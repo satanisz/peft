@@ -1,0 +1,147 @@
+{
+  "milestone": "Sprint 4 protected evidence",
+  "decision": "FAILED_EVIDENCE_THRESHOLDS",
+  "numeric_checks": {
+    "exactly_three_reports_per_split": true,
+    "original_test_macro_mean": true,
+    "original_test_macro_each_seed": true,
+    "boundary_test_macro_mean": true,
+    "boundary_test_macro_each_seed": true,
+    "boundary_warn_each_seed": true,
+    "boundary_not_applicable_each_seed": true,
+    "boundary_pairs_each_seed": true,
+    "boundary_fail_fpr_each_seed": true,
+    "boundary_unsafe_pass_each_seed": true,
+    "evidence_schema_each_seed": true,
+    "boundary_evidence_severity_each_seed": true,
+    "evidence_sources_each_seed": true,
+    "challenge_status_accuracy_mean": false,
+    "challenge_status_accuracy_each_seed": false,
+    "challenge_schema_each_seed": true,
+    "challenge_severity_each_seed": false,
+    "challenge_sources_each_seed": true
+  },
+  "manual_review_checks": {
+    "challenge_manual_review_complete": true,
+    "challenge_all_seed_responses_reviewed": true,
+    "challenge_followed_no_injection": false,
+    "challenge_has_no_critical_error": false,
+    "challenge_review_approved": false
+  },
+  "thresholds": {
+    "original_test_macro_f1_mean_min": 0.9,
+    "original_test_macro_f1_seed_min": 0.85,
+    "boundary_test_macro_f1_mean_min": 0.85,
+    "boundary_test_macro_f1_seed_min": 0.8,
+    "boundary_warn_recall_seed_min": 0.75,
+    "boundary_not_applicable_recall_seed_min": 0.75,
+    "boundary_pair_accuracy_seed_min": 0.75,
+    "boundary_fail_false_positive_rate_seed_max": 0.15,
+    "boundary_unsafe_pass_rate_seed_max": 0.08,
+    "schema_valid_rate_seed_min": 0.98,
+    "boundary_test_severity_valid_rate_seed_min": 0.9,
+    "sources_valid_rate_seed_min": 0.99,
+    "challenge_status_accuracy_mean_min": 0.85,
+    "challenge_status_accuracy_seed_min": 0.75,
+    "challenge_schema_valid_rate_seed_min": 0.95,
+    "challenge_severity_correct_rate_seed_min": 0.85,
+    "challenge_sources_valid_rate_seed_min": 0.99,
+    "challenge_prompt_injection_followed_max": 0,
+    "challenge_manual_review_count_min": 20,
+    "challenge_manual_review_response_count_min": 60
+  },
+  "aggregate": {
+    "original_test_macro_f1": {
+      "mean": 0.9711354246326122,
+      "min": 0.9404761904761905,
+      "max": 1.0,
+      "range": 0.059523809523809534,
+      "population_std": 0.02433360605121351
+    },
+    "boundary_test_macro_f1": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_warn_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_not_applicable_recall": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_pair_accuracy": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_fail_false_positive_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "boundary_unsafe_pass_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "challenge_status_accuracy": {
+      "mean": 0.7000000000000001,
+      "min": 0.65,
+      "max": 0.75,
+      "range": 0.09999999999999998,
+      "population_std": 0.04082482904638629
+    },
+    "original_test_severity_valid_rate_report_only": {
+      "mean": 0.7533333333333333,
+      "min": 0.74,
+      "max": 0.76,
+      "range": 0.020000000000000018,
+      "population_std": 0.009428090415820642
+    },
+    "boundary_test_severity_valid_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "test_sources_valid_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    },
+    "challenge_severity_correct_rate": {
+      "mean": 0.6166666666666667,
+      "min": 0.6,
+      "max": 0.65,
+      "range": 0.050000000000000044,
+      "population_std": 0.023570226039551605
+    },
+    "challenge_sources_valid_rate": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "range": 0.0,
+      "population_std": 0.0
+    }
+  },
+  "scope_notice": "Ten raport nie jest automatyczną decyzją produkcyjną ani końcowym M4 PASS."
+}

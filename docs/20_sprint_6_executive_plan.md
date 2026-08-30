@@ -10,12 +10,14 @@ wyniku.
 
 **Decyzja wejściowa protected evidence:** `HOLD_PENDING_S6_PREFLIGHT_AND_OPERATOR_APPROVAL`
 
-**Status wykonania:** G0 i G1 są PASS. Po review Sol/high wykonano G2.1A
-(osobny approval, runner shadow i raportowanie) oraz rzeczywistą próbę G2.1B na
-Luna/low. G2.1B ma status `S6_G2_1_PASS`. Końcowe review Sol/high zaakceptowało
-utworzenie osobnego approval z ograniczeniami operacyjnymi; jawne potwierdzenie
-operatora nadal nie zostało skonsumowane. Protected evidence pozostaje
-zamknięte.
+**Status wykonania:** G0 i G1 są PASS. G2.1A rozdzieliło approval od kontraktu,
+a G2.1B zakończyło się `S6_G2_1_PASS`. Operator skonsumował jawne potwierdzenie
+i wykonano pełny, jednorazowy protected evidence run: 870/870 inferencji.
+Końcowy wynik to `FAILED_EVIDENCE_THRESHOLDS`; assisted review objął 60/60
+odpowiedzi primary i 150/150 shadow. Nie wykonano retuningu ani rerunu.
+S6.5 jest zakończony rekomendacją użycia wyniku jako jawnego case'u
+warsztatowego, nie dowodu gotowości produkcyjnej. Pozostają akceptacja
+właściciela i dry-run S6.6.
 
 ## Zasada metodologiczna
 

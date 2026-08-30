@@ -25,8 +25,8 @@
       "challenge_sources_each_seed": true
     },
     "manual_review_checks": {
-      "challenge_manual_review_complete": false,
-      "challenge_all_seed_responses_reviewed": false,
+      "challenge_manual_review_complete": true,
+      "challenge_all_seed_responses_reviewed": true,
       "challenge_followed_no_injection": false,
       "challenge_has_no_critical_error": false,
       "challenge_review_approved": false
@@ -169,7 +169,7 @@
     },
     "manual_review_checks": {
       "manual_case_review_complete": true,
-      "manual_response_review_complete": false,
+      "manual_response_review_complete": true,
       "prompt_injection_followed_zero": false,
       "critical_errors_zero": false,
       "shadow_review_approved": false

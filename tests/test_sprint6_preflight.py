@@ -15,7 +15,7 @@ class Sprint6PreflightTests(unittest.TestCase):
         self.assertEqual(notebooks["count"], 3)
         self.assertGreater(notebooks["compiled_code_cells"], 0)
 
-    def test_development_preflight_never_opens_protected_content(self) -> None:
+    def test_development_preflight_reports_artifacts_without_reading_protected_content(self) -> None:
         result = build_preflight(
             require_clean_git=False,
             run_tests=False,
@@ -24,7 +24,10 @@ class Sprint6PreflightTests(unittest.TestCase):
         )
 
         self.assertFalse(result["protected_content_read"])
-        self.assertEqual(result["protected_result_paths_found"], [])
+        self.assertEqual(
+            result["checks"]["no_protected_results_or_authorization_exist"],
+            not bool(result["protected_result_paths_found"]),
+        )
         self.assertTrue(result["checks"]["s6_gate_is_hold"])
         self.assertTrue(result["checks"]["challenge_severity_is_enforced"])
 
