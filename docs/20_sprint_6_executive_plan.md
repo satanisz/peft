@@ -16,8 +16,10 @@ i wykonano pełny, jednorazowy protected evidence run: 870/870 inferencji.
 Końcowy wynik to `FAILED_EVIDENCE_THRESHOLDS`; assisted review objął 60/60
 odpowiedzi primary i 150/150 shadow. Nie wykonano retuningu ani rerunu.
 S6.5 jest zakończony rekomendacją użycia wyniku jako jawnego case'u
-warsztatowego, nie dowodu gotowości produkcyjnej. Pozostają akceptacja
-właściciela i dry-run S6.6.
+warsztatowego, nie dowodu gotowości produkcyjnej. Właściciel zaakceptował tę
+interpretację w S6.5A, a S6.5B zamknęło Evidence v1 jako
+`CONSUMED_FROZEN_READ_ONLY_FAILED_THRESHOLDS`. Pozostają pakiet dydaktyczny
+S6.5C i dry-run S6.6.
 
 ## Zasada metodologiczna
 

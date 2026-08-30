@@ -1,5 +1,8 @@
 # Sprint 6 — plan zamknięcia Protected Evidence i wydania warsztatu
 
+**Status:** S6.5A zaakceptowane przez właściciela. S6.5B zakończone
+`EVIDENCE_V1_CLOSED_READ_ONLY`. Następny etap: S6.5C.
+
 ## 1. Stan faktyczny na wejściu
 
 Projekt nie wymaga już treningu ani kolejnego evidence runu. Stan jest następujący:
@@ -55,6 +58,9 @@ Akceptacja nie zatwierdza jakości modelu i nie daje zgody na rerun. Pozwala jed
 
 **Bramka:** `OWNER_ACCEPTED_FAILED_EVIDENCE_AS_WORKSHOP_CASE`.
 
+**Wynik:** PASS — jawna akceptacja właściciela z 30 sierpnia 2026 r. została
+zapisana jako osobny artefakt i nie jest zgodą produkcyjną.
+
 ### S6.5B — operacyjne zamknięcie Evidence v1
 
 **Wykonanie:** Luna/low.  
@@ -69,6 +75,9 @@ Akceptacja nie zatwierdza jakości modelu i nie daje zgody na rerun. Pozwala jed
 - nie modyfikować zamrożonego kontraktu ani approval.
 
 **Bramka:** `EVIDENCE_V1_CLOSED_READ_ONLY`.
+
+**Wynik:** PASS — 37 artefaktów wejściowych i wynikowych związano hashami;
+rerun, retuning oraz production approval są jawnie zabronione.
 
 ### S6.5C — pakiet dydaktyczny „wynik kontra bezpieczeństwo”
 

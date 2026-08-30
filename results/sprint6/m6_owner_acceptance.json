@@ -1,0 +1,24 @@
+{
+  "id": "S6-5A-OWNER-ACCEPTANCE-V1",
+  "decision": "OWNER_ACCEPTED_FAILED_EVIDENCE_AS_WORKSHOP_CASE",
+  "accepted_at": "2026-08-30T11:42:35.7774900+02:00",
+  "accepted_by": "project_owner",
+  "source": "explicit_user_confirmation_in_project_thread",
+  "statements": {
+    "benchmark_did_not_pass": true,
+    "show_result_honestly": true,
+    "use_as_didactic_case": true,
+    "adapter_is_not_presented_as_production_solution": true,
+    "no_evidence_v1_rerun": true
+  },
+  "evidence_run_commit": "0a4305d8fb5060a8f12d9cccf77519db338502b1",
+  "final_review_commit": "699fa6b64e03c3a730fac02d3e07eeca49184641",
+  "closure_plan_commit": "a7699498485cd25f9fba9967b12deaefb043bf84",
+  "bound_sha256": {
+    "results/sprint6/evidence_summary.json": "50b804cf9e151c4583a8e5850bd8c9d8deaeb6e6a139356f3ceb7b994dbd001a",
+    "results/sprint4/challenge_manual_review.json": "fe6ea5d83ce26131e756836318cc1bda5012f42841e740c5fda9e049e4ddc855",
+    "results/sprint6/shadow_manual_response_review.json": "d48af5f11dd03170f64f55c1169c4758870d68e4266d8427753ea8100fb4c7d1",
+    "docs/28_sprint_6_final_evidence_review.md": "a620ba94589d61077decb777273a2fb8a077c7d26f420aae0ebc993c5f2e6422"
+  },
+  "scope": "Acceptance of the failed benchmark as a workshop case only; not model approval, production approval, or rerun authorization."
+}
