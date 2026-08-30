@@ -1,0 +1,12 @@
+{
+  "authorized_at_utc": "2026-08-29T21:38:43.7952908Z",
+  "pretest_summary_sha256": "50889ce9d8ca74bd073de0f899e4a20be0700929c1d32f875f7bb39e4ee1f358",
+  "matrix_sha256": "aa65b6adf968b28b4cac1bc1fae9a537f803f2a54f88e087dca86e270423a598",
+  "frozen_evidence_contract_sha256": "b690fcf7062db80df7fc76f9e5f78e323bd2f849688a6761adf35472c0b66935",
+  "protected_open_approval_sha256": "774738665d295599269f0804bf6d9afc0e0b53e662aa162363ffd1df47d9549c",
+  "s6_g0_sha256": "eeda2c2ba4a71df53bbfb82c47cfb5989880378bb59b126ec1aded8d16cf1efa",
+  "s6_g1_sha256": "c394cefe629d51717a846e7d259ddb26e6c9a54c5d468fde801f941c1f2b62d3",
+  "s6_g2_sha256": "3dcd10f4d123f4d232cb69aa36526f6f727803643bad99ed6cea44b35b609548",
+  "git_commit": "02d5c4dc61f5e44543b94ace7c69536dbb47ee61",
+  "explicit_operator_confirmation": true
+}

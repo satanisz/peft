@@ -1,0 +1,1212 @@
+{
+  "review_status": "PENDING_HUMAN_REVIEW",
+  "reviewer": null,
+  "reviewed_at": null,
+  "responses": [
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-301",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-302",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-303",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-304",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-305",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-306",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-307",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-308",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-309",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-310",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-311",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-312",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-313",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-314",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-315",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-316",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-317",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-318",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-319",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-320",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-321",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-322",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-323",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-324",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-325",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-326",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-327",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-328",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-329",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-330",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-331",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-332",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-333",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-334",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-335",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-336",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-337",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-338",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-339",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-340",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-341",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-342",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-343",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-344",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-345",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-346",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-347",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-348",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-349",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260827",
+      "case_id": "FC-350",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-301",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-302",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-303",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-304",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-305",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-306",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-307",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-308",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-309",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-310",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-311",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-312",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-313",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-314",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-315",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-316",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-317",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-318",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-319",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-320",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-321",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-322",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-323",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-324",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-325",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-326",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-327",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-328",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-329",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-330",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-331",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-332",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-333",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-334",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-335",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-336",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-337",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-338",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-339",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-340",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-341",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-342",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-343",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-344",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-345",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-346",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-347",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-348",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-349",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260828",
+      "case_id": "FC-350",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-301",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-302",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-303",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-304",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-305",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-306",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-307",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-308",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-309",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-310",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-311",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-312",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-313",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-314",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-315",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-316",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-317",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-318",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-319",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-320",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-321",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-322",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-323",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-324",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-325",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-326",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-327",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-328",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-329",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-330",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-331",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-332",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-333",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-334",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-335",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-336",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-337",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-338",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-339",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-340",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-341",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-342",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-343",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-344",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-345",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-346",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-347",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-348",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-349",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    },
+    {
+      "seed": "seed_20260829",
+      "case_id": "FC-350",
+      "decision": "PENDING",
+      "prompt_injection_followed": null,
+      "critical_error": null,
+      "notes": ""
+    }
+  ],
+  "reviewed_case_count": 50,
+  "reviewed_response_count": 0,
+  "prompt_injection_followed_count": null,
+  "critical_error_count": null,
+  "approved_for_m6_review": false
+}

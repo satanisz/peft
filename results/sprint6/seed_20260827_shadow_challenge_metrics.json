@@ -1,0 +1,1754 @@
+{
+  "metadata": {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "model_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "profile": null,
+    "split": "challenge",
+    "baseline_variant": null,
+    "prompt_style": "status_aware_v2_zero_shot",
+    "prompt_contract": "v2",
+    "prompt_sha256": "3ae5d6082accb747996e3aead0927fd384e40af82ae15bb8bcaeaf9f072b5de8",
+    "max_new_tokens": 384,
+    "do_sample": false,
+    "enable_thinking": false,
+    "parameter_dtype": "torch.bfloat16",
+    "adapter_id": "Q1",
+    "adapter_path": "artifacts/adapters/q1-v0.1",
+    "artifact_type": "adapter",
+    "merged_model_path": null,
+    "protected_split_authorized": true
+  },
+  "aggregate": {
+    "count": 50,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 1.0,
+    "sources_valid_rate": 1.0,
+    "status_correct_rate": 0.86,
+    "control_type_correct_rate": 1.0,
+    "severity_correct_rate": 0.9,
+    "human_review_correct_rate": 0.98,
+    "mean_evidence_precision": 0.9466666666666668,
+    "mean_evidence_recall": 0.8933333333333333,
+    "status_confusion": {
+      "PASS->PASS": 9,
+      "WARN->WARN": 10,
+      "FAIL->FAIL": 9,
+      "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 5,
+      "NOT_APPLICABLE->NOT_APPLICABLE": 10,
+      "INSUFFICIENT_DATA->WARN": 2,
+      "INSUFFICIENT_DATA->FAIL": 3,
+      "PASS->WARN": 1,
+      "FAIL->WARN": 1
+    },
+    "per_status": {
+      "PASS": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1": 0.9473684210526316,
+        "support": 10
+      },
+      "WARN": {
+        "precision": 0.7142857142857143,
+        "recall": 1.0,
+        "f1": 0.8333333333333333,
+        "support": 10
+      },
+      "FAIL": {
+        "precision": 0.75,
+        "recall": 0.9,
+        "f1": 0.8181818181818182,
+        "support": 10
+      },
+      "INSUFFICIENT_DATA": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1": 0.6666666666666666,
+        "support": 10
+      },
+      "NOT_APPLICABLE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      }
+    },
+    "macro_f1": 0.85311004784689,
+    "fail_false_positive_rate": 0.075,
+    "fail_false_negative_rate": 0.1
+  },
+  "runtime": {
+    "latency_s": {
+      "mean": 18.8489,
+      "median": 18.3094,
+      "p95": 23.5371,
+      "max": 25.4232
+    },
+    "input_tokens": {
+      "mean": 1715.42,
+      "median": 1708.0,
+      "p95": 1812.0,
+      "max": 1848.0
+    },
+    "output_tokens": {
+      "mean": 176.1,
+      "median": 173.0,
+      "p95": 222.0,
+      "max": 244.0
+    },
+    "tokens_per_second": {
+      "mean": 9.3514,
+      "median": 9.25,
+      "p95": 10.02,
+      "max": 10.25
+    },
+    "peak_gpu_allocated_gib": {
+      "mean": 3.8211,
+      "median": 3.811,
+      "p95": 3.935,
+      "max": 3.977
+    },
+    "peak_gpu_reserved_gib": {
+      "mean": 4.178,
+      "median": 4.178,
+      "p95": 4.178,
+      "max": 4.178
+    },
+    "truncated_rate": 0.0
+  },
+  "by_control_type": {
+    "ARITHMETIC": {
+      "count": 7,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.8571428571428571,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.8571428571428571,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.9285714285714286,
+      "mean_evidence_recall": 0.9047619047619048,
+      "status_confusion": {
+        "PASS->PASS": 3,
+        "WARN->WARN": 1,
+        "FAIL->FAIL": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1,
+        "FAIL->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "WARN": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.8333333333333333,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.5
+    },
+    "CROSS_SECTION": {
+      "count": 8,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.875,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.875,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.8958333333333334,
+      "status_confusion": {
+        "PASS->PASS": 1,
+        "WARN->WARN": 2,
+        "FAIL->FAIL": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 2,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1,
+        "INSUFFICIENT_DATA->FAIL": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "FAIL": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 3
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.8933333333333333,
+      "fail_false_positive_rate": 0.14285714285714285,
+      "fail_false_negative_rate": 0.0
+    },
+    "CURRENCY": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.875,
+      "mean_evidence_recall": 0.875,
+      "status_confusion": {
+        "WARN->WARN": 2,
+        "FAIL->FAIL": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "DIRECTION": {
+      "count": 3,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "FAIL->FAIL": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 2
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "DISCLOSURE": {
+      "count": 12,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.8333333333333334,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.8333333333333334,
+      "human_review_correct_rate": 0.9166666666666666,
+      "mean_evidence_precision": 0.9444444444444445,
+      "mean_evidence_recall": 0.8888888888888888,
+      "status_confusion": {
+        "PASS->PASS": 2,
+        "WARN->WARN": 2,
+        "FAIL->FAIL": 4,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 2,
+        "INSUFFICIENT_DATA->FAIL": 1,
+        "PASS->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "support": 3
+        },
+        "WARN": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8,
+          "support": 2
+        },
+        "FAIL": {
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "support": 4
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 0.6977777777777778,
+      "fail_false_positive_rate": 0.125,
+      "fail_false_negative_rate": 0.0
+    },
+    "EVIDENCE": {
+      "count": 7,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.7142857142857143,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.9285714285714286,
+      "mean_evidence_recall": 0.9047619047619048,
+      "status_confusion": {
+        "PASS->PASS": 1,
+        "WARN->WARN": 2,
+        "FAIL->FAIL": 1,
+        "INSUFFICIENT_DATA->WARN": 2,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 2
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 2
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.7333333333333333,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "PERIOD": {
+      "count": 3,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.6666666666666666,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.6666666666666666,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.7777777777777777,
+      "status_confusion": {
+        "WARN->WARN": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 1,
+        "INSUFFICIENT_DATA->FAIL": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        }
+      },
+      "macro_f1": 0.6666666666666666,
+      "fail_false_positive_rate": 0.3333333333333333,
+      "fail_false_negative_rate": 0.0
+    },
+    "UNIT": {
+      "count": 2,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 1.0,
+      "mean_evidence_recall": 0.8333333333333333,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1,
+        "PASS->PASS": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "VARIANCE": {
+      "count": 4,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.875,
+      "mean_evidence_recall": 0.9166666666666666,
+      "status_confusion": {
+        "PASS->PASS": 1,
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 1,
+        "NOT_APPLICABLE->NOT_APPLICABLE": 2
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 2
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "by_expected_status": {
+    "FAIL": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.9,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.9,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.9166666666666666,
+      "mean_evidence_recall": 0.8333333333333334,
+      "status_confusion": {
+        "FAIL->FAIL": 9,
+        "FAIL->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526316,
+          "support": 10
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.9473684210526316,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.1
+    },
+    "INSUFFICIENT_DATA": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.5,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.7,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.95,
+      "mean_evidence_recall": 0.8833333333333334,
+      "status_confusion": {
+        "INSUFFICIENT_DATA->INSUFFICIENT_DATA": 5,
+        "INSUFFICIENT_DATA->WARN": 2,
+        "INSUFFICIENT_DATA->FAIL": 3
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6666666666666666,
+          "support": 10
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.6666666666666666,
+      "fail_false_positive_rate": 0.3,
+      "fail_false_negative_rate": 0.0
+    },
+    "NOT_APPLICABLE": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.95,
+      "mean_evidence_recall": 1.0,
+      "status_confusion": {
+        "NOT_APPLICABLE->NOT_APPLICABLE": 10
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "PASS": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 0.9,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 0.9,
+      "human_review_correct_rate": 0.9,
+      "mean_evidence_precision": 0.9666666666666666,
+      "mean_evidence_recall": 0.9333333333333333,
+      "status_confusion": {
+        "PASS->PASS": 9,
+        "PASS->WARN": 1
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9473684210526316,
+          "support": 10
+        },
+        "WARN": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 0.9473684210526316,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    },
+    "WARN": {
+      "count": 10,
+      "json_valid_rate": 1.0,
+      "schema_valid_rate": 1.0,
+      "sources_valid_rate": 1.0,
+      "status_correct_rate": 1.0,
+      "control_type_correct_rate": 1.0,
+      "severity_correct_rate": 1.0,
+      "human_review_correct_rate": 1.0,
+      "mean_evidence_precision": 0.95,
+      "mean_evidence_recall": 0.8166666666666667,
+      "status_confusion": {
+        "WARN->WARN": 10
+      },
+      "per_status": {
+        "PASS": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "WARN": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 10
+        },
+        "FAIL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "INSUFFICIENT_DATA": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        },
+        "NOT_APPLICABLE": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 0
+        }
+      },
+      "macro_f1": 1.0,
+      "fail_false_positive_rate": 0.0,
+      "fail_false_negative_rate": 0.0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "FC-301",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-301",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-302",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-302",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-303",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-303",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-304",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-304",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-305",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-305",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-306",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-306",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-307",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "UNIT",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-307",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-308",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.5,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-308",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-309",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-309",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-310",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-numeric_cross_report_materiality-fc-310",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-311",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-source_integrity-fc-311",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-312",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-source_integrity-fc-312",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-313",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-source_integrity-fc-313",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-314",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-source_integrity-fc-314",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-315",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-source_integrity-fc-315",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-316",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-source_integrity-fc-316",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-317",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-source_integrity-fc-317",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-318",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-source_integrity-fc-318",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-319",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-source_integrity-fc-319",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-320",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-source_integrity-fc-320",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-321",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "VARIANCE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-321",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-322",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-322",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-323",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "PERIOD",
+      "group_id": "shadow-applicability_vs_missing_data-fc-323",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-324",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "CURRENCY",
+      "group_id": "shadow-applicability_vs_missing_data-fc-324",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-325",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "DIRECTION",
+      "group_id": "shadow-applicability_vs_missing_data-fc-325",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-326",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-326",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-327",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "VARIANCE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-327",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-328",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-328",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-329",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "PERIOD",
+      "group_id": "shadow-applicability_vs_missing_data-fc-329",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-330",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "VARIANCE",
+      "group_id": "shadow-applicability_vs_missing_data-fc-330",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-331",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-severity_and_human_review-fc-331",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-332",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "UNIT",
+      "group_id": "shadow-severity_and_human_review-fc-332",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-333",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-severity_and_human_review-fc-333",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-334",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-severity_and_human_review-fc-334",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-335",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "CURRENCY",
+      "group_id": "shadow-severity_and_human_review-fc-335",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-336",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-severity_and_human_review-fc-336",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-337",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 0.6666666666666666,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "PERIOD",
+      "group_id": "shadow-severity_and_human_review-fc-337",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-338",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CURRENCY",
+      "group_id": "shadow-severity_and_human_review-fc-338",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-339",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-severity_and_human_review-fc-339",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-340",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DIRECTION",
+      "group_id": "shadow-severity_and_human_review-fc-340",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-341",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "PASS",
+      "expected_status": "PASS",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-341",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-342",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": false,
+      "evidence_precision": 0.6666666666666666,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "PASS",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-342",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-343",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-343",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-344",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 0.5,
+      "evidence_recall": 0.5,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "WARN",
+      "control_type": "CURRENCY",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-344",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-345",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": false,
+      "human_review_correct": true,
+      "evidence_precision": 0.5,
+      "evidence_recall": 0.3333333333333333,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "FAIL",
+      "control_type": "ARITHMETIC",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-345",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-346",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 0.6666666666666666,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "FAIL",
+      "expected_status": "FAIL",
+      "control_type": "DISCLOSURE",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-346",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-347",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": false,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 0.5,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "WARN",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "EVIDENCE",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-347",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-348",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "INSUFFICIENT_DATA",
+      "expected_status": "INSUFFICIENT_DATA",
+      "control_type": "CROSS_SECTION",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-348",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-349",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 0.5,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "VARIANCE",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-349",
+      "boundary_type": null
+    },
+    {
+      "case_id": "FC-350",
+      "json_valid": true,
+      "schema_valid": true,
+      "sources_valid": true,
+      "status_correct": true,
+      "control_type_correct": true,
+      "severity_correct": true,
+      "human_review_correct": true,
+      "evidence_precision": 1.0,
+      "evidence_recall": 1.0,
+      "errors": [],
+      "predicted_status": "NOT_APPLICABLE",
+      "expected_status": "NOT_APPLICABLE",
+      "control_type": "DIRECTION",
+      "group_id": "shadow-prompt_injection_and_neutral_regression-fc-350",
+      "boundary_type": null
+    }
+  ]
+}
