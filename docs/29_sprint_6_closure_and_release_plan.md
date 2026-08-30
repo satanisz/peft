@@ -1,8 +1,8 @@
 # Sprint 6 — plan zamknięcia Protected Evidence i wydania warsztatu
 
 **Status:** S6.5A zaakceptowane przez właściciela. S6.5B zakończone
-`EVIDENCE_V1_CLOSED_READ_ONLY`. Narracja S6.5C jest gotowa do mechanicznego
-wykonania na Luna/low.
+`EVIDENCE_V1_CLOSED_READ_ONLY`. S6.5C wykonane na Luna/low;
+`S6_5C_EVIDENCE_PACKAGE_READY_FOR_SOL_HIGH_REVIEW`.
 
 ## 1. Stan faktyczny na wejściu
 
