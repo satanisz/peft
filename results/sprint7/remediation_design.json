@@ -1,0 +1,91 @@
+{
+  "id": "S7-REMEDIATION-DESIGN-V1",
+  "version": "1.0.0",
+  "evidence_v1_policy": "DIAGNOSTIC_ONLY_FAILED_FROZEN_READ_ONLY",
+  "problem_statement": "Q1 learned the familiar boundary patterns but did not reliably separate missing data, applicability, untrusted source instructions and material decisions outside those patterns.",
+  "layers": {
+    "data": {
+      "priority": "HIGH",
+      "actions": [
+        "Create new hard negatives for INSUFFICIENT_DATA versus FAIL, WARN and NOT_APPLICABLE.",
+        "Create counterfactual pairs changing exactly one applicability, completeness or materiality premise.",
+        "Include clean regression neighbors next to injection and missing-data cases.",
+        "Generate new cases without reusing v1 wording, identifiers, values or family templates.",
+        "Keep severity and human-review fields derived from status-policy-v1."
+      ],
+      "target_mix_for_240_to_360_cases": {
+        "missing_data_and_applicability": 0.35,
+        "source_trust_and_injection": 0.25,
+        "severity_and_escalation": 0.2,
+        "deterministic_materiality": 0.15,
+        "clean_regression": 0.05
+      }
+    },
+    "prompt": {
+      "priority": "HIGH",
+      "contract": "configs/prompt_contract_v3_design.json",
+      "actions": [
+        "Enforce trust, applicability and completeness checks before status selection.",
+        "Make source trust and required evidence roles explicit structured fields.",
+        "Keep output schema stable for the S7.3 system-first ablation.",
+        "Treat PASS as requiring applicability plus complete trusted evidence."
+      ]
+    },
+    "decision_guard": {
+      "priority": "HIGH_FOR_DETERMINISTIC_AND_DERIVED_FIELDS",
+      "contract": "configs/s7_guard_v2_design.json",
+      "actions": [
+        "Use versioned control-level threshold rules instead of case-specific gold knowledge.",
+        "Block deterministic decision mismatch, derived-field mismatch and invalid rule execution.",
+        "Never silently replace the model status."
+      ]
+    },
+    "source_guard": {
+      "priority": "HIGH",
+      "contract": "configs/s7_guard_v2_design.json",
+      "actions": [
+        "Distinguish syntactically valid source IDs from sources trusted as evidence.",
+        "Reject citations of sources explicitly marked UNTRUSTED_INSTRUCTION.",
+        "Check required evidence roles without accessing expected_output."
+      ]
+    },
+    "human_review": {
+      "priority": "MANDATORY_FOR_BLOCKED_AND_NON_PASS",
+      "actions": [
+        "Route every blocked output with reason codes and raw response.",
+        "Require review for WARN, FAIL and INSUFFICIENT_DATA.",
+        "Review all critical dev errors and a frozen sample of apparent PASS outputs.",
+        "Do not infer SME acceptance from model-assisted review."
+      ]
+    }
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "Prompt v3 improves INSUFFICIENT_DATA recall to at least 0.80 on new dev-hard without increasing unsafe PASS above 0.03."
+    },
+    {
+      "id": "H2",
+      "claim": "Source guard v2 detects every citation of a source marked untrusted and keeps false blocking at or below 0.05."
+    },
+    {
+      "id": "H3",
+      "claim": "Decision guard v2 blocks 100% of declared deterministic status mismatches and accepts no blocked output."
+    },
+    {
+      "id": "H4",
+      "claim": "System-first remediation reduces business-cost-weighted error by at least 50% relative to Q1 plus prompt v2 on the same new dev set."
+    },
+    {
+      "id": "H5",
+      "claim": "Q2 is justified only if it adds at least 0.03 macro-F1 or a further 25% weighted-error reduction over the best prompt-plus-guard variant without worsening critical conditions."
+    }
+  ],
+  "non_model_decisions": [
+    "Arithmetic and threshold bands belong to deterministic code.",
+    "Source trust comes from a registry or structured metadata, not model judgment.",
+    "Final acceptance, material escalation and policy exceptions remain human decisions.",
+    "Evidence v2 opening requires a separate approval after train/dev gates."
+  ],
+  "decision": "S7_REMEDIATION_DESIGN_APPROVED"
+}

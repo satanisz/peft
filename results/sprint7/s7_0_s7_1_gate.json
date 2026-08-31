@@ -1,0 +1,34 @@
+{
+  "id": "S7-0-1-GATE",
+  "version": "1.0.0",
+  "checks": {
+    "baseline_frozen": true,
+    "closure_failed_frozen_read_only": true,
+    "closure_hashes_match": true,
+    "adapter_hashes_match": true,
+    "closure_commits_are_ancestors": true,
+    "q1_training_excluded_protected_shadow": true,
+    "all_870_responses_analyzed": true,
+    "four_splits_three_seeds_covered": true,
+    "per_case_seed_error_records_present": true,
+    "legacy_severity_separated": true,
+    "deterministic_diagnostic_separated": true,
+    "q2_train_exclusions_recorded": true,
+    "v2_evidence_exclusions_recorded": true,
+    "prompt_v3_design_frozen_for_implementation": true,
+    "guard_v2_design_frozen_for_implementation": true,
+    "guard_has_no_gold_runtime_input": true,
+    "guard_has_no_silent_correction": true,
+    "remediation_design_approved": true,
+    "no_evidence_v2_created": true,
+    "no_q2_adapter_created": true
+  },
+  "decision": "S7_REMEDIATION_DESIGN_APPROVED",
+  "next_allowed_action": "DESIGN_S7_2_TRAIN_DEV_V2",
+  "prohibited_actions": [
+    "rerun Evidence v1",
+    "retune on Evidence v1 or shadow v1",
+    "create or open Evidence v2",
+    "start Q2 training before S7.2 and S7.3 gates"
+  ]
+}

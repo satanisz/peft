@@ -70,6 +70,8 @@ decyzji, że prompt+guard jest lepszym rozwiązaniem niż kolejny adapter.
 **Bramka:** `S7_REMEDIATION_DESIGN_APPROVED`. Wynikiem nie jest jeszcze nowy
 adapter.
 
+**Status:** wykonane. Raport: `docs/40_sprint_7_0_7_1_baseline_and_remediation_report.md`.
+
 ### S7.2 — train/dev v2 bez nowego protected evidence
 
 **Projekt:** Sol/high + człowiek/SME. **Wykonanie:** Luna/low. **Czas:** 2–4 dni.

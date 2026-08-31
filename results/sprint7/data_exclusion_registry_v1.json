@@ -1,0 +1,85 @@
+{
+  "id": "S7-DATA-EXCLUSION-REGISTRY-V1",
+  "version": "1.0.0",
+  "policy": {
+    "evidence_v1": "DIAGNOSTIC_AND_REGRESSION_ONLY_NOT_INDEPENDENT_EVIDENCE",
+    "q2_training": "No historical validation, test, challenge, diagnostic or shadow cases.",
+    "evidence_v2": "No historical train, dev, validation, test, challenge, diagnostic or shadow cases."
+  },
+  "forbidden_for_q2_train": [
+    {
+      "path": "data/generated/dataset_v1/validation.jsonl",
+      "sha256": "0c35de602c8ed6defe70006031e632baabdb3ed8d22a600af0d6ff1da788fd40"
+    },
+    {
+      "path": "data/generated/dataset_v1/test.jsonl",
+      "sha256": "f6692f7f1fbed793d4f21e434cf5369eb7b8e5341194568f10b3f753fdb302a6"
+    },
+    {
+      "path": "data/generated/dataset_v1/challenge.jsonl",
+      "sha256": "30a61363c9de29ed24907e87650a096e22c92b657cea86c29cbbf989b821c64d"
+    },
+    {
+      "path": "data/splits/boundary_validation.jsonl",
+      "sha256": "047718b7ee372711b2f64a50915d0363bbb64700f6608074f37ab9566252e020"
+    },
+    {
+      "path": "data/splits/boundary_test.jsonl",
+      "sha256": "80e3e829fd9223a5ed2a8983445c8df43fc45aec985a03f21cdd0ce51aec9437"
+    },
+    {
+      "path": "data/diagnostic/diagnostic_set_v1.jsonl",
+      "sha256": "35fac4bcb44ea54b49badf17642da0c4a0001f895406f6c5dde202af7e839d4b"
+    },
+    {
+      "path": "data/shadow/shadow_challenge_v1.jsonl",
+      "sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93"
+    }
+  ],
+  "forbidden_for_v2_evidence": [
+    {
+      "path": "data/diagnostic/diagnostic_set_v1.jsonl",
+      "sha256": "35fac4bcb44ea54b49badf17642da0c4a0001f895406f6c5dde202af7e839d4b"
+    },
+    {
+      "path": "data/generated/dataset_v1/challenge.jsonl",
+      "sha256": "30a61363c9de29ed24907e87650a096e22c92b657cea86c29cbbf989b821c64d"
+    },
+    {
+      "path": "data/generated/dataset_v1/development.jsonl",
+      "sha256": "b7986f162fef080b5dc0d1c7b85dacb2e12885b83ed4a35af2c0d891c6d96e3f"
+    },
+    {
+      "path": "data/generated/dataset_v1/test.jsonl",
+      "sha256": "f6692f7f1fbed793d4f21e434cf5369eb7b8e5341194568f10b3f753fdb302a6"
+    },
+    {
+      "path": "data/generated/dataset_v1/train.jsonl",
+      "sha256": "3eea05da2c8c2a4c06fa6bda4f338cdd27640373e0ec6dcafbdb10fcc0bcdd9c"
+    },
+    {
+      "path": "data/generated/dataset_v1/validation.jsonl",
+      "sha256": "0c35de602c8ed6defe70006031e632baabdb3ed8d22a600af0d6ff1da788fd40"
+    },
+    {
+      "path": "data/shadow/shadow_challenge_v1.jsonl",
+      "sha256": "18472606c9043b13e9d89d769ee38005cdce846e022c61096be17a481716cd93"
+    },
+    {
+      "path": "data/splits/boundary_development.jsonl",
+      "sha256": "2322939ddb5e1ee913337ef60dc0cfdb801b7f5cfd23dbbd696a326291c49c7a"
+    },
+    {
+      "path": "data/splits/boundary_test.jsonl",
+      "sha256": "80e3e829fd9223a5ed2a8983445c8df43fc45aec985a03f21cdd0ce51aec9437"
+    },
+    {
+      "path": "data/splits/boundary_train.jsonl",
+      "sha256": "a22d04f930489fcd8ed5bb49dd562de3ffa78086b4bbf9cb572b25e82bdf84b2"
+    },
+    {
+      "path": "data/splits/boundary_validation.jsonl",
+      "sha256": "047718b7ee372711b2f64a50915d0363bbb64700f6608074f37ab9566252e020"
+    }
+  ]
+}

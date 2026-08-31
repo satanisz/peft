@@ -1,0 +1,69 @@
+{
+  "id": "S7-HYBRID-GUARD-V2-DESIGN",
+  "version": "2.0.0-design",
+  "status": "FROZEN_FOR_S7_2_IMPLEMENTATION_NOT_FOR_EVIDENCE",
+  "mode": "block_and_route_to_human_no_silent_correction",
+  "runtime_forbidden_inputs": [
+    "expected_output",
+    "gold_status",
+    "gold_severity",
+    "evidence_v1_manual_review_decision"
+  ],
+  "decision_guard": {
+    "inputs": [
+      "declared deterministic_check",
+      "versioned threshold rule",
+      "raw model response"
+    ],
+    "checks": [
+      "deterministic result matches the trusted input result",
+      "status matches the versioned threshold band",
+      "severity and human-review fields match status-policy-v1",
+      "missing or invalid deterministic rule is blocking"
+    ],
+    "blocking_codes": [
+      "INVALID_DETERMINISTIC_DECISION_RULE",
+      "DETERMINISTIC_RESULT_MISMATCH",
+      "DETERMINISTIC_DECISION_MISMATCH",
+      "SEVERITY_POLICY_MISMATCH",
+      "HUMAN_REVIEW_POLICY_MISMATCH"
+    ]
+  },
+  "source_guard": {
+    "trust_source": "structured input metadata and versioned source registry",
+    "checks": [
+      "every cited source_id exists in the input",
+      "every cited source has trusted_for_evidence=true",
+      "required evidence roles are present for PASS, WARN or FAIL",
+      "untrusted instruction sources are never accepted as evidence",
+      "empty evidence and unknown identifiers are blocking"
+    ],
+    "blocking_codes": [
+      "UNKNOWN_SOURCE_ID",
+      "UNTRUSTED_SOURCE_CITED",
+      "REQUIRED_EVIDENCE_ROLE_MISSING",
+      "EMPTY_EVIDENCE",
+      "SCHEMA_VIOLATION",
+      "INVALID_JSON"
+    ]
+  },
+  "routing": {
+    "blocked_output_retained": true,
+    "guarded_output_when_blocked": null,
+    "route": "HUMAN_REVIEW_QUEUE",
+    "queue_payload": [
+      "case_id",
+      "raw_response",
+      "issue_codes",
+      "trusted deterministic result when present",
+      "used and allowed source IDs",
+      "artifact hashes"
+    ]
+  },
+  "acceptance_targets_for_dev": {
+    "deterministic_mismatch_detection_rate": 1.0,
+    "untrusted_source_citation_detection_rate": 1.0,
+    "blocked_output_accepted_count": 0,
+    "guard_false_block_rate_max": 0.05
+  }
+}
