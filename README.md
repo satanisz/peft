@@ -7,8 +7,9 @@ Oryginalny trzygodzinny warsztat pozostaje zachowany jako materiał dodatkowy.
 - [Narracja wykładu i notatki prowadzącego](materials/lecture60_presenter_guide.md)
 - [Zweryfikowany przebieg treningów](docs/36_lecture60_training_review.md)
 - [Aktualny plan wykonania i wydania wykładu](docs/37_lecture60_delivery_plan.md)
+- [Sprint 7 — Q2 i Evidence v2](docs/39_sprint_7_q2_evidence_v2_executive_plan.md)
 
-Narracja jest przygotowana; nowy deck 60-minutowy wymaga złożenia i QA.
+Deck 60-minutowy jest złożony i przeszedł pełny render oraz QA.
 Protected Evidence v1 pozostaje FAILED/FROZEN/READ-ONLY, bez rerunu i bez
 zgody produkcyjnej.
 
@@ -54,6 +55,7 @@ zgody produkcyjnej.
 - [G2.1A — hardening approval, runnera i raportowania](docs/24_sprint_6_g2_1a_contract_hardening.md)
 - [Raport G2.1B — rzeczywisty offline i fallback](docs/25_sprint_6_g2_1b_technical_hardening_report.md)
 - [Końcowe review G0/G1/G2.1](docs/26_sprint_6_final_g0_g1_g2_1_review.md)
+- [Plan odzyskania jakości Q2 / Evidence v2](docs/39_sprint_7_q2_evidence_v2_executive_plan.md)
 - [Pakiet materiałów](materials/README.md)
 
 ## Planowane artefakty
@@ -69,17 +71,9 @@ notebooks/            trzy demonstracje prowadzącego bez auto-startu treningu
 
 ## Najbliższy kamień milowy
 
-Sprint 5 ma status `M5_ACCEPTED_CONTENT_FREEZE_WITH_PROTECTED_HOLD`.
-Q1-DEMO ukończyło 12 kroków w 114,361 s, zapisało adapter rank 8 i przeszło
-fresh reload przy limicie 384 tokenów. Talia 53 slajdów, trzy notebooki i pakiet
-uczestnika/prowadzącego są zamrożone jako M5 Content freeze.
-
-Sprint 6 obejmuje próbę od czystego środowiska, 50 nowych przypadków shadow
-challenge, kontrolowane protected evidence i pełny dry-run 180 minut. Protected
-evidence pozostaje zamknięte. S6-G0 ma status PASS, a 50 goldów shadow challenge
-przeszło authoring, audyt, kontrolę wspomaganą i review człowieka/SME 50/50.
-S6-G1 ma status PASS. Po review Sol/high wykonano G2.1A dotyczące osobnego
-approval, shadow 50×3 i raportowania oraz G2.1B z realnym local-only loadem,
-wykonanymi fallbackami i próbą czystej instalacji offline. G2.1B ma status
-`S6_G2_1_PASS`; następny krok to review Sol/high i osobna decyzja approval.
-Wyniki dotyczą danych syntetycznych i nie stanowią zgody produkcyjnej.
+Wykład 60-minutowy i pakiet QA są gotowe. Evidence v1 wykonano i zamknięto jako
+`FAILED / FROZEN / READ-ONLY`; wynik jest częścią case study, a nie zgodą
+produkcyjną. Następny opcjonalny projekt to Sprint 7: najpierw diagnoza oraz
+system-first ablation, następnie — tylko po przejściu bramek train/dev — Q2 i
+nowe, wcześniej niewidziane Evidence v2. Najbliższy krok wykonuje Sol/high:
+S7.0 + S7.1.
