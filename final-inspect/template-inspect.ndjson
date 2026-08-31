@@ -1,0 +1,446 @@
+{"kind":"deck","id":"pr/60j21l","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"WARSZTAT • 180 MINUT","textShapes":4}
+{"kind":"shape","id":"sh/ts7md4r2","slide":1,"bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"text":"WARSZTAT • 180 MINUT","textPreview":"WARSZTAT • 180 MINUT","textChars":20,"textLines":1,"bbox":[54,44,500,30]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"text":"Parameter-Efficient\nFine-Tuning w banku","textPreview":"Parameter-Efficient | Fine-Tuning w banku","textChars":39,"textLines":2,"bbox":[54,172,1050,210]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"text":"Od LoRA i QLoRA do wiarygodnego benchmarku oraz bezpiecznej architektury","textPreview":"Od LoRA i QLoRA do wiarygodnego benchmarku oraz bezpiecznej architektury","textChars":72,"textLines":1,"bbox":[56,470,820,92]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"text":"LoRA • QLoRA • dane • benchmark • guard","textPreview":"LoRA • QLoRA • dane • benchmark • guard","textChars":39,"textLines":1,"bbox":[56,620,760,30]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"Czas: 1 min\nCel: Ustawić zakres i profesjonalny ton szkolenia.\nPrzebieg:\nPrzedstaw warsztat jako historię decyzji inżynierskiej, nie przegląd biblioteki. Zapowiedz, że użyjemy własnego bankowego eksperymentu i pokażemy również wynik negatywny.\n[Sources]\n- repo:docs/01_training_blueprint.md\n[/Sources]"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"OTWARCIE","textShapes":4}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"text":"OTWARCIE","textPreview":"OTWARCIE","textChars":8,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/ozy1ofad","slide":2,"text":"Model policzył 27. Potem uznał, że 27 ≤ 5.","textPreview":"Model policzył 27. Potem uznał, że 27 ≤ 5.","textChars":42,"textLines":1,"bbox":[42,165,1080,205]}
+{"kind":"shape","id":"sh/b29kza94","slide":2,"bbox":[42,414,900,8]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"text":"Trzy seedy, ten sam błąd, poprawny JSON i poprawne źródła. To będzie nasz test rzeczywistości.","textPreview":"Trzy seedy, ten sam błąd, poprawny JSON i poprawne źródła. To będzie nasz test rzeczywistości.","textChars":94,"textLines":1,"bbox":[42,458,990,110]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"Czas: 2 min\nCel: Zbudować napięcie wokół FC-209.\nPrzebieg:\nNie wyjaśniaj jeszcze guarda. Pokaż, że struktura i arytmetyka mogą być poprawne, a decyzja biznesowa błędna. Poproś grupę, aby zapamiętała to zdanie.\n\nPytanie do grupy: Która metryka ujawni taki błąd, jeśli schema validity wynosi 100%?\n[Sources]\n- repo:data/diagnostic/diagnostic_set_v1.jsonl#FC-209\n- repo:results/sprint4_2b/comparison.md\n- repo:results/sprint4_2c/report.md\n[/Sources]"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"OTWARCIE","textShapes":12}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"text":"OTWARCIE","textPreview":"OTWARCIE","textChars":8,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/d0jax03i","slide":3,"text":"Sukces ma trzy niezależne wymiary","textPreview":"Sukces ma trzy niezależne wymiary","textChars":33,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/byd032h8","slide":3,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/3ah8rqlg","slide":3,"bbox":[42,205,372,372]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[64,226,328,38]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"text":"Decyzja","textPreview":"Decyzja","textChars":7,"textLines":1,"bbox":[64,278,328,72]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"text":"Czy status odpowiada przesłankom i kosztowi błędu?","textPreview":"Czy status odpowiada przesłankom i kosztowi błędu?","textChars":50,"textLines":1,"bbox":[64,370,328,170]}
+{"kind":"shape","id":"sh/n6ls3alk","slide":3,"bbox":[452,205,372,372]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[474,226,328,38]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"text":"Dowód","textPreview":"Dowód","textChars":5,"textLines":1,"bbox":[474,278,328,72]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"text":"Czy wynik wskazuje dozwolone, wystarczające źródła?","textPreview":"Czy wynik wskazuje dozwolone, wystarczające źródła?","textChars":51,"textLines":1,"bbox":[474,370,328,170]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"bbox":[862,205,372,372]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[884,226,328,38]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"text":"Kontrakt","textPreview":"Kontrakt","textChars":8,"textLines":1,"bbox":[884,278,328,72]}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"text":"Czy JSON, severity i human review są spójne?","textPreview":"Czy JSON, severity i human review są spójne?","textChars":44,"textLines":1,"bbox":[884,370,328,170]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"Czas: 2 min\nCel: Sukces ma trzy niezależne wymiary\nPrzebieg:\nWyjaśnij, że decyzja, dowód i kontrakt wymagają osobnych testów. Bezpieczeństwo procesu będzie warstwą nadrzędną, której nie wolno redukować do jednej liczby.\n\nPrzejście: Najpierw określimy, co system może robić.\n[Sources]\n- repo:docs/05_baseline_results.md\n- repo:results/sprint4_2b/comparison.md\n[/Sources]"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"OTWARCIE","textShapes":7}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"text":"OTWARCIE","textPreview":"OTWARCIE","textChars":8,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"text":"Copilot wspiera kontrolera — nie zatwierdza","textPreview":"Copilot wspiera kontrolera — nie zatwierdza","textChars":43,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ilwf69kv","slide":4,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/doj29oba","slide":4,"text":"LLM + adapter","textPreview":"LLM + adapter","textChars":13,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/sna103ap","slide":4,"text":"• klasyfikuje status\n\n• porządkuje ustalenie\n\n• cytuje dowody\n\n• proponuje eskalację","textPreview":"• klasyfikuje status |  | • porządkuje ustalenie |  | • cytuje dowody |  | • proponuje eskalację","textChars":84,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/3ihk3et8","slide":4,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"text":"Poza zakresem","textPreview":"Poza zakresem","textChars":13,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"text":"• zatwierdzenie sprawozdania\n\n• zaksięgowanie korekty\n\n• decyzja regulacyjna\n\n• decyzja kredytowa","textPreview":"• zatwierdzenie sprawozdania |  | • zaksięgowanie korekty |  | • decyzja regulacyjna |  | • decyzja kredytowa","textChars":97,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"Czas: 2 min\nCel: Copilot wspiera kontrolera — nie zatwierdza\nPrzebieg:\nWyraźnie oddziel wspomaganie od automatycznej decyzji. To ograniczenie będzie później uzasadniało human review i protected gate.\n[Sources]\n- repo:docs/02_financial_control_copilot.md\n[/Sources]"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"OTWARCIE","textShapes":12}
+{"kind":"textbox","id":"sh/sb6xsvu9","slide":5,"text":"OTWARCIE","textPreview":"OTWARCIE","textChars":8,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/cf2tcr61","slide":5,"text":"Jedna historia: zachowanie → trening → dowód","textPreview":"Jedna historia: zachowanie → trening → dowód","textChars":44,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ehkzepsn","slide":5,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/1kvi94re","slide":5,"bbox":[52,342,1170,0]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"bbox":[70,332,20,20]}
+{"kind":"textbox","id":"sh/032tgr6d","slide":5,"text":"0–80 min","textPreview":"0–80 min","textChars":8,"textLines":1,"bbox":[70,282,240,30]}
+{"kind":"textbox","id":"sh/n6dcr65o","slide":5,"text":"Mechanika","textPreview":"Mechanika","textChars":9,"textLines":1,"bbox":[70,382,330,56]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"text":"Kiedy PEFT, jak działa LoRA i gdzie QLoRA oszczędza pamięć.","textPreview":"Kiedy PEFT, jak działa LoRA i gdzie QLoRA oszczędza pamięć.","textChars":59,"textLines":1,"bbox":[70,458,330,120]}
+{"kind":"shape","id":"sh/w32dkbuh","slide":5,"bbox":[446,332,20,20]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"text":"90–148 min","textPreview":"90–148 min","textChars":10,"textLines":1,"bbox":[446,282,240,30]}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"text":"Warsztat","textPreview":"Warsztat","textChars":8,"textLines":1,"bbox":[446,382,330,56]}
+{"kind":"textbox","id":"sh/v2twb6dw","slide":5,"text":"Dane graniczne, konfiguracja, trening, adapter i reload.","textPreview":"Dane graniczne, konfiguracja, trening, adapter i reload.","textChars":56,"textLines":1,"bbox":[446,458,330,120]}
+{"kind":"shape","id":"sh/k7mxovud","slide":5,"bbox":[822,332,20,20]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"text":"148–180 min","textPreview":"148–180 min","textChars":11,"textLines":1,"bbox":[822,282,240,30]}
+{"kind":"textbox","id":"sh/i54fmlc7","slide":5,"text":"Decyzja","textPreview":"Decyzja","textChars":7,"textLines":1,"bbox":[822,382,330,56]}
+{"kind":"textbox","id":"sh/j6dwfqds","slide":5,"text":"Benchmark, FC-209, guard oraz bankowy operating model.","textPreview":"Benchmark, FC-209, guard oraz bankowy operating model.","textChars":54,"textLines":1,"bbox":[822,458,330,120]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"Czas: 3 min\nCel: Jedna historia: zachowanie → trening → dowód\nPrzebieg:\nZaznacz przerwę po części QLoRA. Uczestnicy nie konfigurują środowisk; analizują decyzje i obserwują prawdziwy trening.\n[Sources]\n- repo:docs/01_training_blueprint.md\n[/Sources]"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"DOBÓR METODY","textShapes":7}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"text":"DOBÓR METODY","textPreview":"DOBÓR METODY","textChars":12,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/zi98nu94","slide":6,"text":"Czy brakuje wiedzy, czy zachowania?","textPreview":"Czy brakuje wiedzy, czy zachowania?","textChars":35,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/jet8nm1c","slide":6,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/98rqt4r6","slide":6,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/ml07i9sv","slide":6,"text":"Wiedza zmienna","textPreview":"Wiedza zmienna","textChars":14,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"text":"• procedury i regulaminy\n\n• bieżące dane klienta\n\n• wersje raportów\n\n• progi z polityki","textPreview":"• procedury i regulaminy |  | • bieżące dane klienta |  | • wersje raportów |  | • progi z polityki","textChars":87,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"text":"Zachowanie stabilne","textPreview":"Zachowanie stabilne","textChars":19,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"text":"• format odpowiedzi\n\n• styl ustalenia\n\n• hierarchia statusów\n\n• zasady eskalacji","textPreview":"• format odpowiedzi |  | • styl ustalenia |  | • hierarchia statusów |  | • zasady eskalacji","textChars":80,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"Czas: 3 min\nCel: Czy brakuje wiedzy, czy zachowania?\nPrzebieg:\nTo najważniejsze pytanie diagnostyczne przed wyborem PEFT. Wiedzę zmienną zwykle dostarcza kontekst lub retrieval; stabilne zachowanie może trafić do adaptera.\n\nPytanie do grupy: Która część waszego procesu zmienia się co tydzień?\n[Sources]\n- repo:docs/02_financial_control_copilot.md\n[/Sources]"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"DOBÓR METODY","textShapes":19}
+{"kind":"textbox","id":"sh/b2h4nupk","slide":7,"text":"DOBÓR METODY","textPreview":"DOBÓR METODY","textChars":12,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/dcbud0ra","slide":7,"text":"Każda interwencja rozwiązuje inny problem","textPreview":"Każda interwencja rozwiązuje inny problem","textChars":41,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/adkbu1cv","slide":7,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/zedcfa9g","slide":7,"bbox":[42,190,410,58]}
+{"kind":"textbox","id":"sh/kzmdova1","slide":7,"text":"Problem","textPreview":"Problem","textChars":7,"textLines":1,"bbox":[52,204,390,32]}
+{"kind":"shape","id":"sh/l0vuh0rm","slide":7,"bbox":[452,190,260,58]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"text":"Pierwszy wybór","textPreview":"Pierwszy wybór","textChars":14,"textLines":1,"bbox":[462,204,240,32]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"bbox":[712,190,526,58]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"text":"Sygnał ostrzegawczy","textPreview":"Sygnał ostrzegawczy","textChars":19,"textLines":1,"bbox":[722,204,506,32]}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"bbox":[42,248,410,64]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"text":"Lepsza instrukcja i format","textPreview":"Lepsza instrukcja i format","textChars":26,"textLines":1,"bbox":[52,260,390,46]}
+{"kind":"shape","id":"sh/cbq1sv25","slide":7,"bbox":[452,248,260,64]}
+{"kind":"textbox","id":"sh/n6x0fqlo","slide":7,"text":"Prompting","textPreview":"Prompting","textChars":9,"textLines":1,"bbox":[462,260,240,46]}
+{"kind":"shape","id":"sh/25ojml43","slide":7,"bbox":[712,248,526,64]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"text":"Długi prompt w każdym wywołaniu","textPreview":"Długi prompt w każdym wywołaniu","textChars":31,"textLines":1,"bbox":[722,260,506,46]}
+{"kind":"shape","id":"sh/o761ov2t","slide":7,"bbox":[42,312,410,64]}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"text":"Aktualne dokumenty i fakty","textPreview":"Aktualne dokumenty i fakty","textChars":26,"textLines":1,"bbox":[52,324,390,46]}
+{"kind":"shape","id":"sh/eh4jil4r","slide":7,"bbox":[452,312,260,64]}
+{"kind":"textbox","id":"sh/id4ju1oz","slide":7,"text":"RAG","textPreview":"RAG","textChars":3,"textLines":1,"bbox":[462,324,240,46]}
+{"kind":"shape","id":"sh/jedkn654","slide":7,"bbox":[712,312,526,64]}
+{"kind":"textbox","id":"sh/4fm1wb6p","slide":7,"text":"Retrieval nie uczy procedury","textPreview":"Retrieval nie uczy procedury","textChars":28,"textLines":1,"bbox":[722,324,506,46]}
+{"kind":"shape","id":"sh/50v2pgna","slide":7,"bbox":[42,376,410,64]}
+{"kind":"textbox","id":"sh/q143ylov","slide":7,"text":"Stabilne zachowanie domenowe","textPreview":"Stabilne zachowanie domenowe","textChars":28,"textLines":1,"bbox":[52,388,390,46]}
+{"kind":"shape","id":"sh/r2dkrq5g","slide":7,"bbox":[452,376,260,64]}
+{"kind":"textbox","id":"sh/s3ml0v61","slide":7,"text":"SFT + PEFT","textPreview":"SFT + PEFT","textChars":10,"textLines":1,"bbox":[462,388,240,46]}
+{"kind":"shape","id":"sh/d4f2t0nm","slide":7,"bbox":[712,376,526,64]}
+{"kind":"textbox","id":"sh/e5o32lor","slide":7,"text":"Potrzebne goldy i benchmark","textPreview":"Potrzebne goldy i benchmark","textChars":27,"textLines":1,"bbox":[722,388,506,46]}
+{"kind":"shape","id":"sh/f6xkvq5c","slide":7,"bbox":[42,440,410,64]}
+{"kind":"textbox","id":"sh/p0zmlk7u","slide":7,"text":"Nowy rozkład języka domeny","textPreview":"Nowy rozkład języka domeny","textChars":26,"textLines":1,"bbox":[52,452,390,46]}
+{"kind":"shape","id":"sh/ozq5szq9","slide":7,"bbox":[452,440,260,64]}
+{"kind":"textbox","id":"sh/nyh4jupo","slide":7,"text":"Continued pretraining","textPreview":"Continued pretraining","textChars":21,"textLines":1,"bbox":[462,452,240,46]}
+{"kind":"shape","id":"sh/2x8nqp83","slide":7,"bbox":[712,440,526,64]}
+{"kind":"textbox","id":"sh/x4j6p47q","slide":7,"text":"Wysoki koszt i ryzyko driftu","textPreview":"Wysoki koszt i ryzyko driftu","textChars":28,"textLines":1,"bbox":[722,452,506,46]}
+{"kind":"textbox","id":"sh/c3a5wzq5","slide":7,"text":"Pełny fine-tuning jest opcją architektoniczną, a nie domyślnym punktem startu.","textPreview":"Pełny fine-tuning jest opcją architektoniczną, a nie domyślnym punktem startu.","textChars":78,"textLines":1,"bbox":[42,620,1050,34]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"Czas: 4 min\nCel: Każda interwencja rozwiązuje inny problem\nPrzebieg:\nOmów kolejność od najtańszej do najbardziej inwazyjnej interwencji. RAG i PEFT mogą działać razem — jeden dostarcza fakty, drugi sposób działania.\n[Sources]\n- repo:docs/01_training_blueprint.md\n- repo:docs/02_financial_control_copilot.md\n[/Sources]"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"LORA","textShapes":18}
+{"kind":"textbox","id":"sh/z61s7il4","slide":8,"text":"LORA","textPreview":"LORA","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/g72x4zyd","slide":8,"text":"Rank, alpha i dropout działają razem","textPreview":"Rank, alpha i dropout działają razem","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/kjmdwbit","slide":8,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/6h0fypgb","slide":8,"bbox":[42,190,220,58]}
+{"kind":"textbox","id":"sh/tkby9kzm","slide":8,"text":"Parametr","textPreview":"Parametr","textChars":8,"textLines":1,"bbox":[52,204,200,32]}
+{"kind":"shape","id":"sh/sjix0zy1","slide":8,"bbox":[262,190,430,58]}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"text":"Co reguluje","textPreview":"Co reguluje","textChars":11,"textLines":1,"bbox":[272,204,410,32]}
+{"kind":"shape","id":"sh/id0fu50z","slide":8,"bbox":[692,190,546,58]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"text":"Typowy błąd","textPreview":"Typowy błąd","textChars":11,"textLines":1,"bbox":[702,204,526,32]}
+{"kind":"shape","id":"sh/98rehwve","slide":8,"bbox":[42,248,220,64]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"text":"r","textPreview":"r","textChars":1,"textLines":1,"bbox":[52,260,200,46]}
+{"kind":"shape","id":"sh/n6pwfmd8","slide":8,"bbox":[262,248,430,64]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"text":"pojemność aktualizacji","textPreview":"pojemność aktualizacji","textChars":22,"textLines":1,"bbox":[272,260,410,46]}
+{"kind":"shape","id":"sh/1k7edwv2","slide":8,"bbox":[692,248,546,64]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"text":"sweep bez danych granicznych","textPreview":"sweep bez danych granicznych","textChars":28,"textLines":1,"bbox":[702,260,526,46]}
+{"kind":"shape","id":"sh/zipwbmdc","slide":8,"bbox":[42,312,220,64]}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"text":"alpha","textPreview":"alpha","textChars":5,"textLines":1,"bbox":[52,324,200,46]}
+{"kind":"shape","id":"sh/lgbepgvm","slide":8,"bbox":[262,312,430,64]}
+{"kind":"textbox","id":"sh/tw7e9gnq","slide":8,"text":"skalę ΔW","textPreview":"skalę ΔW","textChars":8,"textLines":1,"bbox":[272,324,410,46]}
+{"kind":"shape","id":"sh/svydgb65","slide":8,"bbox":[692,312,546,64]}
+{"kind":"textbox","id":"sh/7u5w765k","slide":8,"text":"kopiowanie wartości między modelami","textPreview":"kopiowanie wartości między modelami","textChars":35,"textLines":1,"bbox":[702,324,526,46]}
+{"kind":"shape","id":"sh/6twve1oz","slide":8,"bbox":[42,376,220,64]}
+{"kind":"textbox","id":"sh/5sne5wne","slide":8,"text":"dropout","textPreview":"dropout","textChars":7,"textLines":1,"bbox":[52,388,200,46]}
+{"kind":"shape","id":"sh/kredcr6t","slide":8,"bbox":[262,376,430,64]}
+{"kind":"textbox","id":"sh/jq5w365o","slide":8,"text":"regularizację adaptera","textPreview":"regularizację adaptera","textChars":22,"textLines":1,"bbox":[272,388,410,46]}
+{"kind":"shape","id":"sh/i5wva1o3","slide":8,"bbox":[692,376,546,64]}
+{"kind":"textbox","id":"sh/x4ne1wni","slide":8,"text":"dodawanie go bez diagnozy overfittingu","textPreview":"dodawanie go bez diagnozy overfittingu","textChars":38,"textLines":1,"bbox":[702,388,526,46]}
+{"kind":"shape","id":"sh/w3ed8r6x","slide":8,"bbox":[42,440,220,64]}
+{"kind":"textbox","id":"sh/m9sb2x4v","slide":8,"text":"init","textPreview":"init","textChars":4,"textLines":1,"bbox":[52,452,200,46]}
+{"kind":"shape","id":"sh/na1sb2lg","slide":8,"bbox":[262,440,430,64]}
+{"kind":"textbox","id":"sh/8bat47ml","slide":8,"text":"punkt startu adaptera","textPreview":"punkt startu adaptera","textChars":21,"textLines":1,"bbox":[272,452,410,46]}
+{"kind":"shape","id":"sh/9w3uds36","slide":8,"bbox":[692,440,546,64]}
+{"kind":"textbox","id":"sh/y5sbed4j","slide":8,"text":"brak testu, czy adapter startuje jako no-op","textPreview":"brak testu, czy adapter startuje jako no-op","textChars":43,"textLines":1,"bbox":[702,452,526,46]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"Czas: 3 min\nCel: Rank, alpha i dropout działają razem\nPrzebieg:\nOmów zależności zamiast katalogu domyślnych wartości. Wspomnij, że rsLoRA zmienia skalowanie na alpha/sqrt(r).\n[Sources]\n- https://huggingface.co/docs/peft/main/conceptual_guides/lora\n[/Sources]"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"QLORA","textShapes":16}
+{"kind":"textbox","id":"sh/wba1cjqp","slide":9,"text":"QLORA","textPreview":"QLORA","textChars":5,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/0b65obm9","slide":9,"text":"QLoRA: 4-bitowy base, gradient do adaptera","textPreview":"QLoRA: 4-bitowy base, gradient do adaptera","textChars":42,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/v2l4nitk","slide":9,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/mdonql4z","slide":9,"bbox":[274,330,76,42]}
+{"kind":"shape","id":"sh/9gzml0nq","slide":9,"bbox":[582,330,76,42]}
+{"kind":"shape","id":"sh/ofq5svm5","slide":9,"bbox":[890,330,76,42]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"bbox":[42,250,232,205]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"text":"STORAGE","textPreview":"STORAGE","textChars":7,"textLines":1,"bbox":[62,276,190,28]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"text":"NF4","textPreview":"NF4","textChars":3,"textLines":1,"bbox":[62,322,190,60]}
+{"kind":"textbox","id":"sh/p0ji9kf2","slide":9,"text":"zamrożone wagi","textPreview":"zamrożone wagi","textChars":14,"textLines":1,"bbox":[62,397,190,44]}
+{"kind":"shape","id":"sh/2xsjepgb","slide":9,"bbox":[350,250,232,205]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"text":"COMPUTE","textPreview":"COMPUTE","textChars":7,"textLines":1,"bbox":[370,276,190,28]}
+{"kind":"textbox","id":"sh/cnu1kzyd","slide":9,"text":"BF16","textPreview":"BF16","textChars":4,"textLines":1,"bbox":[370,322,190,60]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"text":"operacje forward/backward","textPreview":"operacje forward/backward","textChars":25,"textLines":1,"bbox":[370,397,190,44]}
+{"kind":"shape","id":"sh/qlcjipgn","slide":9,"bbox":[658,250,232,205]}
+{"kind":"textbox","id":"sh/bml0buxs","slide":9,"text":"TRAIN","textPreview":"TRAIN","textChars":5,"textLines":1,"bbox":[678,276,190,28]}
+{"kind":"textbox","id":"sh/0ru1ozyp","slide":9,"text":"LoRA","textPreview":"LoRA","textChars":4,"textLines":1,"bbox":[678,322,190,60]}
+{"kind":"textbox","id":"sh/lsn2h4fa","slide":9,"text":"A i B z gradientem","textPreview":"A i B z gradientem","textChars":18,"textLines":1,"bbox":[678,397,190,44]}
+{"kind":"shape","id":"sh/98ji147e","slide":9,"bbox":[966,250,232,205]}
+{"kind":"textbox","id":"sh/87a18zqt","slide":9,"text":"SAVE","textPreview":"SAVE","textChars":4,"textLines":1,"bbox":[986,276,190,28]}
+{"kind":"textbox","id":"sh/76h0zup8","slide":9,"text":"Adapter","textPreview":"Adapter","textChars":7,"textLines":1,"bbox":[986,322,190,60]}
+{"kind":"textbox","id":"sh/ml8j6p8n","slide":9,"text":"mały artefakt","textPreview":"mały artefakt","textChars":13,"textLines":1,"bbox":[986,397,190,44]}
+{"kind":"textbox","id":"sh/hcji5o7a","slide":9,"text":"Kwantyzacja zmniejsza pamięć wag bazowych; nie zamienia całego treningu w int4.","textPreview":"Kwantyzacja zmniejsza pamięć wag bazowych; nie zamienia całego treningu w int4.","textChars":79,"textLines":1,"bbox":[42,522,1150,70]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"Czas: 4 min\nCel: QLoRA: 4-bitowy base, gradient do adaptera\nPrzebieg:\nPrzejdź dokładnie przez przepływ: zamrożone wagi są dekwantyzowane do typu obliczeń, gradient przechodzi przez model, ale aktualizuje adapter.\n[Sources]\n- https://arxiv.org/abs/2305.14314\n- https://huggingface.co/docs/transformers/v4.42.4/quantization/bitsandbytes\n[/Sources]"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"QLORA","textShapes":6}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"text":"QLORA","textPreview":"QLORA","textChars":5,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/cbu58j2h","slide":10,"text":"Referencyjna konfiguracja mieści 4B w 7,55 GiB","textPreview":"Referencyjna konfiguracja mieści 4B w 7,55 GiB","textChars":46,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/1o3ahwvq","slide":10,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/ydcnatkn","slide":10,"bbox":[42,182,742,438]}
+{"kind":"textbox","id":"sh/l036l83y","slide":10,"text":"BitsAndBytesConfig(\n  load_in_4bit=True,\n  bnb_4bit_quant_type=\"nf4\",\n  bnb_4bit_use_double_quant=True,\n  bnb_4bit_compute_dtype=torch.bfloat16,\n)\n\nLoraConfig(\n  r=16, lora_alpha=32,\n  target_modules=\"all-linear\",\n  bias=\"none\",\n)","textPreview":"BitsAndBytesConfig( |   load_in_4bit=True, |   bnb_4bit_quant_type=\"nf4\", |   bnb_4bit_use_double_quant=True, |   bnb_4bit_compute_dtype=...","textChars":230,"textLines":12,"bbox":[68,210,690,382]}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"text":"Q1 — pełny bieg","textPreview":"Q1 — pełny bieg","textChars":15,"textLines":1,"bbox":[832,204,370,48]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"text":"• 640 przykładów\n\n• 240 kroków\n\n• 88 min 22 s\n\n• 7,55 GiB peak\n\n• 0 truncation","textPreview":"• 640 przykładów |  | • 240 kroków |  | • 88 min 22 s |  | • 7,55 GiB peak |  | • 0 truncation","textChars":78,"textLines":9,"bbox":[832,282,370,300]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"Czas: 5 min\nCel: Referencyjna konfiguracja mieści 4B w 7,55 GiB\nPrzebieg:\nCzytaj konfigurację od ograniczeń: 12 GiB VRAM, brak truncation, completion-only loss. Liczby czasu są lokalnym wynikiem projektu, nie uniwersalnym benchmarkiem sprzętu.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- https://huggingface.co/docs/transformers/v4.42.4/quantization/bitsandbytes\n- https://huggingface.co/docs/peft/main/conceptual_guides/lora\n[/Sources]"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"DEMO","textShapes":12}
+{"kind":"textbox","id":"sh/cn6t83y1","slide":11,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/xcryxg7y","slide":11,"text":"34","textPreview":"34","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/wbih4b6d","slide":11,"text":"Demo potwierdziło pipeline w 114 sekund","textPreview":"Demo potwierdziło pipeline w 114 sekund","textChars":39,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ip8bmtor","slide":11,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/5sjah872","slide":11,"bbox":[52,342,1170,0]}
+{"kind":"shape","id":"sh/98rytw72","slide":11,"bbox":[70,332,20,20]}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"text":"START","textPreview":"START","textChars":5,"textLines":1,"bbox":[70,282,240,30]}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"text":"12 kroków","textPreview":"12 kroków","textChars":9,"textLines":1,"bbox":[70,382,330,56]}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"text":"50 przypadków, rank 8 i realny update adaptera.","textPreview":"50 przypadków, rank 8 i realny update adaptera.","textChars":47,"textLines":1,"bbox":[70,458,330,120]}
+{"kind":"shape","id":"sh/ofqtgnyt","slide":11,"bbox":[446,332,20,20]}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"text":"VERIFY","textPreview":"VERIFY","textChars":6,"textLines":1,"bbox":[446,282,240,30]}
+{"kind":"textbox","id":"sh/mdobedg3","slide":11,"text":"7,487 GiB","textPreview":"7,487 GiB","textChars":9,"textLines":1,"bbox":[446,382,330,56]}
+{"kind":"textbox","id":"sh/nehs7iho","slide":11,"text":"Zero truncation; wagi adaptera 33,1 MB.","textPreview":"Zero truncation; wagi adaptera 33,1 MB.","textChars":39,"textLines":1,"bbox":[446,458,330,120]}
+{"kind":"shape","id":"sh/0b6tc3yx","slide":11,"bbox":[822,332,20,20]}
+{"kind":"textbox","id":"sh/1cfa58zi","slide":11,"text":"RELOAD","textPreview":"RELOAD","textChars":6,"textLines":1,"bbox":[822,282,240,30]}
+{"kind":"textbox","id":"sh/epobatgr","slide":11,"text":"Reload 1/1","textPreview":"Reload 1/1","textChars":10,"textLines":1,"bbox":[822,382,330,56]}
+{"kind":"textbox","id":"sh/zaxs3yhc","slide":11,"text":"Przy 384 tokenach: JSON, schema i źródła 100%.","textPreview":"Przy 384 tokenach: JSON, schema i źródła 100%.","textChars":46,"textLines":1,"bbox":[822,458,330,120]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"Czas: 3 min\nCel: Pokazać zweryfikowany pipeline, bez przedstawiania mini-treningu jako dowodu jakości biznesowej.\nPrzebieg:\nPokaż fakty: 50 przypadków, rank 8, 12 kroków, 114,361 s, peak GPU 7,487 GiB i zero truncation. Wagi adaptera mają 33,1 MB. Fresh reload przeszedł 1/1 przy limicie 384 tokenów. Jakość nadal oceniamy na pełnym Q1 i protected evidence.\n[Sources]\n- repo:results/sprint3/q1_demo_training_metrics.json\n- repo:results/sprint3/q1_demo_adapter_manifest.json\n- repo:results/sprint3/q1_demo_reload_smoke_metrics.json\n- repo:docs/12_sprint_3_report.md\n[/Sources]"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"DEMO","textShapes":12}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1gbm9s3a","slide":12,"text":"35","textPreview":"35","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/0f2lgnmp","slide":12,"text":"Trening obserwujemy w trzech warstwach","textPreview":"Trening obserwujemy w trzech warstwach","textChars":38,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ojutgjah","slide":12,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/q903ad4n","slide":12,"bbox":[42,205,372,372]}
+{"kind":"textbox","id":"sh/dcbm583y","slide":12,"text":"UCZENIE","textPreview":"UCZENIE","textChars":7,"textLines":1,"bbox":[64,226,328,38]}
+{"kind":"textbox","id":"sh/sb2lcnmd","slide":12,"text":"Loss + gradient","textPreview":"Loss + gradient","textChars":15,"textLines":1,"bbox":[64,278,328,72]}
+{"kind":"textbox","id":"sh/b6d4f2lc","slide":12,"text":"Czy model faktycznie uczy się i czy gradient jest stabilny?","textPreview":"Czy model faktycznie uczy się i czy gradient jest stabilny?","textChars":59,"textLines":1,"bbox":[64,370,328,170]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"bbox":[452,205,372,372]}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"text":"ZASOBY","textPreview":"ZASOBY","textChars":6,"textLines":1,"bbox":[474,226,328,38]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"text":"VRAM + czas","textPreview":"VRAM + czas","textChars":11,"textLines":1,"bbox":[474,278,328,72]}
+{"kind":"textbox","id":"sh/atc7epon","slide":12,"text":"Czy bieg mieści się w budżecie demonstracji?","textPreview":"Czy bieg mieści się w budżecie demonstracji?","textChars":44,"textLines":1,"bbox":[474,370,328,170]}
+{"kind":"shape","id":"sh/bulo7u58","slide":12,"bbox":[862,205,372,372]}
+{"kind":"textbox","id":"sh/orapcf6h","slide":12,"text":"DANE","textPreview":"DANE","textChars":4,"textLines":1,"bbox":[884,226,328,38]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"text":"Truncation","textPreview":"Truncation","textChars":10,"textLines":1,"bbox":[884,278,328,72]}
+{"kind":"textbox","id":"sh/mps7a5or","slide":12,"text":"Czy prompt i gold nie zostały ucięte?","textPreview":"Czy prompt i gold nie zostały ucięte?","textChars":37,"textLines":1,"bbox":[884,370,328,170]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"Czas: 3 min\nCel: Trening obserwujemy w trzech warstwach\nPrzebieg:\nW tych trzech warstwach pilnuj pięciu sygnałów: loss, gradient, VRAM, czas i truncation. Po biegu dochodzi test adaptera przez reload. Loss nie jest bramką jakości biznesowej.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n[/Sources]"}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/q50nydsj","slide":13,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/bq9orito","slide":13,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/jqlkfyds","slide":13,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/p4r6p8by","slide":13,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/21gnuts7","slide":13,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/32ponyts","slide":13,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/gzy5s3a1","slide":13,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/1076lobm","slide":13,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/hcfy9k3u","slide":13,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"DEMO","textShapes":6}
+{"kind":"textbox","id":"sh/ehwvat8n","slide":14,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/xc7eds76","slide":14,"text":"36","textPreview":"36","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/wbydknq1","slide":14,"text":"Q1 zamraża warunki eksperymentu","textPreview":"Q1 zamraża warunki eksperymentu","textChars":31,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/d0fydk7m","slide":14,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/idgvmx8r","slide":14,"bbox":[42,182,742,438]}
+{"kind":"textbox","id":"sh/5grehs7i","slide":14,"text":"model: Qwen3-4B-Instruct-2507\nquantization: NF4 + double quant\ncompute: BF16\nLoRA: r=16, alpha=32, all-linear\ntrain: 640 cases, 3 epochs\neffective batch: 8\nmax length: 1728\nloss: completion-only\ntruncation: forbidden","textPreview":"model: Qwen3-4B-Instruct-2507 | quantization: NF4 + double quant | compute: BF16 | LoRA: r=16, alpha=32, all-linear | train: 640 cases, 3...","textChars":216,"textLines":9,"bbox":[68,210,690,382]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"text":"Dlaczego to ważne","textPreview":"Dlaczego to ważne","textChars":17,"textLines":1,"bbox":[832,204,370,48]}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"text":"• Q0 i Q1 różnią dane\n\n• test pozostaje zamknięty\n\n• prompt inferencji ten sam\n\n• adapter-only checkpoints","textPreview":"• Q0 i Q1 różnią dane |  | • test pozostaje zamknięty |  | • prompt inferencji ten sam |  | • adapter-only checkpoints","textChars":106,"textLines":7,"bbox":[832,282,370,300]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"Czas: 4 min\nCel: Q1 zamraża warunki eksperymentu\nPrzebieg:\nPokaż plik konfiguracji w repo. Zwróć uwagę, że długość 1728 wynika z audytu tokenów, a nie z domyślnej wartości.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:configs/qlora_q1_v1.json\n[/Sources]"}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/hsvat0fa","slide":15,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/547mhg3m","slide":15,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/k3y5ov21","slide":15,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/uh4v2pkj","slide":15,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/65gnqlk7","slide":15,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/t87ml0ji","slide":15,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/s7y5sv2x","slide":15,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/na5476l8","slide":15,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/m9c3e1kn","slide":15,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/wrm9kvep","slide":15,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/e1sf65o3","slide":16,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/8z2h8bq1","slide":16,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/9kby1g7m","slide":16,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/tcbmdcre","slide":16,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/zutgvm94","slide":16,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/kv2h4rqp","slide":16,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/lwbyxwra","slide":16,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/ip4zel83","slide":16,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/3qdg7qpo","slide":16,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/fm1gzq5o","slide":16,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/pc7qhwn6","slide":17,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1c7e50ni","slide":17,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/gbedwfmx","slide":17,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/2dsn2xwn","slide":17,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/6lwvql4v","slide":17,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/t8ne10n6","slide":17,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/snedsvml","slide":17,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/jilcvq54","slide":17,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/4by9or6l","slide":17,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"BENCHMARK","textShapes":27}
+{"kind":"textbox","id":"sh/srad07yh","slide":18,"text":"BENCHMARK","textPreview":"BENCHMARK","textChars":9,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/wrelszu9","slide":18,"text":"45","textPreview":"45","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/hsn2l4bu","slide":18,"text":"Błędy mają różne przyczyny i różne remedia","textPreview":"Błędy mają różne przyczyny i różne remedia","textChars":42,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/jqdsjy5s","slide":18,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/je5knut0","slide":18,"bbox":[42,190,150,58]}
+{"kind":"textbox","id":"sh/4felwzu5","slide":18,"text":"Case","textPreview":"Case","textChars":4,"textLines":1,"bbox":[52,204,130,32]}
+{"kind":"shape","id":"sh/5gnmp4bq","slide":18,"bbox":[192,190,270,58]}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"text":"Błąd","textPreview":"Błąd","textChars":4,"textLines":1,"bbox":[202,204,250,32]}
+{"kind":"shape","id":"sh/rip4retw","slide":18,"bbox":[462,190,450,58]}
+{"kind":"textbox","id":"sh/fapkr6pw","slide":18,"text":"Diagnoza","textPreview":"Diagnoza","textChars":8,"textLines":1,"bbox":[472,204,430,32]}
+{"kind":"shape","id":"sh/upg3i18r","slide":18,"bbox":[912,190,326,58]}
+{"kind":"textbox","id":"sh/1cr2tg72","slide":18,"text":"Warstwa","textPreview":"Warstwa","textChars":7,"textLines":1,"bbox":[922,204,306,32]}
+{"kind":"shape","id":"sh/gbylkbqh","slide":18,"bbox":[42,248,150,64]}
+{"kind":"textbox","id":"sh/7mpknmp0","slide":18,"text":"FC-209","textPreview":"FC-209","textChars":6,"textLines":1,"bbox":[52,260,130,46]}
+{"kind":"shape","id":"sh/6lg3e18f","slide":18,"bbox":[192,248,270,64]}
+{"kind":"textbox","id":"sh/to72pw76","slide":18,"text":"3× PASS","textPreview":"3× PASS","textChars":7,"textLines":1,"bbox":[202,260,250,46]}
+{"kind":"shape","id":"sh/snylgrql","slide":18,"bbox":[462,248,450,64]}
+{"kind":"textbox","id":"sh/bi94zqp4","slide":18,"text":"odwrócenie 27 > 5","textPreview":"odwrócenie 27 > 5","textChars":17,"textLines":1,"bbox":[472,260,430,46]}
+{"kind":"shape","id":"sh/qh03ql8j","slide":18,"bbox":[912,248,326,64]}
+{"kind":"textbox","id":"sh/md4nipsr","slide":18,"text":"deterministic guard","textPreview":"deterministic guard","textChars":19,"textLines":1,"bbox":[922,260,306,46]}
+{"kind":"shape","id":"sh/nedoru9c","slide":18,"bbox":[42,312,150,64]}
+{"kind":"textbox","id":"sh/8zm5kzax","slide":18,"text":"FC-212","textPreview":"FC-212","textChars":6,"textLines":1,"bbox":[52,324,130,46]}
+{"kind":"shape","id":"sh/90v6t4ri","slide":18,"bbox":[192,312,270,64]}
+{"kind":"textbox","id":"sh/a14nm9s3","slide":18,"text":"1× WARN","textPreview":"1× WARN","textChars":7,"textLines":1,"bbox":[202,324,250,46]}
+{"kind":"shape","id":"sh/v2xovu9o","slide":18,"bbox":[462,312,450,64]}
+{"kind":"textbox","id":"sh/w36poza9","slide":18,"text":"pominięty zakres jednostkowy","textPreview":"pominięty zakres jednostkowy","textChars":28,"textLines":1,"bbox":[472,324,430,46]}
+{"kind":"shape","id":"sh/x4f6x4re","slide":18,"bbox":[912,312,326,64]}
+{"kind":"textbox","id":"sh/q5kna5sz","slide":18,"text":"prompt / dane","textPreview":"prompt / dane","textChars":13,"textLines":1,"bbox":[922,324,306,46]}
+{"kind":"shape","id":"sh/b6toja94","slide":18,"bbox":[42,376,150,64]}
+{"kind":"textbox","id":"sh/t0zqp8bm","slide":18,"text":"FC-215","textPreview":"FC-215","textChars":6,"textLines":1,"bbox":[52,388,130,46]}
+{"kind":"shape","id":"sh/szq9g3uh","slide":18,"bbox":[192,376,270,64]}
+{"kind":"textbox","id":"sh/7yh8nytw","slide":18,"text":"1× WARN","textPreview":"1× WARN","textChars":7,"textLines":1,"bbox":[202,388,250,46]}
+{"kind":"shape","id":"sh/6x8retcb","slide":18,"bbox":[462,376,450,64]}
+{"kind":"textbox","id":"sh/h4jqtsby","slide":18,"text":"przeoczone jawne wyłączenie","textPreview":"przeoczone jawne wyłączenie","textChars":27,"textLines":1,"bbox":[472,388,430,46]}
+{"kind":"shape","id":"sh/g3a9knud","slide":18,"bbox":[912,376,326,64]}
+{"kind":"textbox","id":"sh/f218rits","slide":18,"text":"prompt / review","textPreview":"prompt / review","textChars":15,"textLines":1,"bbox":[922,388,306,46]}
+{"kind":"shape","id":"sh/u1sridc7","slide":18,"bbox":[42,440,150,64]}
+{"kind":"textbox","id":"sh/x8fqhobu","slide":18,"text":"FC-216","textPreview":"FC-216","textChars":6,"textLines":1,"bbox":[52,452,130,46]}
+{"kind":"shape","id":"sh/w7698ju9","slide":18,"bbox":[192,440,270,64]}
+{"kind":"textbox","id":"sh/0netwrex","slide":18,"text":"2× WARN","textPreview":"2× WARN","textChars":7,"textLines":1,"bbox":[202,452,250,46]}
+{"kind":"shape","id":"sh/lonupwv2","slide":18,"bbox":[462,440,450,64]}
+{"kind":"textbox","id":"sh/ylwbuhwr","slide":18,"text":"brak pliku ≠ częściowa wada","textPreview":"brak pliku ≠ częściowa wada","textChars":27,"textLines":1,"bbox":[472,452,430,46]}
+{"kind":"shape","id":"sh/zm5cnmdc","slide":18,"bbox":[912,440,326,64]}
+{"kind":"textbox","id":"sh/cjutsrel","slide":18,"text":"boundary data","textPreview":"boundary data","textChars":13,"textLines":1,"bbox":[922,452,306,46]}
+{"kind":"shape","id":"sh/dk3ulcv6","slide":18,"bbox":[42,504,150,64]}
+{"kind":"textbox","id":"sh/qxcbqhwf","slide":18,"text":"FC-226","textPreview":"FC-226","textChars":6,"textLines":1,"bbox":[52,516,130,46]}
+{"kind":"shape","id":"sh/bylcjmd0","slide":18,"bbox":[192,504,270,64]}
+{"kind":"textbox","id":"sh/4vuto7ep","slide":18,"text":"2× WARN","textPreview":"2× WARN","textChars":7,"textLines":1,"bbox":[202,516,250,46]}
+{"kind":"shape","id":"sh/pw3uhcvu","slide":18,"bbox":[462,504,450,64]}
+{"kind":"textbox","id":"sh/7q1cr2hw","slide":18,"text":"dokument poza zakresem","textPreview":"dokument poza zakresem","textChars":22,"textLines":1,"bbox":[472,516,430,46]}
+{"kind":"shape","id":"sh/6psvyxgb","slide":18,"bbox":[912,504,326,64]}
+{"kind":"textbox","id":"sh/tsjutcz2","slide":18,"text":"scope policy","textPreview":"scope policy","textChars":12,"textLines":1,"bbox":[922,516,306,46]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"Czas: 3 min\nCel: Błędy mają różne przyczyny i różne remedia\nPrzebieg:\nNie rób jednej poprawki na wszystkie błędy. Najpierw sklasyfikuj przyczynę: dane, prompt, model, guard czy niejednoznaczny gold.\n[Sources]\n- repo:results/sprint4_2b/comparison.md\n- repo:docs/16_sprint_4_2b_error_analysis_and_rerun_plan.md\n[/Sources]"}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"BENCHMARK","textShapes":16}
+{"kind":"textbox","id":"sh/k3y1wri9","slide":19,"text":"BENCHMARK","textPreview":"BENCHMARK","textChars":9,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/9gb6xgbi","slide":19,"text":"47","textPreview":"47","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/8v2pobax","slide":19,"text":"Guard blokuje sprzeczność, nie naprawia odpowiedzi","textPreview":"Guard blokuje sprzeczność, nie naprawia odpowiedzi","textChars":50,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ju947q5o","slide":19,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/ahk7qls3","slide":19,"bbox":[274,330,76,42]}
+{"kind":"shape","id":"sh/xkbq10be","slide":19,"bbox":[582,330,76,42]}
+{"kind":"shape","id":"sh/wj2psvat","slide":19,"bbox":[890,330,76,42]}
+{"kind":"shape","id":"sh/jmd83atk","slide":19,"bbox":[42,250,232,205]}
+{"kind":"textbox","id":"sh/il47u5sz","slide":19,"text":"LLM","textPreview":"LLM","textChars":3,"textLines":1,"bbox":[62,276,190,28]}
+{"kind":"textbox","id":"sh/cri1gnql","slide":19,"text":"PASS","textPreview":"PASS","textChars":4,"textLines":1,"bbox":[62,322,190,60]}
+{"kind":"textbox","id":"sh/dsri9sr6","slide":19,"text":"calculation=27","textPreview":"calculation=27","textChars":14,"textLines":1,"bbox":[62,397,190,44]}
+{"kind":"shape","id":"sh/qpgjex8f","slide":19,"bbox":[350,250,232,205]}
+{"kind":"textbox","id":"sh/rqp07290","slide":19,"text":"RULE","textPreview":"RULE","textChars":4,"textLines":1,"bbox":[370,276,190,28]}
+{"kind":"textbox","id":"sh/0vi1k7qx","slide":19,"text":"27 > 5","textPreview":"27 > 5","textChars":6,"textLines":1,"bbox":[370,322,190,60]}
+{"kind":"textbox","id":"sh/1gridcr2","slide":19,"text":"wymagany FAIL","textPreview":"wymagany FAIL","textChars":13,"textLines":1,"bbox":[370,397,190,44]}
+{"kind":"shape","id":"sh/et0jix8r","slide":19,"bbox":[658,250,232,205]}
+{"kind":"textbox","id":"sh/zu90b29c","slide":19,"text":"ACTION","textPreview":"ACTION","textChars":6,"textLines":1,"bbox":[678,276,190,28]}
+{"kind":"textbox","id":"sh/oj21o7qt","slide":19,"text":"BLOCK","textPreview":"BLOCK","textChars":5,"textLines":1,"bbox":[678,322,190,60]}
+{"kind":"textbox","id":"sh/9kb2hcre","slide":19,"text":"bez silent fix","textPreview":"bez silent fix","textChars":14,"textLines":1,"bbox":[678,397,190,44]}
+{"kind":"shape","id":"sh/x07i1cji","slide":19,"bbox":[966,250,232,205]}
+{"kind":"textbox","id":"sh/wfy1s7ix","slide":19,"text":"OWNER","textPreview":"OWNER","textChars":5,"textLines":1,"bbox":[986,276,190,28]}
+{"kind":"textbox","id":"sh/vep0z21c","slide":19,"text":"Human review","textPreview":"Human review","textChars":12,"textLines":1,"bbox":[986,322,190,60]}
+{"kind":"textbox","id":"sh/adgjqx0r","slide":19,"text":"decyzja i audyt","textPreview":"decyzja i audyt","textChars":15,"textLines":1,"bbox":[986,397,190,44]}
+{"kind":"textbox","id":"sh/54ri5wje","slide":19,"text":"Reguła powstała retrospektywnie: zwiększa bezpieczeństwo demo, ale nie otwiera protected evidence.","textPreview":"Reguła powstała retrospektywnie: zwiększa bezpieczeństwo demo, ale nie otwiera protected evidence.","textChars":98,"textLines":1,"bbox":[42,522,1150,70]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":"Czas: 3 min\nCel: Guard blokuje sprzeczność, nie naprawia odpowiedzi\nPrzebieg:\nWyjaśnij dwa kontrakty: model quality pozostaje HOLD, a operational containment jest READY dla demonstracji. Nie mieszaj ich w jedną bramkę.\n[Sources]\n- repo:results/sprint4_2c/report.md\n- repo:configs/deterministic_decision_rules_v1.json\n[/Sources]"}
+{"kind":"slide","id":"sl/zyxsni5k","slide":20,"title":"BENCHMARK • WARSZTAT 3","textShapes":5}
+{"kind":"shape","id":"sh/gjuhg7ql","slide":20,"bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/qpwjmh8n","slide":20,"text":"BENCHMARK • WARSZTAT 3","textPreview":"BENCHMARK • WARSZTAT 3","textChars":22,"textLines":1,"bbox":[54,36,520,30]}
+{"kind":"textbox","id":"sh/rq50vmp8","slide":20,"text":"48","textPreview":"48","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/4nu1krqh","slide":20,"text":"Czy otwieramy protected evidence?","textPreview":"Czy otwieramy protected evidence?","textChars":33,"textLines":1,"bbox":[54,126,1120,120]}
+{"kind":"shape","id":"sh/po3itc72","slide":20,"bbox":[54,292,1128,252]}
+{"kind":"textbox","id":"sh/2lczih8r","slide":20,"text":"• Validation: 1,000 F1 dla trzech seedów\n\n• Diagnostic: 0,834–0,949 macro-F1\n\n• FC-209: trzy błędne PASS\n\n• Guard powstał po analizie diagnostic","textPreview":"• Validation: 1,000 F1 dla trzech seedów |  | • Diagnostic: 0,834–0,949 macro-F1 |  | • FC-209: trzy błędne PASS |  | • Guard powstał po ...","textChars":144,"textLines":7,"bbox":[88,326,1060,188]}
+{"kind":"textbox","id":"sh/3ml0rmpw","slide":20,"text":"Mini-komitet model risk • 5 minut • decyzja + uzasadnienie","textPreview":"Mini-komitet model risk • 5 minut • decyzja + uzasadnienie","textChars":58,"textLines":1,"bbox":[54,586,930,52]}
+{"kind":"notes","id":"nt/zyxsni5k","slide":20,"text":"Czas: 7 min\nCel: Czy otwieramy protected evidence?\nPrzebieg:\nOczekiwana decyzja: HOLD protected evidence, READY do materiału szkoleniowego. Retrospektywny guard nie jest niezależnym dowodem generalizacji.\n[Sources]\n- repo:results/sprint4/m4_pretest_summary.md\n- repo:results/sprint4_2b/comparison.md\n- repo:results/sprint4_2c/report.md\n[/Sources]"}
+{"kind":"slide","id":"sl/m1wvqtk3","slide":21,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/5kjydsri","slide":21,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1gbmxs7a","slide":21,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/0f2lon6p","slide":21,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/ipcjmhw7","slide":21,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/qp03yt8n","slide":21,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/dcb2t87y","slide":21,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/sb2lk36t","slide":21,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/b6d432pc","slide":21,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/al43uxor","slide":21,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/4jax4nqd","slide":21,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/m1wvqtk3","slide":21,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/5onypobq","slide":22,"title":"DEMO","textShapes":7}
+{"kind":"textbox","id":"sh/436507qx","slide":22,"text":"DEMO","textPreview":"DEMO","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/6987itcr","slide":22,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/7a18rydc","slide":22,"text":"Checkpoint może zawieść przy zapisie","textPreview":"Checkpoint może zawieść przy zapisie","textChars":36,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/rup0va5s","slide":22,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/58zqpov6","slide":22,"bbox":[42,188,582,426]}
+{"kind":"textbox","id":"sh/il87etcv","slide":22,"text":"Incydent","textPreview":"Incydent","textChars":8,"textLines":1,"bbox":[56,204,550,50]}
+{"kind":"textbox","id":"sh/jmh8nyd0","slide":22,"text":"• Windows + paged_adamw_8bit\n\n• błąd serializacji stanu\n\n• pierwszy Q0 odrzucony\n\n• brak wejścia do M3","textPreview":"• Windows + paged_adamw_8bit |  | • błąd serializacji stanu |  | • pierwszy Q0 odrzucony |  | • brak wejścia do M3","textChars":102,"textLines":7,"bbox":[56,274,548,316]}
+{"kind":"shape","id":"sh/43u9snu5","slide":22,"bbox":[656,188,582,426]}
+{"kind":"textbox","id":"sh/p43q1sva","slide":22,"text":"Kontrola","textPreview":"Kontrola","textChars":8,"textLines":1,"bbox":[670,204,550,50]}
+{"kind":"textbox","id":"sh/p4z6tcri","slide":22,"text":"• save_only_model=true\n\n• bieg od początku\n\n• manifest incydentu\n\n• jawny brak resume optimizera","textPreview":"• save_only_model=true |  | • bieg od początku |  | • manifest incydentu |  | • jawny brak resume optimizera","textChars":96,"textLines":7,"bbox":[670,274,548,316]}
+{"kind":"notes","id":"nt/5onypobq","slide":22,"text":"Czas: 3 min\nCel: Checkpoint może zawieść przy zapisie\nPrzebieg:\nTo wartościowy element szkolenia: awaria checkpointu po poprawnym kroku treningu nie unieważnia metody, ale zmienia operacyjny kontrakt resume.\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint3/q0_checkpoint_incident.json\n[/Sources]"}
+{"kind":"slide","id":"sl/c7uhcr6t","slide":23,"title":"BANK","textShapes":12}
+{"kind":"textbox","id":"sh/fepsvelc","slide":23,"text":"BANK","textPreview":"BANK","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/90vqdczq","slide":23,"text":"49","textPreview":"49","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/8zm9k7y5","slide":23,"text":"Portfel use case’ów wymaga różnych barier","textPreview":"Portfel use case’ów wymaga różnych barier","textChars":41,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/03upkfa5","slide":23,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/a14rmhgb","slide":23,"bbox":[42,205,372,372]}
+{"kind":"textbox","id":"sh/xovqhcz2","slide":23,"text":"NISKA KONSEKWENCJA","textPreview":"NISKA KONSEKWENCJA","textChars":18,"textLines":1,"bbox":[64,226,328,38]}
+{"kind":"textbox","id":"sh/w3m9o7yh","slide":23,"text":"Redakcja","textPreview":"Redakcja","textChars":8,"textLines":1,"bbox":[64,278,328,72]}
+{"kind":"textbox","id":"sh/jqd8jmhs","slide":23,"text":"Styl, format, klasyfikacja dokumentów i routing.","textPreview":"Styl, format, klasyfikacja dokumentów i routing.","textChars":48,"textLines":1,"bbox":[64,370,328,170]}
+{"kind":"shape","id":"sh/ip4rqhgn","slide":23,"bbox":[452,205,372,372]}
+{"kind":"textbox","id":"sh/sby90zm1","slide":23,"text":"ŚREDNIA","textPreview":"ŚREDNIA","textChars":7,"textLines":1,"bbox":[474,226,328,38]}
+{"kind":"textbox","id":"sh/tc7at436","slide":23,"text":"Kontrole","textPreview":"Kontrole","textChars":8,"textLines":1,"bbox":[474,278,328,72]}
+{"kind":"textbox","id":"sh/69gry94v","slide":23,"text":"Ustalenia, kompletność i triage z human review.","textPreview":"Ustalenia, kompletność i triage z human review.","textChars":47,"textLines":1,"bbox":[474,370,328,170]}
+{"kind":"shape","id":"sh/rapsrelg","slide":23,"bbox":[862,205,372,372]}
+{"kind":"textbox","id":"sh/0fi94jmx","slide":23,"text":"WYSOKA","textPreview":"WYSOKA","textChars":6,"textLines":1,"bbox":[884,226,328,38]}
+{"kind":"textbox","id":"sh/1graxo3i","slide":23,"text":"Decyzje","textPreview":"Decyzje","textChars":7,"textLines":1,"bbox":[884,278,328,72]}
+{"kind":"textbox","id":"sh/edgr294r","slide":23,"text":"Kredyt, AML i raportowanie — mocne ograniczenia i właściciel.","textPreview":"Kredyt, AML i raportowanie — mocne ograniczenia i właściciel.","textChars":61,"textLines":1,"bbox":[884,370,328,170]}
+{"kind":"notes","id":"nt/c7uhcr6t","slide":23,"text":"Czas: 3 min\nCel: Portfel use case’ów wymaga różnych barier\nPrzebieg:\nPrzykłady: kontrola sprawozdań, audyt, odchylenia, reklamacje, incydenty. Wysoka konsekwencja nie wyklucza LLM, lecz zwiększa wymagania.\n[Sources]\n- repo:docs/02_financial_control_copilot.md\n- https://arxiv.org/abs/2311.11944\n- https://arxiv.org/abs/2109.00122\n[/Sources]"}
+{"kind":"slide","id":"sl/7qto7e10","slide":24,"title":"BANK","textShapes":12}
+{"kind":"textbox","id":"sh/c3uh07id","slide":24,"text":"BANK","textPreview":"BANK","textChars":4,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/1sfqxsv6","slide":24,"text":"50","textPreview":"50","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/0r6p4nul","slide":24,"text":"Adapter to tylko część model risk management","textPreview":"Adapter to tylko część model risk management","textChars":44,"textLines":1,"bbox":[42,68,1196,66]}
+{"kind":"shape","id":"sh/q9w325wr","slide":24,"bbox":[42,148,1196,0]}
+{"kind":"shape","id":"sh/dc7md0fi","slide":24,"bbox":[52,342,1170,0]}
+{"kind":"shape","id":"sh/9wzq1svi","slide":24,"bbox":[70,332,20,20]}
+{"kind":"textbox","id":"sh/ov6p8nux","slide":24,"text":"DESIGN","textPreview":"DESIGN","textChars":6,"textLines":1,"bbox":[70,282,240,30]}
+{"kind":"textbox","id":"sh/3ydonyd8","slide":24,"text":"Kontrakt","textPreview":"Kontrakt","textChars":8,"textLines":1,"bbox":[70,382,330,56]}
+{"kind":"textbox","id":"sh/ix47utcn","slide":24,"text":"Intended use, status policy, dane i koszt błędu.","textPreview":"Intended use, status policy, dane i koszt błędu.","textChars":48,"textLines":1,"bbox":[70,458,330,120]}
+{"kind":"shape","id":"sh/8veh8ril","slide":24,"bbox":[446,332,20,20]}
+{"kind":"textbox","id":"sh/9wni1wjq","slide":24,"text":"VALIDATE","textPreview":"VALIDATE","textChars":8,"textLines":1,"bbox":[446,282,240,30]}
+{"kind":"textbox","id":"sh/mtwz6h0f","slide":24,"text":"Evidence","textPreview":"Evidence","textChars":8,"textLines":1,"bbox":[446,382,330,56]}
+{"kind":"textbox","id":"sh/nu50zm10","slide":24,"text":"Seedy, splity, review SME, regresje i guardy.","textPreview":"Seedy, splity, review SME, regresje i guardy.","textChars":45,"textLines":1,"bbox":[446,458,330,120]}
+{"kind":"shape","id":"sh/wzyhcrih","slide":24,"bbox":[822,332,20,20]}
+{"kind":"textbox","id":"sh/x07i5wj2","slide":24,"text":"OPERATE","textPreview":"OPERATE","textChars":7,"textLines":1,"bbox":[822,282,240,30]}
+{"kind":"textbox","id":"sh/axgza10b","slide":24,"text":"Monitoring","textPreview":"Monitoring","textChars":10,"textLines":1,"bbox":[822,382,330,56]}
+{"kind":"textbox","id":"sh/vyp03m1w","slide":24,"text":"Drift, wersje, incydenty, rollback i owner.","textPreview":"Drift, wersje, incydenty, rollback i owner.","textChars":43,"textLines":1,"bbox":[822,458,330,120]}
+{"kind":"notes","id":"nt/7qto7e10","slide":24,"text":"Czas: 3 min\nCel: Adapter to tylko część model risk management\nPrzebieg:\nPołącz techniczne artefakty z właścicielstwem procesu. Manifest adaptera, dataset card i gate są dokumentami governance.\n[Sources]\n- https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-follow-report-use-machine-learning-internal\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint4_2c/report.md\n[/Sources]"}
+{"kind":"slide","id":"sl/69wfm9o7","slide":25,"title":"ZAMKNIĘCIE","textShapes":4}
+{"kind":"textbox","id":"sh/pc7atgf6","slide":25,"text":"ZAMKNIĘCIE","textPreview":"ZAMKNIĘCIE","textChars":10,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/xg7axgf2","slide":25,"text":"53","textPreview":"53","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/cfyt4beh","slide":25,"text":"Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.","textPreview":"Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.","textChars":57,"textLines":1,"bbox":[42,165,1080,205]}
+{"kind":"shape","id":"sh/napsr6x0","slide":25,"bbox":[42,414,900,8]}
+{"kind":"textbox","id":"sh/29wby1wf","slide":25,"text":"LoRA i QLoRA obniżają koszt adaptacji. Profesjonalny system powstaje dopiero wokół adaptera.","textPreview":"LoRA i QLoRA obniżają koszt adaptacji. Profesjonalny system powstaje dopiero wokół adaptera.","textChars":92,"textLines":1,"bbox":[42,458,990,110]}
+{"kind":"notes","id":"nt/69wfm9o7","slide":25,"text":"Czas: 1 min\nCel: Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.\nPrzebieg:\nWróć do FC-209. Trzy prawdy: dane zmieniły Q1; jedna metryka nie wystarczyła; deterministyczny guard zatrzymał błąd, którego prompt nie usunął.\n\nPytanie do grupy: Którą jedną rzecz zmienicie w następnym eksperymencie?\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint4_2b/comparison.md\n- repo:results/sprint4_2c/report.md\n- https://arxiv.org/abs/2106.09685\n- https://arxiv.org/abs/2305.14314\n[/Sources]"}
+{"kind":"slide","id":"sl/l0bepsfm","slide":26,"title":"ZAMKNIĘCIE","textShapes":4}
+{"kind":"textbox","id":"sh/md0321kv","slide":26,"text":"ZAMKNIĘCIE","textPreview":"ZAMKNIĘCIE","textChars":10,"textLines":1,"bbox":[42,28,360,24]}
+{"kind":"textbox","id":"sh/uhk36lk7","slide":26,"text":"53","textPreview":"53","textChars":2,"textLines":1,"bbox":[1190,670,48,20]}
+{"kind":"textbox","id":"sh/vitkzqlc","slide":26,"text":"Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.","textPreview":"Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.","textChars":57,"textLines":1,"bbox":[42,165,1080,205]}
+{"kind":"shape","id":"sh/8fil4b21","slide":26,"bbox":[42,414,900,8]}
+{"kind":"textbox","id":"sh/tgr2xg3m","slide":26,"text":"LoRA i QLoRA obniżają koszt adaptacji. Profesjonalny system powstaje dopiero wokół adaptera.","textPreview":"LoRA i QLoRA obniżają koszt adaptacji. Profesjonalny system powstaje dopiero wokół adaptera.","textChars":92,"textLines":1,"bbox":[42,458,990,110]}
+{"kind":"notes","id":"nt/l0bepsfm","slide":26,"text":"Czas: 1 min\nCel: Dane graniczne. Wiele metryk. Hybrydowa odpowiedzialność.\nPrzebieg:\nWróć do FC-209. Trzy prawdy: dane zmieniły Q1; jedna metryka nie wystarczyła; deterministyczny guard zatrzymał błąd, którego prompt nie usunął.\n\nPytanie do grupy: Którą jedną rzecz zmienicie w następnym eksperymencie?\n[Sources]\n- repo:docs/12_sprint_3_report.md\n- repo:results/sprint4_2b/comparison.md\n- repo:results/sprint4_2c/report.md\n- https://arxiv.org/abs/2106.09685\n- https://arxiv.org/abs/2305.14314\n[/Sources]"}

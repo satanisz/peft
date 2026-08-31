@@ -1,5 +1,10 @@
 # S6.7 — końcowy review Sol/high
 
+**Historyczny review formatu warsztatowego.** Późniejsza decyzja właściciela
+zmieniła produkt na wykład 60-minutowy. Dawna bramka czasu nie blokuje tego
+wydania; obowiązuje [plan S6.7-L](37_lecture60_delivery_plan.md).
+Nie zmieniamy historii próby i nie deklarujemy wstecznego PASS.
+
 Data review: 2026-08-30  
 Decyzja: **M6_RELEASE_HOLD_DRY_RUN_DURATION_ONLY**
 
@@ -51,4 +56,3 @@ Po uzyskaniu prawdziwego wyniku S6.6B Luna/low może mechanicznie:
 
 Instrukcja wykonawcza znajduje się w
 `docs/35_sprint_6_7_luna_low_release_handoff.md`.
-

@@ -1,5 +1,10 @@
 # S6.7 — handoff mechanicznego release'u dla Luna/low
 
+**NIE WYKONYWAĆ dla bieżącego wydania.** Ten handoff dotyczył warsztatu
+180-minutowego. Właściciel zmienił zakres na wykład 60-minutowy; aktualna
+instrukcja to [S6.7-L](37_lecture60_delivery_plan.md). Nie żądaj fikcyjnego
+czasu dry-runu ani nie twórz tagu warsztatowego dla wykładu.
+
 ## Cel
 
 Wydać `workshop-v1.0` jako **warsztat gotowy, nie rozwiązanie produkcyjne**.

@@ -1,6 +1,17 @@
-# Materiały Sprintu 5
+# Materiały wykładu i archiwum warsztatu
 
-## Talia warsztatowa
+## Bieżący wykład 60 minut
+
+[Guide prowadzącego](lecture60_presenter_guide.md) zawiera 26 slajdów,
+56 minut treści i 4 minuty pytań. Narracja bazuje na wykonanym treningu;
+wykład nie wymaga notebooków, GPU ani live demo.
+
+Nowy PPTX nie został jeszcze zbudowany. Kolejny krok:
+[S6.7-LB — skład i QA](../docs/37_lecture60_delivery_plan.md).
+Korekty interpretacji wyników zawiera
+[review treningu](../docs/36_lecture60_training_review.md).
+
+## Zachowana talia warsztatowa
 
 `PEFT_LoRA_QLoRA_w_banku_workshop.pptx` zawiera 53 slajdy na 180-minutowe
 szkolenie. Każdy slajd ma notatki prowadzącego z czasem, celem, przebiegiem,
@@ -27,9 +38,11 @@ benchmarku i deterministic guard.
 Raport aktualizacji i walidacji znajduje się w
 `docs/19_sprint_5_material_update_report.md`.
 
-## Status bramki
+## Status i rozróżnienie wersji
 
-Trening demonstracyjny i fresh reload zakończyły się poprawnie. Pakiet jest
-kandydatem do M5 Content freeze i wymaga jeszcze pełnej próby 180 minut w
-Sprincie 6. Protected evidence pozostaje zamknięte; materiał szkoleniowy nie
-jest zgodą produkcyjną.
+S6.6A technicznie przeszło, a właściciel potwierdził bezproblemowe uruchamianie
+sekcji. Aktualna zmiana formatu nie stanowi wstecznego zaliczenia 180-minutowej
+próby warsztatu. Evidence v1 zostało już skonsumowane i jest zamrożone po
+nieprzejściu progów; nie uruchamiamy go ponownie. Historyczny stan HOLD
+w oryginalnej talii należy czytać razem z osobnym appendixem evidence,
+nie jako stan bieżący projektu. Materiały nie stanowią zgody produkcyjnej.

@@ -35,6 +35,7 @@ tmp/
 *.inspect.ndjson
 results/*.tmp
 .s6_5c_luna/
+.s6_lecture60/
 
 # Edytory i system operacyjny
 .idea/

@@ -1,0 +1,13 @@
+{
+  "artifact": "materials/PEFT_w_banku_lecture60_v1.pptx",
+  "slides": 26,
+  "render": "PASS",
+  "overflow": "PASS",
+  "fidelity": "PASS",
+  "notes_with_sources": 26,
+  "numeric_validation": "PASS",
+  "source_deck_unchanged": true,
+  "protected_evidence": "READ-ONLY",
+  "live_training_or_inference": false,
+  "decision": "READY_FOR_FINAL_REVIEW"
+}

@@ -1,5 +1,11 @@
 # Sprint 6 — plan zamknięcia Protected Evidence i wydania warsztatu
 
+**Zmiana zakresu:** właściciel wybrał wykład 60-minutowy bez live demo,
+oparty na wykonanym treningu. Bieżące kryteria i wykonanie release'u opisuje
+[S6.7-L](37_lecture60_delivery_plan.md). Poniższy plan 180-minutowego warsztatu
+jest historyczny; wymóg 175–185 minut nie dotyczy nowego wydania.
+Zamknięcie Evidence v1 i jego zakazy pozostają bez zmian.
+
 **Status:** S6.5A zaakceptowane przez właściciela. S6.5B zakończone
 `EVIDENCE_V1_CLOSED_READ_ONLY`. S6.5C wykonane na Luna/low;
 `S6_5C_EVIDENCE_PACKAGE_READY_FOR_SOL_HIGH_REVIEW`.

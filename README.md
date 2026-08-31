@@ -1,12 +1,21 @@
-# Parameter-Efficient Fine-Tuning — warsztat
+# Parameter-Efficient Fine-Tuning — wykład i materiały warsztatowe
 
-Materiały do trzygodzinnego, technicznego szkolenia o PEFT, LoRA i QLoRA,
-zbudowanego wokół zastosowań bankowych.
+Aktualny produkt: wykład 60-minutowy o PEFT, LoRA i QLoRA, oparty na własnym
+eksperymencie Financial Control Copilot. Bez notebooków i treningu na żywo.
+Oryginalny trzygodzinny warsztat pozostaje zachowany jako materiał dodatkowy.
+
+- [Narracja wykładu i notatki prowadzącego](materials/lecture60_presenter_guide.md)
+- [Zweryfikowany przebieg treningów](docs/36_lecture60_training_review.md)
+- [Aktualny plan wykonania i wydania wykładu](docs/37_lecture60_delivery_plan.md)
+
+Narracja jest przygotowana; nowy deck 60-minutowy wymaga złożenia i QA.
+Protected Evidence v1 pozostaje FAILED/FROZEN/READ-ONLY, bez rerunu i bez
+zgody produkcyjnej.
 
 ## Założenia
 
 - grupa: 15 osób na poziomie średniozaawansowanym,
-- forma: wykład połączony z demonstracją prowadzoną przez prowadzącego,
+- forma bieżąca: wykład 60 minut, wyniki i konfiguracje wyłącznie na slajdach,
 - główny przypadek: `Financial Control Copilot`,
 - przykład uzupełniający: `BankAssist-PL`,
 - język materiałów i danych: polski,
