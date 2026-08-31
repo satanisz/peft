@@ -1,0 +1,55 @@
+{
+  "id": "S7-2-DESIGN-GATE",
+  "version": "1.0.0",
+  "checks": {
+    "upstream_remediation_gate_pass": true,
+    "spec_frozen_for_luna_generation": true,
+    "train_count_300": true,
+    "dev_count_90": true,
+    "train_matrix_valid": true,
+    "dev_matrix_valid": true,
+    "counterfactual_pairs_36": true,
+    "counterfactual_pairs_stay_in_split": true,
+    "single_premise_pairs": true,
+    "all_nine_control_types": true,
+    "stable_existing_output_schema": true,
+    "structured_source_trust_required": true,
+    "gold_rubric_frozen": true,
+    "gold_review_requires_all_390": true,
+    "model_review_not_sme": true,
+    "provenance_policy_frozen": true,
+    "authoring_does_not_load_forbidden_cases": true,
+    "similarity_policy_frozen": true,
+    "similarity_thresholds_are_fixed": true,
+    "exclusion_hashes_unchanged": true,
+    "planned_data_not_generated_yet": true,
+    "no_evidence_v2_created": true,
+    "no_q2_adapter_created": true
+  },
+  "details": {
+    "train_matrix": {
+      "matrix_total_matches_count": true,
+      "matrix_columns_match_status_counts": true,
+      "all_matrix_cells_non_negative_integers": true,
+      "all_statuses_present": true
+    },
+    "dev_matrix": {
+      "matrix_total_matches_count": true,
+      "matrix_columns_match_status_counts": true,
+      "all_matrix_cells_non_negative_integers": true,
+      "all_statuses_present": true
+    },
+    "train_count": 300,
+    "dev_count": 90,
+    "counterfactual_pairs": 36
+  },
+  "decision": "S7_2_DESIGN_READY_FOR_LUNA_LOW",
+  "next_allowed_action": "LUNA_LOW_GENERATE_AND_VALIDATE_S7_2",
+  "next_stop": "S7_TRAIN_DEV_V2_READY_FOR_SOL_SME_REVIEW",
+  "prohibited_actions": [
+    "Q2 training",
+    "Evidence v2 authoring or inference",
+    "Evidence v1 rerun",
+    "changing counts, matrices, rubric or similarity thresholds on Luna/low"
+  ]
+}

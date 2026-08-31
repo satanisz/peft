@@ -1,0 +1,69 @@
+{
+  "id": "S7-SIMILARITY-LEAKAGE-POLICY-V2",
+  "version": "1.0.0",
+  "status": "FROZEN_DESIGN_READY_FOR_IMPLEMENTATION",
+  "exclusion_registry": "results/sprint7/data_exclusion_registry_v1.json",
+  "comparison_phase": "POST_GENERATION_PRE_REVIEW",
+  "normalization": [
+    "Unicode NFKC",
+    "lowercase",
+    "collapse whitespace",
+    "remove case, family and source identifiers",
+    "compare task, procedure and source content separately from output wording",
+    "retain numbers for numeric-signature checks"
+  ],
+  "automatic_fail_rules": {
+    "exact_normalized_case_duplicate": 0,
+    "case_id_overlap": 0,
+    "family_id_overlap": 0,
+    "source_id_overlap": 0,
+    "cross_split_family_overlap": 0,
+    "cross_split_source_record_overlap": 0,
+    "counterfactual_pair_cross_split": 0,
+    "token_5gram_jaccard_against_forbidden_max_exclusive": 0.35,
+    "token_5gram_jaccard_train_vs_dev_max_exclusive": 0.3,
+    "sequence_match_ratio_against_forbidden_max_exclusive": 0.82
+  },
+  "manual_review_triggers": {
+    "token_5gram_jaccard_against_forbidden_min": 0.22,
+    "sequence_match_ratio_against_forbidden_min": 0.68,
+    "same_control_mutation_and_numeric_signature": true,
+    "shared_document_title_or_entity_name": true
+  },
+  "numeric_signature": {
+    "fields": [
+      "all ordered numeric values",
+      "unit",
+      "control type",
+      "mutation type",
+      "threshold band"
+    ],
+    "exact_collision_with_forbidden": "MANUAL_REVIEW",
+    "exact_collision_train_vs_dev": "FAIL"
+  },
+  "within_new_dataset_rules": {
+    "exact_duplicates": 0,
+    "duplicate_case_ids": 0,
+    "duplicate_source_ids": 0,
+    "duplicate_family_ids_across_splits": 0,
+    "counterfactual_pair_member_count": 2,
+    "counterfactual_changed_premise_count": 1
+  },
+  "failure_handling": [
+    "Do not automatically paraphrase a failing case using forbidden text.",
+    "Quarantine the case with its similarity evidence.",
+    "Return the case to Sol/high for redesign from the clean specification.",
+    "Any threshold change requires a new version and review before rerunning the scan."
+  ],
+  "required_report_fields": [
+    "policy_sha256",
+    "exclusion_registry_sha256",
+    "compared_case_count",
+    "forbidden_case_count",
+    "maximum similarities by field",
+    "automatic failures",
+    "manual review queue",
+    "cross-split overlap checks",
+    "decision"
+  ]
+}

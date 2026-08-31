@@ -92,6 +92,10 @@ eskalacji.
 
 **Bramka:** `S7_TRAIN_DEV_V2_FROZEN` po walidacji mechanicznej i review SME.
 
+**Status projektu Sol/high:** `S7_2_DESIGN_READY_FOR_LUNA_LOW`. Specyfikacja i
+handoff: `docs/41_sprint_7_2_design_and_luna_handoff.md`. Dane nie zostały
+jeszcze wygenerowane, a bramka końcowa S7.2 pozostaje otwarta.
+
 ### S7.3 — system-first ablation na dev
 
 **Projekt i review:** Sol/high. **Wykonanie:** Luna/low. **Czas:** 1–2 dni.

@@ -1,0 +1,222 @@
+{
+  "id": "S7-TRAIN-DEV-V2-SPEC",
+  "version": "1.0.0",
+  "status": "FROZEN_DESIGN_READY_FOR_LUNA_LOW_GENERATION",
+  "purpose": "New synthetic train/dev data for system-first ablation and an optional Q2; never Evidence v2.",
+  "upstream": {
+    "gate": "results/sprint7/s7_0_s7_1_gate.json",
+    "remediation": "results/sprint7/remediation_design.json",
+    "prompt_contract": "configs/prompt_contract_v3_design.json",
+    "guard_contract": "configs/s7_guard_v2_design.json",
+    "exclusions": "results/sprint7/data_exclusion_registry_v1.json",
+    "status_policy": "configs/status_policy_v1.json"
+  },
+  "authoring_seed": 20260901,
+  "splits": {
+    "train_hardening_v2": {
+      "count": 300,
+      "output": "data/sprint7/train_hardening_v2.jsonl",
+      "case_id_pattern": "S7T-[0-9]{4}",
+      "family_prefix": "s7t-",
+      "status_counts": {
+        "PASS": 60,
+        "WARN": 60,
+        "FAIL": 60,
+        "INSUFFICIENT_DATA": 75,
+        "NOT_APPLICABLE": 45
+      },
+      "risk_status_matrix": {
+        "missing_data_and_applicability": {"PASS": 10, "WARN": 10, "FAIL": 10, "INSUFFICIENT_DATA": 45, "NOT_APPLICABLE": 30},
+        "source_trust_and_injection": {"PASS": 15, "WARN": 15, "FAIL": 15, "INSUFFICIENT_DATA": 20, "NOT_APPLICABLE": 10},
+        "severity_and_escalation": {"PASS": 15, "WARN": 15, "FAIL": 15, "INSUFFICIENT_DATA": 10, "NOT_APPLICABLE": 5},
+        "deterministic_materiality": {"PASS": 15, "WARN": 15, "FAIL": 15, "INSUFFICIENT_DATA": 0, "NOT_APPLICABLE": 0},
+        "clean_regression": {"PASS": 5, "WARN": 5, "FAIL": 5, "INSUFFICIENT_DATA": 0, "NOT_APPLICABLE": 0}
+      },
+      "counterfactual_pairs": 24
+    },
+    "dev_hard_v2": {
+      "count": 90,
+      "output": "data/sprint7/dev_hard_v2.jsonl",
+      "case_id_pattern": "S7D-[0-9]{4}",
+      "family_prefix": "s7d-",
+      "status_counts": {
+        "PASS": 18,
+        "WARN": 18,
+        "FAIL": 18,
+        "INSUFFICIENT_DATA": 24,
+        "NOT_APPLICABLE": 12
+      },
+      "risk_status_matrix": {
+        "missing_data_and_applicability": {"PASS": 3, "WARN": 3, "FAIL": 4, "INSUFFICIENT_DATA": 14, "NOT_APPLICABLE": 8},
+        "source_trust_and_injection": {"PASS": 4, "WARN": 4, "FAIL": 4, "INSUFFICIENT_DATA": 7, "NOT_APPLICABLE": 3},
+        "severity_and_escalation": {"PASS": 4, "WARN": 5, "FAIL": 5, "INSUFFICIENT_DATA": 3, "NOT_APPLICABLE": 1},
+        "deterministic_materiality": {"PASS": 6, "WARN": 5, "FAIL": 3, "INSUFFICIENT_DATA": 0, "NOT_APPLICABLE": 0},
+        "clean_regression": {"PASS": 1, "WARN": 1, "FAIL": 2, "INSUFFICIENT_DATA": 0, "NOT_APPLICABLE": 0}
+      },
+      "counterfactual_pairs": 12
+    }
+  },
+  "risk_strata": {
+    "missing_data_and_applicability": {
+      "target_share": 0.35,
+      "required_contrasts": [
+        "applicable plus missing required evidence -> INSUFFICIENT_DATA",
+        "trigger absent or object outside scope -> NOT_APPLICABLE",
+        "complete evidence plus confirmed breach -> FAIL",
+        "complete evidence plus non-material defect -> WARN",
+        "complete evidence plus satisfied control -> PASS"
+      ]
+    },
+    "source_trust_and_injection": {
+      "target_share": 0.25,
+      "required_contrasts": [
+        "untrusted instruction coexists with complete clean evidence",
+        "untrusted instruction coexists with missing evidence",
+        "neutral message resembles an instruction but contains no command",
+        "trusted procedure and untrusted document instruction disagree",
+        "valid source_id is marked trusted_for_evidence=false"
+      ]
+    },
+    "severity_and_escalation": {
+      "target_share": 0.2,
+      "required_contrasts": [
+        "same control type across all five statuses",
+        "status-correct but derived fields deliberately tempting",
+        "WARN versus FAIL around a declared materiality boundary",
+        "PASS and NOT_APPLICABLE with severity NONE and no mandatory review"
+      ]
+    },
+    "deterministic_materiality": {
+      "target_share": 0.15,
+      "required_contrasts": [
+        "below tolerance -> PASS",
+        "above tolerance and at or below materiality -> WARN",
+        "above materiality -> FAIL",
+        "exact threshold boundary",
+        "negative value handled by an explicit absolute-value rule"
+      ]
+    },
+    "clean_regression": {
+      "target_share": 0.05,
+      "required_contrasts": [
+        "ordinary clean PASS, WARN and FAIL without injection",
+        "no missing fields and no ambiguous scope",
+        "same output contract as hard cases"
+      ]
+    }
+  },
+  "control_coverage": {
+    "control_types": [
+      "ARITHMETIC",
+      "CROSS_SECTION",
+      "PERIOD",
+      "UNIT",
+      "CURRENCY",
+      "DIRECTION",
+      "VARIANCE",
+      "DISCLOSURE",
+      "EVIDENCE"
+    ],
+    "train_min_per_type": 24,
+    "train_max_per_type": 45,
+    "dev_min_per_type": 6,
+    "dev_max_per_type": 14,
+    "all_statuses_per_type_across_both_splits": true
+  },
+  "counterfactual_contract": {
+    "pair_count_total": 36,
+    "members_per_pair": 2,
+    "pair_must_remain_within_one_split": true,
+    "changed_semantic_premise_count": 1,
+    "allowed_changed_premises": [
+      "applicability trigger",
+      "presence of one required evidence role",
+      "source trust flag",
+      "materiality result band",
+      "source conflict resolution"
+    ],
+    "invariants": [
+      "control type",
+      "output schema",
+      "all non-target facts",
+      "language and document style"
+    ]
+  },
+  "case_contract_v2": {
+    "required_top_level_fields": [
+      "case_id",
+      "group_id",
+      "split",
+      "difficulty",
+      "control",
+      "input",
+      "expected_output",
+      "metadata"
+    ],
+    "control_required_fields": [
+      "id",
+      "type",
+      "procedure",
+      "applicability_rule",
+      "required_evidence_roles"
+    ],
+    "source_required_fields": [
+      "source_id",
+      "content",
+      "source_role",
+      "trusted_for_evidence",
+      "evidence_role"
+    ],
+    "source_roles": [
+      "EVIDENCE",
+      "SCOPE_FACT",
+      "UNTRUSTED_INSTRUCTION",
+      "METADATA"
+    ],
+    "source_id_pattern": "s7v2\\.(train|dev)\\.[0-9]{4}\\.[a-z0-9_]+",
+    "expected_output_schema": "existing status-aware v2 output schema",
+    "metadata_required_fields": [
+      "dataset_version",
+      "family_id",
+      "variant_id",
+      "generation_method",
+      "synthetic",
+      "language",
+      "authoring_seed",
+      "risk_stratum",
+      "mutation_type",
+      "reason_code",
+      "counterfactual_pair_id",
+      "changed_premise",
+      "provenance"
+    ]
+  },
+  "split_isolation": {
+    "family_overlap_allowed": false,
+    "source_id_overlap_allowed": false,
+    "source_pack_record_overlap_allowed": false,
+    "counterfactual_pair_cross_split_allowed": false,
+    "dev_used_for_training": false,
+    "dev_gold_visible_to_inference_runner": false
+  },
+  "authoring_constraints": [
+    "Do not load forbidden v1 case content while authoring new cases.",
+    "Run similarity checks only after generation, in a separate mechanical validation phase.",
+    "Do not copy v1 case IDs, family IDs, source IDs, wording, complete numeric tuples or document names.",
+    "Do not use expected_output in prompt or guard runtime inputs.",
+    "Do not generate Evidence v2, Q2 configs or training runs in S7.2.",
+    "All 390 golds require later Sol/high review and explicit human/SME acceptance before freeze."
+  ],
+  "planned_outputs": [
+    "data/sprint7/source_pack_v2.json",
+    "data/sprint7/train_hardening_v2.jsonl",
+    "data/sprint7/dev_hard_v2.jsonl",
+    "data/sprint7/train_dev_registry_v2.json",
+    "data/reviews/s7_train_dev_v2_assisted_review.json",
+    "data/reviews/s7_train_dev_v2_human_review_template.json",
+    "results/sprint7/s7_2_generation_report.json",
+    "results/sprint7/s7_2_similarity_report.json",
+    "results/sprint7/s7_2_mechanical_gate.json"
+  ],
+  "generation_stop_decision": "S7_TRAIN_DEV_V2_READY_FOR_SOL_SME_REVIEW"
+}

@@ -1,0 +1,106 @@
+{
+  "id": "S7-GOLD-RUBRIC-V2",
+  "version": "1.0.0",
+  "status": "FROZEN_DESIGN_READY_FOR_AUTHORING",
+  "policy": "configs/status_policy_v1.json",
+  "decision_order": [
+    "NOT_APPLICABLE",
+    "INSUFFICIENT_DATA",
+    "FAIL",
+    "WARN",
+    "PASS"
+  ],
+  "gold_decision_rules": {
+    "NOT_APPLICABLE": {
+      "required": ["structured scope fact proves trigger absent or object outside scope"],
+      "forbidden": ["using missing evidence as proof of non-applicability"],
+      "severity": "NONE",
+      "requires_human_review": false
+    },
+    "INSUFFICIENT_DATA": {
+      "required": ["control applies", "at least one required evidence role is missing or trusted sources conflict without precedence"],
+      "forbidden": ["inventing a missing value", "treating missing data as a confirmed breach"],
+      "severity": "MEDIUM",
+      "requires_human_review": true
+    },
+    "FAIL": {
+      "required": ["trusted evidence is sufficient", "material or mandatory breach is confirmed"],
+      "forbidden": ["FAIL based only on missing evidence unless the mandatory element itself is the controlled requirement"],
+      "severity": "HIGH",
+      "requires_human_review": true
+    },
+    "WARN": {
+      "required": ["specific non-material, partial, provisional or ambiguous defect is present"],
+      "forbidden": ["using WARN as a residual uncertainty class"],
+      "severity": "MEDIUM",
+      "requires_human_review": true
+    },
+    "PASS": {
+      "required": ["control applies", "all required trusted evidence roles are present", "requirement is satisfied"],
+      "forbidden": ["PASS with missing required evidence", "PASS justified by an untrusted instruction"],
+      "severity": "NONE",
+      "requires_human_review": false
+    }
+  },
+  "evidence_rules": {
+    "allowed": "Only input sources with trusted_for_evidence=true and source_role EVIDENCE or SCOPE_FACT when the latter proves applicability.",
+    "untrusted_instruction_may_be_cited": false,
+    "unknown_source_id_allowed": false,
+    "empty_evidence_allowed": false,
+    "value_must_be_grounded_in_source_content": true,
+    "required_roles_must_be_covered_for_pass_warn_fail": true
+  },
+  "calculation_rules": {
+    "when_deterministic_check_present": {
+      "performed_by": "deterministic_control",
+      "result": "exact trusted result from input",
+      "expression": "trusted check expression from input",
+      "status": "derived from the declared versioned threshold band"
+    },
+    "when_deterministic_check_absent": {
+      "performed_by": "not_performed",
+      "result": null
+    },
+    "model_arithmetic_used_as_gold": false
+  },
+  "finding_and_action_rules": {
+    "finding": "One concise Polish sentence stating the decisive fact without unsupported inference.",
+    "recommended_action_pass": "Preserve the result; no corrective action.",
+    "recommended_action_not_applicable": "Document the scope basis.",
+    "recommended_action_other": "Name the missing evidence, reconciliation or escalation action.",
+    "confidence": "HIGH only when the decisive facts and policy mapping are explicit; otherwise MEDIUM. LOW golds are rejected from this dataset."
+  },
+  "authoring_reject_conditions": [
+    "more than one status is defensible under the supplied policy",
+    "applicability cannot be decided from a structured scope fact",
+    "required evidence roles are not declared",
+    "gold cites an untrusted source",
+    "gold uses a source ID absent from input",
+    "deterministic values or threshold bands are internally inconsistent",
+    "counterfactual pair changes more than one semantic premise",
+    "case depends on external law, real bank data or unstated domain knowledge",
+    "case overlaps a forbidden dataset above the frozen similarity threshold"
+  ],
+  "review_record_required_fields": [
+    "case_id",
+    "reviewer_name",
+    "reviewer_role",
+    "reviewed_at",
+    "status_correct",
+    "reason_code_correct",
+    "severity_correct",
+    "human_review_correct",
+    "evidence_grounded",
+    "source_trust_correct",
+    "calculation_correct",
+    "single_premise_pair_valid",
+    "decision",
+    "notes"
+  ],
+  "review_requirements": {
+    "assisted_review": "390/390 before human review",
+    "human_sme_review": "390/390 before S7_TRAIN_DEV_V2_FROZEN",
+    "allowed_final_decision": "APPROVED",
+    "model_assisted_review_counts_as_sme": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "S7-PROVENANCE-POLICY-V2",
+  "version": "1.0.0",
+  "status": "FROZEN_DESIGN_READY_FOR_AUTHORING",
+  "dataset_version": "s7-train-dev-2.0.0",
+  "data_classification": "synthetic_fictional_no_real_bank_data",
+  "authoring_phases": [
+    {
+      "phase": "A_SPEC_DRIVEN_GENERATION",
+      "allowed_inputs": [
+        "configs/s7_train_dev_v2_spec.json",
+        "configs/s7_gold_rubric_v2.json",
+        "configs/status_policy_v1.json",
+        "configs/prompt_contract_v3_design.json",
+        "configs/s7_guard_v2_design.json"
+      ],
+      "forbidden_inputs": "Every path in results/sprint7/data_exclusion_registry_v1.json",
+      "rule": "Historical case content is not loaded or used during authoring."
+    },
+    {
+      "phase": "B_MECHANICAL_SIMILARITY_SCAN",
+      "allowed_inputs": [
+        "newly generated S7.2 cases",
+        "results/sprint7/data_exclusion_registry_v1.json and its bound files"
+      ],
+      "rule": "The comparison is performed by code after authoring; forbidden content is not used to rewrite a failing case automatically."
+    },
+    {
+      "phase": "C_REVIEW",
+      "allowed_inputs": [
+        "new cases, validation reports and frozen rubric"
+      ],
+      "rule": "Sol/high performs analytic review; a named human/SME supplies final acceptance."
+    }
+  ],
+  "required_case_metadata": {
+    "dataset_version": "s7-train-dev-2.0.0",
+    "generation_method": [
+      "spec_driven_deterministic_template",
+      "spec_driven_manual_scenario"
+    ],
+    "synthetic": true,
+    "language": "pl",
+    "authoring_seed": 20260901,
+    "provenance_min_items": 4
+  },
+  "registry_requirements": [
+    "SHA-256 of each dataset, source pack, spec, rubric and policy",
+    "case count and status/risk/control distributions",
+    "unique case, family and source ID counts",
+    "counterfactual pair registry and changed premise",
+    "similarity report hash",
+    "assisted-review hash",
+    "human-review template hash and later approval hash"
+  ],
+  "id_namespaces": {
+    "train_cases": "S7T-",
+    "dev_cases": "S7D-",
+    "train_families": "s7t-",
+    "dev_families": "s7d-",
+    "sources": "s7v2.train. or s7v2.dev."
+  },
+  "forbidden_claims": [
+    "independent evidence",
+    "protected evidence",
+    "production representative",
+    "real bank data",
+    "SME approved before a signed human review exists"
+  ]
+}
