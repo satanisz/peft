@@ -1,0 +1,9 @@
+{
+  "decision": "S7_TRAIN_DEV_V2_READY_FOR_SOL_SME_REVIEW",
+  "mechanical_validation": "PASS",
+  "assisted_review": "390/390 PASS",
+  "similarity_scan": "NOT_RUN_SEPARATELY",
+  "human_sme_status": "PENDING",
+  "q2_training": "NOT_RUN",
+  "evidence_v1": "NOT_RUN"
+}

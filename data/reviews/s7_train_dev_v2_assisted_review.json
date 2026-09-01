@@ -1,0 +1,2352 @@
+{
+  "review_type": "assisted_review",
+  "reviewer": "Luna/low",
+  "reviewer_role": "model_assisted_not_sme",
+  "human_sme_status": "PENDING",
+  "total": 390,
+  "passed": 390,
+  "failed": 0,
+  "decision": "ASSISTED_PASS",
+  "records": [
+    {
+      "case_id": "S7T-0001",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0002",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0003",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0004",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0005",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0006",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0007",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0008",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0009",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0010",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0011",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0012",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0013",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0014",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0015",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0016",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0017",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0018",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0019",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0020",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0021",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0022",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0023",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0024",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0025",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0026",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0027",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0028",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0029",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0030",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0031",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0032",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0033",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0034",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0035",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0036",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0037",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0038",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0039",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0040",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0041",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0042",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0043",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0044",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0045",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0046",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0047",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0048",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0049",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0050",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0051",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0052",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0053",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0054",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0055",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0056",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0057",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0058",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0059",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0060",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0061",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0062",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0063",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0064",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0065",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0066",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0067",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0068",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0069",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0070",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0071",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0072",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0073",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0074",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0075",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0076",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0077",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0078",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0079",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0080",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0081",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0082",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0083",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0084",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0085",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0086",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0087",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0088",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0089",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0090",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0091",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0092",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0093",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0094",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0095",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0096",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0097",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0098",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0099",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0100",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0101",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0102",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0103",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0104",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0105",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0106",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0107",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0108",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0109",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0110",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0111",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0112",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0113",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0114",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0115",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0116",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0117",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0118",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0119",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0120",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0121",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0122",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0123",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0124",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0125",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0126",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0127",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0128",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0129",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0130",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0131",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0132",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0133",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0134",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0135",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0136",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0137",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0138",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0139",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0140",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0141",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0142",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0143",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0144",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0145",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0146",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0147",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0148",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0149",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0150",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0151",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0152",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0153",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0154",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0155",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0156",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0157",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0158",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0159",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0160",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0161",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0162",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0163",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0164",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0165",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0166",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0167",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0168",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0169",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0170",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0171",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0172",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0173",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0174",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0175",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0176",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0177",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0178",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0179",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0180",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0181",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0182",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0183",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0184",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0185",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0186",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0187",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0188",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0189",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0190",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0191",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0192",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0193",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0194",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0195",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0196",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0197",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0198",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0199",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0200",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0201",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0202",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0203",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0204",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0205",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0206",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0207",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0208",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0209",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0210",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0211",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0212",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0213",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0214",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0215",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0216",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0217",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0218",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0219",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0220",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0221",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0222",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0223",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0224",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0225",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0226",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0227",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0228",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0229",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0230",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0231",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0232",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0233",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0234",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0235",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0236",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0237",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0238",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0239",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0240",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0241",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0242",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0243",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0244",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0245",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0246",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0247",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0248",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0249",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0250",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0251",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0252",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0253",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0254",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0255",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0256",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0257",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0258",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0259",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0260",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0261",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0262",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0263",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0264",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0265",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0266",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0267",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0268",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0269",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0270",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0271",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0272",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0273",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0274",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0275",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0276",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0277",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0278",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0279",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0280",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0281",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0282",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0283",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0284",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0285",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0286",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0287",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0288",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0289",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0290",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0291",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0292",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0293",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0294",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0295",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0296",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0297",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0298",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0299",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7T-0300",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0001",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0002",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0003",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0004",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0005",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0006",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0007",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0008",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0009",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0010",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0011",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0012",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0013",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0014",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0015",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0016",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0017",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0018",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0019",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0020",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0021",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0022",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0023",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0024",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0025",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0026",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0027",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0028",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0029",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0030",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0031",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0032",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0033",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0034",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0035",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0036",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0037",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0038",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0039",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0040",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0041",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0042",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0043",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0044",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0045",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0046",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0047",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0048",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0049",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0050",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0051",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0052",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0053",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0054",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0055",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0056",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0057",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0058",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0059",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0060",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0061",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0062",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0063",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0064",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0065",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0066",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0067",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0068",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0069",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0070",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0071",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0072",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0073",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0074",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0075",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0076",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0077",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0078",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0079",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0080",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0081",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0082",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0083",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0084",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0085",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0086",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0087",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0088",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0089",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    },
+    {
+      "case_id": "S7D-0090",
+      "decision": "ASSISTED_PASS",
+      "schema_valid": true,
+      "gold_complete": true
+    }
+  ]
+}

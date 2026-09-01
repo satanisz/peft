@@ -1,0 +1,20 @@
+{
+  "dataset_version": "s7_train_dev_v2",
+  "decision": "S7_TRAIN_DEV_V2_READY_FOR_SOL_SME_REVIEW",
+  "counts": {
+    "train": 300,
+    "dev": 90,
+    "total": 390,
+    "counterfactual_pairs": 36
+  },
+  "sha256": {
+    "data\\sprint7\\source_pack_v2.json": "b3fa2af42d35a88802a1dbed6ddf555ac4f06ebe9b9082fe740e13643329a124",
+    "data\\sprint7\\train_hardening_v2.jsonl": "3acc4add159a870b38f2d43d489b7a4b6b3f08393b100156d485654e4d6dec53",
+    "data\\sprint7\\dev_hard_v2.jsonl": "43516beca074d407eead73d7aa5bb6c319334260263feaee6aa577bd2044bdec",
+    "data\\reviews\\s7_train_dev_v2_assisted_review.json": "c277f03d6428c252ac0913065a2936ee3367518fc684a38dd9dd57cd8deb7f32",
+    "data\\reviews\\s7_train_dev_v2_human_review_template.json": "96535f9c9eec609d84a03e1207246b62973df918536538d5ec560e979c996fc5"
+  },
+  "human_sme_status": "PENDING",
+  "evidence_v1": "FROZEN_READ_ONLY",
+  "q2_training": "NOT_RUN"
+}

@@ -1,0 +1,9 @@
+{
+  "decision": "PASS",
+  "exact_duplicates": 0,
+  "cross_split_exact_duplicates": 0,
+  "auto_failures": [],
+  "manual_review_queue": 0,
+  "normalization": "NFKC lowercase whitespace; IDs retained in separate check",
+  "forbidden_registry_consulted": true
+}

@@ -22,7 +22,7 @@
     "similarity_policy_frozen": true,
     "similarity_thresholds_are_fixed": true,
     "exclusion_hashes_unchanged": true,
-    "planned_data_not_generated_yet": true,
+    "planned_data_not_generated_yet": false,
     "no_evidence_v2_created": true,
     "no_q2_adapter_created": true
   },
@@ -43,8 +43,8 @@
     "dev_count": 90,
     "counterfactual_pairs": 36
   },
-  "decision": "S7_2_DESIGN_READY_FOR_LUNA_LOW",
-  "next_allowed_action": "LUNA_LOW_GENERATE_AND_VALIDATE_S7_2",
+  "decision": "S7_2_DESIGN_HOLD",
+  "next_allowed_action": "SOL_HIGH_REVIEW_DESIGN_FAILURES",
   "next_stop": "S7_TRAIN_DEV_V2_READY_FOR_SOL_SME_REVIEW",
   "prohibited_actions": [
     "Q2 training",

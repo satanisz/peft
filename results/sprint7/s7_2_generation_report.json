@@ -1,0 +1,9 @@
+{
+  "decision": "PASS",
+  "train_count": 300,
+  "dev_count": 90,
+  "total_count": 390,
+  "source_count": 877,
+  "counterfactual_pairs": 36,
+  "errors": []
+}
