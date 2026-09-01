@@ -10,6 +10,7 @@ Oryginalny trzygodzinny warsztat pozostaje zachowany jako materiał dodatkowy.
 - [Sprint 7 — Q2 i Evidence v2](docs/39_sprint_7_q2_evidence_v2_executive_plan.md)
 - [Wynik S7.0–S7.1 — baseline i remediation](docs/40_sprint_7_0_7_1_baseline_and_remediation_report.md)
 - [Projekt S7.2 i handoff dla Luna/low](docs/41_sprint_7_2_design_and_luna_handoff.md)
+- [Review Sol/high pakietu S7.2](docs/42_sprint_7_2_sol_high_review.md)
 
 Deck 60-minutowy jest złożony i przeszedł pełny render oraz QA.
 Protected Evidence v1 pozostaje FAILED/FROZEN/READ-ONLY, bez rerunu i bez

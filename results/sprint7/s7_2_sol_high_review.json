@@ -1,0 +1,139 @@
+{
+  "id": "S7-2-SOL-HIGH-PACKAGE-REVIEW",
+  "review_scope": "complete S7.2 package; analytic/model review, not human SME acceptance",
+  "counts": {
+    "train": 300,
+    "dev": 90,
+    "total": 390,
+    "statuses": {
+      "PASS": 78,
+      "WARN": 78,
+      "FAIL": 78,
+      "INSUFFICIENT_DATA": 99,
+      "NOT_APPLICABLE": 57
+    }
+  },
+  "checks_that_passed": {
+    "declared_counts": true,
+    "declared_status_set": true,
+    "counterfactual_group_count": true,
+    "registry_existing_hashes_match": true,
+    "legacy_test_suite": "91/91 PASS (executed separately)",
+    "evidence_v1_not_rerun": true,
+    "q2_not_trained": true
+  },
+  "blocking_findings": {
+    "schema_invalid_cases": 390,
+    "control_contract_invalid_cases": 390,
+    "source_contract_invalid_cases": 390,
+    "metadata_contract_invalid_cases": 390,
+    "invalid_source_ids": 877,
+    "gold_status_disclosed_in_task": 390,
+    "invalid_counterfactual_pairs": 36,
+    "not_applicable_without_scope_fact": 57,
+    "insufficient_data_without_declared_required_roles": 99,
+    "deterministic_checks_without_threshold": 44,
+    "source_pack_invalid_roles": 877,
+    "source_pack_missing_evidence_role": 877,
+    "source_pack_untrusted_flag_lost": 97,
+    "assisted_review_records_missing_required_fields": 390,
+    "similarity_report_missing_required_fields": 8,
+    "registry_missing_required_hashes": 5,
+    "registry_hash_mismatches": 0
+  },
+  "examples": {
+    "schema_invalid": [
+      "S7T-0001",
+      "S7T-0002",
+      "S7T-0003",
+      "S7T-0004",
+      "S7T-0005"
+    ],
+    "invalid_pairs": [
+      {
+        "pair_id": "S7D-CF-001",
+        "case_ids": [
+          "S7D-0001",
+          "S7D-0002"
+        ],
+        "reasons": [
+          "control_type_changed",
+          "family_changed"
+        ]
+      },
+      {
+        "pair_id": "S7D-CF-002",
+        "case_ids": [
+          "S7D-0003",
+          "S7D-0004"
+        ],
+        "reasons": [
+          "control_type_changed",
+          "family_changed"
+        ]
+      },
+      {
+        "pair_id": "S7D-CF-003",
+        "case_ids": [
+          "S7D-0005",
+          "S7D-0006"
+        ],
+        "reasons": [
+          "control_type_changed",
+          "family_changed"
+        ]
+      },
+      {
+        "pair_id": "S7D-CF-004",
+        "case_ids": [
+          "S7D-0007",
+          "S7D-0008"
+        ],
+        "reasons": [
+          "control_type_changed",
+          "family_changed"
+        ]
+      },
+      {
+        "pair_id": "S7D-CF-005",
+        "case_ids": [
+          "S7D-0009",
+          "S7D-0010"
+        ],
+        "reasons": [
+          "control_type_changed",
+          "family_changed"
+        ]
+      }
+    ],
+    "invalid_source_ids": [
+      "s7v2.train.0001a",
+      "s7v2.train.0001b",
+      "s7v2.train.0002a",
+      "s7v2.train.0002b",
+      "s7v2.train.0003a"
+    ],
+    "similarity_missing_fields": [
+      "automatic failures",
+      "compared_case_count",
+      "cross-split overlap checks",
+      "exclusion_registry_sha256",
+      "forbidden_case_count",
+      "manual review queue",
+      "maximum similarities by field",
+      "policy_sha256"
+    ],
+    "registry_missing_required_hashes": [
+      "configs/s7_gold_rubric_v2.json",
+      "configs/s7_provenance_policy_v2.json",
+      "configs/s7_similarity_leakage_policy_v2.json",
+      "configs/s7_train_dev_v2_spec.json",
+      "results/sprint7/s7_2_similarity_report.json"
+    ]
+  },
+  "decision": "S7_2_SOL_REVIEW_HOLD_REAUTHOR_REQUIRED",
+  "human_sme_review": "DO_NOT_START_UNTIL_REMEDIATED",
+  "s7_3": "BLOCKED",
+  "q2_training": "PROHIBITED",
+  "evidence_v2": "PROHIBITED"
+}

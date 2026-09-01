@@ -92,9 +92,11 @@ eskalacji.
 
 **Bramka:** `S7_TRAIN_DEV_V2_FROZEN` po walidacji mechanicznej i review SME.
 
-**Status projektu Sol/high:** `S7_2_DESIGN_READY_FOR_LUNA_LOW`. Specyfikacja i
-handoff: `docs/41_sprint_7_2_design_and_luna_handoff.md`. Dane nie zostały
-jeszcze wygenerowane, a bramka końcowa S7.2 pozostaje otwarta.
+**Status po review Sol/high:** `S7_2_SOL_REVIEW_HOLD_REAUTHOR_REQUIRED`.
+Pierwszy wygenerowany pakiet osiągnął liczności, lecz nie spełnił kontraktu
+semantycznego, source trust, counterfactual ani similarity/leakage. Wymagany
+jest wersjonowany S7.2R przed review człowieka/SME. Szczegóły:
+`docs/42_sprint_7_2_sol_high_review.md`.
 
 ### S7.3 — system-first ablation na dev
 
